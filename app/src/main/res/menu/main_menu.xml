@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/file"
+        android:title="@string/file_menu"
+        app:showAsAction="never" >
+
+        <menu>
+
+            <item
+                android:id="@+id/exit"
+                android:title="@string/minimiza" />
+
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/tools"
+        android:title="@string/tools_menu"
+        app:showAsAction="never" >
+
+        <menu>
+
+            <item
+                android:id="@+id/change_password"
+                android:title="@string/change_password" />
+            <item
+                android:id="@+id/get_balance"
+                android:title="@string/get_balance" />
+            <item
+                android:id="@+id/send_transaction"
+                android:title="@string/send_transaction" />
+            <item
+                android:id="@+id/show_address"
+                android:title="@string/show_address" />
+
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/messaging"
+        android:title="@string/messaging_menu"
+        app:showAsAction="never">
+
+        <menu>
+
+            <item
+                android:id="@+id/send_message"
+                android:title="@string/send_secure_message" />
+
+            <item
+                android:id="@+id/show_messages"
+                android:title="@string/show_messages" />
+
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/twitter"
+        android:title="@string/twitter_menu"
+        app:showAsAction="never" >
+
+        <menu>
+
+            <item
+                android:id="@+id/create_twitter"
+                android:title="@string/create_twitter" />
+            <item
+                android:id="@+id/show_my_tweets"
+                android:title="@string/show_my_tweets" />
+            <item
+                android:id="@+id/send_tweet"
+                android:title="@string/send_tweet" />
+            <item
+                android:id="@+id/search_twitter"
+                android:title="@string/search_twitter" />
+            <item
+                android:id="@+id/my_subscription"
+                android:title="@string/my_subscription" />
+
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/posting"
+        android:title="@string/posting_menu"
+        app:showAsAction="never" >
+
+        <menu>
+
+            <item
+                android:id="@+id/create_post"
+                android:title="@string/create_post" />
+            <item
+                android:id="@+id/find_post"
+                android:title="@string/find_post" />
+            <item
+                android:id="@+id/my_ratings"
+                android:title="@string/my_ratings" />
+            <item
+                android:id="@+id/my_posts"
+                android:title="@string/my_posts" />
+
+        </menu>
+
+    </item>
+
+</menu>

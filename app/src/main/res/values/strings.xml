@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">TMA Post</string>
+    <string name="enter_passphrase">Enter Passphrase</string>
+    <string name="confirm_passphrase">Confirm Passphrase</string>
+    <string name="submit">Submit</string>
+    <string name="connected">You successfully connected to TMA Network</string>
+    <string name="address_label">Your TMA Address</string>
+    <string name="balance_label">Your Balance</string>
+    <string name="coins">\u0020coins</string>
+
+    <string name="file_menu">File</string>
+    <string name="tools_menu">Tools</string>
+    <string name="messaging_menu">Messaging</string>
+    <string name="twitter_menu">Twitter</string>
+    <string name="posting_menu">Posting</string>
+
+    <string name="minimiza">Minimize</string>
+    <string name="change_password">Change Password</string>
+    <string name="get_balance">Get Balance</string>
+    <string name="send_transaction">Send Transaction</string>
+    <string name="show_address">Show Address</string>
+    <string name="send_secure_message">Send Secure Message</string>
+    <string name="show_messages">Show Messages</string>
+    <string name="create_twitter">Create Twitter</string>
+    <string name="show_my_tweets">Show My Tweets</string>
+    <string name="send_tweet">Send Tweet</string>
+    <string name="search_twitter">Search Twitter</string>
+    <string name="my_subscription">My Subscription</string>
+    <string name="create_post">Create Post</string>
+    <string name="find_post">Find Post</string>
+    <string name="my_ratings">My Ratings</string>
+    <string name="my_posts">My Posts</string>
+
+    <string name="connecting_wait">Connecting to TMA Network, please wait.</string>
+    <string name="get_balance_wait">Retrieving balance. Please wait.</string>
+
+    <string name="tma_address">TMA Address</string>
+    <string name="balance">Balance</string>
+    <string name="wrong_password">Entered passphrase was not correct. Please try again.</string>
+    <string name="reentered_password_does_not_match">New and reentered passphrase do not match. Please try again.</string>
+
+    <string name="Recipient_TMA_Address">Recipient TMA Address</string>
+    <string name="Amount_in_coins">Amount in coins</string>
+    <string name="Fee_in_satoshis">Fee in satoshis</string>
+    <string name="data">Data</string>
+    <string name="Expire_after_blocks">Expire after # blocks</string>
+    <string name="Expiring_Data">Expiring Data</string>
+
+</resources>
