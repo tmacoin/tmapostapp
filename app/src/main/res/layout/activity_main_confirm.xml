@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
         android:text="@string/confirm_passphrase"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -42,6 +43,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="19dp"
         android:text="@string/enter_passphrase"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
