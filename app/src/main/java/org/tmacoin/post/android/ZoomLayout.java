@@ -126,6 +126,8 @@ public class ZoomLayout extends FrameLayout implements ScaleGestureDetector.OnSc
         } else {
             lastScaleFactor = 0;
         }
+        dx *= scaleFactor;
+        dy *= scaleFactor;
         return true;
     }
 
