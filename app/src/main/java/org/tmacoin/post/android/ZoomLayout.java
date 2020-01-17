@@ -24,9 +24,8 @@ public class ZoomLayout extends FrameLayout implements ScaleGestureDetector.OnSc
         ZOOM
     }
 
-    private static final String TAG = "ZoomLayout";
-    private static final float MIN_ZOOM = 1.0f;
-    private static final float MAX_ZOOM = 4.0f;
+    private static final float MIN_ZOOM = 0.5f;
+    private static final float MAX_ZOOM = 5.0f;
 
     private Mode mode = Mode.NONE;
     private float scale = 1.0f;
@@ -126,8 +125,11 @@ public class ZoomLayout extends FrameLayout implements ScaleGestureDetector.OnSc
         } else {
             lastScaleFactor = 0;
         }
-        dx *= scaleFactor;
-        dy *= scaleFactor;
+        if(scale < MAX_ZOOM) {
+            dx *= scaleFactor;
+            dy *= scaleFactor;
+        }
+
         return true;
     }
 
