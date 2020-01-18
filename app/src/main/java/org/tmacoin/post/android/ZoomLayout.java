@@ -24,8 +24,8 @@ public class ZoomLayout extends FrameLayout implements ScaleGestureDetector.OnSc
         ZOOM
     }
 
-    private static final float MIN_ZOOM = 0.5f;
-    private static final float MAX_ZOOM = 5.0f;
+    private static final float MIN_ZOOM = 1f;
+    private static final float MAX_ZOOM = 10f;
 
     private Mode mode = Mode.NONE;
     private float scale = 1.0f;
@@ -40,6 +40,8 @@ public class ZoomLayout extends FrameLayout implements ScaleGestureDetector.OnSc
     private float dy = 0f;
     private float prevDx = 0f;
     private float prevDy = 0f;
+    private float focusx = 0f;
+    private float focusy = 0f;
 
     public ZoomLayout(Context context) {
         super(context);
@@ -117,7 +119,10 @@ public class ZoomLayout extends FrameLayout implements ScaleGestureDetector.OnSc
     @Override
     public boolean onScale(ScaleGestureDetector scaleDetector) {
         float scaleFactor = scaleDetector.getScaleFactor();
-        logger.debug("onScale {}", scaleFactor);
+        focusx = scaleDetector.getFocusX();
+        focusy = scaleDetector.getFocusY();
+        logger.debug("onScale={} focusx={} focusy={}", scaleFactor, focusx, focusy);
+
         if (lastScaleFactor == 0 || (Math.signum(scaleFactor) == Math.signum(lastScaleFactor))) {
             scale *= scaleFactor;
             scale = Math.max(MIN_ZOOM, Math.min(scale, MAX_ZOOM));
@@ -126,10 +131,9 @@ public class ZoomLayout extends FrameLayout implements ScaleGestureDetector.OnSc
             lastScaleFactor = 0;
         }
         if(scale < MAX_ZOOM) {
-            dx *= scaleFactor;
-            dy *= scaleFactor;
+            dx = dx * scaleFactor + (scaleFactor - 1) * (child().getWidth()/2 - scaleDetector.getFocusX());
+            dy = dy * scaleFactor + (scaleFactor - 1) * (child().getHeight()/2 - scaleDetector.getFocusY());
         }
-
         return true;
     }
 
