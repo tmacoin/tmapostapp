@@ -118,26 +118,6 @@ public class SendMessageActivity extends BaseActivity {
             }
         });
 
-        EditText expiringDataEditText = (EditText)findViewById(R.id.expiringDataEditText);
-
-        expiringDataEditText.setVerticalScrollBarEnabled(true);
-        expiringDataEditText.setOverScrollMode(View.OVER_SCROLL_ALWAYS);
-        expiringDataEditText.setScrollBarStyle(View.SCROLLBARS_INSIDE_INSET);
-        expiringDataEditText.setMovementMethod(ScrollingMovementMethod.getInstance());
-
-        expiringDataEditText.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-
-                view.getParent().requestDisallowInterceptTouchEvent(true);
-                if ((motionEvent.getAction() & MotionEvent.ACTION_UP) != 0 && (motionEvent.getActionMasked() & MotionEvent.ACTION_UP) != 0)
-                {
-                    view.getParent().requestDisallowInterceptTouchEvent(false);
-                }
-                return false;
-            }
-        });
-
     }
 
     private void process() {
@@ -213,7 +193,7 @@ public class SendMessageActivity extends BaseActivity {
         logger.debug("sent {}", transaction);
         new SendTransactionRequest(network, transaction).start();
 
-        result = "Successfully sent message \"" + subject + "\" coins to " + recipientTmaAddress;
+        result = "Successfully sent message \"" + subject + "\" to " + recipientTmaAddress;
     }
 
     private void processSync() {
