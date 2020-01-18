@@ -12,8 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".SendTransactionActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+
+            ></activity>
+        <activity
+            android:name=".messaging.SendMessageActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
 
             ></activity>

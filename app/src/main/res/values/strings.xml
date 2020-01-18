@@ -49,4 +49,18 @@
     <string name="wait">Please wait.</string>
     <string name="entered_info_not_correct">Entered information was not correct. Please try again.</string>
 
+    <string name="subject">Subject</string>
+    <string name="body">Body</string>
+
+    <string name="expire_prompt">Select expire duration</string>
+
+    <string-array name="expire_arrays">
+        <item>10 minutes</item>
+        <item>1 hour</item>
+        <item>24 hours</item>
+        <item>1 week</item>
+        <item>1 month</item>
+        <item>1 year</item>
+    </string-array>
+
 </resources>

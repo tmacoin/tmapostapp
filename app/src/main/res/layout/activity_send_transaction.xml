@@ -154,8 +154,8 @@
 
     <EditText
         android:id="@+id/dataEditText"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
@@ -165,14 +165,16 @@
         android:inputType="textMultiLine"
         android:padding="3dp"
         android:textSize="12sp"
+        android:lines="5"
+        android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <EditText
         android:id="@+id/expiringDataEditText"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
@@ -182,6 +184,8 @@
         android:inputType="textMultiLine"
         android:padding="3dp"
         android:textSize="12sp"
+        android:lines="9"
+        android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />

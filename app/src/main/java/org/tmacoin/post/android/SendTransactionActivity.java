@@ -144,9 +144,9 @@ public class SendTransactionActivity extends BaseActivity {
         EditText feeInSatoshisEditText = findViewById(R.id.feeInSatoshisEditText);
         fee = StringUtil.trim(feeInSatoshisEditText.getText().toString());
         EditText expireAfterBlocksEditText = findViewById(R.id.expireAfterBlocksEditText);
-        data = StringUtil.trimToNull(expireAfterBlocksEditText.getText().toString());
+        expire = StringUtil.trimToNull(expireAfterBlocksEditText.getText().toString());
         EditText dataEditText = findViewById(R.id.dataEditText);
-        expire = StringUtil.trim(dataEditText.getText().toString());
+        data = StringUtil.trimToNull(dataEditText.getText().toString());
         EditText expiringDataEditText = findViewById(R.id.expiringDataEditText);
         expiringData = StringUtil.trimToNull(expiringDataEditText.getText().toString());
     }

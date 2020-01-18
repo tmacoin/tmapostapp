@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import org.tmacoin.post.android.messaging.SendMessageActivity;
+
 public class MenuHandler {
 
     public void handleExit(Activity activity) {
@@ -35,7 +37,8 @@ public class MenuHandler {
     }
 
     public void handleSendSecureMessage(Activity activity) {
-        Toast.makeText(activity, activity.getResources().getString(R.string.send_secure_message), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(activity, SendMessageActivity.class);
+        activity.startActivity(intent);
     }
 
     public void handleShowMessages(Activity activity) {
