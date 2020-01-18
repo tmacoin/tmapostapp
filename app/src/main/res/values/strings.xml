@@ -46,4 +46,7 @@
     <string name="Expire_after_blocks">Expire after # blocks</string>
     <string name="Expiring_Data">Expiring Data</string>
 
+    <string name="wait">Please wait.</string>
+    <string name="entered_info_not_correct">Entered information was not correct. Please try again.</string>
+
 </resources>
