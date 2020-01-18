@@ -96,7 +96,7 @@ public class SendTransactionActivity extends BaseActivity {
         List<Set<TransactionOutput>> inputList = new GetInputsRequest(network, tmaAddress, totals).getInputlist();
         int i = 0;
 
-        if(inputList.size() != totals.size()) {
+        if(inputList == null || inputList.size() != totals.size()) {
             result = "No inputs available for tma address " + tmaAddress + ". Please check your balance.";
             return;
         }
@@ -107,7 +107,7 @@ public class SendTransactionActivity extends BaseActivity {
                 new Coin(Integer.parseInt(fee)), inputs, wallet.getPrivateKey(), data, expiringData, null);
         logger.debug("sent {}", transaction);
         new SendTransactionRequest(Network.getInstance(), transaction).start();
-        result = "Transaction was sent";
+        result = "Successfully sent " + amount + " coins to " + recipient;
     }
 
     private void processSync() {
