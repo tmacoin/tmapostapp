@@ -89,6 +89,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
+                    if(!password.getText().toString().equals(confirmPassword.getText().toString())) {
+                        Toast.makeText(getApplicationContext(), "Password and Confirm Password do no match. Please try again.", Toast.LENGTH_LONG).show();
+                        return false;
+                    }
                     doStartNetwork(v, password.getText().toString(), pgsBar);
                 }
                 return false;
