@@ -33,6 +33,8 @@
 
     <string name="connecting_wait">Connecting to TMA Network, please wait.</string>
     <string name="get_balance_wait">Retrieving balance. Please wait.</string>
+    <string name="retrieving_messages_wait">Retrieving messages. Please wait.</string>
+    <string name="fail_retrieve_messages">Failed to retrieve messages. Please try again.</string>
 
     <string name="tma_address">TMA Address</string>
     <string name="balance">Balance</string>
