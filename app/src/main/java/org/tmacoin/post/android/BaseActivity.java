@@ -1,15 +1,22 @@
 package org.tmacoin.post.android;
 
 import android.app.Activity;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.tma.util.TmaLogger;
+
 public class BaseActivity extends AppCompatActivity {
+
+    private static final TmaLogger logger = TmaLogger.getLogger();
 
     public void hideKeyboard(View view) {
         InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
@@ -82,5 +89,22 @@ public class BaseActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void updateStatus(final String message) {
+        new Handler(Looper.getMainLooper()).post(new Runnable(){
+            @Override
+            public void run() {
+                try {
+                    TextView statusBar = findViewById(R.id.statusBar);
+                    if(statusBar == null) {
+                        return;
+                    }
+                    statusBar.setText(message);
+                } catch (Exception e) {
+                    logger.error(e.getMessage(), e);
+                }
+            }
+        });
     }
 }

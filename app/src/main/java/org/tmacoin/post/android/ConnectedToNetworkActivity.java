@@ -62,16 +62,18 @@ public class ConnectedToNetworkActivity extends BaseActivity {
             return null;
         }
         Network network = Network.getInstance();
+        updateStatus("Network status: " + network.getPeerCount().toString());
         if(!network.isPeerSetComplete()) {
             new BootstrapRequest(network).start();
         }
-
+        updateStatus("Network status: " + network.getPeerCount().toString());
         GetBalanceRequest request = new GetBalanceRequest(network, network.getTmaAddress());
         request.start();
         String balance = (String) ResponseHolder.getInstance().getObject(request.getCorrelationId());
         if(balance == null) {
             balance = getBalance(--attempNumber);
         }
+        updateStatus("Network status: " + network.getPeerCount().toString());
         return balance;
     }
 

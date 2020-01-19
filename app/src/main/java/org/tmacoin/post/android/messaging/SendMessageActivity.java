@@ -55,6 +55,7 @@ public class SendMessageActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_message);
+        updateStatus("Network status: " + Network.getInstance().getPeerCount().toString());
         Button sendMessageButton = findViewById(R.id.sendMessageButton);
         sendMessageButton.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -140,10 +141,11 @@ public class SendMessageActivity extends BaseActivity {
         final String tmaAddress = network.getTmaAddress();
         final Coin total = Coin.SATOSHI.add(new Coin(Long.parseLong(fee)));
         final Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
-
+        updateStatus("Network status: " + network.getPeerCount().toString());
         if(!network.isPeerSetComplete()) {
             new BootstrapRequest(network).start();
         }
+        updateStatus("Network status: " + network.getPeerCount().toString());
         List<Coin> totals = new ArrayList<>();
         totals.add(total);
         List<Set<TransactionOutput>> inputList = new GetInputsRequest(network, tmaAddress, totals).getInputlist();
@@ -191,8 +193,9 @@ public class SendMessageActivity extends BaseActivity {
                 new Coin(Integer.parseInt(fee)), inputs, wallet.getPrivateKey(), null, transactionData, null);
         transaction.setApp(Applications.MESSAGING);
         logger.debug("sent {}", transaction);
-        new SendTransactionRequest(network, transaction).start();
 
+        new SendTransactionRequest(network, transaction).start();
+        updateStatus("Network status: " + network.getPeerCount().toString());
         result = "Successfully sent message \"" + subject + "\" to " + recipientTmaAddress;
     }
 
@@ -200,6 +203,7 @@ public class SendMessageActivity extends BaseActivity {
         setContentView(R.layout.activity_send_message_complete);
         TextView resultTextView = findViewById(R.id.resultTextView);
         resultTextView.setText(result);
+        updateStatus("Network status: " + Network.getInstance().getPeerCount().toString());
     }
 
     private void showAlert() {

@@ -34,7 +34,7 @@ public class ShowMessagesActivity extends BaseActivity {
         pgsBar.setVisibility(View.VISIBLE);
         TextView myMessagesTextView = findViewById(R.id.myMessagesTextView);
         myMessagesTextView.setText("Messages for " + Network.getInstance().getTmaAddress());
-        Toast.makeText(this, getResources().getString(R.string.retrieving_messages_wait), Toast.LENGTH_LONG).show();
+        updateStatus(getResources().getString(R.string.retrieving_messages_wait));
         process();
 
     }
@@ -56,22 +56,25 @@ public class ShowMessagesActivity extends BaseActivity {
 
     private void processAsync() {
         Network network = Network.getInstance();
+        updateStatus("Network status: " + network.getPeerCount().toString());
         if(!network.isPeerSetComplete()) {
             new BootstrapRequest(network).start();
         }
+        updateStatus("Network status: " + network.getPeerCount().toString());
         final Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         final PublicKey publicKey = wallet.getPublicKey();
         GetMessagesRequest request = new GetMessagesRequest(network, publicKey);
         request.start();
         list = (List<SecureMessage>) ResponseHolder.getInstance().getObject(request.getCorrelationId());
+        updateStatus("Network status: " + network.getPeerCount().toString());
     }
 
     private void processSync() {
         if(list == null) {
-            Toast.makeText(this, getResources().getString(R.string.fail_retrieve_messages), Toast.LENGTH_LONG).show();
+            updateStatus(getResources().getString(R.string.fail_retrieve_messages));
             return;
         } else {
-            Toast.makeText(this, "Retrieved " + list.size() + " messages", Toast.LENGTH_LONG).show();
+            updateStatus("Retrieved " + list.size() + " messages");
         }
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.INVISIBLE);

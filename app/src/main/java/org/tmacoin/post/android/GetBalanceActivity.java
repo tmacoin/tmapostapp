@@ -56,6 +56,7 @@ public class GetBalanceActivity extends BaseActivity {
                 buttonClicked();
             }
         });
+        updateStatus("Network status: " + Network.getInstance().getPeerCount().toString());
     }
 
     private void buttonClicked() {
@@ -85,6 +86,7 @@ public class GetBalanceActivity extends BaseActivity {
         final TextView balanceTextView = findViewById(R.id.balance_textView);
         addressTextView.setText(tmaAddress);
         balanceTextView.setText(balance + getResources().getString(R.string.coins));
+        updateStatus("Network status: " + Network.getInstance().getPeerCount().toString());
     }
 
     private String getBalance(int attemptNumber, String tmaAddress) {
@@ -92,17 +94,18 @@ public class GetBalanceActivity extends BaseActivity {
             return null;
         }
         Network network = Network.getInstance();
+        updateStatus("Network status: " + network.getPeerCount().toString());
         if(!network.isPeerSetComplete()) {
             new BootstrapRequest(network).start();
         }
-
+        updateStatus("Network status: " + network.getPeerCount().toString());
         GetBalanceRequest request = new GetBalanceRequest(network, tmaAddress);
         request.start();
         String balance = (String) ResponseHolder.getInstance().getObject(request.getCorrelationId());
         if(balance == null) {
             balance = getBalance(--attemptNumber, tmaAddress);
         }
-
+        updateStatus("Network status: " + network.getPeerCount().toString());
         return balance;
     }
 }
