@@ -41,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        showSelectKeyFileDialog();
+
+    }
+
+    private void showSelectKeyFileDialog() {
         new AlertDialog.Builder(this)
                 .setTitle("Key File")
                 .setMessage("Do you want to use an existing key file?")
@@ -53,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         createNewKeyFile();
                     }}).show();
-
     }
 
     private boolean startNetwork(String passphrase) {
@@ -63,7 +67,10 @@ public class MainActivity extends AppCompatActivity {
             PasswordUtil passwordUtil = new PasswordUtil();
             if (!passwordUtil.loadKeys(passphrase)) {
                 logger.error("Could not load keys");
-                Toast.makeText(this, getResources().getString(R.string.wrong_password), Toast.LENGTH_LONG).show();
+                File keyFile = new File(Constants.FILES_DIRECTORY + Constants.KEYS);
+                if(keyFile.exists()) {
+                    Toast.makeText(this, getResources().getString(R.string.wrong_password), Toast.LENGTH_LONG).show();
+                }
                 return false;
             }
             Toast.makeText(this, getResources().getString(R.string.connecting_wait), Toast.LENGTH_LONG).show();
@@ -93,6 +100,9 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Password and Confirm Password do no match. Please try again.", Toast.LENGTH_LONG).show();
                         return false;
                     }
+                    Wallets.WALLET_NAME = "0";
+                    PasswordUtil passwordUtil = new PasswordUtil();
+                    passwordUtil.generateKey(Wallets.TMA, Wallets.WALLET_NAME, password.getText().toString());
                     doStartNetwork(v, password.getText().toString(), pgsBar);
                 }
                 return false;
@@ -115,17 +125,21 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Password and Confirm Password do no match. Please try again.", Toast.LENGTH_LONG).show();
                     return;
                 }
+                Wallets.WALLET_NAME = "0";
+                PasswordUtil passwordUtil = new PasswordUtil();
+                passwordUtil.generateKey(Wallets.TMA, Wallets.WALLET_NAME, password.getText().toString());
                 doStartNetwork(v, password.getText().toString(), pgsBar);
             }
         });
     }
 
-    private void doStartNetwork(View v, String password, ProgressBar pgsBar) {
+    private boolean doStartNetwork(View v, String password, ProgressBar pgsBar) {
         hideKeyboard(v);
         boolean result = startNetwork(password);
         if(result) {
             pgsBar.setVisibility(View.VISIBLE);
         }
+        return result;
     }
 
     private void selectKeyFile() {
@@ -167,7 +181,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
-                    doStartNetwork(v, password.getText().toString(), pgsBar);
+                    if(!doStartNetwork(v, password.getText().toString(), pgsBar)) {
+                        File keyFile = new File(Constants.FILES_DIRECTORY + Constants.KEYS);
+                        if(!keyFile.exists()) {
+                            showPreviousKeyFileDialog();
+                        }
+                    }
+
                 }
                 return false;
             }
@@ -185,9 +205,29 @@ public class MainActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                doStartNetwork(v, password.getText().toString(), pgsBar);
+                if(!doStartNetwork(v, password.getText().toString(), pgsBar)) {
+                    File keyFile = new File(Constants.FILES_DIRECTORY + Constants.KEYS);
+                    if(!keyFile.exists()) {
+                        showPreviousKeyFileDialog();
+                    }
+                }
             }
         });
+    }
+
+    private void showPreviousKeyFileDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("Key File")
+                .setMessage("Previously selected key file is invalid. Do you want to use another valid key file?")
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        selectKeyFile();
+                    }})
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        createNewKeyFile();
+                    }}).show();
     }
 
     public void hideKeyboard(View view) {

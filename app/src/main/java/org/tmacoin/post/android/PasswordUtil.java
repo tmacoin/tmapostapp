@@ -70,8 +70,9 @@ public class PasswordUtil {
 	}
 	
 	public boolean loadKeys(String passphrase) throws Exception {
+		File keyFile = new File(Constants.FILES_DIRECTORY + Constants.KEYS);
 		try (
-				InputStream is = new FileInputStream(new File(Constants.FILES_DIRECTORY + Constants.KEYS));
+				InputStream is = new FileInputStream(keyFile);
 				BufferedReader in = new BufferedReader(new InputStreamReader(is));
 		) {
 			String line;
@@ -105,10 +106,9 @@ public class PasswordUtil {
 			logger.error(e.getMessage(), e);
 		}
 		if(wallets.getNames(Wallets.TMA).isEmpty()) {
-			generateKey(Wallets.TMA, Wallets.WALLET_NAME, passphrase);
-			return true;
+			keyFile.delete();
+			return false;
 		}
-		saveKeys(passphrase);
 		return true;
 	}
 
@@ -149,7 +149,7 @@ public class PasswordUtil {
 		}
 	}
 	
-	private void generateKey(String application, String name, String passphrase) {
+	public void generateKey(String application, String name, String passphrase) {
 		Wallet wallet = new Wallet();
 		wallet.generateKeyPair();
 		wallets.putWallet(application, name, wallet);
