@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import org.tmacoin.post.android.messaging.SendMessageActivity;
+import org.tmacoin.post.android.messaging.ShowMessagesActivity;
 
 public class MenuHandler {
 
@@ -42,7 +43,8 @@ public class MenuHandler {
     }
 
     public void handleShowMessages(Activity activity) {
-        Toast.makeText(activity, activity.getResources().getString(R.string.show_messages), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(activity, ShowMessagesActivity.class);
+        activity.startActivity(intent);
     }
 
     public void handleCreateTwitter(Activity activity) {
