@@ -7,8 +7,6 @@
  *******************************************************************************/
 package org.tmacoin.post.android;
 
-import android.util.Log;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -34,10 +32,11 @@ import org.tma.util.Base58;
 import org.tma.util.Constants;
 import org.tma.util.Encryptor;
 import org.tma.util.StringUtil;
+import org.tma.util.TmaLogger;
 
 public class PasswordUtil {
 
-	private static final String TAG = "PasswordUtil";
+	private static final TmaLogger logger = TmaLogger.getLogger();
 	
 	static {
 		setupBouncyCastle();
@@ -94,7 +93,7 @@ public class PasswordUtil {
 				PublicKey publicKey = StringUtil.loadPublicKey(list.get(2));
 				PrivateKey privateKey = StringUtil.loadPrivateKey(encryptor.decrypt(passphrase, Base58.decode(list.get(3))));
 				if(privateKey == null) {
-					Log.d(TAG, "Passphrase entered was not correct. Try again.");
+					logger.debug("Passphrase entered was not correct. Try again.");
 					return false;
 				}
 				wallet.setPrivateKey(privateKey);
@@ -103,7 +102,7 @@ public class PasswordUtil {
 				i++;
 			}
 		} catch (Exception e) {
-			Log.e(TAG, e.getMessage(), e);
+			logger.error(e.getMessage(), e);
 		}
 		if(wallets.getNames(Wallets.TMA).isEmpty()) {
 			generateKey(Wallets.TMA, Wallets.WALLET_NAME, passphrase);
@@ -121,7 +120,7 @@ public class PasswordUtil {
 			}
 
 		} catch (Exception e) {
-			Log.e(TAG, e.getMessage(), e);
+			logger.error(e.getMessage(), e);
 		}
 		file.delete();
 		File parentDirectory = file.getParentFile();
@@ -130,7 +129,7 @@ public class PasswordUtil {
 			parentDirectoryCreated = parentDirectory.mkdirs();
 		}
 		if(parentDirectoryCreated) {
-			Log.d(TAG, "Parent directory created: " + parentDirectory.getAbsolutePath());
+			logger.debug( "Parent directory created: {}");
 		}
 		try (
 				OutputStream os = new FileOutputStream(new File(Constants.FILES_DIRECTORY + Constants.KEYS));
@@ -150,15 +149,15 @@ public class PasswordUtil {
 		}
 	}
 	
-	public void generateKey(String application, String name, String passphrase) {
+	private void generateKey(String application, String name, String passphrase) {
 		Wallet wallet = new Wallet();
 		wallet.generateKeyPair();
 		wallets.putWallet(application, name, wallet);
-		Log.d(TAG, "New key was generated for application " + application + " with name " + name + " and address " + wallet.getTmaAddress());
+		logger.debug("New key was generated for application {} with name {} and address {}", application, name, wallet.getTmaAddress());
 		try {
 			saveKeys(passphrase);
 		} catch (Exception e) {
-			Log.e(TAG, e.getMessage(), e);
+			logger.error(e.getMessage(), e);
 		}
 	}
 
@@ -174,7 +173,7 @@ public class PasswordUtil {
 				os.write(buffer, 0, length);
 			}
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			logger.error(e.getMessage(), e);
 		} finally {
 			try {
 				if(is != null) {
@@ -185,7 +184,7 @@ public class PasswordUtil {
 				}
 
 			} catch (Exception e) {
-				System.out.println(e.getMessage());
+				logger.error(e.getMessage(), e);
 			}
 
 		}
