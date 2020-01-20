@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,11 +21,12 @@ import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.Wallets;
 
 import java.security.PublicKey;
+import java.util.Iterator;
 import java.util.List;
 
 public class ShowMessagesActivity extends BaseActivity {
 
-    List<SecureMessage> list = null;
+    private List<SecureMessage> list = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,7 @@ public class ShowMessagesActivity extends BaseActivity {
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.VISIBLE);
         TextView myMessagesTextView = findViewById(R.id.myMessagesTextView);
-        myMessagesTextView.setText("Messages for " + Network.getInstance().getTmaAddress());
+        myMessagesTextView.setText("Secure messages for " + Network.getInstance().getTmaAddress());
         updateStatus(getResources().getString(R.string.retrieving_messages_wait));
         process();
 
@@ -66,6 +68,16 @@ public class ShowMessagesActivity extends BaseActivity {
         GetMessagesRequest request = new GetMessagesRequest(network, publicKey);
         request.start();
         list = (List<SecureMessage>) ResponseHolder.getInstance().getObject(request.getCorrelationId());
+
+        Iterator<SecureMessage> iterator = list.iterator();
+
+        while(iterator.hasNext()) {
+            SecureMessage secureMessage = iterator.next();
+            if (!secureMessage.getRecipient().equals(wallet.getTmaAddress())) {
+                iterator.remove();
+            }
+        }
+
         updateStatus("Network status: " + network.getPeerCount().toString());
     }
 
@@ -78,5 +90,8 @@ public class ShowMessagesActivity extends BaseActivity {
         }
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.INVISIBLE);
+        ListView simpleList = (ListView)findViewById(R.id.simpleListView);
+        MessageAdapter arrayAdapter = new MessageAdapter(this, list);
+        simpleList.setAdapter(arrayAdapter);
     }
 }
