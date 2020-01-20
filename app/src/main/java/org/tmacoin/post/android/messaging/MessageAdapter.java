@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.tma.blockchain.Wallet;
@@ -37,7 +36,7 @@ public class MessageAdapter extends ArrayAdapter<SecureMessage> {
     }
 
     public MessageAdapter(Activity context, List<SecureMessage> list) {
-        super(context, R.layout.rowlayout, list);
+        super(context, R.layout.message_rowlayout, list);
         this.context = context;
         this.list = list;
     }
@@ -48,12 +47,12 @@ public class MessageAdapter extends ArrayAdapter<SecureMessage> {
         // reuse views
         if (rowView == null) {
             LayoutInflater inflater = context.getLayoutInflater();
-            rowView = inflater.inflate(R.layout.rowlayout, null);
+            rowView = inflater.inflate(R.layout.message_rowlayout, null);
             // configure view holder
             ViewHolder viewHolder = new ViewHolder();
             viewHolder.from = (TextView) rowView.findViewById(R.id.from);
-            viewHolder.subject = (TextView) rowView.findViewById(R.id.subject);
-            viewHolder.date = (TextView) rowView.findViewById(R.id.date);
+            viewHolder.subject = (TextView) rowView.findViewById(R.id.subjectTextView);
+            viewHolder.date = (TextView) rowView.findViewById(R.id.dateTextView);
 
             rowView.setTag(viewHolder);
         }

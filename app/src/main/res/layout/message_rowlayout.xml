@@ -14,19 +14,19 @@
     </TextView>
 
     <TextView
-        android:id="@+id/subject"
+        android:id="@+id/subjectTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@+id/subject"
+        android:text="@+id/subjectTextView"
         android:textSize="12dp"
         android:textColor="@color/colorPrimaryDark">
     </TextView>
 
     <TextView
-        android:id="@+id/date"
+        android:id="@+id/dateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@+id/date"
+        android:text="@+id/dateTextView"
         android:textSize="12dp"
         android:textColor="@color/colorPrimaryDark">
     </TextView>

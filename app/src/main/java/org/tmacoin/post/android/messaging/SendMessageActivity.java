@@ -168,7 +168,7 @@ public class SendMessageActivity extends BaseActivity {
             result = "Recipient public key is not found for tma address " + recipientTmaAddress;
             return;
         }
-        logger.debug("expire={}, subject={}, expiringData={}", expire, subject, expiringData);
+        logger.debug("expire={}, subjectTextView={}, expiringData={}", expire, subject, expiringData);
 
         TransactionData transactionData = null;
         if(subject != null) {

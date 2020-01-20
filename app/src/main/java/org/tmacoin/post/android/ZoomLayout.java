@@ -8,13 +8,15 @@ import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import org.tma.util.TmaLogger;
 
 /**
  * Layout that provides pinch-zooming of content. This view should have exactly one child
  * view containing the content.
  */
-public class ZoomLayout extends FrameLayout implements ScaleGestureDetector.OnScaleGestureListener {
+public class ZoomLayout extends ConstraintLayout implements ScaleGestureDetector.OnScaleGestureListener {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
 
