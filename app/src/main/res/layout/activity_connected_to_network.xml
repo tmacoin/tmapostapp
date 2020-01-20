@@ -42,6 +42,7 @@
             android:layout_marginTop="16dp"
             android:text="text"
             android:textColor="@color/colorPrimaryDark"
+            android:textIsSelectable="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
