@@ -44,8 +44,6 @@ public class ShowMessagesActivity extends BaseActivity {
         setContentView(R.layout.activity_show_messages);
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.VISIBLE);
-        TextView myMessagesTextView = findViewById(R.id.myMessagesTextView);
-        myMessagesTextView.setText("Secure messages for " + Network.getInstance().getTmaAddress());
         updateStatus(getResources().getString(R.string.retrieving_messages_wait));
         process();
 
@@ -100,7 +98,7 @@ public class ShowMessagesActivity extends BaseActivity {
         }
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.INVISIBLE);
-        ListView listView = (ListView)findViewById(R.id.simpleListView);
+        ListView listView = findViewById(R.id.simpleListView);
         MessageAdapter arrayAdapter = new MessageAdapter(this, list);
         listView.setAdapter(arrayAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -110,6 +108,8 @@ public class ShowMessagesActivity extends BaseActivity {
                 Toast.makeText(getBaseContext(), getBody(secureMessage), Toast.LENGTH_LONG).show();
             }
         });
+        TextView statusBar = findViewById(R.id.statusBar);
+        statusBar.setVisibility(View.INVISIBLE);
     }
 
     private String getBody(SecureMessage secureMessage) {
