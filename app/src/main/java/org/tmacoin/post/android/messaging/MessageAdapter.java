@@ -61,29 +61,12 @@ public class MessageAdapter extends ArrayAdapter<SecureMessage> {
         ViewHolder holder = (ViewHolder) rowView.getTag();
         SecureMessage secureMessage = list.get(position);
         holder.from.setText("From: " + StringUtil.getStringFromKey(secureMessage.getSender()));
-        holder.subject.setText("Subject: " + getSubject(secureMessage));
+        Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
+
+        holder.subject.setText("Subject: " + secureMessage.getSubject(wallet.getPrivateKey()));
         holder.date.setText("Date: " + new Date(secureMessage.getTimeStamp()).toString());
 
         return rowView;
-    }
-
-    private String getSubject(SecureMessage secureMessage) {
-        Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
-        if(!secureMessage.getRecipient().equals(wallet.getTmaAddress())) {
-            return "";
-        }
-        try {
-            String str = StringUtil.trimToNull(secureMessage.getText());
-            if(str != null) {
-                str = new String(encryptor.decryptAsymm(Base58.decode(str), wallet.getPrivateKey()), StandardCharsets.UTF_8);
-                int index = str.indexOf("\n");
-                index = index == -1? str.length(): index;
-                return str.substring(0, index);
-            }
-        } catch (GeneralSecurityException e) {
-            logger.error(e.getMessage(), e);
-        }
-        return "";
     }
 
 }

@@ -21,6 +21,7 @@ import org.tma.peer.SendTransactionRequest;
 import org.tma.peer.thin.GetInputsRequest;
 import org.tma.peer.thin.GetPublicKeyRequest;
 import org.tma.peer.thin.ResponseHolder;
+import org.tma.peer.thin.SecureMessage;
 import org.tma.util.Applications;
 import org.tma.util.Base58;
 import org.tma.util.Coin;
@@ -33,6 +34,7 @@ import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.Wallets;
 
 import java.nio.charset.StandardCharsets;
+import java.security.GeneralSecurityException;
 import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,13 +50,20 @@ public class SendMessageActivity extends BaseActivity {
     private String expire;
     private String subject;
     private String expiringData;
-
     String result = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_message);
+        SecureMessage secureMessage = (SecureMessage)getIntent().getSerializableExtra("secureMessage");
+        if(secureMessage != null) {
+            EditText recipientTmaAddressEditText = findViewById(R.id.recipientTmaAddressEditText);
+            recipientTmaAddressEditText.setText(StringUtil.getStringFromKey(secureMessage.getSender()));
+            EditText subjectEditText = findViewById(R.id.subjectEditText);
+            Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
+            subjectEditText.setText("Re: " + secureMessage.getSubject(wallet.getPrivateKey()));
+        }
         updateStatus("Network status: " + Network.getInstance().getPeerCount().toString());
         Button sendMessageButton = findViewById(R.id.sendMessageButton);
         sendMessageButton.setOnFocusChangeListener(new View.OnFocusChangeListener() {

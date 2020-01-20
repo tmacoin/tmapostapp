@@ -1,9 +1,11 @@
 package org.tmacoin.post.android.messaging;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -125,10 +127,11 @@ public class ShowMessagesActivity extends BaseActivity {
         statusBar.setVisibility(View.GONE);
     }
 
-    private void showMessage(SecureMessage secureMessage) {
+    private void showMessage(final SecureMessage secureMessage) {
         String date = new Date(secureMessage.getTimeStamp()).toString();
         String expire = new Date(secureMessage.getTimeStamp() + secureMessage.getExpire() * 60000).toString();
-        String subject = getSubject(secureMessage);
+        Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
+        String subject = secureMessage.getSubject(wallet.getPrivateKey());
         logger.debug("date={}, expire={}, subject={}", date, expire, subject);
         TextView sender = findViewById(R.id.sender);
         sender.setText(StringUtil.getStringFromKey(secureMessage.getSender()));
@@ -149,12 +152,26 @@ public class ShowMessagesActivity extends BaseActivity {
         subjectTextView.setText(subject);
 
         TextView body = findViewById(R.id.body);
-        body.setText(getBody(secureMessage));
+        body.setText(secureMessage.getBody(wallet.getPrivateKey()));
         ConstraintLayout messages = findViewById(R.id.messages);
         messages.setVisibility(View.GONE);
         ConstraintLayout message = findViewById(R.id.message);
         message.setVisibility(View.VISIBLE);
         activeView = "message";
+
+        Button reply = findViewById(R.id.reply);
+        reply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buttonClicked(secureMessage);
+            }
+        });
+    }
+
+    private void buttonClicked(SecureMessage secureMessage) {
+        Intent intent = new Intent(this, SendMessageActivity.class);
+        intent.putExtra("secureMessage", secureMessage);
+        startActivity(intent);
     }
 
     @Override
@@ -179,41 +196,4 @@ public class ShowMessagesActivity extends BaseActivity {
         }
     }
 
-    private String getSubject(SecureMessage secureMessage) {
-        Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
-        if(!secureMessage.getRecipient().equals(wallet.getTmaAddress())) {
-            return "";
-        }
-        try {
-            String str = StringUtil.trimToNull(secureMessage.getText());
-            if(str != null) {
-                str = new String(encryptor.decryptAsymm(Base58.decode(str), wallet.getPrivateKey()), StandardCharsets.UTF_8);
-                int index = str.indexOf("\n");
-                index = index == -1? str.length(): index;
-                return str.substring(0, index);
-            }
-        } catch (GeneralSecurityException e) {
-            logger.error(e.getMessage(), e);
-        }
-        return "";
-    }
-
-    private String getBody(SecureMessage secureMessage) {
-        Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
-        if(!secureMessage.getRecipient().equals(wallet.getTmaAddress())) {
-            return "";
-        }
-        try {
-            String str = StringUtil.trimToNull(secureMessage.getText());
-            if(str != null) {
-                str = new String(encryptor.decryptAsymm(Base58.decode(str), wallet.getPrivateKey()), StandardCharsets.UTF_8);
-                int index = str.indexOf("\n");
-                index = index == -1? str.length(): index;
-                return  str.substring(index + 1);
-            }
-        } catch (GeneralSecurityException e) {
-            logger.error(e.getMessage(), e);
-        }
-        return "";
-    }
 }

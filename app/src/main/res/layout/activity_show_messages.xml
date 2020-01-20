@@ -7,9 +7,9 @@
     tools:context=".messaging.ShowMessagesActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/messages"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/messages">
+        android:layout_height="match_parent">
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -51,11 +51,10 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/message"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
-        android:id="@+id/message"
-        >
+        android:visibility="gone">
 
 
         <TextView
@@ -64,8 +63,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Recipient"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="@+id/textView20"
             app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
@@ -76,8 +75,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
             android:text="Sender"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,8 +86,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Value"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="@+id/textView21"
             app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
@@ -98,8 +97,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Fee"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="@+id/textView22"
             app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
@@ -109,8 +108,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Date"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="@+id/textView23"
             app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
@@ -120,8 +119,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Expire"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="@+id/textView24"
             app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
@@ -131,8 +130,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Subject"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="@+id/textView25"
             app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
@@ -142,8 +141,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Body"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="@+id/textView26"
             app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
@@ -155,9 +154,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="Sender"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
             android:textIsSelectable="true"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView20"
             app:layout_constraintTop_toTopOf="parent" />
@@ -170,8 +169,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="Recipient"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView21"
             app:layout_constraintTop_toBottomOf="@+id/sender" />
@@ -184,8 +183,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="value"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView22"
             app:layout_constraintTop_toBottomOf="@+id/recipient" />
@@ -198,8 +197,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="Fee"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView23"
             app:layout_constraintTop_toBottomOf="@+id/value" />
@@ -212,8 +211,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="Date"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView24"
             app:layout_constraintTop_toBottomOf="@+id/fee" />
@@ -226,8 +225,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="Expire"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView25"
             app:layout_constraintTop_toBottomOf="@+id/singleDateTextView" />
@@ -240,9 +239,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="Subject"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
             android:textIsSelectable="true"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView26"
             app:layout_constraintTop_toBottomOf="@+id/expire" />
@@ -255,12 +254,22 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="Body"
-            android:textSize="12dp"
             android:textColor="@color/colorPrimaryDark"
             android:textIsSelectable="true"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+        <Button
+            android:id="@+id/reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Reply"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/body" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
