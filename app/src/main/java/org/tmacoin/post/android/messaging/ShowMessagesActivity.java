@@ -1,14 +1,13 @@
 package org.tmacoin.post.android.messaging;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -21,9 +20,7 @@ import org.tma.peer.thin.SecureMessage;
 import org.tma.util.Base58;
 import org.tma.util.Encryptor;
 import org.tma.util.StringUtil;
-import org.tma.util.ThreadExecutor;
 import org.tma.util.TmaLogger;
-import org.tma.util.TmaRunnable;
 import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
@@ -74,16 +71,18 @@ public class ShowMessagesActivity extends BaseActivity {
     private void processAsync() {
         Network network = Network.getInstance();
         updateStatus("Network status: " + network.getPeerCount().toString());
-        if(!network.isPeerSetComplete()) {
-            new BootstrapRequest(network).start();
+        Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
+        int attempt = 0;
+        while(list == null && attempt++ < 5) {
+            if(!network.isPeerSetComplete()) {
+                new BootstrapRequest(network).start();
+            }
+            updateStatus("Network status: " + network.getPeerCount().toString());
+            PublicKey publicKey = wallet.getPublicKey();
+            GetMessagesRequest request = new GetMessagesRequest(network, publicKey);
+            request.start();
+            list = (List<SecureMessage>) ResponseHolder.getInstance().getObject(request.getCorrelationId());
         }
-        updateStatus("Network status: " + network.getPeerCount().toString());
-        final Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
-        final PublicKey publicKey = wallet.getPublicKey();
-        GetMessagesRequest request = new GetMessagesRequest(network, publicKey);
-        request.start();
-
-        list = (List<SecureMessage>) ResponseHolder.getInstance().getObject(request.getCorrelationId());
 
         if(list == null) {
             updateStatus("Could not retrieve messages. Please try again.");
@@ -105,6 +104,7 @@ public class ShowMessagesActivity extends BaseActivity {
     private void processSync() {
         if(list == null) {
             updateStatus(getResources().getString(R.string.fail_retrieve_messages));
+            Toast.makeText(this, getResources().getString(R.string.fail_retrieve_messages), Toast.LENGTH_LONG).show();
             return;
         } else {
             updateStatus("Retrieved " + list.size() + " messages");
