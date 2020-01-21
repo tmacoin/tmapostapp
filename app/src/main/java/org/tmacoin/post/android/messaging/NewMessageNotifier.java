@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
@@ -127,12 +128,15 @@ public class NewMessageNotifier {
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(activity.getApplicationContext(), channelId)
+                        .setLargeIcon(BitmapFactory.decodeResource(activity.getResources(), R.mipmap.ic_launcher))
                         .setSmallIcon(R.drawable.ic_launcher_foreground)
-                        .setContentTitle("New Message Received")
+                        .setContentTitle("Secure Message Received")
                         .setContentText(lastMessage.getSubject(wallet.getPrivateKey()))
                         .setAutoCancel(true)
                         .setVibrate(new long[] { 1000, 1000})
-                        .setSound(Settings.System.DEFAULT_NOTIFICATION_URI);
+                        .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
+                        .setPriority(NotificationCompat.PRIORITY_MAX);
+        ;
 
         Intent notificationIntent = new Intent(activity, ShowMessagesActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(activity, 0, notificationIntent,
@@ -151,7 +155,7 @@ public class NewMessageNotifier {
             String channelId = activity.getString(R.string.channel_id);
             CharSequence name = activity.getString(R.string.channel_name);
             String description = activity.getString(R.string.channel_description);
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel channel = new NotificationChannel(channelId, name, importance);
             channel.setDescription(description);
             // Register the channel with the system; you can't change the importance
