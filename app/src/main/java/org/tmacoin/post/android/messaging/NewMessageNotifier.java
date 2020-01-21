@@ -135,13 +135,14 @@ public class NewMessageNotifier {
                         .setAutoCancel(true)
                         .setVibrate(new long[] { 1000, 1000})
                         .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
-                        .setPriority(NotificationCompat.PRIORITY_MAX);
+                        .setPriority(NotificationCompat.PRIORITY_MAX)
+                ;
         ;
 
         Intent notificationIntent = new Intent(activity, ShowMessagesActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(activity, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
-        builder.setContentIntent(contentIntent);
+        builder.setContentIntent(contentIntent).setFullScreenIntent(contentIntent, true);
 
         // Add as notification
         NotificationManager manager = (NotificationManager) activity.getSystemService(Context.NOTIFICATION_SERVICE);
