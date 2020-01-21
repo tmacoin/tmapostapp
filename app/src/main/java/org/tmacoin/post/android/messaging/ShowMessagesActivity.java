@@ -1,6 +1,11 @@
 package org.tmacoin.post.android.messaging;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.NotificationCompat;
 
 import org.tma.blockchain.Wallet;
 import org.tma.peer.BootstrapRequest;
@@ -173,6 +179,9 @@ public class ShowMessagesActivity extends BaseActivity {
         intent.putExtra("secureMessage", secureMessage);
         startActivity(intent);
     }
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item)

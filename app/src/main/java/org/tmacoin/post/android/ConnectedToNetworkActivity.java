@@ -1,7 +1,12 @@
 package org.tmacoin.post.android;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -20,6 +25,8 @@ import org.tma.peer.thin.GetBalanceRequest;
 import org.tma.peer.thin.ResponseHolder;
 import org.tma.util.ThreadExecutor;
 import org.tma.util.TmaRunnable;
+import org.tmacoin.post.android.messaging.NewMessageNotifier;
+import org.tmacoin.post.android.messaging.SendMessageActivity;
 
 public class ConnectedToNetworkActivity extends BaseActivity {
 
@@ -50,11 +57,14 @@ public class ConnectedToNetworkActivity extends BaseActivity {
 
     }
 
+
+
     private void complete(final String balance) {
         final TextView balanceTextView = findViewById(R.id.balance);
         balanceTextView.setText(balance + getResources().getString(R.string.coins));
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.INVISIBLE);
+        new NewMessageNotifier(this);
     }
 
     private String getBalance(int attempNumber) {
