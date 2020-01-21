@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.PowerManager;
 import android.provider.Settings;
 
 import androidx.core.app.NotificationCompat;
@@ -123,6 +124,7 @@ public class NewMessageNotifier {
     }
 
     private void addNotification() {
+
         createNotificationChannel();
         String channelId = activity.getString(R.string.channel_id);
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
@@ -147,6 +149,17 @@ public class NewMessageNotifier {
         // Add as notification
         NotificationManager manager = (NotificationManager) activity.getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(0, builder.build());
+
+        try {
+            PowerManager powerManager = (PowerManager) activity.getSystemService(Context.POWER_SERVICE);
+            if (!powerManager.isInteractive()) { // check if screen is on
+                PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, "tmaApp:notificationLock");
+                wakeLock.acquire(1000); //set your time in milliseconds
+            }
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+        }
+
     }
 
     private void createNotificationChannel() {
