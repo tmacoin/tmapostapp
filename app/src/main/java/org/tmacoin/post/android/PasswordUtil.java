@@ -45,7 +45,7 @@ public class PasswordUtil {
 	private static final Wallets wallets = Wallets.getInstance();
 	private static final Encryptor encryptor = new Encryptor();
 
-	private static void setupBouncyCastle() {
+	public static void setupBouncyCastle() {
 		Security.setProperty("crypto.policy", "unlimited");
 		Security.addProvider(new BouncyCastleProvider());
 		final Provider provider = Security.getProvider(BouncyCastleProvider.PROVIDER_NAME);

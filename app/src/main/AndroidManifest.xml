@@ -52,6 +52,15 @@
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
+
+        <service
+            android:name="org.tmacoin.post.android.messaging.NewMessageNotifier"
+            android:process=":remote"
+            android:enabled="true"
+            android:exported="true">
+
+        </service>
+
     </application>
 
 </manifest>

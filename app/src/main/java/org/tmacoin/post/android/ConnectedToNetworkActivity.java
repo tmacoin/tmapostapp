@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.tma.blockchain.Wallet;
 import org.tma.peer.BootstrapRequest;
 import org.tma.peer.Network;
 import org.tma.peer.thin.GetBalanceRequest;
@@ -64,11 +65,14 @@ public class ConnectedToNetworkActivity extends BaseActivity {
         balanceTextView.setText(balance + getResources().getString(R.string.coins));
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.INVISIBLE);
-        new NewMessageNotifier(this);
+        Intent service = new Intent(this, NewMessageNotifier.class);
+        Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
+        service.putExtra("wallet", wallet);
+        startService(service);
     }
 
-    private String getBalance(int attempNumber) {
-        if(attempNumber < 0) {
+    private String getBalance(int attemptNumber) {
+        if(attemptNumber < 0) {
             return null;
         }
         Network network = Network.getInstance();
@@ -81,7 +85,7 @@ public class ConnectedToNetworkActivity extends BaseActivity {
         request.start();
         String balance = (String) ResponseHolder.getInstance().getObject(request.getCorrelationId());
         if(balance == null) {
-            balance = getBalance(--attempNumber);
+            balance = getBalance(--attemptNumber);
         }
         updateStatus("Network status: " + network.getPeerCount().toString());
         return balance;
