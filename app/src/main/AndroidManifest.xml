@@ -58,7 +58,8 @@
             android:name="org.tmacoin.post.android.messaging.NewMessageNotifier"
             android:process=":remote"
             android:enabled="true"
-            android:exported="true">
+            android:exported="false"
+            android:stopWithTask="false" >
 
         </service>
 

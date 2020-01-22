@@ -1,6 +1,7 @@
 package org.tmacoin.post.android.messaging;
 
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -13,6 +14,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.PowerManager;
+import android.os.SystemClock;
 import android.provider.Settings;
 
 import androidx.annotation.Nullable;
@@ -50,9 +52,11 @@ public class NewMessageNotifier extends Service {
 
     private SecureMessage lastMessage = null;
     private Wallet wallet = null;
+    private Context context;
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        context = getApplicationContext();
         Constants.FILES_DIRECTORY = getFilesDir().getAbsolutePath() + "/";
         run(intent);
         return Service.START_REDELIVER_INTENT;
@@ -66,6 +70,21 @@ public class NewMessageNotifier extends Service {
         } catch (UnknownHostException e) {
             logger.error(e.getMessage(), e);
         }
+    }
+
+    @Override
+    public void onTaskRemoved(Intent rootIntent){
+        Intent restartServiceTask = new Intent(context,this.getClass());
+        restartServiceTask.setPackage(getPackageName());
+        restartServiceTask.putExtra("wallet", wallet);
+        PendingIntent restartPendingIntent =PendingIntent.getService(context, 1,restartServiceTask, PendingIntent.FLAG_ONE_SHOT);
+        AlarmManager myAlarmService = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        myAlarmService.set(
+                AlarmManager.ELAPSED_REALTIME,
+                SystemClock.elapsedRealtime() + 1000,
+                restartPendingIntent);
+
+        super.onTaskRemoved(rootIntent);
     }
 
 
@@ -136,10 +155,10 @@ public class NewMessageNotifier extends Service {
     private void addNotification() {
 
         createNotificationChannel();
-        String channelId = getApplicationContext().getString(R.string.channel_id);
+        String channelId = context.getString(R.string.channel_id);
         NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(getApplicationContext(), channelId)
-                        .setLargeIcon(BitmapFactory.decodeResource(getApplicationContext().getResources(), R.mipmap.ic_launcher))
+                new NotificationCompat.Builder(context, channelId)
+                        .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher))
                         .setSmallIcon(R.drawable.ic_launcher_foreground)
                         .setContentTitle("Secure Message Received")
                         .setContentText(lastMessage.getSubject(wallet.getPrivateKey()))
@@ -150,13 +169,13 @@ public class NewMessageNotifier extends Service {
                 ;
         ;
 
-        Intent notificationIntent = new Intent(getApplicationContext(), ShowMessagesActivity.class);
-        PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(), 0, notificationIntent,
+        Intent notificationIntent = new Intent(context, ShowMessagesActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(contentIntent);
 
         // Add as notification
-        NotificationManager manager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(0, builder.build());
 
     }
@@ -165,15 +184,15 @@ public class NewMessageNotifier extends Service {
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            String channelId = getApplicationContext().getString(R.string.channel_id);
-            CharSequence name = getApplicationContext().getString(R.string.channel_name);
-            String description = getApplicationContext().getString(R.string.channel_description);
+            String channelId = context.getString(R.string.channel_id);
+            CharSequence name = context.getString(R.string.channel_name);
+            String description = context.getString(R.string.channel_description);
             int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel channel = new NotificationChannel(channelId, name, importance);
             channel.setDescription(description);
             // Register the channel with the system; you can't change the importance
             // or other notification behaviors after this
-            NotificationManager notificationManager = getApplicationContext().getSystemService(NotificationManager.class);
+            NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
     }
