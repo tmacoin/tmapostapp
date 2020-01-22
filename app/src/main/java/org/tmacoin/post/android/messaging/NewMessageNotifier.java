@@ -70,6 +70,9 @@ public class NewMessageNotifier extends Service {
 
 
     private void run(final Intent intent) {
+        if(wallet != null) {
+            return;
+        }
         ThreadExecutor.getInstance().execute(new TmaRunnable("NewMessageNotifier") {
             public void doRun() {
                 setup(intent);
@@ -148,7 +151,7 @@ public class NewMessageNotifier extends Service {
         createNotificationChannel();
         String channelId = getApplicationContext().getString(R.string.channel_id);
         NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(getApplicationContext().getApplicationContext(), channelId)
+                new NotificationCompat.Builder(getApplicationContext(), channelId)
                         .setLargeIcon(BitmapFactory.decodeResource(getApplicationContext().getResources(), R.mipmap.ic_launcher))
                         .setSmallIcon(R.drawable.ic_launcher_foreground)
                         .setContentTitle("Secure Message Received")
