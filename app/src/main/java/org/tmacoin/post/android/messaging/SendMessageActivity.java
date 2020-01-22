@@ -241,9 +241,9 @@ public class SendMessageActivity extends BaseActivity {
         EditText feeInSatoshisEditText = findViewById(R.id.feeInSatoshisEditText);
         fee = StringUtil.trim(feeInSatoshisEditText.getText().toString());
         EditText subjectEditText = findViewById(R.id.subjectEditText);
-        subject = StringUtil.trimToNull(subjectEditText.getText().toString());
+        subject = StringUtil.trim(subjectEditText.getText().toString());
         EditText expiringDataEditText = findViewById(R.id.expiringDataEditText);
-        expiringData = StringUtil.trimToNull(expiringDataEditText.getText().toString());
+        expiringData = StringUtil.trim(expiringDataEditText.getText().toString());
         logger.debug("expiringData={}, expiringDataEditText.getLineCount()={}", expiringData, expiringDataEditText.getLineCount());
     }
 }

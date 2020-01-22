@@ -165,7 +165,9 @@ public class ShowMessagesActivity extends BaseActivity {
         subjectTextView.setText(subject);
 
         TextView body = findViewById(R.id.body);
-        body.setText(secureMessage.getBody(wallet.getPrivateKey()));
+        String bodyText = secureMessage.getBody(wallet.getPrivateKey());
+        bodyText = bodyText == null? "": bodyText;
+        body.setText(bodyText);
         ConstraintLayout messages = findViewById(R.id.messages);
         messages.setVisibility(View.GONE);
         ConstraintLayout message = findViewById(R.id.message);
