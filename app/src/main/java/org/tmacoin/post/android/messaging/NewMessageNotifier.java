@@ -37,11 +37,12 @@ public class NewMessageNotifier {
     private static NewMessageNotifier instance;
 
     private SecureMessage lastMessage = null;
-    private Activity activity;
+    private Context context;
+    private long count;
 
     public NewMessageNotifier(Activity activity) {
         instance = this;
-        this.activity = activity;
+        this.context = activity.getApplicationContext();
         run();
     }
 
@@ -126,13 +127,13 @@ public class NewMessageNotifier {
     private void addNotification() {
 
         createNotificationChannel();
-        String channelId = activity.getString(R.string.channel_id);
+        String channelId = context.getString(R.string.channel_id);
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(activity.getApplicationContext(), channelId)
-                        .setLargeIcon(BitmapFactory.decodeResource(activity.getResources(), R.mipmap.ic_launcher))
+                new NotificationCompat.Builder(context.getApplicationContext(), channelId)
+                        .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher))
                         .setSmallIcon(R.drawable.ic_launcher_foreground)
-                        .setContentTitle("Secure Message Received")
+                        .setContentTitle("Secure Message Received " + count++)
                         .setContentText(lastMessage.getSubject(wallet.getPrivateKey()))
                         .setAutoCancel(true)
                         .setVibrate(new long[] { 1000, 1000})
@@ -141,24 +142,14 @@ public class NewMessageNotifier {
                 ;
         ;
 
-        Intent notificationIntent = new Intent(activity, ShowMessagesActivity.class);
-        PendingIntent contentIntent = PendingIntent.getActivity(activity, 0, notificationIntent,
+        Intent notificationIntent = new Intent(context, ShowMessagesActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
-        builder.setContentIntent(contentIntent).setFullScreenIntent(contentIntent, true);
+        builder.setContentIntent(contentIntent);
 
         // Add as notification
-        NotificationManager manager = (NotificationManager) activity.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(0, builder.build());
-
-        try {
-            PowerManager powerManager = (PowerManager) activity.getSystemService(Context.POWER_SERVICE);
-            if (!powerManager.isInteractive()) { // check if screen is on
-                PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, "tmaApp:notificationLock");
-                wakeLock.acquire(1000); //set your time in milliseconds
-            }
-        } catch (Exception e) {
-            logger.error(e.getMessage(), e);
-        }
 
     }
 
@@ -166,15 +157,15 @@ public class NewMessageNotifier {
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            String channelId = activity.getString(R.string.channel_id);
-            CharSequence name = activity.getString(R.string.channel_name);
-            String description = activity.getString(R.string.channel_description);
+            String channelId = context.getString(R.string.channel_id);
+            CharSequence name = context.getString(R.string.channel_name);
+            String description = context.getString(R.string.channel_description);
             int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel channel = new NotificationChannel(channelId, name, importance);
             channel.setDescription(description);
             // Register the channel with the system; you can't change the importance
             // or other notification behaviors after this
-            NotificationManager notificationManager = activity.getSystemService(NotificationManager.class);
+            NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
     }

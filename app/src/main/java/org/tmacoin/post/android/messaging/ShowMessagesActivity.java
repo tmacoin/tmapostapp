@@ -31,7 +31,9 @@ import org.tma.util.StringUtil;
 import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
+import org.tmacoin.post.android.MainActivity;
 import org.tmacoin.post.android.R;
+import org.tmacoin.post.android.SendTransactionActivity;
 import org.tmacoin.post.android.Wallets;
 
 import java.nio.charset.StandardCharsets;
@@ -52,6 +54,11 @@ public class ShowMessagesActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(Network.getInstance() == null) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            return;
+        }
         setContentView(R.layout.activity_show_messages);
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.VISIBLE);

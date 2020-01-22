@@ -93,6 +93,7 @@ public class SendMessageActivity extends BaseActivity {
         });
 
         Spinner expireAfterBlocksSpinner = (Spinner) findViewById(R.id.expireAfterBlocksSpinner);
+        expireAfterBlocksSpinner.setSelection(5);
         expireAfterBlocksSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
