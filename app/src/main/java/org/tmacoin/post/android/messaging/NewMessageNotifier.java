@@ -126,23 +126,10 @@ public class NewMessageNotifier extends Service {
             return;
         }
 
-
-
         if(!lastMessage.getText().equals(message.getText())) {
             lastMessage = message;
-            new Handler(Looper.getMainLooper()).post(new Runnable(){
-                @Override
-                public void run() {
-                    try {
-                        addNotification();
-                    } catch (Exception e) {
-                        logger.error(e.getMessage(), e);
-                    }
-                }
-            });
-
+            addNotification();
         }
-
 
     }
 
