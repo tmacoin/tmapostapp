@@ -74,6 +74,17 @@ public class NewMessageNotifier extends Service {
 
     @Override
     public void onTaskRemoved(Intent rootIntent){
+        restart();
+        super.onTaskRemoved(rootIntent);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        restart();
+    }
+
+    private void restart() {
         Intent restartServiceTask = new Intent(context,this.getClass());
         restartServiceTask.setPackage(getPackageName());
         restartServiceTask.putExtra("wallet", wallet);
@@ -83,8 +94,6 @@ public class NewMessageNotifier extends Service {
                 AlarmManager.ELAPSED_REALTIME,
                 SystemClock.elapsedRealtime() + 1000,
                 restartPendingIntent);
-
-        super.onTaskRemoved(rootIntent);
     }
 
 
