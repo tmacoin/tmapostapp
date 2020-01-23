@@ -3,6 +3,8 @@ package org.tmacoin.post.android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -78,6 +80,9 @@ public class SendTransactionActivity extends BaseActivity {
                 }
             }
         });
+
+        TmaAndroidUtil.enableScroll(expiringDataEditText);
+
     }
 
     private void process() {

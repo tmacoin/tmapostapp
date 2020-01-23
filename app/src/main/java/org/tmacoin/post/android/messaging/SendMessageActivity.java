@@ -30,6 +30,7 @@ import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
+import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
 
 import java.nio.charset.StandardCharsets;
@@ -138,6 +139,8 @@ public class SendMessageActivity extends BaseActivity {
                 }
             }
         });
+
+        TmaAndroidUtil.enableScroll(expiringDataEditText);
 
     }
 
