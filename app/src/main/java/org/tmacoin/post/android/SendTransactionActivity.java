@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -63,6 +64,18 @@ public class SendTransactionActivity extends BaseActivity {
                 }
                 setContentView(R.layout.activity_send_transaction_wait);
                 process();
+            }
+        });
+
+        final EditText expiringDataEditText = findViewById(R.id.expiringDataEditText);
+        final ScrollView scrollView = findViewById(R.id.scrollView);
+        final TextView statusBar = findViewById(R.id.statusBar);
+        expiringDataEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (hasFocus){
+                    scrollView.smoothScrollTo(0,statusBar.getBottom());
+                }
             }
         });
     }

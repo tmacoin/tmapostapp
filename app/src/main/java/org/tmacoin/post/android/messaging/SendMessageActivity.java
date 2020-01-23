@@ -1,12 +1,11 @@
 package org.tmacoin.post.android.messaging;
 
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,7 +33,6 @@ import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.Wallets;
 
 import java.nio.charset.StandardCharsets;
-import java.security.GeneralSecurityException;
 import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +60,7 @@ public class SendMessageActivity extends BaseActivity {
             recipientTmaAddressEditText.setText(StringUtil.getStringFromKey(secureMessage.getSender()));
             EditText subjectEditText = findViewById(R.id.subjectEditText);
             Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
-            subjectEditText.setText("Re: " + secureMessage.getSubject(wallet.getPrivateKey()));
+            subjectEditText.setText(getResources().getString(R.string.re) + secureMessage.getSubject(wallet.getPrivateKey()));
         }
         updateStatus("Network status: " + Network.getInstance().getPeerCount().toString());
         Button sendMessageButton = findViewById(R.id.sendMessageButton);
@@ -92,7 +90,7 @@ public class SendMessageActivity extends BaseActivity {
             }
         });
 
-        Spinner expireAfterBlocksSpinner = (Spinner) findViewById(R.id.expireAfterBlocksSpinner);
+        Spinner expireAfterBlocksSpinner = findViewById(R.id.expireAfterBlocksSpinner);
         expireAfterBlocksSpinner.setSelection(5);
         expireAfterBlocksSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -129,18 +127,30 @@ public class SendMessageActivity extends BaseActivity {
             }
         });
 
+        final EditText expiringDataEditText = findViewById(R.id.expiringDataEditText);
+        final ScrollView scrollView = findViewById(R.id.scrollView);
+        final TextView statusBar = findViewById(R.id.statusBar);
+        expiringDataEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (hasFocus){
+                    scrollView.smoothScrollTo(0,statusBar.getBottom());
+                }
+            }
+        });
+
     }
 
     private void process() {
         new AndroidExecutor() {
 
             @Override
-            public void start() throws Exception {
+            public void start() {
                 processAsync();
             }
 
             @Override
-            public void finish() throws Exception {
+            public void finish() {
                 processSync();
             }
         }.run();
@@ -159,14 +169,13 @@ public class SendMessageActivity extends BaseActivity {
         List<Coin> totals = new ArrayList<>();
         totals.add(total);
         List<Set<TransactionOutput>> inputList = new GetInputsRequest(network, tmaAddress, totals).getInputlist();
-        int i = 0;
 
         if(inputList == null || inputList.size() != totals.size()) {
             result = "No inputs available for tma address " + tmaAddress + ". Please check your balance.";
             return;
         }
 
-        Set<TransactionOutput> inputs = inputList.get(i++);
+        Set<TransactionOutput> inputs = inputList.get(0);
         logger.debug("number of inputs: {} for {}", inputs.size(), tmaAddress);
 
         GetPublicKeyRequest getPublicKeyRequest = new GetPublicKeyRequest(network, recipientTmaAddress);
