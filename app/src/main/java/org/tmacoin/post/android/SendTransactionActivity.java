@@ -82,6 +82,8 @@ public class SendTransactionActivity extends BaseActivity {
         });
 
         TmaAndroidUtil.enableScroll(expiringDataEditText);
+        final EditText dataEditText = findViewById(R.id.dataEditText);
+        TmaAndroidUtil.enableScroll(dataEditText);
 
     }
 

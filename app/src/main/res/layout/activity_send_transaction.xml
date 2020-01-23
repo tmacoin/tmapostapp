@@ -24,7 +24,7 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:padding="3dp"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView17" />
@@ -41,7 +41,7 @@
                 android:inputType="textPersonName"
                 android:padding="3dp"
                 android:text="1"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView16" />
@@ -57,7 +57,7 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:padding="3dp"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView14" />
@@ -145,7 +145,7 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:padding="3dp"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView12" />
@@ -164,7 +164,7 @@
                 android:lines="5"
                 android:padding="3dp"
                 android:scrollbars="vertical"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -183,7 +183,7 @@
                 android:lines="9"
                 android:padding="3dp"
                 android:scrollbars="vertical"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView13" />

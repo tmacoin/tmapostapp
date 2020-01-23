@@ -7,21 +7,18 @@ import android.widget.EditText;
 
 public class TmaAndroidUtil {
 
-    public static void enableScroll(EditText editText) {
-
-        editText.setVerticalScrollBarEnabled(true);
-        editText.setOverScrollMode(View.OVER_SCROLL_ALWAYS);
-        editText.setScrollBarStyle(View.SCROLLBARS_INSIDE_INSET);
-        editText.setMovementMethod(ScrollingMovementMethod.getInstance());
+    public static void enableScroll(final EditText editText) {
 
         editText.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
 
-                view.getParent().requestDisallowInterceptTouchEvent(true);
-                if ((motionEvent.getAction() & MotionEvent.ACTION_UP) != 0 && (motionEvent.getActionMasked() & MotionEvent.ACTION_UP) != 0)
-                {
-                    view.getParent().requestDisallowInterceptTouchEvent(false);
+            public boolean onTouch(View v, MotionEvent event) {
+                if (editText.hasFocus()) {
+                    v.getParent().requestDisallowInterceptTouchEvent(true);
+                    switch (event.getAction() & MotionEvent.ACTION_MASK){
+                        case MotionEvent.ACTION_SCROLL:
+                            v.getParent().requestDisallowInterceptTouchEvent(false);
+                            return true;
+                    }
                 }
                 return false;
             }
