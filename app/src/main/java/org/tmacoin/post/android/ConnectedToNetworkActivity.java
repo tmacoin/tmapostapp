@@ -2,6 +2,7 @@ package org.tmacoin.post.android;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -68,7 +69,7 @@ public class ConnectedToNetworkActivity extends BaseActivity {
         Intent service = new Intent(this, NewMessageNotifier.class);
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         service.putExtra("wallet", wallet);
-        startService(service);
+        ContextCompat.startForegroundService(this, service);
     }
 
     private String getBalance(int attemptNumber) {

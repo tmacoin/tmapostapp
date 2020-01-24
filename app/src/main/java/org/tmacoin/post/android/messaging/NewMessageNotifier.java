@@ -3,6 +3,7 @@ package org.tmacoin.post.android.messaging;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlarmManager;
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -60,6 +61,7 @@ public class NewMessageNotifier extends Service {
         context = getApplicationContext();
         Constants.FILES_DIRECTORY = getFilesDir().getAbsolutePath() + "/";
         run(intent);
+        startForeground();
         return Service.START_REDELIVER_INTENT;
     }
 
@@ -177,6 +179,7 @@ public class NewMessageNotifier extends Service {
                         .setVibrate(new long[] { 1000, 1000})
                         .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
                         .setPriority(NotificationCompat.PRIORITY_MAX)
+                        .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
                 ;
         ;
 
@@ -231,6 +234,25 @@ public class NewMessageNotifier extends Service {
             }
         }
         return false;
+    }
+
+    private void startForeground() {
+        Intent notificationIntent = new Intent(context, ShowMessagesActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, context.getString(R.string.channel_id));
+        Notification notification = notificationBuilder
+                .setOngoing(true)
+                .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher))
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setContentTitle("New messages listener")
+                .setPriority(NotificationManager.IMPORTANCE_MIN)
+                .setCategory(Notification.CATEGORY_SERVICE)
+                .setContentIntent(contentIntent)
+                .setAutoCancel(true)
+                .setVisibility(NotificationCompat.VISIBILITY_SECRET)
+                .build();
+        startForeground(1, notification);
     }
 
 }
