@@ -1,6 +1,7 @@
 package org.tmacoin.post.android.messaging;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -107,7 +108,7 @@ public class NewMessageNotifier extends Service {
                 while(true) {
                     try {
                         process();
-                        ThreadExecutor.sleep(60000);
+                        ThreadExecutor.sleep(Constants.ONE_MINUTE);
                     } catch (Exception e) {
                         logger.error(e.getMessage(), e);
                     }
@@ -118,6 +119,7 @@ public class NewMessageNotifier extends Service {
 
     @SuppressWarnings("unchecked")
     private void process() {
+        restartRestarterService();
         Network network = Network.getInstance();
         int attempt = 0;
         List<SecureMessage> list = null;
@@ -211,4 +213,24 @@ public class NewMessageNotifier extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
+
+    private void restartRestarterService() {
+        if(isMyServiceRunning(RestarterService.class)) {
+            return;
+        }
+        Intent service = new Intent(this, RestarterService.class);
+        service.putExtra("wallet", wallet);
+        startService(service);
+    }
+
+    private boolean isMyServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
