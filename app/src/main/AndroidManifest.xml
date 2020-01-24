@@ -63,15 +63,6 @@
             android:stopWithTask="false" >
         </service>
 
-        <service
-            android:name="org.tmacoin.post.android.messaging.RestarterService"
-            android:process=":remote"
-            android:enabled="true"
-            android:exported="false"
-            android:stopWithTask="false"
-        >
-        </service>
-
     </application>
 
 </manifest>

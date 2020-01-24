@@ -8,11 +8,9 @@
         app:showAsAction="never" >
 
         <menu>
-
             <item
                 android:id="@+id/exit"
-                android:title="@string/minimiza" />
-
+                android:title="@string/stop_message_listener" />
         </menu>
 
     </item>

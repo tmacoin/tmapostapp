@@ -7,6 +7,9 @@ import android.widget.EditText;
 
 public class TmaAndroidUtil {
 
+    public static final String STOP = "stop";
+    public static final String START = "start";
+
     public static void enableScroll(final EditText editText) {
 
         editText.setOnTouchListener(new View.OnTouchListener() {

@@ -5,16 +5,19 @@ import android.content.Intent;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
+
+import org.tma.blockchain.Wallet;
+import org.tmacoin.post.android.messaging.NewMessageNotifier;
 import org.tmacoin.post.android.messaging.SendMessageActivity;
 import org.tmacoin.post.android.messaging.ShowMessagesActivity;
 
 public class MenuHandler {
 
     public void handleExit(Activity activity) {
-        Intent homeScreen = new Intent(Intent.ACTION_MAIN);
-        homeScreen.addCategory(Intent.CATEGORY_HOME);
-        homeScreen.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        activity.startActivity(homeScreen);
+        Intent service = new Intent(activity, NewMessageNotifier.class);
+        service.setAction(TmaAndroidUtil.STOP);
+        ContextCompat.startForegroundService(activity, service);
     }
 
     public void handleChangePassword(Activity activity) {

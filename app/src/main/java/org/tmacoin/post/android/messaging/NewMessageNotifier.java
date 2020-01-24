@@ -35,6 +35,7 @@ import org.tma.util.TmaLogger;
 import org.tma.util.TmaRunnable;
 import org.tmacoin.post.android.PasswordUtil;
 import org.tmacoin.post.android.R;
+import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
 
 import java.net.UnknownHostException;
@@ -55,13 +56,20 @@ public class NewMessageNotifier extends Service {
     private SecureMessage lastMessage = null;
     private Wallet wallet = null;
     private Context context;
+    private String action;
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        logger.debug("onStartCommand intent.getAction()={}", intent.getAction());
+        if (TmaAndroidUtil.STOP.equals(intent.getAction())) {
+            action = TmaAndroidUtil.STOP;
+            stopForeground(true);
+            stopSelf();
+        }
         context = getApplicationContext();
         Constants.FILES_DIRECTORY = getFilesDir().getAbsolutePath() + "/";
         run(intent);
-        startForeground();
+
         return Service.START_REDELIVER_INTENT;
     }
 
@@ -77,18 +85,25 @@ public class NewMessageNotifier extends Service {
 
     @Override
     public void onTaskRemoved(Intent rootIntent){
+        logger.debug("onTaskRemoved");
         restart();
         super.onTaskRemoved(rootIntent);
     }
 
     @Override
     public void onDestroy() {
+        logger.debug("onDestroy");
         super.onDestroy();
         restart();
     }
 
     private void restart() {
+        if (TmaAndroidUtil.STOP.equals(action)) {
+            return;
+        }
+        logger.debug("wallet={}", wallet);
         Intent restartServiceTask = new Intent(context,this.getClass());
+        restartServiceTask.setAction(TmaAndroidUtil.START);
         restartServiceTask.setPackage(getPackageName());
         restartServiceTask.putExtra("wallet", wallet);
         PendingIntent restartPendingIntent =PendingIntent.getService(context, 1,restartServiceTask, PendingIntent.FLAG_ONE_SHOT);
@@ -104,10 +119,11 @@ public class NewMessageNotifier extends Service {
         if(wallet != null) {
             return;
         }
+        startForeground();
         ThreadExecutor.getInstance().execute(new TmaRunnable("NewMessageNotifier") {
             public void doRun() {
                 setup(intent);
-                while(true) {
+                while(true && !TmaAndroidUtil.STOP.equals(action)) {
                     try {
                         process();
                         ThreadExecutor.sleep(Constants.ONE_MINUTE);
@@ -121,7 +137,6 @@ public class NewMessageNotifier extends Service {
 
     @SuppressWarnings("unchecked")
     private void process() {
-        restartRestarterService();
         Network network = Network.getInstance();
         int attempt = 0;
         List<SecureMessage> list = null;
@@ -217,15 +232,6 @@ public class NewMessageNotifier extends Service {
         return null;
     }
 
-    private void restartRestarterService() {
-        if(isMyServiceRunning(RestarterService.class)) {
-            return;
-        }
-        Intent service = new Intent(this, RestarterService.class);
-        service.putExtra("wallet", wallet);
-        startService(service);
-    }
-
     private boolean isMyServiceRunning(Class<?> serviceClass) {
         ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
@@ -237,6 +243,7 @@ public class NewMessageNotifier extends Service {
     }
 
     private void startForeground() {
+        logger.debug("startForeground");
         Intent notificationIntent = new Intent(context, ShowMessagesActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);

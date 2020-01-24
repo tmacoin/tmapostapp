@@ -14,7 +14,7 @@
     <string name="twitter_menu">Twitter</string>
     <string name="posting_menu">Posting</string>
 
-    <string name="minimiza">Minimize</string>
+    <string name="stop_message_listener">Stop message listener</string>
     <string name="change_password">Change Password</string>
     <string name="get_balance">Get Balance</string>
     <string name="send_transaction">Send Transaction</string>
