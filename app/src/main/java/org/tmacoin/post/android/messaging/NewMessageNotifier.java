@@ -1,7 +1,9 @@
 package org.tmacoin.post.android.messaging;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlarmManager;
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -33,6 +35,7 @@ import org.tma.util.TmaLogger;
 import org.tma.util.TmaRunnable;
 import org.tmacoin.post.android.PasswordUtil;
 import org.tmacoin.post.android.R;
+import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
 
 import java.net.UnknownHostException;
@@ -53,12 +56,20 @@ public class NewMessageNotifier extends Service {
     private SecureMessage lastMessage = null;
     private Wallet wallet = null;
     private Context context;
+    private String action;
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        logger.debug("onStartCommand intent.getAction()={}", intent.getAction());
+        if (TmaAndroidUtil.STOP.equals(intent.getAction())) {
+            action = TmaAndroidUtil.STOP;
+            stopForeground(true);
+            stopSelf();
+        }
         context = getApplicationContext();
         Constants.FILES_DIRECTORY = getFilesDir().getAbsolutePath() + "/";
         run(intent);
+
         return Service.START_REDELIVER_INTENT;
     }
 
@@ -66,7 +77,10 @@ public class NewMessageNotifier extends Service {
         wallet = (Wallet)intent.getSerializableExtra("wallet");
         String tmaAddress = wallet.getTmaAddress();
         try {
-            new Network(tmaAddress);
+            Network network = Network.getInstance();
+            if(network == null) {
+                network = new Network(tmaAddress);
+            }
         } catch (UnknownHostException e) {
             logger.error(e.getMessage(), e);
         }
@@ -74,7 +88,25 @@ public class NewMessageNotifier extends Service {
 
     @Override
     public void onTaskRemoved(Intent rootIntent){
+        logger.debug("onTaskRemoved");
+        restart();
+        super.onTaskRemoved(rootIntent);
+    }
+
+    @Override
+    public void onDestroy() {
+        logger.debug("onDestroy");
+        super.onDestroy();
+        restart();
+    }
+
+    private void restart() {
+        if (TmaAndroidUtil.STOP.equals(action)) {
+            return;
+        }
+        logger.debug("wallet={}", wallet);
         Intent restartServiceTask = new Intent(context,this.getClass());
+        restartServiceTask.setAction(TmaAndroidUtil.START);
         restartServiceTask.setPackage(getPackageName());
         restartServiceTask.putExtra("wallet", wallet);
         PendingIntent restartPendingIntent =PendingIntent.getService(context, 1,restartServiceTask, PendingIntent.FLAG_ONE_SHOT);
@@ -83,8 +115,6 @@ public class NewMessageNotifier extends Service {
                 AlarmManager.ELAPSED_REALTIME,
                 SystemClock.elapsedRealtime() + 1000,
                 restartPendingIntent);
-
-        super.onTaskRemoved(rootIntent);
     }
 
 
@@ -92,16 +122,31 @@ public class NewMessageNotifier extends Service {
         if(wallet != null) {
             return;
         }
+        startForeground();
         ThreadExecutor.getInstance().execute(new TmaRunnable("NewMessageNotifier") {
             public void doRun() {
                 setup(intent);
-                while(true) {
-                    try {
-                        process();
-                        ThreadExecutor.sleep(60000);
-                    } catch (Exception e) {
-                        logger.error(e.getMessage(), e);
+                PowerManager.WakeLock wakeLock = null;
+                try {
+                    PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+                    wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "TMAPost::MyWakelockTag");
+                    wakeLock.acquire();
+
+                    while (true && !TmaAndroidUtil.STOP.equals(action)) {
+                        try {
+                            process();
+                            ThreadExecutor.sleep(Constants.ONE_MINUTE);
+                        } catch (Exception e) {
+                            logger.error(e.getMessage(), e);
+                        }
                     }
+                } catch (Exception e) {
+                    logger.error(e.getMessage(), e);
+                } finally {
+                    if(wakeLock != null) {
+                        wakeLock.release();
+                    }
+
                 }
             }
         });
@@ -113,7 +158,7 @@ public class NewMessageNotifier extends Service {
         int attempt = 0;
         List<SecureMessage> list = null;
         while(list == null && attempt++ < 5) {
-            if(!network.isPeerSetComplete()) {
+            if(!network.isPeerSetCompleteForMyShard()) {
                 new BootstrapRequest(network).start();
             }
             PublicKey publicKey = wallet.getPublicKey();
@@ -166,6 +211,7 @@ public class NewMessageNotifier extends Service {
                         .setVibrate(new long[] { 1000, 1000})
                         .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
                         .setPriority(NotificationCompat.PRIORITY_MAX)
+                        .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
                 ;
         ;
 
@@ -202,4 +248,35 @@ public class NewMessageNotifier extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
+
+    private boolean isMyServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void startForeground() {
+        logger.debug("startForeground");
+        Intent notificationIntent = new Intent(context, ShowMessagesActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, context.getString(R.string.channel_id));
+        Notification notification = notificationBuilder
+                .setOngoing(true)
+                .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher))
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setContentTitle("New messages listener")
+                .setPriority(NotificationManager.IMPORTANCE_MIN)
+                .setCategory(Notification.CATEGORY_SERVICE)
+                .setContentIntent(contentIntent)
+                .setAutoCancel(true)
+                .setVisibility(NotificationCompat.VISIBILITY_SECRET)
+                .build();
+        startForeground(1, notification);
+    }
+
 }

@@ -89,7 +89,7 @@ public class ShowMessagesActivity extends BaseActivity {
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         int attempt = 0;
         while(list == null && attempt++ < 5) {
-            if(!network.isPeerSetComplete()) {
+            if(!network.isPeerSetCompleteForMyShard()) {
                 new BootstrapRequest(network).start();
             }
             updateStatus("Network status: " + network.getPeerCount().toString());
@@ -121,8 +121,6 @@ public class ShowMessagesActivity extends BaseActivity {
             updateStatus(getResources().getString(R.string.fail_retrieve_messages));
             Toast.makeText(this, getResources().getString(R.string.fail_retrieve_messages), Toast.LENGTH_LONG).show();
             return;
-        } else {
-            updateStatus("Retrieved " + list.size() + " messages");
         }
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.GONE);
@@ -136,8 +134,6 @@ public class ShowMessagesActivity extends BaseActivity {
                 showMessage(secureMessage);
             }
         });
-        TextView statusBar = findViewById(R.id.statusBar);
-        statusBar.setVisibility(View.GONE);
     }
 
     private void showMessage(final SecureMessage secureMessage) {

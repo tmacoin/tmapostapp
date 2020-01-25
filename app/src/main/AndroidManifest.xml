@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -57,11 +58,9 @@
 
         <service
             android:name="org.tmacoin.post.android.messaging.NewMessageNotifier"
-            android:process=":remote"
             android:enabled="true"
             android:exported="false"
             android:stopWithTask="false" >
-
         </service>
 
     </application>

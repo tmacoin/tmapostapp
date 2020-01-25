@@ -15,7 +15,6 @@
     <string name="posting_menu">Posting</string>
 
     <string name="minimiza">Minimize</string>
-    <string name="get_peers_config_file">Get Peers Config File</string>
     <string name="change_password">Change Password</string>
     <string name="get_balance">Get Balance</string>
     <string name="send_transaction">Send Transaction</string>
@@ -61,9 +60,6 @@
     <string name="channel_name">tmacoin</string>
     <string name="channel_description">tmacoin</string>
     <string name="re">Re:</string>
-
-    <!--  Buttons  -->
-    <string name="get_file_button">Get File</string>
 
     <string-array name="expire_arrays">
         <item>10 minutes</item>

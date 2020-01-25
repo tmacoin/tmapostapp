@@ -2,7 +2,9 @@ package org.tmacoin.post.android;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -10,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.SyncStateContract;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -66,9 +69,10 @@ public class ConnectedToNetworkActivity extends BaseActivity {
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.INVISIBLE);
         Intent service = new Intent(this, NewMessageNotifier.class);
+        service.setAction(TmaAndroidUtil.START);
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         service.putExtra("wallet", wallet);
-        startService(service);
+        ContextCompat.startForegroundService(this, service);
     }
 
     private String getBalance(int attemptNumber) {
@@ -77,7 +81,7 @@ public class ConnectedToNetworkActivity extends BaseActivity {
         }
         Network network = Network.getInstance();
         updateStatus("Network status: " + network.getPeerCount().toString());
-        if(!network.isPeerSetComplete()) {
+        if(!network.isPeerSetCompleteForMyShard()) {
             new BootstrapRequest(network).start();
         }
         updateStatus("Network status: " + network.getPeerCount().toString());
