@@ -14,7 +14,7 @@
     <string name="twitter_menu">Twitter</string>
     <string name="posting_menu">Posting</string>
 
-    <string name="minimiza">Minimize</string>
+    <string name="stop_message_listener">Stop message listener</string>
     <string name="change_password">Change Password</string>
     <string name="get_balance">Get Balance</string>
     <string name="send_transaction">Send Transaction</string>
@@ -59,7 +59,7 @@
     <string name="channel_id">tmacoin</string>
     <string name="channel_name">tmacoin</string>
     <string name="channel_description">tmacoin</string>
-    <string name="re">Re:</string>
+    <string name="re">Re:\u0020</string>
     <string name="get_peers_config_file">Locate Peers COnfig file</string>
     <string name="peers_config_button">Get File</string>
 
