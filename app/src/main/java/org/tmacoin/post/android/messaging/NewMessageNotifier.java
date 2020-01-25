@@ -77,7 +77,10 @@ public class NewMessageNotifier extends Service {
         wallet = (Wallet)intent.getSerializableExtra("wallet");
         String tmaAddress = wallet.getTmaAddress();
         try {
-            new Network(tmaAddress);
+            Network network = Network.getInstance();
+            if(network == null) {
+                network = new Network(tmaAddress);
+            }
         } catch (UnknownHostException e) {
             logger.error(e.getMessage(), e);
         }
