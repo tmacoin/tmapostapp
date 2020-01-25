@@ -89,7 +89,7 @@ public class ShowMessagesActivity extends BaseActivity {
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         int attempt = 0;
         while(list == null && attempt++ < 5) {
-            if(!network.isPeerSetComplete()) {
+            if(!network.isPeerSetCompleteForMyShard()) {
                 new BootstrapRequest(network).start();
             }
             updateStatus("Network status: " + network.getPeerCount().toString());

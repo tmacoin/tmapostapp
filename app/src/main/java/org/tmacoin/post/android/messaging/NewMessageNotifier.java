@@ -144,7 +144,7 @@ public class NewMessageNotifier extends Service {
         int attempt = 0;
         List<SecureMessage> list = null;
         while(list == null && attempt++ < 5) {
-            if(!network.isPeerSetComplete()) {
+            if(!network.isPeerSetCompleteForMyShard()) {
                 new BootstrapRequest(network).start();
             }
             PublicKey publicKey = wallet.getPublicKey();

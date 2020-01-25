@@ -109,7 +109,7 @@ public class SendTransactionActivity extends BaseActivity {
         final Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         final TransactionData expiringData = this.expiringData == null? null: new TransactionData(this.expiringData, Long.parseLong(expire));
         updateStatus("Network status: " + network.getPeerCount().toString());
-        if(!network.isPeerSetComplete()) {
+        if(!network.isPeerSetCompleteForMyShard()) {
             new BootstrapRequest(network).start();
         }
         updateStatus("Network status: " + network.getPeerCount().toString());

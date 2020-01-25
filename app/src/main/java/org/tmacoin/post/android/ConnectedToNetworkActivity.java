@@ -81,7 +81,7 @@ public class ConnectedToNetworkActivity extends BaseActivity {
         }
         Network network = Network.getInstance();
         updateStatus("Network status: " + network.getPeerCount().toString());
-        if(!network.isPeerSetComplete()) {
+        if(!network.isPeerSetCompleteForMyShard()) {
             new BootstrapRequest(network).start();
         }
         updateStatus("Network status: " + network.getPeerCount().toString());

@@ -165,7 +165,7 @@ public class SendMessageActivity extends BaseActivity {
         final Coin total = Coin.SATOSHI.add(new Coin(Long.parseLong(fee)));
         final Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         updateStatus("Network status: " + network.getPeerCount().toString());
-        if(!network.isPeerSetComplete()) {
+        if(!network.isPeerSetCompleteForMyShard()) {
             new BootstrapRequest(network).start();
         }
         updateStatus("Network status: " + network.getPeerCount().toString());
