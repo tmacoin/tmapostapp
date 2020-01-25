@@ -126,13 +126,27 @@ public class NewMessageNotifier extends Service {
         ThreadExecutor.getInstance().execute(new TmaRunnable("NewMessageNotifier") {
             public void doRun() {
                 setup(intent);
-                while(true && !TmaAndroidUtil.STOP.equals(action)) {
-                    try {
-                        process();
-                        ThreadExecutor.sleep(Constants.ONE_MINUTE);
-                    } catch (Exception e) {
-                        logger.error(e.getMessage(), e);
+                PowerManager.WakeLock wakeLock = null;
+                try {
+                    PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+                    wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "TMAPost::MyWakelockTag");
+                    wakeLock.acquire();
+
+                    while (true && !TmaAndroidUtil.STOP.equals(action)) {
+                        try {
+                            process();
+                            ThreadExecutor.sleep(Constants.ONE_MINUTE);
+                        } catch (Exception e) {
+                            logger.error(e.getMessage(), e);
+                        }
                     }
+                } catch (Exception e) {
+                    logger.error(e.getMessage(), e);
+                } finally {
+                    if(wakeLock != null) {
+                        wakeLock.release();
+                    }
+
                 }
             }
         });
