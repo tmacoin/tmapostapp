@@ -60,6 +60,9 @@
     <string name="channel_name">tmacoin</string>
     <string name="channel_description">tmacoin</string>
     <string name="re">Re:</string>
+    <string name="get_peers_config_file">Locate Peers COnfig file</string>
+    <string name="peers_config_button">Get File</string>
+
 
     <string-array name="expire_arrays">
         <item>10 minutes</item>
