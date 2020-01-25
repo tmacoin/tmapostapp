@@ -95,9 +95,7 @@ public class GetBalanceActivity extends BaseActivity {
         }
         Network network = Network.getInstance();
         updateStatus("Network status: " + network.getPeerCount().toString());
-        if(!network.isPeerSetCompleteForMyShard()) {
-            new BootstrapRequest(network).start();
-        }
+        TmaAndroidUtil.checkNetwork();
         updateStatus("Network status: " + network.getPeerCount().toString());
         GetBalanceRequest request = new GetBalanceRequest(network, tmaAddress);
         request.start();

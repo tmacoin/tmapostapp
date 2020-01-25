@@ -34,6 +34,7 @@ import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.MainActivity;
 import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.SendTransactionActivity;
+import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
 
 import java.nio.charset.StandardCharsets;
@@ -89,9 +90,7 @@ public class ShowMessagesActivity extends BaseActivity {
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         int attempt = 0;
         while(list == null && attempt++ < 5) {
-            if(!network.isPeerSetCompleteForMyShard()) {
-                new BootstrapRequest(network).start();
-            }
+            TmaAndroidUtil.checkNetwork();
             updateStatus("Network status: " + network.getPeerCount().toString());
             PublicKey publicKey = wallet.getPublicKey();
             GetMessagesRequest request = new GetMessagesRequest(network, publicKey);

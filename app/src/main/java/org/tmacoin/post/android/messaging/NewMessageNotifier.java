@@ -158,9 +158,7 @@ public class NewMessageNotifier extends Service {
         int attempt = 0;
         List<SecureMessage> list = null;
         while(list == null && attempt++ < 5) {
-            if(!network.isPeerSetCompleteForMyShard()) {
-                new BootstrapRequest(network).start();
-            }
+            TmaAndroidUtil.checkNetwork();
             PublicKey publicKey = wallet.getPublicKey();
             GetMessagesRequest request = new GetMessagesRequest(network, publicKey);
             request.start();

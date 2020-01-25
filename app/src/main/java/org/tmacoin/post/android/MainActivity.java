@@ -18,6 +18,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.tma.peer.Network;
 import org.tma.util.Constants;
 import org.tma.util.TmaLogger;
 
@@ -34,6 +35,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if(Network.getInstance() != null) {
+            connectedToTmaNetwork();
+            return;
+        }
+
         Constants.FILES_DIRECTORY = getFilesDir().getAbsolutePath() + "/";
         File keyFile = new File(Constants.FILES_DIRECTORY + Constants.KEYS);
         if(keyFile.exists()) {

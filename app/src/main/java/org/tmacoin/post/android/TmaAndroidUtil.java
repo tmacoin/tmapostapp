@@ -5,6 +5,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 
+import org.tma.peer.BootstrapRequest;
+import org.tma.peer.Network;
+import org.tma.util.ThreadExecutor;
+import org.tma.util.TmaRunnable;
+
 public class TmaAndroidUtil {
 
     public static final String STOP = "stop";
@@ -26,6 +31,23 @@ public class TmaAndroidUtil {
                 return false;
             }
         });
+
+    }
+
+    public static void checkNetwork() {
+
+        final Network network = Network.getInstance();
+        if (!network.isPeerSetCompleteForMyShard()) {
+            if (network.getMyPeers().isEmpty()) {
+                new BootstrapRequest(network).start();
+            } else {
+                ThreadExecutor.getInstance().execute(new TmaRunnable("checkNetwork") {
+                    public void doRun() {
+                        new BootstrapRequest(network).start();
+                    }
+                });
+            }
+        }
 
     }
 }
