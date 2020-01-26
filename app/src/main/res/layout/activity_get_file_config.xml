@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GetPeersConfig">
+    tools:context=".GetFilesConfig">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="132dp"
             android:layout_marginTop="24dp"
-            android:text="@string/get_peers_config_file"
+            android:text="@string/locate_file"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="132dp"
             android:layout_marginTop="20dp"
-            android:text="@string/peers_config_button"
+            android:text="@string/down_load_file_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewPeers" />
 
