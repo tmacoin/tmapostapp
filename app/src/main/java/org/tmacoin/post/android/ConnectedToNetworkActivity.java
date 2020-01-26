@@ -53,7 +53,7 @@ public class ConnectedToNetworkActivity extends BaseActivity {
             private String balance;
             @Override
             public void start() throws Exception {
-                balance = getBalance(5);
+                balance = getBalance(10);
             }
 
             @Override

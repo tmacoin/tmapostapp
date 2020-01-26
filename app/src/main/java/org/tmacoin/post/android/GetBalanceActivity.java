@@ -73,7 +73,7 @@ public class GetBalanceActivity extends BaseActivity {
             private String balance;
             @Override
             public void start() throws Exception {
-                balance = getBalance(5, tmaAddress);
+                balance = getBalance(10, tmaAddress);
             }
 
             @Override
