@@ -259,6 +259,7 @@ public class NewMessageNotifier extends Service {
 
     private void startForeground() {
         logger.debug("startForeground");
+        createNotificationChannel();
         Intent notificationIntent = new Intent(context, ShowMessagesActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
