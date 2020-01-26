@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
             Toast.makeText(this, getResources().getString(R.string.connecting_wait), Toast.LENGTH_LONG).show();
-            logger.debug("TMA POST Web starting up");
+            logger.debug("TMA POST starting up");
             StartNetwork.getInstance().start(this);
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
