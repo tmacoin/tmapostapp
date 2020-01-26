@@ -19,9 +19,12 @@ import org.tma.peer.Network;
 import org.tma.peer.thin.GetBalanceRequest;
 import org.tma.peer.thin.ResponseHolder;
 import org.tma.util.ThreadExecutor;
+import org.tma.util.TmaLogger;
 import org.tma.util.TmaRunnable;
 
 public class GetBalanceActivity extends BaseActivity {
+
+    private static final TmaLogger logger = TmaLogger.getLogger();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +73,7 @@ public class GetBalanceActivity extends BaseActivity {
             private String balance;
             @Override
             public void start() throws Exception {
-                balance = getBalance(3, tmaAddress);
+                balance = getBalance(5, tmaAddress);
             }
 
             @Override
@@ -93,6 +96,8 @@ public class GetBalanceActivity extends BaseActivity {
         if(attemptNumber < 0) {
             return null;
         }
+        logger.debug("getBalance attempt {}", attemptNumber);
+        updateStatus("getBalance attempt " + attemptNumber);
         Network network = Network.getInstance();
         updateStatus("Network status: " + network.getPeerCount().toString());
         TmaAndroidUtil.checkNetwork();

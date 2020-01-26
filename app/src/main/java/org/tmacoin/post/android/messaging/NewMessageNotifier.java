@@ -126,6 +126,9 @@ public class NewMessageNotifier extends Service {
         ThreadExecutor.getInstance().execute(new TmaRunnable("NewMessageNotifier") {
             public void doRun() {
                 setup(intent);
+                if(wallet == null) {
+                    return;
+                }
                 PowerManager.WakeLock wakeLock = null;
                 try {
                     PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
