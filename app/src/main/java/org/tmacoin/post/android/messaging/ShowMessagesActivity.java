@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -165,7 +166,7 @@ public class ShowMessagesActivity extends BaseActivity {
         body.setText(bodyText);
         ConstraintLayout messages = findViewById(R.id.messages);
         messages.setVisibility(View.GONE);
-        ConstraintLayout message = findViewById(R.id.message);
+        ScrollView message = findViewById(R.id.message);
         message.setVisibility(View.VISIBLE);
         activeView = "message";
 
@@ -201,7 +202,7 @@ public class ShowMessagesActivity extends BaseActivity {
                 activeView = "messages";
                 ConstraintLayout messages = findViewById(R.id.messages);
                 messages.setVisibility(View.VISIBLE);
-                ConstraintLayout message = findViewById(R.id.message);
+                ScrollView message = findViewById(R.id.message);
                 message.setVisibility(View.GONE);
                 return true;
             default:
