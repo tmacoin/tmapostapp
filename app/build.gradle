@@ -28,11 +28,8 @@ dependencies {
     implementation 'org.tinylog:tinylog-api:2.0.1'
     implementation 'org.tinylog:tinylog-impl:2.0.1'
     implementation 'org.bouncycastle:bcprov-jdk15on:1.59'
-
-
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation files('libs/tmalite.jar')
-
 }
