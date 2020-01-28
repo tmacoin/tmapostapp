@@ -96,24 +96,23 @@ public class SendMessageActivity extends BaseActivity {
         expireAfterBlocksSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String label = parent.getItemAtPosition(position).toString();
-                switch(label) {
-                    case "10 minutes":
+                switch(position) {
+                    case 0:
                         expire = "10";
                         break;
-                    case "1 hour":
+                    case 1:
                         expire = "60";
                         break;
-                    case "24 hours":
+                    case 2:
                         expire = "1440";
                         break;
-                    case "1 week":
+                    case 3:
                         expire = "10080";
                         break;
-                    case "1 month":
+                    case 4:
                         expire = "43200";
                         break;
-                    case "1 year":
+                    case 5:
                         expire = "525600";
                         break;
 
