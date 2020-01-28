@@ -1,0 +1,80 @@
+<resources>
+<string name="app_name">TMA邮政</string>
+    <string name="enter_passphrase">输入密码</string>
+    <string name="confirm_passphrase">确认密码</string>
+    <string name="connected">您已成功连接到TMA网络</string>
+    <string name="address_label">您的TMA地址</string>
+    <string name="balance_label">您的余额</string>
+    <string name="coins">\u0020硬币</string>
+    <string name="file_menu">文件</string>
+    <string name="tools_menu">工具类</string>
+    <string name="messaging_menu">讯息传递</string>
+    <string name="twitter_menu">推特</string>
+    <string name="posting_menu">过帐</string>
+    <string name="stop_message_listener">停止消息监听器</string>
+    <string name="show_address">显示地址</string>
+    <string name="show_messages">显示讯息</string>
+    <string name="create_twitter">创建Twitter</string>
+    <string name="show_my_tweets">显示我的推文</string>
+    <string name="search_twitter">搜索推特</string>
+    <string name="my_subscription">我的订阅</string>
+    <string name="create_post">建立讯息</string>
+    <string name="find_post">查找帖子</string>
+    <string name="my_ratings">我的评分</string>
+    <string name="my_posts">我的帖子</string>
+    <string name="connecting_wait">正在连接到TMA网络，请稍候。</string>
+    <string name="get_balance_wait">检索余额。请耐心等待。</string>
+    <string name="retrieving_messages_wait">检索消息。请耐心等待。</string>
+    <string name="fail_retrieve_messages">检索消息失败。请再试一遍。</string>
+    <string name="tma_address">TMA地址</string>
+    <string name="balance">平衡</string>
+    <string name="wrong_password">输入的密码不正确。请再试一遍。</string>
+    <string name="reentered_password_does_not_match">新密码和重新输入的密码不匹配。请再试一遍。</string>
+    <string name="Recipient_TMA_Address">收件人TMA地址</string>
+    <string name="Amount_in_coins">硬币金额</string>
+    <string name="Fee_in_satoshis">费用在聪</string>
+    <string name="data">数据</string>
+    <string name="Expire_after_blocks">过期后</string>
+    <string name="Expiring_Data">过期数据</string>
+    <string name="wait">请耐心等待。</string>
+    <string name="entered_info_not_correct">输入的信息不正确。请再试一遍。</string>
+    <string name="subject">学科</string>
+    <string name="body">身体</string>
+    <string name="expire_prompt">选择过期时间</string>
+    <string name="channel_id">Tmacoin</string>
+    <string name="channel_name">Tmacoin</string>
+    <string name="channel_description">Tmacoin</string>
+    <string name="re">回复：\u0020</string>
+    <string name="locate_file">定位文件</string>
+    <string name="old_password">旧密码</string>
+    <string name="new_password">新密码</string>
+    <string name="reenter_new">重新输入新</string>
+    <string name="passphrase_was_successfully_updated">密码已成功更新</string>
+    <string name="value">值</string>
+    <string name="sender">寄件人</string>
+    <string name="recipient">接受者</string>
+    <string name="fee">费用</string>
+    <string name="date">日期</string>
+    <string name="expire">到期</string>
+    <string name="reply">回复</string>
+    <string name="result">结果</string>
+
+    
+    <string name="down_load_file_button">获取文件</string>
+    <string name="change_password">更改密码</string>
+    <string name="get_balance">取得平衡</string>
+    <string name="submit">提交</string>
+    <string name="send_transaction">发送交易</string>
+    <string name="send_secure_message">发送安全消息</string>
+    <string name="send_tweet">发送推文</string>
+
+
+    <string-array name="expire_arrays">
+        <item>10分钟</item>
+        <item>1小时</item>
+        <item>24小时</item>
+        <item>1周</item>
+        <item>1个月</item>
+        <item>1年</item>
+    </string-array>
+</resources>

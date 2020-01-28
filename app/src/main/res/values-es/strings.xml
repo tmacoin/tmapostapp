@@ -1,0 +1,80 @@
+<resources>
+<string name="app_name">Publicación de TMA</string>
+    <string name="enter_passphrase">Introducir frase de contraseña</string>
+    <string name="confirm_passphrase">Confirmar frase de contraseña</string>
+    <string name="connected">Te has conectado correctamente a la red TMA</string>
+    <string name="address_label">Tu dirección de TMA</string>
+    <string name="balance_label">Tu balance</string>
+    <string name="coins">\u0020coins</string>
+    <string name="file_menu">Archivo</string>
+    <string name="tools_menu">Herramientas</string>
+    <string name="messaging_menu">Mensajería</string>
+    <string name="twitter_menu">Twitter</string>
+    <string name="posting_menu">Destino</string>
+    <string name="stop_message_listener">Detener mensaje oyente</string>
+    <string name="show_address">Mostrar dirección</string>
+    <string name="show_messages">Mostrar mensajes</string>
+    <string name="create_twitter">Crear Twitter</string>
+    <string name="show_my_tweets">Mostrar mis tweets</string>
+    <string name="search_twitter">Busca en Twitter</string>
+    <string name="my_subscription">Mi suscripción</string>
+    <string name="create_post">Crear publicación</string>
+    <string name="find_post">Buscar publicación</string>
+    <string name="my_ratings">Mis calificaciones</string>
+    <string name="my_posts">Mis publicaciones</string>
+    <string name="connecting_wait">Conectándose a la red TMA, espere.</string>
+    <string name="get_balance_wait">Recuperando el equilibrio. Por favor espera.</string>
+    <string name="retrieving_messages_wait">Recuperando mensajes. Por favor espera.</string>
+    <string name="fail_retrieve_messages">Error al recuperar mensajes. Inténtalo de nuevo.</string>
+    <string name="tma_address">Dirección TMA</string>
+    <string name="balance">Balance</string>
+    <string name="wrong_password">La frase de contraseña ingresada no era correcta. Inténtalo de nuevo.</string>
+    <string name="reentered_password_does_not_match">La frase de contraseña nueva y reentrada no coincide. Inténtalo de nuevo.</string>
+    <string name="Recipient_TMA_Address">Dirección del destinatario TMA</string>
+    <string name="Amount_in_coins">Cantidad en monedas</string>
+    <string name="Fee_in_satoshis">Tarifa en satoshis</string>
+    <string name="data">Datos</string>
+    <string name="Expire_after_blocks">Caduca después</string>
+    <string name="Expiring_Data">Datos vencidos</string>
+    <string name="wait">Por favor espera.</string>
+    <string name="entered_info_not_correct">La información ingresada no era correcta. Inténtalo de nuevo.</string>
+    <string name="subject">Tema</string>
+    <string name="body">Cuerpo</string>
+    <string name="expire_prompt">Seleccionar duración de caducidad</string>
+    <string name="channel_id">tmacoin</string>
+    <string name="channel_name">tmacoin</string>
+    <string name="channel_description">tmacoin</string>
+    <string name="re">Re: \u0020</string>
+    <string name="locate_file">Localizar el archivo</string>
+    <string name="old_password">Contraseña anterior</string>
+    <string name="new_password">Nueva contraseña</string>
+    <string name="reenter_new">Reentrar nuevo</string>
+    <string name="passphrase_was_successfully_updated">La frase de contraseña se actualizó correctamente</string>
+    <string name="value">Valor</string>
+    <string name="sender">Remitente</string>
+    <string name="recipient">Recipiente</string>
+    <string name="fee">Cuota</string>
+    <string name="date">Fecha</string>
+    <string name="expire">Expirar</string>
+    <string name="reply">Respuesta</string>
+    <string name="result">Resultado</string>
+
+    
+    <string name="down_load_file_button">Obtener el archivo</string>
+    <string name="change_password">Cambia la contraseña</string>
+    <string name="get_balance">Obtener el equilibrio</string>
+    <string name="submit">Enviar</string>
+    <string name="send_transaction">Enviar transacción</string>
+    <string name="send_secure_message">Enviar mensaje seguro</string>
+    <string name="send_tweet">Enviar Tweet</string>
+
+
+    <string-array name="expire_arrays">
+        <item>10 minutos</item>
+        <item>1 hora</item>
+        <item>24 horas</item>
+        <item>1 semana</item>
+        <item>1 mes</item>
+        <item>1 año</item>
+    </string-array>
+</resources>

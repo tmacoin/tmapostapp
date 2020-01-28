@@ -1,0 +1,80 @@
+<resources>
+<string name="app_name">TMA Post</string>
+    <string name="enter_passphrase">Inserisci Passphrase</string>
+    <string name="confirm_passphrase">Conferma passphrase</string>
+    <string name="connected">Connessione corretta alla rete TMA</string>
+    <string name="address_label">Il tuo indirizzo TMA</string>
+    <string name="balance_label">Il tuo bilancio</string>
+    <string name="coins">\u0020coins</string>
+    <string name="file_menu">File</string>
+    <string name="tools_menu">Utensili</string>
+    <string name="messaging_menu">messaggistica</string>
+    <string name="twitter_menu">cinguettio</string>
+    <string name="posting_menu">spedizione</string>
+    <string name="stop_message_listener">Ferma l\'ascoltatore di messaggi</string>
+    <string name="show_address">Mostra indirizzo</string>
+    <string name="show_messages">Mostra messaggi</string>
+    <string name="create_twitter">Crea Twitter</string>
+    <string name="show_my_tweets">Mostra i miei tweet</string>
+    <string name="search_twitter">Cerca su Twitter</string>
+    <string name="my_subscription">La mia iscrizione</string>
+    <string name="create_post">Crea post</string>
+    <string name="find_post">Trova post</string>
+    <string name="my_ratings">Le mie valutazioni</string>
+    <string name="my_posts">I miei post</string>
+    <string name="connecting_wait">Connessione alla rete TMA, attendere.</string>
+    <string name="get_balance_wait">Recupero del saldo. Attendere prego.</string>
+    <string name="retrieving_messages_wait">Recupero dei messaggi. Attendere prego.</string>
+    <string name="fail_retrieve_messages">Impossibile recuperare i messaggi. Per favore riprova.</string>
+    <string name="tma_address">Indirizzo TMA</string>
+    <string name="balance">Equilibrio</string>
+    <string name="wrong_password">La passphrase immessa non era corretta. Per favore riprova.</string>
+    <string name="reentered_password_does_not_match">La passphrase nuova e reinserita non corrisponde. Per favore riprova.</string>
+    <string name="Recipient_TMA_Address">Indirizzo TMA del destinatario</string>
+    <string name="Amount_in_coins">Importo in monete</string>
+    <string name="Fee_in_satoshis">Fee in satoshis</string>
+    <string name="data">Dati</string>
+    <string name="Expire_after_blocks">Scade dopo</string>
+    <string name="Expiring_Data">Dati in scadenza</string>
+    <string name="wait">Attendere prego.</string>
+    <string name="entered_info_not_correct">Le informazioni inserite non erano corrette. Per favore riprova.</string>
+    <string name="subject">Soggetto</string>
+    <string name="body">Corpo</string>
+    <string name="expire_prompt">Seleziona scade la durata</string>
+    <string name="channel_id">tmacoin</string>
+    <string name="channel_name">tmacoin</string>
+    <string name="channel_description">tmacoin</string>
+    <string name="re">Re: \u0020</string>
+    <string name="locate_file">Localizza file</string>
+    <string name="old_password">vecchia password</string>
+    <string name="new_password">nuova password</string>
+    <string name="reenter_new">Rientra Nuovo</string>
+    <string name="passphrase_was_successfully_updated">Passphrase è stato aggiornato con successo</string>
+    <string name="value">Valore</string>
+    <string name="sender">mittente</string>
+    <string name="recipient">Destinatario</string>
+    <string name="fee">tassa</string>
+    <string name="date">Data</string>
+    <string name="expire">scadere</string>
+    <string name="reply">rispondere</string>
+    <string name="result">risultato</string>
+
+    
+    <string name="down_load_file_button">Prendi il file</string>
+    <string name="change_password">Cambia la password</string>
+    <string name="get_balance">Ottieni l\'equilibrio</string>
+    <string name="submit">Invia</string>
+    <string name="send_transaction">Invia transazione</string>
+    <string name="send_secure_message">Invia un messaggio sicuro</string>
+    <string name="send_tweet">Invia Tweet</string>
+
+
+    <string-array name="expire_arrays">
+        <item>10 minuti</item>
+        <item>1 ora</item>
+        <item>24 ore</item>
+        <item>1 settimana</item>
+        <item>1 mese</item>
+        <item>1 anno</item>
+    </string-array>
+</resources>

@@ -1,0 +1,80 @@
+<resources>
+<string name="app_name">Post TMA</string>
+    <string name="enter_passphrase">Digite a senha</string>
+    <string name="confirm_passphrase">Confirmar senha</string>
+    <string name="connected">Você se conectou com sucesso à rede TMA</string>
+    <string name="address_label">O seu endereço TMA</string>
+    <string name="balance_label">Seu balanço</string>
+    <string name="coins">\u0020coins</string>
+    <string name="file_menu">Arquivo</string>
+    <string name="tools_menu">Ferramentas</string>
+    <string name="messaging_menu">Mensagens</string>
+    <string name="twitter_menu">Twitter</string>
+    <string name="posting_menu">Postagem</string>
+    <string name="stop_message_listener">Parar ouvinte de mensagem</string>
+    <string name="show_address">Mostrar Endereço</string>
+    <string name="show_messages">Mostrar Mensagens</string>
+    <string name="create_twitter">Criar Twitter</string>
+    <string name="show_my_tweets">Mostrar meus tweets</string>
+    <string name="search_twitter">Pesquisar no Twitter</string>
+    <string name="my_subscription">Minha assinatura</string>
+    <string name="create_post">Criar postagem</string>
+    <string name="find_post">Localizar publicação</string>
+    <string name="my_ratings">As minhas classificações</string>
+    <string name="my_posts">Minhas postagens</string>
+    <string name="connecting_wait">Conectando à rede TMA, aguarde.</string>
+    <string name="get_balance_wait">Recuperando saldo. Por favor, espere.</string>
+    <string name="retrieving_messages_wait">Recuperando mensagens. Por favor, espere.</string>
+    <string name="fail_retrieve_messages">Falha ao recuperar as mensagens. Por favor, tente novamente.</string>
+    <string name="tma_address">Endereço TMA</string>
+    <string name="balance">Saldo</string>
+    <string name="wrong_password">A senha digitada não estava correta. Por favor, tente novamente.</string>
+    <string name="reentered_password_does_not_match">A senha nova e reinserida não corresponde. Por favor, tente novamente.</string>
+    <string name="Recipient_TMA_Address">Endereço TMA do destinatário</string>
+    <string name="Amount_in_coins">Quantidade em moedas</string>
+    <string name="Fee_in_satoshis">Taxa em satoshis</string>
+    <string name="data">Dados</string>
+    <string name="Expire_after_blocks">Expira depois</string>
+    <string name="Expiring_Data">Dados expirados</string>
+    <string name="wait">Por favor, espere.</string>
+    <string name="entered_info_not_correct">As informações inseridas não estavam corretas. Por favor, tente novamente.</string>
+    <string name="subject">Sujeito</string>
+    <string name="body">Corpo</string>
+    <string name="expire_prompt">Selecione a duração expirar</string>
+    <string name="channel_id">tmacoin</string>
+    <string name="channel_name">tmacoin</string>
+    <string name="channel_description">tmacoin</string>
+    <string name="re">Re: \u0020</string>
+    <string name="locate_file">Localize o arquivo</string>
+    <string name="old_password">Senha Antiga</string>
+    <string name="new_password">Nova senha</string>
+    <string name="reenter_new">Reentrar Novo</string>
+    <string name="passphrase_was_successfully_updated">A senha foi atualizada com sucesso</string>
+    <string name="value">Valor</string>
+    <string name="sender">remetente</string>
+    <string name="recipient">Destinatário</string>
+    <string name="fee">Taxa</string>
+    <string name="date">Encontro</string>
+    <string name="expire">Expirar</string>
+    <string name="reply">Resposta</string>
+    <string name="result">resultado</string>
+
+    
+    <string name="down_load_file_button">Obter arquivo</string>
+    <string name="change_password">Mudar senha</string>
+    <string name="get_balance">Obter saldo</string>
+    <string name="submit">Enviar</string>
+    <string name="send_transaction">Enviar transação</string>
+    <string name="send_secure_message">Enviar mensagem segura</string>
+    <string name="send_tweet">Enviar Tweet</string>
+
+
+    <string-array name="expire_arrays">
+        <item>10 minutos</item>
+        <item>1 hora</item>
+        <item>24 horas</item>
+        <item>1 semana</item>
+        <item>1 mês</item>
+        <item>1 ano</item>
+    </string-array>
+</resources>

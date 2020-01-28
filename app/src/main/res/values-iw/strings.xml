@@ -1,0 +1,80 @@
+<resources>
+<string name="app_name">TMA פוסט</string>
+    <string name="enter_passphrase">הזן משפט-סיסמה</string>
+    <string name="confirm_passphrase">אשר משפט משפט</string>
+    <string name="connected">התחברת בהצלחה לרשת TMA</string>
+    <string name="address_label">כתובת TMA שלך</string>
+    <string name="balance_label">האיזון שלך</string>
+    <string name="coins">\u0020 מטבעות</string>
+    <string name="file_menu">קובץ</string>
+    <string name="tools_menu">כלים</string>
+    <string name="messaging_menu">העברת הודעות</string>
+    <string name="twitter_menu">טוויטר</string>
+    <string name="posting_menu">פרסום</string>
+    <string name="stop_message_listener">עצור מאזין להודעות</string>
+    <string name="show_address">הצג כתובת</string>
+    <string name="show_messages">הצג הודעות</string>
+    <string name="create_twitter">צור טוויטר</string>
+    <string name="show_my_tweets">הצג את הציוצים שלי</string>
+    <string name="search_twitter">חפש בטוויטר</string>
+    <string name="my_subscription">המנוי שלי</string>
+    <string name="create_post">צור הודעה</string>
+    <string name="find_post">מצא פוסט</string>
+    <string name="my_ratings">הדירוגים שלי</string>
+    <string name="my_posts">ההודעות שלי</string>
+    <string name="connecting_wait">מתחבר לרשת TMA, אנא המתן.</string>
+    <string name="get_balance_wait">השבת איזון. המתן בבקשה.</string>
+    <string name="retrieving_messages_wait">אחזור הודעות. המתן בבקשה.</string>
+    <string name="fail_retrieve_messages">אחזור ההודעות נכשל. בבקשה נסה שוב.</string>
+    <string name="tma_address">כתובת TMA</string>
+    <string name="balance">איזון</string>
+    <string name="wrong_password">ביטוי הסיסמה שהוזן לא היה נכון. בבקשה נסה שוב.</string>
+    <string name="reentered_password_does_not_match">ביטוי סיסמה חדש והוכנס מחדש אינם תואמים. בבקשה נסה שוב.</string>
+    <string name="Recipient_TMA_Address">כתובת TMA של הנמען</string>
+    <string name="Amount_in_coins">סכום במטבעות</string>
+    <string name="Fee_in_satoshis">תשלום בסאטושיס</string>
+    <string name="data">נתונים</string>
+    <string name="Expire_after_blocks">תפוג לאחר</string>
+    <string name="Expiring_Data">פג נתונים</string>
+    <string name="wait">המתן בבקשה.</string>
+    <string name="entered_info_not_correct">המידע שהוזן לא היה נכון. בבקשה נסה שוב.</string>
+    <string name="subject">נושא</string>
+    <string name="body">גוף</string>
+    <string name="expire_prompt">בחר משך תפוגה</string>
+    <string name="channel_id">tmacoin</string>
+    <string name="channel_name">tmacoin</string>
+    <string name="channel_description">tmacoin</string>
+    <string name="re">Re: \u0020</string>
+    <string name="locate_file">אתר קובץ</string>
+    <string name="old_password">סיסמה ישנה</string>
+    <string name="new_password">סיסמה חדשה</string>
+    <string name="reenter_new">הכנס שוב חדש</string>
+    <string name="passphrase_was_successfully_updated">ביטוי הסיסמה עודכן בהצלחה</string>
+    <string name="value">ערך</string>
+    <string name="sender">סנדר</string>
+    <string name="recipient">מקבל</string>
+    <string name="fee">תשלום</string>
+    <string name="date">תאריך</string>
+    <string name="expire">תפוג</string>
+    <string name="reply">תשובה</string>
+    <string name="result">תוצאה</string>
+
+    
+    <string name="down_load_file_button">קבל קובץ</string>
+    <string name="change_password">שנה סיסמא</string>
+    <string name="get_balance">קבל איזון</string>
+    <string name="submit">שלח</string>
+    <string name="send_transaction">שלח עסקה</string>
+    <string name="send_secure_message">שלח הודעה מאובטחת</string>
+    <string name="send_tweet">שלח ציוץ</string>
+
+
+    <string-array name="expire_arrays">
+        <item>10 דקות</item>
+        <item>1 שעה</item>
+        <item>24 שעות</item>
+        <item>שבוע 1</item>
+        <item>1 חודש</item>
+        <item>1 שנה</item>
+    </string-array>
+</resources>

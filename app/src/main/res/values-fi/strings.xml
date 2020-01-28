@@ -1,0 +1,80 @@
+<resources>
+<string name="app_name">TMA Post</string>
+    <string name="enter_passphrase">Kirjoita salasana</string>
+    <string name="confirm_passphrase">Vahvista salasana</string>
+    <string name="connected">Yhteys TMA-verkkoon onnistui</string>
+    <string name="address_label">TMA-osoitteesi</string>
+    <string name="balance_label">Tasapainosi</string>
+    <string name="coins">\u0020coins</string>
+    <string name="file_menu">tiedosto</string>
+    <string name="tools_menu">Työkalut</string>
+    <string name="messaging_menu">Viestit</string>
+    <string name="twitter_menu">Viserrys</string>
+    <string name="posting_menu">komennus</string>
+    <string name="stop_message_listener">Lopeta viestin kuuntelija</string>
+    <string name="show_address">Näytä osoite</string>
+    <string name="show_messages">Näytä viestit</string>
+    <string name="create_twitter">Luo Twitter</string>
+    <string name="show_my_tweets">Näytä omat twiitit</string>
+    <string name="search_twitter">Hae Twitteristä</string>
+    <string name="my_subscription">Oma tilaukseni</string>
+    <string name="create_post">Luo viesti</string>
+    <string name="find_post">Etsi viesti</string>
+    <string name="my_ratings">Minun arvosanani</string>
+    <string name="my_posts">Omat viestit</string>
+    <string name="connecting_wait">Yhdistetään TMA-verkkoon, odota.</string>
+    <string name="get_balance_wait">Palautetaan tasapaino. Odota.</string>
+    <string name="retrieving_messages_wait">Viestien nouto. Odota.</string>
+    <string name="fail_retrieve_messages">Viestien nouto epäonnistui. Yritä uudelleen.</string>
+    <string name="tma_address">TMA-osoite</string>
+    <string name="balance">Saldo</string>
+    <string name="wrong_password">Syötetty tunnuslause ei ollut väärä. Yritä uudelleen.</string>
+    <string name="reentered_password_does_not_match">Uusi ja uudelleen syötetty tunnuslause eivät vastaa toisiaan. Yritä uudelleen.</string>
+    <string name="Recipient_TMA_Address">Vastaanottajan TMA-osoite</string>
+    <string name="Amount_in_coins">Määrä kolikoissa</string>
+    <string name="Fee_in_satoshis">Maksu satoshis</string>
+    <string name="data">data</string>
+    <string name="Expire_after_blocks">Viimeinen voimassaolopäivä</string>
+    <string name="Expiring_Data">Vanhentuneet tiedot</string>
+    <string name="wait">Odota.</string>
+    <string name="entered_info_not_correct">Syötetyt tiedot eivät olleet oikeita. Yritä uudelleen.</string>
+    <string name="subject">aihe</string>
+    <string name="body">ruumis</string>
+    <string name="expire_prompt">Valitse viimeinen kesto</string>
+    <string name="channel_id">tmacoin</string>
+    <string name="channel_name">tmacoin</string>
+    <string name="channel_description">tmacoin</string>
+    <string name="re">Vs: \u0020</string>
+    <string name="locate_file">Etsi tiedosto</string>
+    <string name="old_password">vanha salasana</string>
+    <string name="new_password">uusi salasana</string>
+    <string name="reenter_new">Reenter Uusi</string>
+    <string name="passphrase_was_successfully_updated">Tunnuslause päivitettiin onnistuneesti</string>
+    <string name="value">Arvo</string>
+    <string name="sender">lähettäjä</string>
+    <string name="recipient">vastaanottaja</string>
+    <string name="fee">Maksu</string>
+    <string name="date">Päivämäärä</string>
+    <string name="expire">Mennä umpeen</string>
+    <string name="reply">Vastaa</string>
+    <string name="result">tulos</string>
+
+    
+    <string name="down_load_file_button">Hanki tiedosto</string>
+    <string name="change_password">Vaihda salasana</string>
+    <string name="get_balance">Hanki tasapaino</string>
+    <string name="submit">Lähetä</string>
+    <string name="send_transaction">Lähetä tapahtuma</string>
+    <string name="send_secure_message">Lähetä suojattu viesti</string>
+    <string name="send_tweet">Lähetä Tweet</string>
+
+
+    <string-array name="expire_arrays">
+        <item>10 minuuttia</item>
+        <item>1 tunti</item>
+        <item>24 tuntia</item>
+        <item>1 viikko</item>
+        <item>1 kuukausi</item>
+        <item>1 vuosi</item>
+    </string-array>
+</resources>

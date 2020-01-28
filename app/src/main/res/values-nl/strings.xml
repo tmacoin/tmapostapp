@@ -1,0 +1,80 @@
+<resources>
+<string name="app_name">TMA-bericht</string>
+    <string name="enter_passphrase">Voer wachtwoordzin in</string>
+    <string name="confirm_passphrase">Bevestig wachtwoordzin</string>
+    <string name="connected">U bent succesvol verbonden met TMA Network</string>
+    <string name="address_label">Uw TMA-adres</string>
+    <string name="balance_label">Je balans</string>
+    <string name="coins">\u0020coins</string>
+    <string name="file_menu">het dossier</string>
+    <string name="tools_menu">Gereedschap</string>
+    <string name="messaging_menu">messaging</string>
+    <string name="twitter_menu">tjilpen</string>
+    <string name="posting_menu">plaatsing</string>
+    <string name="stop_message_listener">Stop berichtluisteraar</string>
+    <string name="show_address">Toon adres</string>
+    <string name="show_messages">Toon berichten</string>
+    <string name="create_twitter">Maak Twitter</string>
+    <string name="show_my_tweets">Toon mijn tweets</string>
+    <string name="search_twitter">Zoeken op Twitter</string>
+    <string name="my_subscription">Mijn abonnement</string>
+    <string name="create_post">Maak bericht</string>
+    <string name="find_post">Post zoeken</string>
+    <string name="my_ratings">Mijn beoordelingen</string>
+    <string name="my_posts">Mijn posts</string>
+    <string name="connecting_wait">Bezig met verbinding maken met TMA-netwerk. Een ogenblik geduld.</string>
+    <string name="get_balance_wait">Saldo ophalen. Wacht alsjeblieft.</string>
+    <string name="retrieving_messages_wait">Berichten ophalen. Wacht alsjeblieft.</string>
+    <string name="fail_retrieve_messages">Kan berichten niet ophalen. Probeer het opnieuw.</string>
+    <string name="tma_address">TMA-adres</string>
+    <string name="balance">Balans</string>
+    <string name="wrong_password">Ingevoerde wachtwoordzin was niet correct. Probeer het opnieuw.</string>
+    <string name="reentered_password_does_not_match">Nieuwe en opnieuw ingevoerde wachtwoordzin komen niet overeen. Probeer het opnieuw.</string>
+    <string name="Recipient_TMA_Address">Ontvanger TMA-adres</string>
+    <string name="Amount_in_coins">Bedrag in munten</string>
+    <string name="Fee_in_satoshis">Fee in satoshis</string>
+    <string name="data">Gegevens</string>
+    <string name="Expire_after_blocks">Vervalt na</string>
+    <string name="Expiring_Data">Verlopen gegevens</string>
+    <string name="wait">Wacht alsjeblieft.</string>
+    <string name="entered_info_not_correct">Ingevoerde informatie was niet correct. Probeer het opnieuw.</string>
+    <string name="subject">Onderwerpen</string>
+    <string name="body">Lichaam</string>
+    <string name="expire_prompt">Selecteer vervaldatum</string>
+    <string name="channel_id">tmacoin</string>
+    <string name="channel_name">tmacoin</string>
+    <string name="channel_description">tmacoin</string>
+    <string name="re">Re: \u0020</string>
+    <string name="locate_file">Vind het bestand</string>
+    <string name="old_password">Oud Wachtwoord</string>
+    <string name="new_password">nieuw paswoord</string>
+    <string name="reenter_new">Reenter Nieuw</string>
+    <string name="passphrase_was_successfully_updated">Wachtwoordzin is succesvol bijgewerkt</string>
+    <string name="value">Waarde</string>
+    <string name="sender">verzender</string>
+    <string name="recipient">Ontvanger</string>
+    <string name="fee">Vergoeding</string>
+    <string name="date">Datum</string>
+    <string name="expire">vervallen</string>
+    <string name="reply">Antwoord</string>
+    <string name="result">resultaat</string>
+
+    
+    <string name="down_load_file_button">Download bestand</string>
+    <string name="change_password">Verander wachtwoord</string>
+    <string name="get_balance">Krijg saldo</string>
+    <string name="submit">voorleggen</string>
+    <string name="send_transaction">Stuur transactie</string>
+    <string name="send_secure_message">Verzend beveiligd bericht</string>
+    <string name="send_tweet">Tweet verzenden</string>
+
+
+    <string-array name="expire_arrays">
+        <item>10 minuten</item>
+        <item>1 uur</item>
+        <item>24 uur</item>
+        <item>1 week</item>
+        <item>1 maand</item>
+        <item>1 jaar</item>
+    </string-array>
+</resources>

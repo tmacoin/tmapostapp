@@ -1,0 +1,81 @@
+<resources>
+<!-- https://asrt.gluege.boerde.de -->
+    <string name="app_name">TMA Post</string>
+    <string name="enter_passphrase">Saisissez la phrase secrète</string>
+    <string name="confirm_passphrase">Confirmer le mot de passe</string>
+    <string name="connected">Vous vous êtes connecté avec succès au réseau TMA</string>
+    <string name="address_label">Votre adresse TMA</string>
+    <string name="balance_label">Votre équilibre</string>
+    <string name="coins">\u0020coins</string>
+    <string name="file_menu">fichier</string>
+    <string name="tools_menu">les outils</string>
+    <string name="messaging_menu">messagerie</string>
+    <string name="twitter_menu">Twitter</string>
+    <string name="posting_menu">affichage</string>
+    <string name="stop_message_listener">Arrêter l\'écouteur de messages</string>
+    <string name="show_address">Afficher l\'adresse</string>
+    <string name="show_messages">Afficher les articles</string>
+    <string name="create_twitter">Créer Twitter</string>
+    <string name="show_my_tweets">Afficher mes tweets</string>
+    <string name="search_twitter">Recherche sur Twitter</string>
+    <string name="my_subscription">Mon abonnement</string>
+    <string name="create_post">Créer un message</string>
+    <string name="find_post">Rechercher un message</string>
+    <string name="my_ratings">Ma note</string>
+    <string name="my_posts">Mes messages</string>
+    <string name="connecting_wait">Connexion à un réseau TMA, veuillez patienter.</string>
+    <string name="get_balance_wait">Rétablir l\'équilibre. Veuillez patienter.</string>
+    <string name="retrieving_messages_wait">Recevez des messages. Veuillez patienter.</string>
+    <string name="fail_retrieve_messages">Impossible de recevoir des messages. Veuillez réessayer.</string>
+    <string name="tma_address">Adresse TMA</string>
+    <string name="balance">Équilibre</string>
+    <string name="wrong_password">La phrase que vous avez entrée est incorrecte. Veuillez réessayer.</string>
+    <string name="reentered_password_does_not_match">Les mots de passe nouveaux et ressaisis ne correspondent pas. Veuillez réessayer.</string>
+    <string name="Recipient_TMA_Address">Adresse du destinataire TMA</string>
+    <string name="Amount_in_coins">Montant en pièces</string>
+    <string name="Fee_in_satoshis">Frais Satoshi</string>
+    <string name="data">Les données</string>
+    <string name="Expire_after_blocks">Expire après</string>
+    <string name="Expiring_Data">Expiration des données</string>
+    <string name="wait">Veuillez patienter.</string>
+    <string name="entered_info_not_correct">Les informations saisies étaient incorrectes. Veuillez réessayer.</string>
+    <string name="subject">Objet</string>
+    <string name="body">le corps</string>
+    <string name="expire_prompt">Choisissez la date d\'expiration</string>
+    <string name="channel_id">tmacoin</string>
+    <string name="channel_name">tmacoin</string>
+    <string name="channel_description">tmacoin</string>
+    <string name="re">Re: \u0020</string>
+    <string name="locate_file">Rechercher un fichier</string>
+    <string name="old_password">Ancien mot de passe</string>
+    <string name="new_password">nouveau mot de passe</string>
+    <string name="reenter_new">Entrez à nouveau</string>
+    <string name="passphrase_was_successfully_updated">Le mot de passe a été mis à jour avec succès.</string>
+    <string name="value">Valeur</string>
+    <string name="sender">expéditeur</string>
+    <string name="recipient">Le destinataire</string>
+    <string name="fee">frais</string>
+    <string name="date">Date</string>
+    <string name="expire">expirer</string>
+    <string name="reply">Répondre</string>
+    <string name="result">résultat</string>
+
+    
+    <string name="down_load_file_button">Récupérer le fichier</string>
+    <string name="change_password">Changer le mot de passe</string>
+    <string name="get_balance">Obtenez l\'équilibre</string>
+    <string name="submit">Publier</string>
+    <string name="send_transaction">Envoyer la transaction</string>
+    <string name="send_secure_message">Envoyez un message sécurisé</string>
+    <string name="send_tweet">Envoyer un tweet</string>
+
+
+    <string-array name="expire_arrays">
+        <item>10 minutes</item>
+        <item>1 heure</item>
+        <item>24 heures</item>
+        <item>1 semaine</item>
+        <item>1 mois</item>
+        <item>1 an</item>
+    </string-array>
+</resources>

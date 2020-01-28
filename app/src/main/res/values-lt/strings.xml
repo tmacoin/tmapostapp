@@ -1,0 +1,80 @@
+<resources>
+<string name="app_name">TMA paštas</string>
+    <string name="enter_passphrase">Įveskite slaptafrazę</string>
+    <string name="confirm_passphrase">Patvirtinkite slaptafrazę</string>
+    <string name="connected">Sėkmingai prisijungėte prie TMA tinklo</string>
+    <string name="address_label">Jūsų TMA adresas</string>
+    <string name="balance_label">Jūsų balansas</string>
+    <string name="coins">\u0020monetų</string>
+    <string name="file_menu">Byla</string>
+    <string name="tools_menu">Įrankiai</string>
+    <string name="messaging_menu">Žinutės</string>
+    <string name="twitter_menu">„Twitter“</string>
+    <string name="posting_menu">Skelbimas</string>
+    <string name="stop_message_listener">Sustabdyti pranešimų klausytoją</string>
+    <string name="show_address">Rodyti adresą</string>
+    <string name="show_messages">Rodyti pranešimus</string>
+    <string name="create_twitter">Sukurkite „Twitter“</string>
+    <string name="show_my_tweets">Rodyti mano Tweets</string>
+    <string name="search_twitter">Ieškokite „Twitter“</string>
+    <string name="my_subscription">Mano prenumerata</string>
+    <string name="create_post">Sukurti pranešimą</string>
+    <string name="find_post">Rasti pranešimą</string>
+    <string name="my_ratings">Mano reitingai</string>
+    <string name="my_posts">Mano įrašai</string>
+    <string name="connecting_wait">Prisijunkite prie TMA tinklo, palaukite.</string>
+    <string name="get_balance_wait">Atkuriama pusiausvyra. Prašau palauk.</string>
+    <string name="retrieving_messages_wait">Pranešimų gavimas. Prašau palauk.</string>
+    <string name="fail_retrieve_messages">Nepavyko gauti pranešimų. Prašau, pabandykite dar kartą.</string>
+    <string name="tma_address">TMA adresas</string>
+    <string name="balance">Balansas</string>
+    <string name="wrong_password">Įvesta slaptažodžio frazė nebuvo teisinga. Prašau, pabandykite dar kartą.</string>
+    <string name="reentered_password_does_not_match">Nauja ir pakartotinai įvesta slaptafrazė nesutampa. Prašau, pabandykite dar kartą.</string>
+    <string name="Recipient_TMA_Address">Gavėjo TMA adresas</string>
+    <string name="Amount_in_coins">Suma monetose</string>
+    <string name="Fee_in_satoshis">Mokestis satoshis</string>
+    <string name="data">Duomenys</string>
+    <string name="Expire_after_blocks">Galioja po</string>
+    <string name="Expiring_Data">Galiojantys duomenys</string>
+    <string name="wait">Prašau palauk.</string>
+    <string name="entered_info_not_correct">Įvesta informacija nebuvo teisinga. Prašau, pabandykite dar kartą.</string>
+    <string name="subject">Tema</string>
+    <string name="body">kūnas</string>
+    <string name="expire_prompt">Pasirinkite galiojimo laiką</string>
+    <string name="channel_id">tmacoin</string>
+    <string name="channel_name">tmacoin</string>
+    <string name="channel_description">tmacoin</string>
+    <string name="re">Re:\u0020</string>
+    <string name="locate_file">Raskite failą</string>
+    <string name="old_password">Senas slaptažodis</string>
+    <string name="new_password">Naujas Slaptažodis</string>
+    <string name="reenter_new">„Reenter New“</string>
+    <string name="passphrase_was_successfully_updated">Slaptafrazė sėkmingai atnaujinta</string>
+    <string name="value">Vertė</string>
+    <string name="sender">siuntėjas</string>
+    <string name="recipient">Gavėjas</string>
+    <string name="fee">Rinkliava</string>
+    <string name="date">Data</string>
+    <string name="expire">Galiojimas</string>
+    <string name="reply">Atsakyk</string>
+    <string name="result">rezultatas</string>
+
+    
+    <string name="down_load_file_button">Gauti failą</string>
+    <string name="change_password">Pakeisti slaptažodį</string>
+    <string name="get_balance">Gaukite pusiausvyrą</string>
+    <string name="submit">Pateikti</string>
+    <string name="send_transaction">Siųsti operaciją</string>
+    <string name="send_secure_message">Siųsti saugią žinutę</string>
+    <string name="send_tweet">Siųsti „Tweet“</string>
+
+
+    <string-array name="expire_arrays">
+        <item>10 minučių</item>
+        <item>1 valandą</item>
+        <item>24 valandos</item>
+        <item>1 savaitė</item>
+        <item>1 mėnuo</item>
+        <item>1 metai</item>
+    </string-array>
+</resources>

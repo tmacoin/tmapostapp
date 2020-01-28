@@ -1,0 +1,81 @@
+<resources>
+          
+	<string name="app_name">TMA Post</string>
+    <string name="enter_passphrase">Введите кодовую фразу</string>
+    <string name="confirm_passphrase">Подтвердите кодовую фразу</string>
+    <string name="connected">Вы успешно подключились к сети TMA</string>
+    <string name="address_label">Ваш адрес TMA</string>
+    <string name="balance_label">Ваш баланс</string>
+    <string name="coins">\u0020coins</string>
+    <string name="file_menu">Файл</string>
+    <string name="tools_menu">Инструменты</string>
+    <string name="messaging_menu">Обмен сообщениями</string>
+    <string name="twitter_menu">Твиттер</string>
+    <string name="posting_menu">Объявления</string>
+    <string name="stop_message_listener">Остановить прослушиватель сообщений</string>
+    <string name="show_address">Показать адрес</string>
+    <string name="show_messages">Показать сообщения</string>
+    <string name="create_twitter">Создать твиттер</string>
+    <string name="show_my_tweets">Показать мои твиты</string>
+    <string name="search_twitter">Поиск в Твиттере</string>
+    <string name="my_subscription">Моя подписка</string>
+    <string name="create_post">Создать сообщение</string>
+    <string name="find_post">Найти сообщение</string>
+    <string name="my_ratings">Мой рейтинг</string>
+    <string name="my_posts">Мои сообщения</string>
+    <string name="connecting_wait">Подключение к сети TMA, пожалуйста, подождите.</string>
+    <string name="get_balance_wait">Восстановление баланса. Пожалуйста, подождите.</string>
+    <string name="retrieving_messages_wait">Получение сообщений. Пожалуйста, подождите.</string>
+    <string name="fail_retrieve_messages">Не удалось получить сообщения. Пожалуйста, попробуйте еще раз.</string>
+    <string name="tma_address">Адрес TMA</string>
+    <string name="balance">Баланс</string>
+    <string name="wrong_password">Введенная фраза неверна. Пожалуйста, попробуйте еще раз.</string>
+    <string name="reentered_password_does_not_match">Новые и повторно введенные парольные фразы не совпадают. Пожалуйста, попробуйте еще раз.</string>
+    <string name="Recipient_TMA_Address">Адрес получателя TMA</string>
+    <string name="Amount_in_coins">Сумма в монетах</string>
+    <string name="Fee_in_satoshis">Плата в сатоши</string>
+    <string name="data">Данные</string>
+    <string name="Expire_after_blocks">Истекает после блоков</string>
+    <string name="Expiring_Data">Истекающие данные</string>
+    <string name="wait">Пожалуйста, подождите.</string>
+    <string name="entered_info_not_correct">Введенная информация была неверной. Пожалуйста, попробуйте еще раз.</string>
+    <string name="subject">Предмет</string>
+    <string name="body">Tело</string>
+    <string name="expire_prompt">Выберите срок действия</string>
+    <string name="channel_id">tmacoin</string>
+    <string name="channel_name">tmacoin</string>
+    <string name="channel_description">tmacoin</string>
+    <string name="re">Re: \u0020</string>
+    <string name="locate_file">Найти файл</string>
+    <string name="old_password">Старый пароль</string>
+    <string name="new_password">Новый пароль</string>
+    <string name="reenter_new">Повторите новый пароль</string>
+    <string name="passphrase_was_successfully_updated">Пароль был успешно обновлен</string>
+    <string name="value">Значение</string>
+    <string name="sender">Отправитель</string>
+    <string name="recipient">Получатель</string>
+    <string name="fee">Плата</string>
+    <string name="date">Дата</string>
+    <string name="expire">истекать</string>
+    <string name="reply">Ответить</string>
+    <string name="result">результат</string>
+
+    
+    <string name="down_load_file_button">Получить файл</string>
+    <string name="change_password">Изменить пароль</string>
+    <string name="get_balance">Получить баланс</string>
+    <string name="submit">Войти</string>
+    <string name="send_transaction">Отправить транзакцию</string>
+    <string name="send_secure_message">Отправить конфиденциальное сообщение</string>
+    <string name="send_tweet">Отправить твит</string>
+
+
+    <string-array name="expire_arrays">
+        <item>10 минут</item>
+        <item>1 час</item>
+        <item>24 часа</item>
+        <item>1 неделя</item>
+        <item>1 месяц</item>
+        <item>1 год</item>
+    </string-array>
+</resources>

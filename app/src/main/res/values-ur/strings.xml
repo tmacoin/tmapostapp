@@ -1,0 +1,80 @@
+<resources>
+<string name="app_name">ٹی ایم اے پوسٹ</string>
+    <string name="enter_passphrase">پاسفریز درج کریں</string>
+    <string name="confirm_passphrase">پاسفریز کی تصدیق کریں</string>
+    <string name="connected">آپ نے کامیابی کے ساتھ ٹی ایم اے نیٹ ورک سے رابطہ قائم کیا</string>
+    <string name="address_label">آپ کا ٹی ایم اے ایڈریس</string>
+    <string name="balance_label">آپ کا توازن</string>
+    <string name="coins">00 u0020 سکے</string>
+    <string name="file_menu">فائل</string>
+    <string name="tools_menu">اوزار</string>
+    <string name="messaging_menu">پیغام رسانی</string>
+    <string name="twitter_menu">ٹویٹر</string>
+    <string name="posting_menu">پوسٹنگ</string>
+    <string name="stop_message_listener">پیغام سننے والوں کو روکیں</string>
+    <string name="show_address">پتہ دکھائیں</string>
+    <string name="show_messages">پیغامات دکھائیں</string>
+    <string name="create_twitter">ٹویٹر بنائیں</string>
+    <string name="show_my_tweets">میری ٹویٹس دکھائیں</string>
+    <string name="search_twitter">ٹویٹر تلاش کریں</string>
+    <string name="my_subscription">میری رکنیت</string>
+    <string name="create_post">پوسٹ بنائیں</string>
+    <string name="find_post">پوسٹ تلاش کریں</string>
+    <string name="my_ratings">میری درجہ بندی</string>
+    <string name="my_posts">میری پوسٹس</string>
+    <string name="connecting_wait">ٹی ایم اے نیٹ ورک سے منسلک ، براہ کرم انتظار کریں۔</string>
+    <string name="get_balance_wait">توازن حاصل کرنا۔ برائے مہربانی انتظار کریں.</string>
+    <string name="retrieving_messages_wait">پیغامات کی بازیافت۔ برائے مہربانی انتظار کریں.</string>
+    <string name="fail_retrieve_messages">پیغامات کی بازیافت کرنے میں ناکام۔ دوبارہ کوشش کریں.</string>
+    <string name="tma_address">ٹی ایم اے ایڈریس</string>
+    <string name="balance">بقیہ</string>
+    <string name="wrong_password">اندراج شدہ پاس فریز درست نہیں تھا۔ دوبارہ کوشش کریں.</string>
+    <string name="reentered_password_does_not_match">نیا اور دوبارہ تیار کردہ پاس فریز مماثل نہیں ہیں۔ دوبارہ کوشش کریں.</string>
+    <string name="Recipient_TMA_Address">وصول کنندہ ٹی ایم اے ایڈریس</string>
+    <string name="Amount_in_coins">سککوں میں رقم</string>
+    <string name="Fee_in_satoshis">ستوشیس میں فیس</string>
+    <string name="data">ڈیٹا</string>
+    <string name="Expire_after_blocks">بعد ختم ہوجائیں</string>
+    <string name="Expiring_Data">میعاد ختم ہونے والا ڈیٹا</string>
+    <string name="wait">برائے مہربانی انتظار کریں.</string>
+    <string name="entered_info_not_correct">داخل کردہ معلومات درست نہیں تھی۔ دوبارہ کوشش کریں.</string>
+    <string name="subject">مضمون</string>
+    <string name="body">جسم</string>
+    <string name="expire_prompt">میعاد ختم ہونے کی مدت منتخب کریں</string>
+    <string name="channel_id">tmacoin</string>
+    <string name="channel_name">tmacoin</string>
+    <string name="channel_description">tmacoin</string>
+    <string name="re">جواب: \u0020</string>
+    <string name="locate_file">فائل کا پتہ لگائیں</string>
+    <string name="old_password">پرانا پاسورڈ</string>
+    <string name="new_password">نیا پاس ورڈ</string>
+    <string name="reenter_new">نیا داخل کریں</string>
+    <string name="passphrase_was_successfully_updated">پاسفریز کامیابی کے ساتھ اپ ڈیٹ ہوا</string>
+    <string name="value">قدر</string>
+    <string name="sender">مرسل</string>
+    <string name="recipient">وصول کنندہ</string>
+    <string name="fee">فیس</string>
+    <string name="date">تاریخ</string>
+    <string name="expire">میعاد ختم</string>
+    <string name="reply">جواب دیں</string>
+    <string name="result">نتیجہ</string>
+
+    
+    <string name="down_load_file_button">فائل حاصل کریں</string>
+    <string name="change_password">پاس ورڈ تبدیل کریں</string>
+    <string name="get_balance">توازن حاصل کریں</string>
+    <string name="submit">جمع کرائیں</string>
+    <string name="send_transaction">ٹرانزیکشن بھیجیں</string>
+    <string name="send_secure_message">محفوظ پیغام ارسال کریں</string>
+    <string name="send_tweet">ٹویٹ بھیجیں</string>
+
+
+    <string-array name="expire_arrays">
+        <item>10 منٹ</item>
+        <item>1 گھنٹے</item>
+        <item>24 گھنٹے</item>
+        <item>1 ہفتہ</item>
+        <item>1 مہینہ</item>
+        <item>1 سال</item>
+    </string-array>
+</resources>
