@@ -5,7 +5,7 @@
     <string name="connected">Te has conectado correctamente a la red TMA</string>
     <string name="address_label">Tu dirección de TMA</string>
     <string name="balance_label">Tu balance</string>
-    <string name="coins">\u0020coins</string>
+    <string name="coins">\u0020monetas</string>
     <string name="file_menu">Archivo</string>
     <string name="tools_menu">Herramientas</string>
     <string name="messaging_menu">Mensajería</string>
