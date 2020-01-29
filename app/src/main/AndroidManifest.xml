@@ -56,6 +56,10 @@
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
 
+        <activity
+            android:name=".GetFilesConfig"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
+
         <service
             android:name="org.tmacoin.post.android.messaging.NewMessageNotifier"
             android:enabled="true"
