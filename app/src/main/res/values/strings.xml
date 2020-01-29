@@ -58,9 +58,15 @@
     <string name="expire">Expire</string>
     <string name="reply">Reply</string>
     <string name="result">result</string>
+    <string name="import_file" translatable="false">Import File</string>
+    <string name="export_file" translatable="false">Export File</string>
+    <string name="select_file_to_import" translatable="false">Select File to Import?</string>
+    <string name="select_file" translatable="false">Select File</string>
+    <string name="file_copied_to" translatable="false">File copied to</string>
+    <string name="parent_directory_created" translatable="false">Parent directory created</string>
 
     <!-- BUTTONS -->
-    <string name="down_load_file_button">Get File</string>
+    <string name="down_load_file_button">Locate File</string>
     <string name="change_password">Change Password</string>
     <string name="get_balance">Get Balance</string>
     <string name="submit">Submit</string>

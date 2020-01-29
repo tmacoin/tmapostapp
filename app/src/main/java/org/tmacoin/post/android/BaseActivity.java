@@ -1,6 +1,7 @@
 package org.tmacoin.post.android;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.Menu;
@@ -42,6 +43,9 @@ public class BaseActivity extends AppCompatActivity {
                 return true;
             case R.id.get_balance:
                 menuHandler.handleGetBalance(this);
+                return true;
+            case R.id.get_import_file:
+                menuHandler.handleGetFilesConfig(this);
                 return true;
             case R.id.send_transaction:
                 menuHandler.handleSendTransaction(this);
@@ -107,4 +111,6 @@ public class BaseActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }

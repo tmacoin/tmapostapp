@@ -25,6 +25,11 @@ public class MenuHandler {
         activity.startActivity(intent);
     }
 
+    public void handleGetFilesConfig(Activity activity) {
+        Intent intent = new Intent(activity, GetFilesConfig.class);
+        activity.startActivity(intent);
+    }
+
     public void handleGetBalance(Activity activity) {
         Intent intent = new Intent(activity, GetBalanceActivity.class);
         activity.startActivity(intent);
