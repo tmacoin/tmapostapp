@@ -1,10 +1,13 @@
 package org.tmacoin.post.android;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.OpenableColumns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.tma.util.Constants;
@@ -24,18 +27,6 @@ public class GetFilesConfig extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_import_file_config);
-        Button locateButton = findViewById(R.id.get_peers_button);
-        //showSelectKeyFileDialog();
-        locateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectKeyFile();
-            }
-        });
-    }
-
-    private void selectKeyFile() {
         Intent intent = new Intent().setType("*/*").setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, getString(R.string.select_file)), REQUEST_CODE);
     }
@@ -43,23 +34,18 @@ public class GetFilesConfig extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        setContentView(R.layout.activity_file_processed);
 
         if(requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
             Uri selectedFile = data.getData(); //The uri with the location of the file
-            File keyFile = new File(Constants.FILES_DIRECTORY + Constants.KEYS);
-            File parentDirectory = keyFile.getParentFile();
-            boolean parentDirectoryCreated = false;
-            if(parentDirectory != null) {
-                parentDirectoryCreated = parentDirectory.mkdirs();
-            }
-            if(parentDirectoryCreated) {
-                logger.debug(getString(R.string.parent_directory_created) + ": {}", parentDirectory.getAbsolutePath());
-            }
 
-            copyFile(selectedFile, keyFile.getAbsolutePath());
+            File file = new File(Constants.FILES_DIRECTORY + "config/" + getFileName(selectedFile));
+
+            copyFile(selectedFile, file.getAbsolutePath());
+            return;
         }
-        setContentView(R.layout.activity_file_processed);
-        Toast.makeText(getApplicationContext(), getString(R.string.file_copied_to) + " " + getFilesDir().getAbsolutePath(), Toast.LENGTH_LONG).show();
+        TextView textViewFile = findViewById(R.id.textViewFile);
+        textViewFile.setText("Copying file was canceled");
     }
 
     private void copyFile(Uri selectedFile, String destination) {
@@ -91,5 +77,27 @@ public class GetFilesConfig extends BaseActivity {
                 System.out.println(e.getMessage());
             }
         }
+    }
+
+    public String getFileName(Uri uri) {
+        String result = null;
+        if (uri.getScheme().equals("content")) {
+            Cursor cursor = getContentResolver().query(uri, null, null, null, null);
+            try {
+                if (cursor != null && cursor.moveToFirst()) {
+                    result = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+                }
+            } finally {
+                cursor.close();
+            }
+        }
+        if (result == null) {
+            result = uri.getPath();
+            int cut = result.lastIndexOf('/');
+            if (cut != -1) {
+                result = result.substring(cut + 1);
+            }
+        }
+        return result;
     }
 }
