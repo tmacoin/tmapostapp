@@ -64,6 +64,7 @@
     <string name="select_file" translatable="false">Select File</string>
     <string name="file_copied_to" translatable="false">File copied to</string>
     <string name="parent_directory_created" translatable="false">Parent directory created</string>
+    <string name="file_successfully_imported" translatable="false">File successfully imported</string>
 
     <!-- BUTTONS -->
     <string name="down_load_file_button">Locate File</string>

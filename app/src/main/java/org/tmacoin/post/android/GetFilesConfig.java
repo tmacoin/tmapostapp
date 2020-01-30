@@ -1,12 +1,11 @@
 package org.tmacoin.post.android;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AlertDialog;
 
 import org.tma.util.Constants;
 import org.tma.util.TmaLogger;
@@ -25,25 +24,15 @@ public class GetFilesConfig extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_get_file_config);
-
-        showSelectKeyFileDialog();
-    }
-
-    private void showSelectKeyFileDialog() {
-        new AlertDialog.Builder(this)
-                .setTitle(getString(R.string.import_file))
-                .setMessage(getString(R.string.select_file_to_import))
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        selectKeyFile();
-                    }})
-                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        dialog.cancel();
-
-                    }}).show();
+        setContentView(R.layout.activity_import_file_config);
+        Button locateButton = findViewById(R.id.get_peers_button);
+        //showSelectKeyFileDialog();
+        locateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectKeyFile();
+            }
+        });
     }
 
     private void selectKeyFile() {
@@ -69,7 +58,7 @@ public class GetFilesConfig extends BaseActivity {
 
             copyFile(selectedFile, keyFile.getAbsolutePath());
         }
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_file_processed);
         Toast.makeText(getApplicationContext(), getString(R.string.file_copied_to) + " " + getFilesDir().getAbsolutePath(), Toast.LENGTH_LONG).show();
     }
 
@@ -101,7 +90,6 @@ public class GetFilesConfig extends BaseActivity {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-
         }
     }
 }
