@@ -48,6 +48,11 @@ import java.util.List;
 public class NewMessageNotifier extends Service {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
+    private static NewMessageNotifier instance;
+
+    public static NewMessageNotifier getInstance() {
+        return instance;
+    }
 
     static {
         PasswordUtil.setupBouncyCastle();
@@ -60,6 +65,7 @@ public class NewMessageNotifier extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        instance = this;
         logger.debug("onStartCommand intent.getAction()={}", intent.getAction());
         if (TmaAndroidUtil.STOP.equals(intent.getAction())) {
             action = TmaAndroidUtil.STOP;
@@ -156,7 +162,7 @@ public class NewMessageNotifier extends Service {
     }
 
     @SuppressWarnings("unchecked")
-    private void process() {
+    public void process() {
         Network network = Network.getInstance();
         int attempt = 0;
         List<SecureMessage> list = null;
@@ -199,7 +205,7 @@ public class NewMessageNotifier extends Service {
     }
 
     private void addNotification() {
-
+        logger.debug("addNotification");
         createNotificationChannel();
         String channelId = context.getString(R.string.channel_id);
         NotificationCompat.Builder builder =

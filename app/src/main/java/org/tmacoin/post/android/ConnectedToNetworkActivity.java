@@ -26,7 +26,9 @@ import org.tma.blockchain.Wallet;
 import org.tma.peer.BootstrapRequest;
 import org.tma.peer.Network;
 import org.tma.peer.thin.GetBalanceRequest;
+import org.tma.peer.thin.NewMessageEvent;
 import org.tma.peer.thin.ResponseHolder;
+import org.tma.util.Listeners;
 import org.tma.util.ThreadExecutor;
 import org.tma.util.TmaLogger;
 import org.tma.util.TmaRunnable;
@@ -36,6 +38,7 @@ import org.tmacoin.post.android.messaging.SendMessageActivity;
 public class ConnectedToNetworkActivity extends BaseActivity {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
+    private static final Listeners listeners = Listeners.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +64,7 @@ public class ConnectedToNetworkActivity extends BaseActivity {
                 complete(balance);
             }
         }.run();
-
+        listeners.addEventListener(NewMessageEvent.class, new NewMessageEventListener(getApplicationContext()));
     }
 
 

@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import org.tma.peer.Network;
 import org.tma.util.Constants;
+import org.tma.util.Listeners;
 import org.tma.util.TmaLogger;
 
 import java.io.File;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
     private static final int REQUEST_CODE = 1;
+    private static final Listeners listeners = Listeners.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
