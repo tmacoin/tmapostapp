@@ -1,4 +1,4 @@
-package org.tmacoin.post.android;
+package org.tmacoin.post.android.messaging;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -17,10 +17,12 @@ import org.tma.peer.thin.SecureMessage;
 import org.tma.util.Event;
 import org.tma.util.EventListener;
 import org.tma.util.TmaLogger;
+import org.tmacoin.post.android.R;
+import org.tmacoin.post.android.Wallets;
 import org.tmacoin.post.android.messaging.NewMessageNotifier;
 import org.tmacoin.post.android.messaging.ShowMessagesActivity;
 
-class NewMessageEventListener implements EventListener {
+public class NewMessageEventListener implements EventListener {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
 
@@ -56,7 +58,8 @@ class NewMessageEventListener implements EventListener {
                 ;
         ;
 
-        Intent notificationIntent = new Intent(context, ShowMessagesActivity.class);
+        Intent notificationIntent = new Intent(context, ShowMessageActivity.class);
+        notificationIntent.putExtra("secureMessage", secureMessage);
         PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(contentIntent);

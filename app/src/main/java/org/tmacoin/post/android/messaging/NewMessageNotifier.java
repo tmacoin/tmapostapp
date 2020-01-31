@@ -50,11 +50,6 @@ import java.util.List;
 public class NewMessageNotifier extends Service {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
-    private static NewMessageNotifier instance;
-
-    public static NewMessageNotifier getInstance() {
-        return instance;
-    }
 
     static {
         PasswordUtil.setupBouncyCastle();
@@ -67,7 +62,6 @@ public class NewMessageNotifier extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        instance = this;
         logger.debug("onStartCommand intent.getAction()={}", intent.getAction());
         if (TmaAndroidUtil.STOP.equals(intent.getAction())) {
             action = TmaAndroidUtil.STOP;
@@ -170,35 +164,6 @@ public class NewMessageNotifier extends Service {
         for(Peer peer: network.getMyPeers()) {
             peer.send(network, new EmptyRequest());
         }
-    }
-
-    private void addNotification() {
-        logger.debug("addNotification");
-        createNotificationChannel();
-        String channelId = context.getString(R.string.channel_id);
-        NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(context, channelId)
-                        .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher))
-                        .setSmallIcon(R.drawable.ic_launcher_foreground)
-                        .setContentTitle("Secure Message Received")
-                        .setContentText(lastMessage.getSubject(wallet.getPrivateKey()))
-                        .setAutoCancel(true)
-                        .setVibrate(new long[] { 1000, 1000})
-                        .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
-                        .setPriority(NotificationCompat.PRIORITY_MAX)
-                        .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
-                ;
-        ;
-
-        Intent notificationIntent = new Intent(context, ShowMessagesActivity.class);
-        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT);
-        builder.setContentIntent(contentIntent);
-
-        // Add as notification
-        NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        manager.notify(0, builder.build());
-
     }
 
     private void createNotificationChannel() {

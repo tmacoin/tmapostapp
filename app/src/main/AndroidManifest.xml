@@ -15,27 +15,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".messaging.ShowMessagesActivity"
+        <activity
+            android:name=".messaging.ShowMessageActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:parentActivityName=".ConnectedToNetworkActivity">
-        </activity>
+            android:parentActivityName=".messaging.ShowMessagesActivity"></activity>
+        <activity
+            android:name=".messaging.ShowMessagesActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:parentActivityName=".ConnectedToNetworkActivity"></activity>
         <activity
             android:name=".SendTransactionActivity"
-            android:parentActivityName=".ConnectedToNetworkActivity"
-             />
+            android:parentActivityName=".ConnectedToNetworkActivity" />
         <activity
             android:name=".messaging.SendMessageActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:parentActivityName=".ConnectedToNetworkActivity"
-             />
+            android:parentActivityName=".ConnectedToNetworkActivity" />
         <activity
             android:name=".ChangePasswordActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:parentActivityName=".ConnectedToNetworkActivity"/>
+            android:parentActivityName=".ConnectedToNetworkActivity" />
         <activity
             android:name=".GetBalanceActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:parentActivityName=".ConnectedToNetworkActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -49,24 +52,22 @@
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
-
         <activity
             android:name=".GetFilesConfig"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
 
         <service
-            android:name="org.tmacoin.post.android.messaging.NewMessageNotifier"
+            android:name=".messaging.NewMessageNotifier"
             android:enabled="true"
             android:exported="false"
-            android:stopWithTask="false" >
-        </service>
-
+            android:stopWithTask="false"></service>
     </application>
 
 </manifest>
