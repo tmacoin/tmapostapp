@@ -47,6 +47,11 @@ public class BaseActivity extends AppCompatActivity {
             case R.id.get_import_file:
                 menuHandler.handleGetFilesConfig(this);
                 return true;
+
+            case R.id.view_log:
+                menuHandler.handleViewLog(this);
+                return true;
+
             case R.id.send_transaction:
                 menuHandler.handleSendTransaction(this);
                 return true;

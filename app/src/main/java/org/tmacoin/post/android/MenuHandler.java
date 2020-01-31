@@ -91,4 +91,9 @@ public class MenuHandler {
     public void handleMyPosts(Activity activity) {
         Toast.makeText(activity, activity.getResources().getString(R.string.my_posts), Toast.LENGTH_SHORT).show();
     }
+
+    public void handleViewLog(Activity activity) {
+        Intent intent = new Intent(activity, LogViewerActivity.class);
+        activity.startActivity(intent);
+    }
 }

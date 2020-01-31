@@ -34,13 +34,11 @@ public class NewMessageEventListener implements EventListener {
 
     @Override
     public void onEvent(Event event) {
-        logger.debug("New message notification");
         NewMessageEvent newMessageEvent = (NewMessageEvent)event;
         addNotification(newMessageEvent.getSecureMessage());
     }
 
     private void addNotification(SecureMessage secureMessage) {
-        logger.debug("addNotification");
         createNotificationChannel();
         String channelId = context.getString(R.string.channel_id);
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);

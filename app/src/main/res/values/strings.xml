@@ -66,6 +66,8 @@
     <string name="parent_directory_created" translatable="false">Parent directory created</string>
     <string name="file_successfully_imported" translatable="false">File successfully imported</string>
 
+    <string name="view_log" translatable="false">View Log</string>
+
     <!-- BUTTONS -->
     <string name="down_load_file_button">Locate File</string>
     <string name="change_password">Change Password</string>
