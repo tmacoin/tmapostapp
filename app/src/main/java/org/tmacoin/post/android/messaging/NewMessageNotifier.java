@@ -25,7 +25,9 @@ import androidx.core.app.NotificationCompat;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.tma.blockchain.Wallet;
 import org.tma.peer.BootstrapRequest;
+import org.tma.peer.EmptyRequest;
 import org.tma.peer.Network;
+import org.tma.peer.Peer;
 import org.tma.peer.thin.GetMessagesRequest;
 import org.tma.peer.thin.ResponseHolder;
 import org.tma.peer.thin.SecureMessage;
@@ -143,8 +145,8 @@ public class NewMessageNotifier extends Service {
 
                     while (true && !TmaAndroidUtil.STOP.equals(action)) {
                         try {
-                            //process();
-                            ThreadExecutor.sleep(Constants.ONE_MINUTE);
+                            process();
+                            ThreadExecutor.sleep(Constants.TIMEOUT);
                         } catch (Exception e) {
                             logger.error(e.getMessage(), e);
                         }
@@ -164,44 +166,10 @@ public class NewMessageNotifier extends Service {
     @SuppressWarnings("unchecked")
     public void process() {
         Network network = Network.getInstance();
-        int attempt = 0;
-        List<SecureMessage> list = null;
-        while(list == null && attempt++ < 5) {
-            TmaAndroidUtil.checkNetwork();
-            PublicKey publicKey = wallet.getPublicKey();
-            GetMessagesRequest request = new GetMessagesRequest(network, publicKey);
-            request.start();
-            list = (List<SecureMessage>) ResponseHolder.getInstance().getObject(request.getCorrelationId());
+        TmaAndroidUtil.checkNetwork();
+        for(Peer peer: network.getMyPeers()) {
+            peer.send(network, new EmptyRequest());
         }
-
-        if(list == null || list.isEmpty()) {
-            return;
-        }
-
-        Iterator<SecureMessage> iterator = list.iterator();
-
-        while(iterator.hasNext()) {
-            SecureMessage secureMessage = iterator.next();
-            if (!secureMessage.getRecipient().equals(wallet.getTmaAddress())) {
-                iterator.remove();
-            }
-        }
-
-        if(list.isEmpty()) {
-            return;
-        }
-
-        SecureMessage message = list.get(0);
-        if(lastMessage == null) {
-            lastMessage = message;
-            return;
-        }
-
-        if(!lastMessage.getText().equals(message.getText())) {
-            lastMessage = message;
-            addNotification();
-        }
-
     }
 
     private void addNotification() {
@@ -254,16 +222,6 @@ public class NewMessageNotifier extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         return null;
-    }
-
-    private boolean isMyServiceRunning(Class<?> serviceClass) {
-        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
-            if (serviceClass.getName().equals(service.service.getClassName())) {
-                return true;
-            }
-        }
-        return false;
     }
 
     private void startForeground() {
