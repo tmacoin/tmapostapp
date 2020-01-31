@@ -143,7 +143,7 @@ public class NewMessageNotifier extends Service {
 
                     while (true && !TmaAndroidUtil.STOP.equals(action)) {
                         try {
-                            process();
+                            //process();
                             ThreadExecutor.sleep(Constants.ONE_MINUTE);
                         } catch (Exception e) {
                             logger.error(e.getMessage(), e);
