@@ -66,6 +66,9 @@
         <activity
             android:name=".GetFilesConfig"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
+        <activity
+            android:name=".ExportFilesConfig"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
 
         <service
             android:name=".messaging.NewMessageNotifier"

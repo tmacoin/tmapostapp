@@ -15,6 +15,9 @@
                 android:id="@+id/get_import_file"
                 android:title="@string/import_file" />
             <item
+                android:id="@+id/export_file"
+                android:title="@string/export_file" />
+            <item
                 android:id="@+id/view_log"
                 android:title="@string/view_log" />
         </menu>

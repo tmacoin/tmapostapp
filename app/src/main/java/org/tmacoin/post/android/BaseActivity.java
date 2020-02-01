@@ -44,8 +44,13 @@ public class BaseActivity extends AppCompatActivity {
             case R.id.get_balance:
                 menuHandler.handleGetBalance(this);
                 return true;
+
             case R.id.get_import_file:
                 menuHandler.handleGetFilesConfig(this);
+                return true;
+
+            case R.id.export_file:
+                menuHandler.handleExportFilesConfig(this);
                 return true;
 
             case R.id.view_log:

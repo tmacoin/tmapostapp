@@ -30,6 +30,11 @@ public class MenuHandler {
         activity.startActivity(intent);
     }
 
+    public void handleExportFilesConfig(Activity activity) {
+        Intent intent = new Intent(activity, ExportFilesConfig.class);
+        activity.startActivity(intent);
+    }
+
     public void handleGetBalance(Activity activity) {
         Intent intent = new Intent(activity, GetBalanceActivity.class);
         activity.startActivity(intent);
