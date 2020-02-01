@@ -2,12 +2,10 @@ package org.tmacoin.post.android;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 
-import org.tma.blockchain.Wallet;
 import org.tmacoin.post.android.messaging.NewMessageNotifier;
 import org.tmacoin.post.android.messaging.SendMessageActivity;
 import org.tmacoin.post.android.messaging.ShowMessagesActivity;
@@ -27,6 +25,11 @@ public class MenuHandler {
 
     public void handleGetFilesConfig(Activity activity) {
         Intent intent = new Intent(activity, GetFilesConfig.class);
+        activity.startActivity(intent);
+    }
+
+    public void handleExportFilesConfig(Activity activity) {
+        Intent intent = new Intent(activity, ExportFilesConfig.class);
         activity.startActivity(intent);
     }
 
