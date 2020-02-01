@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import org.tma.blockchain.Wallet;
+import org.tma.peer.Network;
 import org.tma.peer.thin.SecureMessage;
 import org.tma.util.Encryptor;
 import org.tma.util.StringUtil;
@@ -31,6 +32,7 @@ public class ShowMessageActivity extends BaseActivity {
         SecureMessage secureMessage = (SecureMessage) getIntent().getSerializableExtra("secureMessage");
         setContentView(R.layout.activity_show_message);
         showMessage(secureMessage);
+        updateStatus("Network status: " + Network.getInstance().getPeerCount().toString());
     }
 
     private void showMessage(final SecureMessage secureMessage) {
