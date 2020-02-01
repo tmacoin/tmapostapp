@@ -1,7 +1,6 @@
 package org.tmacoin.post.android;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.Menu;
