@@ -35,9 +35,6 @@ public class TmaAndroidUtil {
     }
 
     public static void checkNetwork() {
-
-        final Network network = Network.getInstance();
-        new BootstrapRequest(network).start();
-
+        BootstrapRequest.getInstance().start();
     }
 }
