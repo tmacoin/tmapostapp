@@ -29,11 +29,13 @@
             android:parentActivityName=".ConnectedToNetworkActivity" />
         <activity
             android:name=".SendTransactionActivity"
-            android:parentActivityName=".ConnectedToNetworkActivity" />
+            android:parentActivityName=".ConnectedToNetworkActivity"
+             />
         <activity
             android:name=".messaging.SendMessageActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:parentActivityName=".ConnectedToNetworkActivity" />
+            android:parentActivityName=".ConnectedToNetworkActivity"
+            android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".ChangePasswordActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
