@@ -3,6 +3,8 @@ package org.tmacoin.post.android.messaging;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
@@ -59,9 +61,12 @@ public class SendMessageActivity extends BaseActivity {
         setContentView(R.layout.activity_send_message);
         addressStore = new AddressStore(getApplicationContext());
         SecureMessage secureMessage = (SecureMessage)getIntent().getSerializableExtra("secureMessage");
-        if(secureMessage != null) {
-            EditText recipientTmaAddressEditText = findViewById(R.id.recipientTmaAddressEditText);
+        AutoCompleteTextView recipientTmaAddressEditText = findViewById(R.id.recipientTmaAddressEditText);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, addressStore.getAllNames());
+        recipientTmaAddressEditText.setAdapter(adapter);
+        recipientTmaAddressEditText.setThreshold(1);
 
+        if(secureMessage != null) {
             String recipientName = addressStore.findNameByTmaAddress(StringUtil.getStringFromKey(secureMessage.getSender()));
             if(recipientName == null) {
                 recipientName = StringUtil.getStringFromKey(secureMessage.getSender());

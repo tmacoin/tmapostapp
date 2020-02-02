@@ -1,6 +1,7 @@
 package org.tmacoin.post.android.messaging;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -61,6 +62,8 @@ public class ShowMessageActivity extends BaseActivity {
                 senderClicked(secureMessage);
             }
         });
+
+        sender.setPaintFlags(sender.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
 
         TextView recipient = findViewById(R.id.recipient);

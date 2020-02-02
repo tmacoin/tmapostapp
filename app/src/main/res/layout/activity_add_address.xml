@@ -13,6 +13,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/tma_address"
+        android:textSize="12sp"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,6 +26,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text=""
+        android:textSize="12sp"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView31"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,6 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
         android:text="@string/name"
+        android:textSize="12sp"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="@+id/textView31"
         app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
@@ -50,7 +56,7 @@
 
         android:padding="3dp"
         android:text=""
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView34"
         app:layout_constraintTop_toBottomOf="@+id/tma_address"

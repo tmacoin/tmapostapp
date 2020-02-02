@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -155,13 +156,14 @@ public class ShowMessagesActivity extends BaseActivity {
             sender.setText(name);
         }
 
-
         sender.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 senderClicked(secureMessage);
             }
         });
+
+        sender.setPaintFlags(sender.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         TextView recipient = findViewById(R.id.recipient);
 

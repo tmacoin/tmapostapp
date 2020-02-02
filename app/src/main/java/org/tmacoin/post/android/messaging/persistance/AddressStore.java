@@ -8,6 +8,9 @@ import android.provider.BaseColumns;
 
 import org.tma.util.TmaLogger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AddressStore {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
@@ -102,6 +105,37 @@ public class AddressStore {
         cursor.close();
         logger.debug("name={}", name);
         return name;
+    }
+
+    public String[] getAllNames() {
+        List<String> names = new ArrayList<>();
+        // Define a projection that specifies which columns from the database
+        // you will actually use after this query.
+        String[] projection = {
+                BaseColumns._ID,
+                DatabaseContract.AddressEntry.COLUMN_NAME_TMA_ADDRESS,
+                DatabaseContract.AddressEntry.COLUMN_NAME_NAME
+        };
+
+        // How you want the results sorted in the resulting Cursor
+        String sortOrder = DatabaseContract.AddressEntry.COLUMN_NAME_NAME + " DESC";
+
+        Cursor cursor = db.query(
+                DatabaseContract.AddressEntry.TABLE_NAME,   // The table to query
+                projection,             // The array of columns to return (pass null to get all)
+                null,              // The columns for the WHERE clause
+                null,          // The values for the WHERE clause
+                null,                   // don't group the rows
+                null,                   // don't filter by row groups
+                sortOrder               // The sort order
+        );
+        while(cursor.moveToNext()) {
+            String name = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.AddressEntry.COLUMN_NAME_NAME));
+            names.add(name);
+        }
+        cursor.close();
+        logger.debug("names={}", names);
+        return names.toArray(new String[0]);
     }
 
     public String findTmaAddressByName(String name) {
