@@ -13,8 +13,6 @@ import java.util.List;
 
 public class AddressStore {
 
-    private static final TmaLogger logger = TmaLogger.getLogger();
-
     private Context context;
     TmaPostDbHelper dbHelper;
     private SQLiteDatabase db;
@@ -28,7 +26,6 @@ public class AddressStore {
 
     public void save(Address address) {
         String name = findNameByTmaAddress(address.getTmaAddress());
-        logger.debug("name={}", name);
         if(address.getName().equals(name)) {
             return;
         }
@@ -40,7 +37,6 @@ public class AddressStore {
 
             // Insert the new row, returning the primary key value of the new row
             long newRowId = db.insert(DatabaseContract.AddressEntry.TABLE_NAME, null, values);
-            logger.debug("newRowId={}", newRowId);
             return;
         }
         update(address);
@@ -49,7 +45,6 @@ public class AddressStore {
     public void update(Address address) {
         // New value for one column
         String name = findNameByTmaAddress(address.getTmaAddress());
-        logger.debug("name={}", name);
         if(address.getName().equals(name)) {
             return;
         }
@@ -69,8 +64,6 @@ public class AddressStore {
                 values,
                 selection,
                 selectionArgs);
-        logger.debug("update count={}", count);
-
     }
 
     public String findNameByTmaAddress(String tmaAddress) {
@@ -103,7 +96,6 @@ public class AddressStore {
             name = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.AddressEntry.COLUMN_NAME_NAME));
         }
         cursor.close();
-        logger.debug("name={}", name);
         return name;
     }
 
@@ -134,7 +126,6 @@ public class AddressStore {
             names.add(name);
         }
         cursor.close();
-        logger.debug("names={}", names);
         return names.toArray(new String[0]);
     }
 
@@ -168,7 +159,6 @@ public class AddressStore {
             tmaAddress = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.AddressEntry.COLUMN_NAME_TMA_ADDRESS));
         }
         cursor.close();
-        logger.debug("tmaAddress={}", tmaAddress);
         return tmaAddress;
     }
 
