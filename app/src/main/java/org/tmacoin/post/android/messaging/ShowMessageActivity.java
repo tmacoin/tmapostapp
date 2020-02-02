@@ -43,6 +43,14 @@ public class ShowMessageActivity extends BaseActivity {
         logger.debug("date={}, expire={}, subject={}", date, expire, subject);
         TextView sender = findViewById(R.id.sender);
         sender.setText(StringUtil.getStringFromKey(secureMessage.getSender()));
+
+        sender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                senderClicked(secureMessage);
+            }
+        });
+
         TextView recipient = findViewById(R.id.recipient);
         recipient.setText(secureMessage.getRecipient());
         TextView value = findViewById(R.id.value);
@@ -71,6 +79,12 @@ public class ShowMessageActivity extends BaseActivity {
                 buttonClicked(secureMessage);
             }
         });
+    }
+
+    private void senderClicked(SecureMessage secureMessage) {
+        Intent intent = new Intent(this, AddAddressActivity.class);
+        intent.putExtra("secureMessage", secureMessage);
+        startActivity(intent);
     }
 
     private void buttonClicked(SecureMessage secureMessage) {

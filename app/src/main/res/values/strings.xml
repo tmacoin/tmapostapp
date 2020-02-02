@@ -67,6 +67,9 @@
     <string name="file_successfully_imported" translatable="false">File successfully imported</string>
 
     <string name="view_log" translatable="false">View Log</string>
+    <string name="name" translatable="false">Name</string>
+    <string name="adress_was_added" translatable="false">Address was added to your address book</string>
+
 
     <!-- BUTTONS -->
     <string name="down_load_file_button">Locate File</string>
@@ -76,6 +79,7 @@
     <string name="send_transaction">Send Transaction</string>
     <string name="send_secure_message">Send Secure Message</string>
     <string name="send_tweet">Send Tweet</string>
+    <string name="add_to_address_book" translatable="false">Add to Address Book</string>
 
 
     <string-array name="expire_arrays">

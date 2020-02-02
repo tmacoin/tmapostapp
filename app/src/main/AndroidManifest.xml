@@ -15,10 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".messaging.AddAddressActivity"></activity>
         <activity
             android:name=".LogViewerActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            ></activity>
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
         <activity
             android:name=".messaging.ShowMessageActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
@@ -29,13 +29,12 @@
             android:parentActivityName=".ConnectedToNetworkActivity" />
         <activity
             android:name=".SendTransactionActivity"
-            android:parentActivityName=".ConnectedToNetworkActivity"
-             />
+            android:parentActivityName=".ConnectedToNetworkActivity" />
         <activity
             android:name=".messaging.SendMessageActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:parentActivityName=".ConnectedToNetworkActivity"
-            android:windowSoftInputMode="stateHidden"/>
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".ChangePasswordActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
