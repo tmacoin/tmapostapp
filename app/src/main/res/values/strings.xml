@@ -68,7 +68,7 @@
 
     <string name="view_log" translatable="false">View Log</string>
     <string name="name" translatable="false">Name</string>
-    <string name="adress_was_added" translatable="false">Address was added to your address book</string>
+    <string name="address_was_added" translatable="false">Address was added to your address book</string>
 
 
     <!-- BUTTONS -->

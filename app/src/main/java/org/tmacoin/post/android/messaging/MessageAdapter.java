@@ -15,6 +15,7 @@ import org.tma.util.StringUtil;
 import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.Wallets;
+import org.tmacoin.post.android.messaging.persistance.AddressStore;
 
 import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
@@ -28,6 +29,7 @@ public class MessageAdapter extends ArrayAdapter<SecureMessage> {
 
     private final Activity context;
     private final List<SecureMessage> list;
+    private AddressStore addressStore;
 
     static class ViewHolder {
         public TextView from;
@@ -35,10 +37,11 @@ public class MessageAdapter extends ArrayAdapter<SecureMessage> {
         public TextView date;
     }
 
-    public MessageAdapter(Activity context, List<SecureMessage> list) {
+    public MessageAdapter(Activity context, List<SecureMessage> list, AddressStore addressStore) {
         super(context, R.layout.message_rowlayout, list);
         this.context = context;
         this.list = list;
+        this.addressStore = addressStore;
     }
 
     @Override
@@ -60,7 +63,14 @@ public class MessageAdapter extends ArrayAdapter<SecureMessage> {
         // fill data
         ViewHolder holder = (ViewHolder) rowView.getTag();
         SecureMessage secureMessage = list.get(position);
-        holder.from.setText("From: " + StringUtil.getStringFromKey(secureMessage.getSender()));
+
+        String senderTmaAddress = StringUtil.getStringFromKey(secureMessage.getSender());
+        String name = addressStore.findNameByTmaAddress(senderTmaAddress);
+        if(name == null) {
+            name = senderTmaAddress;
+        }
+
+        holder.from.setText("From: " + name);
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
 
         holder.subject.setText("Subject: " + secureMessage.getSubject(wallet.getPrivateKey()));

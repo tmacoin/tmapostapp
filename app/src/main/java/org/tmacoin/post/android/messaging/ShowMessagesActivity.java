@@ -37,6 +37,7 @@ import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.SendTransactionActivity;
 import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
+import org.tmacoin.post.android.messaging.persistance.AddressStore;
 
 import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
@@ -52,6 +53,7 @@ public class ShowMessagesActivity extends BaseActivity {
 
     private List<SecureMessage> list = null;
     private String activeView = "messages";
+    private AddressStore addressStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +64,7 @@ public class ShowMessagesActivity extends BaseActivity {
             return;
         }
         setContentView(R.layout.activity_show_messages);
+        addressStore = new AddressStore(getApplicationContext());
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.VISIBLE);
         updateStatus(getResources().getString(R.string.retrieving_messages_wait));
@@ -125,7 +128,7 @@ public class ShowMessagesActivity extends BaseActivity {
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.GONE);
         ListView listView = findViewById(R.id.simpleListView);
-        MessageAdapter arrayAdapter = new MessageAdapter(this, list);
+        MessageAdapter arrayAdapter = new MessageAdapter(this, list, addressStore);
         listView.setAdapter(arrayAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -143,7 +146,15 @@ public class ShowMessagesActivity extends BaseActivity {
         String subject = secureMessage.getSubject(wallet.getPrivateKey());
         logger.debug("date={}, expire={}, subject={}", date, expire, subject);
         TextView sender = findViewById(R.id.sender);
-        sender.setText(StringUtil.getStringFromKey(secureMessage.getSender()));
+
+        String senderTmaAddress = StringUtil.getStringFromKey(secureMessage.getSender());
+        String name = addressStore.findNameByTmaAddress(senderTmaAddress);
+        if(name == null) {
+            sender.setText(senderTmaAddress);
+        } else {
+            sender.setText(name);
+        }
+
 
         sender.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -222,6 +233,14 @@ public class ShowMessagesActivity extends BaseActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(addressStore != null) {
+            addressStore.onDestroy();
+        }
+        super.onDestroy();
     }
 
 }

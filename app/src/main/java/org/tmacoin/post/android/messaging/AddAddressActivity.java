@@ -12,13 +12,18 @@ import org.tma.peer.thin.SecureMessage;
 import org.tma.util.StringUtil;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
+import org.tmacoin.post.android.messaging.persistance.Address;
+import org.tmacoin.post.android.messaging.persistance.AddressStore;
 
 public class AddAddressActivity extends BaseActivity {
+
+    private AddressStore addressStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_address);
+        addressStore = new AddressStore(getApplicationContext());
         final SecureMessage secureMessage = (SecureMessage)getIntent().getSerializableExtra("secureMessage");
         TextView tma_address = findViewById(R.id.tma_address);
         tma_address.setText(StringUtil.getStringFromKey(secureMessage.getSender()));
@@ -33,9 +38,21 @@ public class AddAddressActivity extends BaseActivity {
     }
 
     private void buttonClicked(SecureMessage secureMessage) {
+        TextView tma_address = findViewById(R.id.tma_address);
+        EditText name = findViewById(R.id.name);
+        addressStore.save(new Address(tma_address.getText().toString(), name.getText().toString()));
         Intent intent = new Intent(this, ShowMessageActivity.class);
         intent.putExtra("secureMessage", secureMessage);
         startActivity(intent);
-        Toast.makeText(this, getResources().getString(R.string.adress_was_added), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, getResources().getString(R.string.address_was_added), Toast.LENGTH_LONG).show();
     }
+
+    @Override
+    protected void onDestroy() {
+        if(addressStore != null) {
+            addressStore.onDestroy();
+        }
+        super.onDestroy();
+    }
+
 }

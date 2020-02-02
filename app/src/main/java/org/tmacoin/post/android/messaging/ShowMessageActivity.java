@@ -18,6 +18,7 @@ import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.Wallets;
+import org.tmacoin.post.android.messaging.persistance.AddressStore;
 
 import java.util.Date;
 
@@ -26,9 +27,12 @@ public class ShowMessageActivity extends BaseActivity {
     private static final TmaLogger logger = TmaLogger.getLogger();
     private static final Encryptor encryptor = new Encryptor();
 
+    private AddressStore addressStore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        addressStore = new AddressStore(getApplicationContext());
         SecureMessage secureMessage = (SecureMessage) getIntent().getSerializableExtra("secureMessage");
         setContentView(R.layout.activity_show_message);
         showMessage(secureMessage);
@@ -42,7 +46,14 @@ public class ShowMessageActivity extends BaseActivity {
         String subject = secureMessage.getSubject(wallet.getPrivateKey());
         logger.debug("date={}, expire={}, subject={}", date, expire, subject);
         TextView sender = findViewById(R.id.sender);
-        sender.setText(StringUtil.getStringFromKey(secureMessage.getSender()));
+
+        String senderTmaAddress = StringUtil.getStringFromKey(secureMessage.getSender());
+        String name = addressStore.findNameByTmaAddress(senderTmaAddress);
+        if(name == null) {
+            sender.setText(senderTmaAddress);
+        } else {
+            sender.setText(name);
+        }
 
         sender.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +61,7 @@ public class ShowMessageActivity extends BaseActivity {
                 senderClicked(secureMessage);
             }
         });
+
 
         TextView recipient = findViewById(R.id.recipient);
         recipient.setText(secureMessage.getRecipient());
@@ -91,5 +103,13 @@ public class ShowMessageActivity extends BaseActivity {
         Intent intent = new Intent(this, SendMessageActivity.class);
         intent.putExtra("secureMessage", secureMessage);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(addressStore != null) {
+            addressStore.onDestroy();
+        }
+        super.onDestroy();
     }
 }
