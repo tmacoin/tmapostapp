@@ -164,7 +164,13 @@ public class ShowMessagesActivity extends BaseActivity {
         });
 
         TextView recipient = findViewById(R.id.recipient);
-        recipient.setText(secureMessage.getRecipient());
+
+        String recipientName = addressStore.findNameByTmaAddress(secureMessage.getRecipient());
+        if(recipientName == null) {
+            recipientName = secureMessage.getRecipient();
+        }
+
+        recipient.setText(recipientName);
         TextView value = findViewById(R.id.value);
         value.setText(secureMessage.getValue().toNumberOfCoins());
         TextView fee = findViewById(R.id.fee);

@@ -104,6 +104,40 @@ public class AddressStore {
         return name;
     }
 
+    public String findTmaAddressByName(String name) {
+        String tmaAddress = null;
+        // Define a projection that specifies which columns from the database
+        // you will actually use after this query.
+        String[] projection = {
+                BaseColumns._ID,
+                DatabaseContract.AddressEntry.COLUMN_NAME_TMA_ADDRESS,
+                DatabaseContract.AddressEntry.COLUMN_NAME_NAME
+        };
+
+        // Filter results WHERE "name" = 'name'
+        String selection = DatabaseContract.AddressEntry.COLUMN_NAME_NAME + " = ?";
+        String[] selectionArgs = {name};
+
+        // How you want the results sorted in the resulting Cursor
+        String sortOrder = DatabaseContract.AddressEntry.COLUMN_NAME_NAME + " DESC";
+
+        Cursor cursor = db.query(
+                DatabaseContract.AddressEntry.TABLE_NAME,   // The table to query
+                projection,             // The array of columns to return (pass null to get all)
+                selection,              // The columns for the WHERE clause
+                selectionArgs,          // The values for the WHERE clause
+                null,                   // don't group the rows
+                null,                   // don't filter by row groups
+                sortOrder               // The sort order
+        );
+        if(cursor.moveToNext()) {
+            tmaAddress = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.AddressEntry.COLUMN_NAME_TMA_ADDRESS));
+        }
+        cursor.close();
+        logger.debug("tmaAddress={}", tmaAddress);
+        return tmaAddress;
+    }
+
     public void onDestroy() {
         dbHelper.close();
     }

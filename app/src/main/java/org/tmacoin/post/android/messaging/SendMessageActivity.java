@@ -32,6 +32,7 @@ import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
+import org.tmacoin.post.android.messaging.persistance.AddressStore;
 
 import java.nio.charset.StandardCharsets;
 import java.security.PublicKey;
@@ -50,15 +51,23 @@ public class SendMessageActivity extends BaseActivity {
     private String subject;
     private String expiringData;
     String result = "";
+    private AddressStore addressStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_message);
+        addressStore = new AddressStore(getApplicationContext());
         SecureMessage secureMessage = (SecureMessage)getIntent().getSerializableExtra("secureMessage");
         if(secureMessage != null) {
             EditText recipientTmaAddressEditText = findViewById(R.id.recipientTmaAddressEditText);
-            recipientTmaAddressEditText.setText(StringUtil.getStringFromKey(secureMessage.getSender()));
+
+            String recipientName = addressStore.findNameByTmaAddress(StringUtil.getStringFromKey(secureMessage.getSender()));
+            if(recipientName == null) {
+                recipientName = StringUtil.getStringFromKey(secureMessage.getSender());
+            }
+
+            recipientTmaAddressEditText.setText(recipientName);
             EditText subjectEditText = findViewById(R.id.subjectEditText);
             Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
             subjectEditText.setText(getResources().getString(R.string.re) + secureMessage.getSubject(wallet.getPrivateKey()));
@@ -215,7 +224,13 @@ public class SendMessageActivity extends BaseActivity {
 
         new SendTransactionRequest(network, transaction).start();
         updateStatus("Network status: " + network.getPeerCount().toString());
-        result = "Successfully sent message \"" + subject + "\" to " + recipientTmaAddress;
+
+        String recipientName = addressStore.findNameByTmaAddress(recipientTmaAddress);
+        if(recipientName == null) {
+            recipientName = recipientTmaAddress;
+        }
+
+        result = "Successfully sent message \"" + subject + "\" to " + recipientName;
     }
 
     private void processSync() {
@@ -247,6 +262,12 @@ public class SendMessageActivity extends BaseActivity {
     private void load() {
         EditText recipientTmaAddressEditText = findViewById(R.id.recipientTmaAddressEditText);
         recipientTmaAddress = StringUtil.trim(recipientTmaAddressEditText.getText().toString());
+
+        String str = addressStore.findTmaAddressByName(recipientTmaAddress);
+        if(str != null) {
+            recipientTmaAddress = str;
+        }
+
         EditText feeInSatoshisEditText = findViewById(R.id.feeInSatoshisEditText);
         fee = StringUtil.trim(feeInSatoshisEditText.getText().toString());
         EditText subjectEditText = findViewById(R.id.subjectEditText);
@@ -254,5 +275,13 @@ public class SendMessageActivity extends BaseActivity {
         EditText expiringDataEditText = findViewById(R.id.expiringDataEditText);
         expiringData = StringUtil.trim(expiringDataEditText.getText().toString());
         logger.debug("expiringData={}, expiringDataEditText.getLineCount()={}", expiringData, expiringDataEditText.getLineCount());
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(addressStore != null) {
+            addressStore.onDestroy();
+        }
+        super.onDestroy();
     }
 }
