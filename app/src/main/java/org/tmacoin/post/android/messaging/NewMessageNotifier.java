@@ -139,7 +139,7 @@ public class NewMessageNotifier extends Service {
 
                     while (true && !TmaAndroidUtil.STOP.equals(action)) {
                         try {
-                            //process();
+                            process();
                             ThreadExecutor.sleep(Constants.TIMEOUT);
                         } catch (Exception e) {
                             logger.error(e.getMessage(), e);
@@ -157,13 +157,9 @@ public class NewMessageNotifier extends Service {
         });
     }
 
-    @SuppressWarnings("unchecked")
     public void process() {
         Network network = Network.getInstance();
         TmaAndroidUtil.checkNetwork();
-        for(Peer peer: network.getMyPeers()) {
-            peer.send(network, new EmptyRequest());
-        }
     }
 
     private void createNotificationChannel() {
