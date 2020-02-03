@@ -6,10 +6,12 @@
 
     <TextView
         android:id="@+id/textView_fileName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@+id/from"
-        android:textSize="12dp"
+        android:layout_width="fill_parent"
+        android:layout_height="?android:attr/listPreferredItemHeight"
+        android:textSize="20sp"
+        android:paddingLeft="6dip"
+        android:paddingRight="6dip"
+        android:gravity="center"
         android:textColor="@color/colorPrimaryDark">
     </TextView>
 
