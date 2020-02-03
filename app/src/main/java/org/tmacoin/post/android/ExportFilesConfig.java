@@ -1,18 +1,16 @@
 package org.tmacoin.post.android;
 
-import android.Manifest;
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.OpenableColumns;
-
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import org.tma.util.TmaLogger;
 
@@ -25,72 +23,44 @@ import java.io.OutputStream;
 public class ExportFilesConfig extends BaseActivity {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
-
     private static final int REQUEST_CODE = 1;
-    private static final int REQUEST_RUNTIME_PERMISSION = 123;
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_export_files);
 
+        //Intent intent = new Intent();
+        //intent.setAction(getFilesDir().getAbsolutePath() + "/config/");
+        //intent.setType("text/plain");
 
-        //Intent intent = new Intent().setType("*/*").setAction(Intent.ACTION_GET_CONTENT);
-        //startActivityForResult(Intent.createChooser(intent, getString(R.string.select_file)), REQUEST_CODE);
-
-        //Uri selectedUri = Uri.parse(getFilesDir().getAbsolutePath() + "/config/");
-        //Intent intent = new Intent(Intent.ACTION_VIEW);
-        //intent.setDataAndType(selectedUri, "resource/folder");
-
-
-        //Intent intent = new Intent(activity, FileChooser::class.java)
-        //intent.putExtra(Constants.INITIAL_DIRECTORY, File(storageDirPath).absolutePath)
-        //startActivityForResult(intent, CODE_INTENT );
-
-
-        Intent intent = new Intent();
-        intent.setAction(getFilesDir().getAbsolutePath() + "/config/");
-        intent.setType("text/plain");
-        //intent.putExtra("CONTENT_TYPE", "text/plain");
-        //intent.addCategory(Intent.CATEGORY_DEFAULT);
-        String[] t = getApplicationContext().fileList();
-        File directory = getApplicationContext().getFilesDir();
-
-        if (CheckPermission(ExportFilesConfig.this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-            // you have permission go ahead
-            //createApplicationFolder();
-            String g = "good";
-        } else {
-            // you do not have permission go request runtime permissions
-            RequestPermission(ExportFilesConfig.this, Manifest.permission.WRITE_EXTERNAL_STORAGE, REQUEST_RUNTIME_PERMISSION);
+        File directory = getApplicationContext().getFilesDir().getAbsoluteFile();
+        final File[] fList = (directory.listFiles())[0].listFiles();
+        for (File file: fList) {
+            logger.info("FILE:",file);
         }
 
+        listView = findViewById(R.id.simpleListView);
+        FileAdapter arrayAdapter = new FileAdapter(this, fList);
+        listView.setAdapter(arrayAdapter);
 
-
-        startActivityForResult(Intent.createChooser(intent, getString(R.string.select_file)), REQUEST_CODE);
-        //startActivity(intent);
-    }
-
-    public void RequestPermission(Activity thisActivity, String Permission, int Code) {
-        if (ContextCompat.checkSelfPermission(thisActivity,
-                Permission)
-                != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(thisActivity,
-                    Permission)) {
-            } else {
-                ActivityCompat.requestPermissions(thisActivity,
-                        new String[]{Permission},
-                        Code);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                File file2 = fList[position];
+                try {
+                    Toast.makeText(ExportFilesConfig.this, "You have clicked on " + file2.getCanonicalPath(), Toast.LENGTH_LONG).show();
+                } catch (Exception e) {
+                    logger.error(e.getMessage(), e);
+                }
             }
-        }
-    }
+        });
 
-    public boolean CheckPermission(Context context, String Permission) {
-        if (ContextCompat.checkSelfPermission(context,
-                Permission) == PackageManager.PERMISSION_GRANTED) {
-            return true;
-        } else {
-            return false;
-        }
+
+
+       // startActivityForResult(Intent.createChooser(intent, getString(R.string.select_file)), REQUEST_CODE);
     }
 
     @Override
