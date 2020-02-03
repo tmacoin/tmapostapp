@@ -167,4 +167,12 @@ public class AddressStore {
     }
 
 
+    public void deleteByTmaAddress(String tmaAddress) {
+
+        // Filter results WHERE "tmaAddress" = 'tmaAddress'
+        String selection = DatabaseContract.AddressEntry.COLUMN_NAME_TMA_ADDRESS + " = ?";
+        String[] selectionArgs = {tmaAddress};
+
+        db.delete(DatabaseContract.AddressEntry.TABLE_NAME, selection, selectionArgs);
+    }
 }

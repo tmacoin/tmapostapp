@@ -16,11 +16,10 @@ public final class DatabaseContract {
         public static final String SQL_CREATE_ENTRIES =
                 "CREATE TABLE " + TABLE_NAME + " (" +
                         _ID + " INTEGER PRIMARY KEY," +
-                        COLUMN_NAME_TMA_ADDRESS + " TEXT," +
-                        COLUMN_NAME_NAME + " TEXT)";
+                        COLUMN_NAME_TMA_ADDRESS + " TEXT NOT NULL UNIQUE," +
+                        COLUMN_NAME_NAME + " TEXT NOT NULL UNIQUE)";
 
-        public static final String SQL_DELETE_ENTRIES =
-                "DROP TABLE IF EXISTS " + TABLE_NAME;
+        public static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + TABLE_NAME;
 
     }
 

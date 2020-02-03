@@ -68,7 +68,10 @@
 
     <string name="view_log" translatable="false">View Log</string>
     <string name="name" translatable="false">Name</string>
-    <string name="address_was_added" translatable="false">Address was added to your address book</string>
+    <string name="address_was_added" translatable="false">Address was added/edited successfully.</string>
+    <string name="address_was_deleted" translatable="false">Address was deleted successfully.</string>
+
+    <string name="name_already_exists" translatable="false">This name already exists. Please select a different name.</string>
 
 
     <!-- BUTTONS -->
@@ -79,7 +82,8 @@
     <string name="send_transaction">Send Transaction</string>
     <string name="send_secure_message">Send Secure Message</string>
     <string name="send_tweet">Send Tweet</string>
-    <string name="add_to_address_book" translatable="false">Add to Address Book</string>
+    <string name="add_to_address_book" translatable="false">Add/Edit Address</string>
+    <string name="delete_address" translatable="false">Delete Address</string>
 
 
     <string-array name="expire_arrays">
