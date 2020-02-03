@@ -72,6 +72,7 @@
     <string name="address_was_deleted" translatable="false">Address was deleted successfully.</string>
 
     <string name="name_already_exists" translatable="false">This name already exists. Please select a different name.</string>
+    <string name="name_cannot_be_blank" translatable="false">Name cannot be blank</string>
 
 
     <!-- BUTTONS -->

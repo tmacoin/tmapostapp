@@ -71,6 +71,11 @@ public class AddAddressActivity extends BaseActivity {
     private void buttonClicked(SecureMessage secureMessage) {
         TextView tma_address = findViewById(R.id.tma_address);
         EditText name = findViewById(R.id.name);
+        String nameString = name.getText().toString();
+        if(StringUtil.isEmpty(nameString)) {
+            Toast.makeText(this, getResources().getString(R.string.name_cannot_be_blank), Toast.LENGTH_LONG).show();
+            return;
+        }
         try {
             addressStore.save(new Address(tma_address.getText().toString(), name.getText().toString()));
         } catch (SQLiteConstraintException e) {
