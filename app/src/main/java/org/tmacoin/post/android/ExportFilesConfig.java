@@ -25,21 +25,15 @@ public class ExportFilesConfig extends BaseActivity {
     private static final TmaLogger logger = TmaLogger.getLogger();
     private static final int REQUEST_CODE = 1;
     private ListView listView;
+    private File selectedFile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_export_files);
 
-        //Intent intent = new Intent();
-        //intent.setAction(getFilesDir().getAbsolutePath() + "/config/");
-        //intent.setType("text/plain");
-
         File directory = getApplicationContext().getFilesDir().getAbsoluteFile();
         final File[] fList = (directory.listFiles())[0].listFiles();
-        for (File file: fList) {
-            logger.info("FILE:",file);
-        }
 
         listView = findViewById(R.id.simpleListView);
         FileAdapter arrayAdapter = new FileAdapter(this, fList);
@@ -49,18 +43,18 @@ public class ExportFilesConfig extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                File file2 = fList[position];
+                selectedFile = fList[position];
                 try {
-                    Toast.makeText(ExportFilesConfig.this, "You have clicked on " + file2.getCanonicalPath(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(ExportFilesConfig.this, "You have clicked on " + selectedFile.getCanonicalPath(), Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(Intent.ACTION_OPEN_DOCUMENT_TREE);
+                    i.addCategory(Intent.CATEGORY_DEFAULT);
+                    startActivityForResult(Intent.createChooser(i, "Choose directory"), REQUEST_CODE);
                 } catch (Exception e) {
                     logger.error(e.getMessage(), e);
                 }
             }
         });
 
-
-
-       // startActivityForResult(Intent.createChooser(intent, getString(R.string.select_file)), REQUEST_CODE);
     }
 
     @Override
@@ -69,16 +63,17 @@ public class ExportFilesConfig extends BaseActivity {
         setContentView(R.layout.activity_file_processed);
 
         if(requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
-            Uri selectedFile = data.getData(); //The uri with the location of the file
+            Uri selectedDirectory = data.getData(); //The uri with the location of the file
 
             //dir with selected file
-            File sourceFile = new File(getFileName(selectedFile));
+            File targetDir = new File(getFileName(selectedDirectory));
 
             //download dir
-            File sdCard = Environment.getExternalStorageDirectory();
-            File dir = new File (sdCard.getAbsolutePath() );
+            //File sdCard = Environment.getExternalStorageDirectory();
+            //File dir = new File (sdCard.getAbsolutePath() );
             //FileUtils.copy(); ????
-           //copyFile(selectedFile, dir.getAbsolutePath());
+            Uri selectedFileUri = android.net.Uri.parse(selectedFile.toString());
+           copyFile(selectedFileUri, targetDir.getAbsolutePath());
             return;
         }
        // TextView textViewFile = findViewById(R.id.textViewFile);
