@@ -15,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".messaging.AddAddressActivity"></activity>
+        <activity android:name=".messaging.AddAddressActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:parentActivityName=".messaging.ShowMessagesActivity"
+            ></activity>
         <activity
             android:name=".LogViewerActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
