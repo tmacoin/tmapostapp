@@ -46,7 +46,7 @@
     <string name="channel_id">tmacoin</string>
     <string name="channel_name">tmacoin</string>
     <string name="channel_description">tmacoin</string>
-    <string name="re">Re: \ u0020</string>
+    <string name="re">Re: \u0020</string>
     <string name="locate_file">Datei suchen</string>
     <string name="old_password">Altes Passwort</string>
     <string name="new_password">Neues Kennwort</string>

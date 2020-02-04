@@ -46,14 +46,14 @@
     <string name="channel_id">tmacoin</string>
     <string name="channel_name">tmacoin</string>
     <string name="channel_description">tmacoin</string>
-    <string name="re">Re: \ u0020</string>
+    <string name="re">Re: \u0020</string>
     <string name="locate_file">Localizar el archivo</string>
     <string name="old_password">Contraseña anterior</string>
     <string name="new_password">Nueva contraseña</string>
     <string name="reenter_new">Reentrar nuevo</string>
     <string name="passphrase_was_successfully_updated">La frase de contraseña se actualizó correctamente</string>
     <string name="value">Valor</string>
-    <string name="sender">remitente</string>
+    <string name="sender">Remitente</string>
     <string name="recipient">Recipiente</string>
     <string name="fee">Cuota</string>
     <string name="date">Fecha</string>

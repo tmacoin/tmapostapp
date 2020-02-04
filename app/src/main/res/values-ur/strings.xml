@@ -46,7 +46,7 @@
     <string name="channel_id">tmacoin</string>
     <string name="channel_name">tmacoin</string>
     <string name="channel_description">tmacoin</string>
-    <string name="re">جواب: \ u0020</string>
+    <string name="re">جواب: \u0020</string>
     <string name="locate_file">فائل کا پتہ لگائیں</string>
     <string name="old_password">پرانا پاسورڈ</string>
     <string name="new_password">نیا پاس ورڈ</string>

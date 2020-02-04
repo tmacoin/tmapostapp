@@ -46,7 +46,7 @@
     <string name="channel_id">tmacoin</string>
     <string name="channel_name">tmacoin</string>
     <string name="channel_description">tmacoin</string>
-    <string name="re">다시 : \ u0020</string>
+    <string name="re">다시 : \u0020</string>
     <string name="locate_file">파일 찾기</string>
     <string name="old_password">기존 비밀번호</string>
     <string name="new_password">새 비밀번호</string>
