@@ -5,7 +5,7 @@
     <string name="connected">You successfully connected to TMA Network</string>
     <string name="address_label">Your TMA Address</string>
     <string name="balance_label">Your Balance</string>
-    <string name="coins">\u0020coins</string>
+    <string name="coins">coins</string>
     <string name="file_menu">File</string>
     <string name="tools_menu">Tools</string>
     <string name="messaging_menu">Messaging</string>
@@ -41,10 +41,7 @@
     <string name="subject">Subject</string>
     <string name="body">Body</string>
     <string name="expire_prompt">Select expire duration</string>
-    <string name="channel_id">tmacoin</string>
-    <string name="channel_name">tmacoin</string>
-    <string name="channel_description">tmacoin</string>
-    <string name="re">Re:\u0020</string>
+    <string name="re">Re:</string>
     <string name="locate_file">Locate file</string>
     <string name="old_password">Old Password</string>
     <string name="new_password">New Password</string>
@@ -84,6 +81,9 @@
     <string name="pls_check_your_balance">. Please check your balance.</string>
     <string name="success_sent">Successfully sent</string>
     <string name="coins_to">coins to</string>
+    <string name="successfully_sent_message" translatable="false">Successfully sent message</string>
+    <string name="to" translatable="false">to</string>
+    <string name="secure_message_received" translatable="false">Secure Message Received</string>
 
     <!-- BUTTONS -->
     <string name="down_load_file_button">Locate File</string>

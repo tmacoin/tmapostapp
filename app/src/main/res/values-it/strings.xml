@@ -7,7 +7,7 @@
     <string name="connected">Connessione corretta alla rete TMA</string>
     <string name="address_label">Il tuo indirizzo TMA</string>
     <string name="balance_label">Il tuo bilancio</string>
-    <string name="coins">\u0020monete</string>
+    <string name="coins">monete</string>
     <string name="file_menu">File</string>
     <string name="tools_menu">Utensili</string>
     <string name="messaging_menu">messaggistica</string>
@@ -43,10 +43,8 @@
     <string name="subject">Soggetto</string>
     <string name="body">Corpo</string>
     <string name="expire_prompt">Seleziona scade la durata</string>
-    <string name="channel_id">tmacoin</string>
-    <string name="channel_name">tmacoin</string>
-    <string name="channel_description">tmacoin</string>
-    <string name="re">Re: \u0020</string>
+
+    <string name="re">Re: </string>
     <string name="locate_file">Localizza file</string>
     <string name="old_password">vecchia password</string>
     <string name="new_password">nuova password</string>

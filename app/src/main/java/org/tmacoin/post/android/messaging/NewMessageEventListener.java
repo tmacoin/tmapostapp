@@ -17,6 +17,7 @@ import org.tma.peer.thin.SecureMessage;
 import org.tma.util.Event;
 import org.tma.util.EventListener;
 import org.tma.util.TmaLogger;
+import org.tmacoin.post.android.AndroidContants;
 import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.Wallets;
 import org.tmacoin.post.android.messaging.NewMessageNotifier;
@@ -40,13 +41,13 @@ public class NewMessageEventListener implements EventListener {
 
     private void addNotification(SecureMessage secureMessage) {
         createNotificationChannel();
-        String channelId = context.getString(R.string.channel_id);
+        String channelId = AndroidContants.TMACOIN;
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(context, channelId)
                         .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher))
                         .setSmallIcon(R.drawable.ic_launcher_foreground)
-                        .setContentTitle("Secure Message Received")
+                        .setContentTitle(context.getString(R.string.secure_message_received))
                         .setContentText(secureMessage.getSubject(wallet.getPrivateKey()))
                         .setAutoCancel(true)
                         .setVibrate(new long[] { 1000, 1000})
@@ -72,9 +73,9 @@ public class NewMessageEventListener implements EventListener {
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            String channelId = context.getString(R.string.channel_id);
-            CharSequence name = context.getString(R.string.channel_name);
-            String description = context.getString(R.string.channel_description);
+            String channelId = AndroidContants.TMACOIN;
+            CharSequence name = AndroidContants.TMACOIN;
+            String description = AndroidContants.TMACOIN;
             int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel channel = new NotificationChannel(channelId, name, importance);
             channel.setDescription(description);

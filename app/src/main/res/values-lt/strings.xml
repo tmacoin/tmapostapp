@@ -7,7 +7,7 @@
     <string name="connected">Sėkmingai prisijungėte prie TMA tinklo</string>
     <string name="address_label">Jūsų TMA adresas</string>
     <string name="balance_label">Jūsų balansas</string>
-    <string name="coins">\u0020monetos</string>
+    <string name="coins">monetos</string>
     <string name="file_menu">Byla</string>
     <string name="tools_menu">Įrankiai</string>
     <string name="messaging_menu">Žinutės</string>
@@ -43,10 +43,8 @@
     <string name="subject">Tema</string>
     <string name="body">kūnas</string>
     <string name="expire_prompt">Pasirinkite galiojimo laiką</string>
-    <string name="channel_id">tmacoin</string>
-    <string name="channel_name">tmacoin</string>
-    <string name="channel_description">tmacoin</string>
-    <string name="re">Re: \u0020</string>
+
+    <string name="re">Re: </string>
     <string name="locate_file">Raskite failą</string>
     <string name="old_password">Senas slaptažodis</string>
     <string name="new_password">Naujas Slaptažodis</string>

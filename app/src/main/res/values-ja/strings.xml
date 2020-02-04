@@ -7,7 +7,7 @@
     <string name="connected">TMAネットワークに正常に接続しました</string>
     <string name="address_label">あなたのTMAアドレス</string>
     <string name="balance_label">あなたのバランス</string>
-    <string name="coins">\u0020硬貨</string>
+    <string name="coins">硬貨</string>
     <string name="file_menu">ファイル</string>
     <string name="tools_menu">道具</string>
     <string name="messaging_menu">メッセージング</string>
@@ -43,10 +43,8 @@
     <string name="subject">件名</string>
     <string name="body">体</string>
     <string name="expire_prompt">有効期限を選択</string>
-    <string name="channel_id">tmacoin</string>
-    <string name="channel_name">tmacoin</string>
-    <string name="channel_description">tmacoin</string>
-    <string name="re">Re：\u0020</string>
+
+    <string name="re">Re：</string>
     <string name="locate_file">ファイルを見つけます</string>
     <string name="old_password">以前のパスワード</string>
     <string name="new_password">新しいパスワード</string>

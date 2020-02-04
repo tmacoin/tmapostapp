@@ -75,9 +75,9 @@ public class SendMessageActivity extends BaseActivity {
             recipientTmaAddressEditText.setText(recipientName);
             EditText subjectEditText = findViewById(R.id.subjectEditText);
             Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
-            subjectEditText.setText(getResources().getString(R.string.re) + secureMessage.getSubject(wallet.getPrivateKey()));
+            subjectEditText.setText(getResources().getString(R.string.re) + " " + secureMessage.getSubject(wallet.getPrivateKey()));
         }
-        updateStatus("Network status: " + Network.getInstance().getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
         Button sendMessageButton = findViewById(R.id.sendMessageButton);
         sendMessageButton.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -177,9 +177,9 @@ public class SendMessageActivity extends BaseActivity {
         final String tmaAddress = network.getTmaAddress();
         final Coin total = Coin.SATOSHI.add(new Coin(Long.parseLong(fee)));
         final Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
-        updateStatus("Network status: " + network.getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
         TmaAndroidUtil.checkNetwork();
-        updateStatus("Network status: " + network.getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
         List<Coin> totals = new ArrayList<>();
         totals.add(total);
         List<Set<TransactionOutput>> inputList = new GetInputsRequest(network, tmaAddress, totals).getInputlist();
@@ -228,21 +228,22 @@ public class SendMessageActivity extends BaseActivity {
         logger.debug("sent {}", transaction);
 
         new SendTransactionRequest(network, transaction).start();
-        updateStatus("Network status: " + network.getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
 
         String recipientName = addressStore.findNameByTmaAddress(recipientTmaAddress);
         if(recipientName == null) {
             recipientName = recipientTmaAddress;
         }
 
-        result = "Successfully sent message \"" + subject + "\" to " + recipientName;
+        result = getResources().getString(R.string.successfully_sent_message) + " \"" + subject + "\" " +
+                getResources().getString(R.string.to) + " " + recipientName;
     }
 
     private void processSync() {
         setContentView(R.layout.activity_send_message_complete);
         TextView resultTextView = findViewById(R.id.resultTextView);
         resultTextView.setText(result);
-        updateStatus("Network status: " + Network.getInstance().getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
     }
 
     private void showAlert() {

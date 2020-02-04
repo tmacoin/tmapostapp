@@ -7,7 +7,7 @@
     <string name="connected">Yhteys TMA-verkkoon onnistui</string>
     <string name="address_label">TMA-osoitteesi</string>
     <string name="balance_label">Tasapainosi</string>
-    <string name="coins">\u0020kolikot</string>
+    <string name="coins">kolikot</string>
     <string name="file_menu">tiedosto</string>
     <string name="tools_menu">Työkalut</string>
     <string name="messaging_menu">Viestit</string>
@@ -43,10 +43,8 @@
     <string name="subject">aihe</string>
     <string name="body">ruumis</string>
     <string name="expire_prompt">Valitse viimeinen kesto</string>
-    <string name="channel_id">tmacoin</string>
-    <string name="channel_name">tmacoin</string>
-    <string name="channel_description">tmacoin</string>
-    <string name="re">Vs: \u0020</string>
+
+    <string name="re">Vs: </string>
     <string name="locate_file">Etsi tiedosto</string>
     <string name="old_password">vanha salasana</string>
     <string name="new_password">uusi salasana</string>

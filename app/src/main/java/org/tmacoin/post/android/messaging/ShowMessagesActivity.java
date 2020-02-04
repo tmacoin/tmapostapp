@@ -91,12 +91,12 @@ public class ShowMessagesActivity extends BaseActivity {
     @SuppressWarnings("unchecked")
     private void processAsync() {
         Network network = Network.getInstance();
-        updateStatus("Network status: " + network.getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         int attempt = 0;
         while(list == null && attempt++ < 10) {
             TmaAndroidUtil.checkNetwork();
-            updateStatus("Network status: " + network.getPeerCount().toString());
+            updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
             PublicKey publicKey = wallet.getPublicKey();
             GetMessagesRequest request = new GetMessagesRequest(network, publicKey);
             request.start();
@@ -117,7 +117,7 @@ public class ShowMessagesActivity extends BaseActivity {
             }
         }
 
-        updateStatus("Network status: " + network.getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
     }
 
     private void processSync() {

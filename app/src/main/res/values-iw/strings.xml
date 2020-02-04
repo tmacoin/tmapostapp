@@ -7,7 +7,7 @@
     <string name="connected">התחברת בהצלחה לרשת TMA</string>
     <string name="address_label">כתובת TMA שלך</string>
     <string name="balance_label">האיזון שלך</string>
-    <string name="coins">מטבעות\u0020</string>
+    <string name="coins">מטבעות</string>
     <string name="file_menu">קובץ</string>
     <string name="tools_menu">כלים</string>
     <string name="messaging_menu">העברת הודעות</string>
@@ -43,10 +43,8 @@
     <string name="subject">נושא</string>
     <string name="body">גוף</string>
     <string name="expire_prompt">בחר משך תפוגה</string>
-    <string name="channel_id">tmacoin</string>
-    <string name="channel_name">tmacoin</string>
-    <string name="channel_description">tmacoin</string>
-    <string name="re">Re: \u0020</string>
+
+    <string name="re">Re: </string>
     <string name="locate_file">אתר קובץ</string>
     <string name="old_password">סיסמה ישנה</string>
     <string name="new_password">סיסמה חדשה</string>

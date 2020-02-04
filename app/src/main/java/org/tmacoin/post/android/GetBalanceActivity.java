@@ -81,8 +81,8 @@ public class GetBalanceActivity extends BaseActivity {
         final TextView addressTextView = findViewById(R.id.tma_address_textView);
         final TextView balanceTextView = findViewById(R.id.balance_textView);
         addressTextView.setText(tmaAddress);
-        balanceTextView.setText(balance + getResources().getString(R.string.coins));
-        updateStatus("Network status: " + Network.getInstance().getPeerCount().toString());
+        balanceTextView.setText(balance + " " + getResources().getString(R.string.coins));
+        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
     }
 
     private String getBalance(int attemptNumber, String tmaAddress) {

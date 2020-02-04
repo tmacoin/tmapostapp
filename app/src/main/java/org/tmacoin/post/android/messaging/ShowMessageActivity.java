@@ -37,7 +37,7 @@ public class ShowMessageActivity extends BaseActivity {
         SecureMessage secureMessage = (SecureMessage) getIntent().getSerializableExtra("secureMessage");
         setContentView(R.layout.activity_show_message);
         showMessage(secureMessage);
-        updateStatus("Network status: " + Network.getInstance().getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
     }
 
     private void showMessage(final SecureMessage secureMessage) {

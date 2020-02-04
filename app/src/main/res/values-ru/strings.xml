@@ -7,7 +7,7 @@
     <string name="connected">Вы успешно подключились к сети TMA</string>
     <string name="address_label">Ваш адрес TMA</string>
     <string name="balance_label">Ваш баланс</string>
-    <string name="coins">\u0020монеты</string>
+    <string name="coins">монеты</string>
     <string name="file_menu">файл</string>
     <string name="tools_menu">инструменты</string>
     <string name="messaging_menu">обмен сообщениями</string>
@@ -43,10 +43,8 @@
     <string name="subject">Предмет</string>
     <string name="body">тело</string>
     <string name="expire_prompt">Выберите срок действия</string>
-    <string name="channel_id">tmacoin</string>
-    <string name="channel_name">tmacoin</string>
-    <string name="channel_description">tmacoin</string>
-    <string name="re">Re: \u0020</string>
+
+    <string name="re">Re: </string>
     <string name="locate_file">Найти файл</string>
     <string name="old_password">Старый пароль</string>
     <string name="new_password">новый пароль</string>

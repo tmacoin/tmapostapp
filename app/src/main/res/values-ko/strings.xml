@@ -7,7 +7,7 @@
     <string name="connected">TMA 네트워크에 성공적으로 연결되었습니다</string>
     <string name="address_label">귀하의 TMA 주소</string>
     <string name="balance_label">당신의 균형</string>
-    <string name="coins">\u0020동전</string>
+    <string name="coins">동전</string>
     <string name="file_menu">파일</string>
     <string name="tools_menu">도구</string>
     <string name="messaging_menu">메시징</string>
@@ -43,10 +43,8 @@
     <string name="subject">제목</string>
     <string name="body">몸</string>
     <string name="expire_prompt">만료 기간 선택</string>
-    <string name="channel_id">tmacoin</string>
-    <string name="channel_name">tmacoin</string>
-    <string name="channel_description">tmacoin</string>
-    <string name="re">다시 : \u0020</string>
+
+    <string name="re">다시 : </string>
     <string name="locate_file">파일 찾기</string>
     <string name="old_password">기존 비밀번호</string>
     <string name="new_password">새 비밀번호</string>

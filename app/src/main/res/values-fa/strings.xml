@@ -7,7 +7,7 @@
     <string name="connected">شما با موفقیت به شبکه TMA وصل شد</string>
     <string name="address_label">آدرس TMA شما</string>
     <string name="balance_label">موجودی شما</string>
-    <string name="coins">سکه\u0020</string>
+    <string name="coins">سکه</string>
     <string name="file_menu">فایل</string>
     <string name="tools_menu">ابزارها</string>
     <string name="messaging_menu">پیام رسانی</string>
@@ -43,10 +43,8 @@
     <string name="subject">موضوع</string>
     <string name="body">بدن</string>
     <string name="expire_prompt">مدت زمان منقضی را انتخاب کنید</string>
-    <string name="channel_id">tmacoin</string>
-    <string name="channel_name">tmacoin</string>
-    <string name="channel_description">tmacoin</string>
-    <string name="re">پاسخ: \u0020</string>
+
+    <string name="re">پاسخ: </string>
     <string name="locate_file">یافتن پرونده</string>
     <string name="old_password">گذرواژه قدیمی</string>
     <string name="new_password">رمز عبور جدید</string>

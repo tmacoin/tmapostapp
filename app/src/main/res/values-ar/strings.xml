@@ -7,7 +7,7 @@
     <string name="connected">لقد نجحت في الاتصال بشبكة TMA</string>
     <string name="address_label">عنوان TMA الخاص بك</string>
     <string name="balance_label">رصيدك</string>
-    <string name="coins">\u0020عملات معدنية</string>
+    <string name="coins">عملات معدنية</string>
     <string name="file_menu">ملف</string>
     <string name="tools_menu">أدوات</string>
     <string name="messaging_menu">الرسائل</string>
@@ -43,10 +43,8 @@
     <string name="subject">موضوع</string>
     <string name="body">الجسم</string>
     <string name="expire_prompt">حدد مدة انتهاء الصلاحية</string>
-    <string name="channel_id">tmacoin</string>
-    <string name="channel_name">tmacoin</string>
-    <string name="channel_description">tmacoin</string>
-    <string name="re">رد: \u0020</string>
+
+    <string name="re">رد: </string>
     <string name="locate_file">حدد الملف</string>
     <string name="old_password">كلمة سر قديمة</string>
     <string name="new_password">كلمة مرور جديدة</string>

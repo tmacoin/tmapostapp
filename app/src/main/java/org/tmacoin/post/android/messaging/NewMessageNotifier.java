@@ -35,6 +35,7 @@ import org.tma.util.Constants;
 import org.tma.util.ThreadExecutor;
 import org.tma.util.TmaLogger;
 import org.tma.util.TmaRunnable;
+import org.tmacoin.post.android.AndroidContants;
 import org.tmacoin.post.android.PasswordUtil;
 import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.TmaAndroidUtil;
@@ -166,9 +167,9 @@ public class NewMessageNotifier extends Service {
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            String channelId = context.getString(R.string.channel_id);
-            CharSequence name = context.getString(R.string.channel_name);
-            String description = context.getString(R.string.channel_description);
+            String channelId = AndroidContants.TMACOIN;
+            CharSequence name = AndroidContants.TMACOIN;
+            String description = AndroidContants.TMACOIN;
             int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel channel = new NotificationChannel(channelId, name, importance);
             channel.setDescription(description);
@@ -191,7 +192,7 @@ public class NewMessageNotifier extends Service {
         Intent notificationIntent = new Intent(context, ShowMessagesActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, context.getString(R.string.channel_id));
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, AndroidContants.TMACOIN);
         Notification notification = notificationBuilder
                 .setOngoing(true)
                 .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher))

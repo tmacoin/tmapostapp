@@ -43,9 +43,6 @@
     <string name="subject">學科</string>
     <string name="body">身體</string>
     <string name="expire_prompt">選擇過期時間</string>
-    <string name="channel_id">Tmacoin</string>
-    <string name="channel_name">Tmacoin</string>
-    <string name="channel_description">Tmacoin</string>
     <string name="re">回复：\</string>
     <string name="locate_file">定位文件</string>
     <string name="old_password">舊密碼</string>
