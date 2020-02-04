@@ -197,7 +197,7 @@ public class NewMessageNotifier extends Service {
                 .setOngoing(true)
                 .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher))
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
-                .setContentTitle("New messages listener")
+                .setContentTitle(getResources().getString(R.string.new_messages_listener))
                 .setPriority(NotificationManager.IMPORTANCE_MIN)
                 .setCategory(Notification.CATEGORY_SERVICE)
                 .setContentIntent(contentIntent)
