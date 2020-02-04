@@ -7,7 +7,7 @@
     <string name="connected">شما با موفقیت به شبکه TMA وصل شد</string>
     <string name="address_label">آدرس TMA شما</string>
     <string name="balance_label">موجودی شما</string>
-    <string name="coins">\u0020 سکه</string>
+    <string name="coins">سکه\u0020</string>
     <string name="file_menu">فایل</string>
     <string name="tools_menu">ابزارها</string>
     <string name="messaging_menu">پیام رسانی</string>
@@ -46,7 +46,7 @@
     <string name="channel_id">tmacoin</string>
     <string name="channel_name">tmacoin</string>
     <string name="channel_description">tmacoin</string>
-    <string name="re">پاسخ: \u0020</string>
+    <string name="re">پاسخ: \ u0020</string>
     <string name="locate_file">یافتن پرونده</string>
     <string name="old_password">گذرواژه قدیمی</string>
     <string name="new_password">رمز عبور جدید</string>
@@ -60,9 +60,35 @@
     <string name="expire">اراضی</string>
     <string name="reply">پاسخ</string>
     <string name="result">نتیجه</string>
+    <string name="import_file">وارد کردن پرونده</string>
+    <string name="export_file">پرونده صادرات</string>
+    <string name="select_file_to_import">پرونده را برای وارد کردن انتخاب کنید؟</string>
+    <string name="select_file">فایل را انتخاب کنید</string>
+    <string name="file_copied_to">پرونده کپی شد</string>
+    <string name="parent_directory_created">دایرکتوری والدین ایجاد شد</string>
+    <string name="file_successfully_imported">پرونده با موفقیت وارد شد</string>
+    <string name="view_log">ورود به سیستم</string>
+    <string name="name">نام</string>
+    <string name="address_was_added">آدرس با موفقیت اضافه یا ویرایش شد.</string>
+    <string name="address_was_deleted">آدرس با موفقیت حذف شد</string>
+    <string name="name_already_exists">این نام قبلاً وجود دارد لطفاً نام دیگری را انتخاب کنید</string>
+    <string name="name_cannot_be_blank">نام نمی تواند خالی باشد</string>
+    <string name="add_to_address_book">افزودن / ویرایش آدرس</string>
+    <string name="delete_address">آدرس را حذف کنید</string>
+    <string name="network_status">وضعیت شبکه</string>
+    <string name="copy_cancelled">کپی کردن پرونده لغو شد</string>
+    <string name="file_does_not_exist">پرونده وجود ندارد:</string>
+    <string name="key_file">پرونده اصلی</string>
+    <string name="existing_key_file">آیا می خواهید از یک فایل کلیدی موجود استفاده کنید</string>
+    <string name="no_load_key_file">کلیدها بارگیری نشد</string>
+    <string name="tma_starting">راه اندازی TMA POST</string>
+    <string name="no_inputs">هیچ ورودی برای آدرس tma موجود نیست</string>
+    <string name="pls_check_your_balance">. لطفا تعادل خود را بررسی کنید.</string>
+    <string name="success_sent">با موفقیت ارسال شد</string>
+    <string name="coins_to">سکه به</string>
 
     
-    <string name="down_load_file_button">دریافت پرونده</string>
+    <string name="down_load_file_button">یافتن پرونده</string>
     <string name="change_password">تغییر رمز عبور</string>
     <string name="get_balance">تعادل را بدست آورید</string>
     <string name="submit">ارسال</string>

@@ -58,22 +58,32 @@
     <string name="expire">Expire</string>
     <string name="reply">Reply</string>
     <string name="result">result</string>
-    <string name="import_file" translatable="false">Import File</string>
-    <string name="export_file" translatable="false">Export File</string>
-    <string name="select_file_to_import" translatable="false">Select File to Import?</string>
-    <string name="select_file" translatable="false">Select File</string>
-    <string name="file_copied_to" translatable="false">File copied to</string>
-    <string name="parent_directory_created" translatable="false">Parent directory created</string>
-    <string name="file_successfully_imported" translatable="false">File successfully imported</string>
-
-    <string name="view_log" translatable="false">View Log</string>
-    <string name="name" translatable="false">Name</string>
-    <string name="address_was_added" translatable="false">Address was added/edited successfully.</string>
-    <string name="address_was_deleted" translatable="false">Address was deleted successfully.</string>
-
-    <string name="name_already_exists" translatable="false">This name already exists. Please select a different name.</string>
-    <string name="name_cannot_be_blank" translatable="false">Name cannot be blank</string>
-
+    <string name="import_file">Import File</string>
+    <string name="export_file">Export File</string>
+    <string name="select_file_to_import">Select File to Import?</string>
+    <string name="select_file">Select File</string>
+    <string name="file_copied_to">File copied to</string>
+    <string name="parent_directory_created">Parent directory created</string>
+    <string name="file_successfully_imported">File successfully imported</string>
+    <string name="view_log">View Log</string>
+    <string name="name">Name</string>
+    <string name="address_was_added">Address was added/edited successfully.</string>
+    <string name="address_was_deleted">Address was deleted successfully.</string>
+    <string name="name_already_exists">This name already exists. Please select a different name.</string>
+    <string name="name_cannot_be_blank">Name cannot be blank</string>
+    <string name="add_to_address_book">Add/Edit Address</string>
+    <string name="delete_address">Delete Address</string>
+    <string name="network_status">Network status</string>
+    <string name="copy_cancelled">Copying file was canceled</string>
+    <string name="file_does_not_exist">File does not exists:</string>
+    <string name="key_file">Key File</string>
+    <string name="existing_key_file">Do you want to use an existing key file</string>
+    <string name="no_load_key_file">Could not load keys</string>
+    <string name="tma_starting">TMA POST starting up</string>
+    <string name="no_inputs">No inputs available for tma address</string>
+    <string name="pls_check_your_balance">. Please check your balance.</string>
+    <string name="success_sent">Successfully sent</string>
+    <string name="coins_to">coins to</string>
 
     <!-- BUTTONS -->
     <string name="down_load_file_button">Locate File</string>
@@ -83,8 +93,6 @@
     <string name="send_transaction">Send Transaction</string>
     <string name="send_secure_message">Send Secure Message</string>
     <string name="send_tweet">Send Tweet</string>
-    <string name="add_to_address_book" translatable="false">Add/Edit Address</string>
-    <string name="delete_address" translatable="false">Delete Address</string>
 
 
     <string-array name="expire_arrays">

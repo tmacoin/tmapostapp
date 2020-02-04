@@ -1,8 +1,5 @@
 package org.tmacoin.post.android;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,9 +15,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import org.tma.peer.Network;
 import org.tma.util.Constants;
-import org.tma.util.Listeners;
 import org.tma.util.TmaLogger;
 
 import java.io.File;
@@ -32,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
     private static final int REQUEST_CODE = 1;
-    private static final Listeners listeners = Listeners.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void showSelectKeyFileDialog() {
         new AlertDialog.Builder(this)
-                .setTitle("Key File")
-                .setMessage("Do you want to use an existing key file?")
+                .setTitle(getString(R.string.key_file))
+                .setMessage(getString(R.string.existing_key_file)+"?")
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
@@ -75,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             Wallets.WALLET_NAME = "0";
             PasswordUtil passwordUtil = new PasswordUtil();
             if (!passwordUtil.loadKeys(passphrase)) {
-                logger.error("Could not load keys");
+                logger.error(getResources().getString(R.string.no_load_key_file));
                 File keyFile = new File(Constants.FILES_DIRECTORY + Constants.KEYS);
                 if(keyFile.exists()) {
                     Toast.makeText(this, getResources().getString(R.string.wrong_password), Toast.LENGTH_LONG).show();
@@ -83,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
             Toast.makeText(this, getResources().getString(R.string.connecting_wait), Toast.LENGTH_LONG).show();
-            logger.debug("TMA POST starting up");
+            logger.debug(getResources().getString(R.string.tma_starting));
             StartNetwork.getInstance().start(this);
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
@@ -106,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
                     if(!password.getText().toString().equals(confirmPassword.getText().toString())) {
-                        Toast.makeText(getApplicationContext(), "Password and Confirm Password do no match. Please try again.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.reentered_password_does_not_match), Toast.LENGTH_LONG).show();
                         return false;
                     }
                     Wallets.WALLET_NAME = "0";
@@ -131,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!password.getText().toString().equals(confirmPassword.getText().toString())) {
-                    Toast.makeText(getApplicationContext(), "Password and Confirm Password do no match. Please try again.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.reentered_password_does_not_match), Toast.LENGTH_LONG).show();
                     return;
                 }
                 Wallets.WALLET_NAME = "0";

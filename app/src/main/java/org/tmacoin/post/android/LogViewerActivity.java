@@ -1,16 +1,10 @@
 package org.tmacoin.post.android;
 
 import android.os.Bundle;
-import android.os.FileObserver;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.method.ScrollingMovementMethod;
-import android.view.View;
-import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.annotation.Nullable;
 
 import org.tma.util.Constants;
 import org.tma.util.StringUtil;
@@ -19,7 +13,6 @@ import org.tma.util.TmaLogger;
 import org.tma.util.TmaRunnable;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.RandomAccessFile;
 
 public class LogViewerActivity extends BaseActivity {
@@ -36,7 +29,7 @@ public class LogViewerActivity extends BaseActivity {
         logContent.setMovementMethod(new ScrollingMovementMethod());
         final File log = new File(getFilesDir(), "config/tmapost.log");
         if(!log.exists()) {
-            logContent.setText("File does not exists: " + log.getAbsolutePath());
+            logContent.setText(getResources().getString(R.string.file_does_not_exist) + log.getAbsolutePath());
             return;
         }
 

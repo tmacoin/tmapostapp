@@ -72,16 +72,16 @@ public class ConnectedToNetworkActivity extends BaseActivity {
         logger.debug("getBalance attempt {}", attemptNumber);
         updateStatus("getBalance attempt " + attemptNumber);
         Network network = Network.getInstance();
-        updateStatus("Network status: " + network.getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
         TmaAndroidUtil.checkNetwork();
-        updateStatus("Network status: " + network.getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
         GetBalanceRequest request = new GetBalanceRequest(network, network.getTmaAddress());
         request.start();
         String balance = (String) ResponseHolder.getInstance().getObject(request.getCorrelationId());
         if(balance == null) {
             balance = getBalance(--attemptNumber);
         }
-        updateStatus("Network status: " + network.getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
         return balance;
     }
 

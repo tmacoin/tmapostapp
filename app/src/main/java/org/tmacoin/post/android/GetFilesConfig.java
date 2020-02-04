@@ -42,7 +42,7 @@ public class GetFilesConfig extends BaseActivity {
             return;
         }
         TextView textViewFile = findViewById(R.id.textViewFile);
-        textViewFile.setText("Copying file was canceled");
+        textViewFile.setText(getResources().getString(R.string.copy_cancelled));
     }
 
     private void copyFile(Uri selectedFile, String destination) {
@@ -78,7 +78,7 @@ public class GetFilesConfig extends BaseActivity {
 
     public String getFileName(Uri uri) {
         String result = null;
-        if (uri.getScheme().equals("content")) {
+        if ("content".equals(uri.getScheme())) {
             Cursor cursor = getContentResolver().query(uri, null, null, null, null);
             try {
                 if (cursor != null && cursor.moveToFirst()) {

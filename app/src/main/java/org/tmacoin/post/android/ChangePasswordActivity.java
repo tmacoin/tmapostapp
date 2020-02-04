@@ -1,7 +1,5 @@
 package org.tmacoin.post.android;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;

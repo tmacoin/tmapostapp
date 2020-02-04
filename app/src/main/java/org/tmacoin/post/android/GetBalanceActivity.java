@@ -1,10 +1,6 @@
 package org.tmacoin.post.android;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -14,13 +10,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.tma.peer.BootstrapRequest;
 import org.tma.peer.Network;
 import org.tma.peer.thin.GetBalanceRequest;
 import org.tma.peer.thin.ResponseHolder;
-import org.tma.util.ThreadExecutor;
 import org.tma.util.TmaLogger;
-import org.tma.util.TmaRunnable;
 
 public class GetBalanceActivity extends BaseActivity {
 
@@ -59,7 +52,7 @@ public class GetBalanceActivity extends BaseActivity {
                 buttonClicked();
             }
         });
-        updateStatus("Network status: " + Network.getInstance().getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
     }
 
     private void buttonClicked() {
@@ -99,16 +92,16 @@ public class GetBalanceActivity extends BaseActivity {
         logger.debug("getBalance attempt {}", attemptNumber);
         updateStatus("getBalance attempt " + attemptNumber);
         Network network = Network.getInstance();
-        updateStatus("Network status: " + network.getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
         TmaAndroidUtil.checkNetwork();
-        updateStatus("Network status: " + network.getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
         GetBalanceRequest request = new GetBalanceRequest(network, tmaAddress);
         request.start();
         String balance = (String) ResponseHolder.getInstance().getObject(request.getCorrelationId());
         if(balance == null) {
             balance = getBalance(--attemptNumber, tmaAddress);
         }
-        updateStatus("Network status: " + network.getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
         return balance;
     }
 }

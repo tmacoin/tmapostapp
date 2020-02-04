@@ -1,7 +1,6 @@
 package org.tmacoin.post.android;
 
 import android.app.Activity;
-import android.text.Html;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 import org.tma.util.TmaLogger;
 
 import java.io.File;
-import java.util.List;
 
 public class FileAdapter extends ArrayAdapter<File> {
 
@@ -39,7 +37,6 @@ public class FileAdapter extends ArrayAdapter<File> {
         File currentFile = list[position];
 
         TextView release = rowView.findViewById(R.id.textView_fileName);
-        //release.setText(currentFile.getName());
 
         SpannableString content = new SpannableString(currentFile.getName());
         content.setSpan(new UnderlineSpan(), 0, currentFile.getName().length(), 0);

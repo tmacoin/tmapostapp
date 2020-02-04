@@ -45,7 +45,7 @@ public class SendTransactionActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_transaction);
-        updateStatus("Network status: " + Network.getInstance().getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
         Button sendTransactionButton = findViewById(R.id.sendTransactionButton);
         sendTransactionButton.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -108,16 +108,16 @@ public class SendTransactionActivity extends BaseActivity {
         final Coin total = Coin.ONE.multiply(Double.parseDouble(amount)).add(new Coin(Long.parseLong(fee)));
         final Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         final TransactionData expiringData = this.expiringData == null? null: new TransactionData(this.expiringData, Long.parseLong(expire));
-        updateStatus("Network status: " + network.getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
         TmaAndroidUtil.checkNetwork();
-        updateStatus("Network status: " + network.getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
         List<Coin> totals = new ArrayList<>();
         totals.add(total);
         List<Set<TransactionOutput>> inputList = new GetInputsRequest(network, tmaAddress, totals).getInputlist();
         int i = 0;
 
         if(inputList == null || inputList.size() != totals.size()) {
-            result = "No inputs available for tma address " + tmaAddress + ". Please check your balance.";
+            result = getResources().getString(R.string.no_inputs) + tmaAddress + getResources().getString(R.string.pls_check_your_balance);
             return;
         }
 
@@ -127,15 +127,15 @@ public class SendTransactionActivity extends BaseActivity {
                 new Coin(Integer.parseInt(fee)), inputs, wallet.getPrivateKey(), data, expiringData, null);
         logger.debug("sent {}", transaction);
         new SendTransactionRequest(Network.getInstance(), transaction).start();
-        updateStatus("Network status: " + network.getPeerCount().toString());
-        result = "Successfully sent " + amount + " coins to " + recipient;
+        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
+        result = getResources().getString(R.string.success_sent) + amount + getResources().getString(R.string.coins_to) + recipient;
     }
 
     private void processSync() {
         setContentView(R.layout.activity_send_transaction_complete);
         TextView resultTextView = findViewById(R.id.resultTextView);
         resultTextView.setText(result);
-        updateStatus("Network status: " + Network.getInstance().getPeerCount().toString());
+        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
     }
 
     private void showAlert() {

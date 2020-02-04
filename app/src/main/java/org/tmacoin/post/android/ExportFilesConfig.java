@@ -1,27 +1,20 @@
 package org.tmacoin.post.android;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import android.provider.DocumentsContract;
-import android.provider.OpenableColumns;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import org.tma.util.TmaLogger;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
@@ -39,24 +32,32 @@ public class ExportFilesConfig extends BaseActivity {
         setContentView(R.layout.activity_export_files);
 
         File directory = getApplicationContext().getFilesDir().getAbsoluteFile();
-        final File[] fList = (directory.listFiles())[0].listFiles();
+        if (directory.listFiles().length > 0) {
+            final File[] fList = (directory.listFiles())[0].listFiles();
 
-        listView = findViewById(R.id.simpleListView);
-        FileAdapter arrayAdapter = new FileAdapter(this, fList);
-        listView.setAdapter(arrayAdapter);
+            listView = findViewById(R.id.simpleListView);
+            FileAdapter arrayAdapter = new FileAdapter(this, fList);
+            listView.setAdapter(arrayAdapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                selectedFile = fList[position];
-                try {
-                    createFile();
-                } catch (Exception e) {
-                    logger.error(e.getMessage(), e);
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view,
+                                        int position, long id) {
+                    if (fList.length > 0) {
+                        selectedFile = fList[position];
+                        try {
+                            createFile();
+                        } catch (Exception e) {
+                            logger.error(e.getMessage(), e);
+                        }
+                    } else {
+                        logger.error("No files in config directory");
+                    }
                 }
-            }
-        });
+            });
+        } else {
+            logger.error("Possible no config directory");
+        }
 
     }
 
