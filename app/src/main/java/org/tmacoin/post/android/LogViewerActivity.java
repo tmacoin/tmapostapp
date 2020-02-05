@@ -33,6 +33,14 @@ public class LogViewerActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        try {
+            doOnCreate();
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+        }
+    }
+
+    private void doOnCreate() {
         setContentView(R.layout.activity_log_viewer);
         final TextView logContent = findViewById(R.id.log_content);
         logContent.setMovementMethod(new ScrollingMovementMethod());
@@ -51,12 +59,18 @@ public class LogViewerActivity extends BaseActivity {
                 readLog(log);
             }
         };
-
         observer.startWatching();
-
     }
 
-    private void readLog(File file) {
+    private synchronized void readLog(File file) {
+        try {
+            doReadLog(file);
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+        }
+    }
+
+    private void doReadLog(File file) {
         final StringBuilder builder = new StringBuilder();
         RandomAccessFile randomAccessFile = null;
         FileInputStream fis = null;
@@ -76,6 +90,7 @@ public class LogViewerActivity extends BaseActivity {
             int length;
             while ((length = fis.read(buffer)) != -1) {
                 result.write(buffer, 0, length);
+                pointer = pointer + length;
             }
 
         } catch (Exception e) {
@@ -113,14 +128,31 @@ public class LogViewerActivity extends BaseActivity {
             @Override
             public void run() {
                 try {
-                    final TextView logContent = findViewById(R.id.log_content);
-                    logContent.append(text);
-                    logContent.scrollTo(0, Integer.MAX_VALUE);
+                    appendToLog(text);
                 } catch (Exception e) {
                     logger.error(e.getMessage(), e);
                 }
             }
         });
+    }
+
+    private synchronized void appendToLog(String text) {
+        final TextView logContent = findViewById(R.id.log_content);
+        logContent.append(text);
+        logContent.scrollTo(0, Integer.MAX_VALUE);
+    }
+
+    @Override
+    protected void onDestroy() {
+        try {
+            if (observer != null) {
+                observer.stopWatching();
+                observer = null;
+            }
+            super.onDestroy();
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+        }
     }
 
 }
