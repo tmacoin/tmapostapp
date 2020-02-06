@@ -39,7 +39,7 @@
     <string name="wait">Por favor espera.</string>
     <string name="entered_info_not_correct">La información ingresada no era correcta. Inténtalo de nuevo.</string>
     <string name="subject">Tema</string>
-    <string name="body">Cuerpo</string>
+    <string name="body">Cuerpo del correo</string>
     <string name="expire_prompt">Seleccionar duración de caducidad</string>
 
     <string name="re">Re: </string>

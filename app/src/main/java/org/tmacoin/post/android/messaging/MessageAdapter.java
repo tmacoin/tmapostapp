@@ -70,11 +70,11 @@ public class MessageAdapter extends ArrayAdapter<SecureMessage> {
             name = senderTmaAddress;
         }
 
-        holder.from.setText("From: " + name);
+        holder.from.setText(context.getResources().getString(R.string.sender) + ": " + name);
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
 
-        holder.subject.setText("Subject: " + secureMessage.getSubject(wallet.getPrivateKey()));
-        holder.date.setText("Date: " + new Date(secureMessage.getTimeStamp()).toString());
+        holder.subject.setText(context.getResources().getString(R.string.subject) + ": " + secureMessage.getSubject(wallet.getPrivateKey()));
+        holder.date.setText(context.getResources().getString(R.string.date) + ": " + new Date(secureMessage.getTimeStamp()).toString());
 
         return rowView;
     }
