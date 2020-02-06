@@ -82,11 +82,11 @@
     <string name="success_sent">Matagumpay na ipinadala</string>
     <string name="coins_to">barya sa</string>
 
-    <string name="successfully_sent_message" translatable="false">Successfully sent message</string>
-    <string name="to" translatable="false">to</string>
-    <string name="secure_message_received" translatable="false">Secure Message Received</string>
-    <string name="new_messages_listener" translatable="false">New messages listener</string>
-    <string name="show_peers" translatable="false">Show Peers</string>
+    <string name="successfully_sent_message">Successfully sent message</string>
+    <string name="to">to</string>
+    <string name="secure_message_received">Secure Message Received</string>
+    <string name="new_messages_listener">New messages listener</string>
+    <string name="show_peers">Show Peers</string>
     <string name="fail_retrieve_balance">Nabigong makuha ang balanse. Pakiulit muli.</string>
 
     
@@ -107,4 +107,14 @@
         <item>1 buwan</item>
         <item>1 taon</item>
     </string-array>
+
+    <string name="successfully_sent_message">Matagumpay na nagpadala ng mensahe</string>
+    <string name="to">sa</string>
+    <string name="secure_message_received">Natanggap ang Secure na Mensahe</string>
+    <string name="new_messages_listener">Mga nakikinig ng mga bagong mensahe</string>
+    <string name="show_peers">Ipakita ang Mga Kaedad</string>
+    <string name="no_config_dir">Posibleng walang direktoryo ng config</string>
+    <string name="no_files_in_config_dir">Walang mga file sa direktoryo ng config</string>
+    <string name="file_success_exported">Matagumpay na nai-export ang file</string>
+
 </resources>
