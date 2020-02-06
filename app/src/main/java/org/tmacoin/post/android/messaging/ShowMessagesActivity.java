@@ -30,8 +30,10 @@ import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
 import org.tmacoin.post.android.persistance.AddressStore;
+import org.tmacoin.post.android.persistance.MessageStore;
 
 import java.security.PublicKey;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -44,6 +46,7 @@ public class ShowMessagesActivity extends BaseActivity {
     private List<SecureMessage> list = null;
     private String activeView = "messages";
     private AddressStore addressStore;
+    private MessageStore messageStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,7 @@ public class ShowMessagesActivity extends BaseActivity {
         }
         setContentView(R.layout.activity_show_messages);
         addressStore = new AddressStore(getApplicationContext());
+        messageStore = new MessageStore(getApplicationContext());
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.VISIBLE);
         updateStatus(getResources().getString(R.string.retrieving_messages_wait));
@@ -105,11 +109,36 @@ public class ShowMessagesActivity extends BaseActivity {
                 iterator.remove();
             }
         }
-
+        cleanIds();
         updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
     }
 
+    private void cleanIds() {
+        List<String> messageIds = new ArrayList<>();
+        for(SecureMessage secureMessage: list) {
+            messageIds.add(secureMessage.getTransactionId());
+        }
+
+        List<String> transactionIds = messageStore.getAll();
+        transactionIds.removeAll(messageIds);
+        for(String transactionId: transactionIds) {
+            messageStore.deleteByTransactionId(transactionId);
+        }
+    }
+
+    private void hideMessages() {
+        List<String> transactionIds = messageStore.getAll();
+        Iterator<SecureMessage> iterator = list.iterator();
+        while(iterator.hasNext()) {
+            SecureMessage secureMessage = iterator.next();
+            if(transactionIds.contains(secureMessage.getTransactionId())) {
+                iterator.remove();
+            }
+        }
+    }
+
     private void processSync() {
+        hideMessages();
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.GONE);
         if(list == null) {
@@ -203,7 +232,7 @@ public class ShowMessagesActivity extends BaseActivity {
     }
 
     private void delete(SecureMessage secureMessage) {
-        list.remove(secureMessage);
+        messageStore.save(secureMessage.getTransactionId());
         processSync();
         showMessages();
     }
@@ -251,6 +280,9 @@ public class ShowMessagesActivity extends BaseActivity {
     protected void onDestroy() {
         if(addressStore != null) {
             addressStore.onDestroy();
+        }
+        if(messageStore != null) {
+            messageStore.onDestroy();
         }
         super.onDestroy();
     }
