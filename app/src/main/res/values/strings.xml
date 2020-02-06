@@ -113,6 +113,6 @@
     <string name="file_success_exported">File successfully exported</string>
     <string name="date_modified">Date modified</string>
     <string name="size">Size</string>
-    <string name="Delete">delete</string>
+    <string name="delete">Delete</string>
 
 </resources>

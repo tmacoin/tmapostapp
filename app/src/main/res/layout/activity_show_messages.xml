@@ -278,7 +278,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="@string/Delete"
+            android:text="@string/delete"
             app:layout_constraintStart_toEndOf="@+id/reply"
             app:layout_constraintTop_toBottomOf="@+id/body" />
 
