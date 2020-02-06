@@ -87,7 +87,7 @@
     <string name="secure_message_received" translatable="false">Secure Message Received</string>
     <string name="new_messages_listener" translatable="false">New messages listener</string>
     <string name="show_peers" translatable="false">Show Peers</string>
-    <string name="fail_retrieve_balance" translatable="false">Failed to retrieve balance. Please try again.</string>
+    <string name="fail_retrieve_balance">Failed to retrieve balance. Please try again.</string>
 
     <!-- BUTTONS -->
     <string name="down_load_file_button">Locate File</string>
