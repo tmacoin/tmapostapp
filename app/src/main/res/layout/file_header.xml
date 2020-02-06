@@ -6,27 +6,30 @@
 >
 
     <TextView
-        android:id="@+id/textView_fileName"
+        android:id="@+id/header_fileName"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
+        android:text="@string/name"
         android:textSize="12sp"
         android:textColor="@color/colorPrimaryDark">
     </TextView>
     <TextView
-        android:id="@+id/textView_dateModified"
+        android:id="@+id/header_dateModified"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:text="@string/date_modified"
         android:textSize="12sp"
         android:textColor="@color/colorPrimaryDark">
     </TextView>
     <TextView
-        android:id="@+id/textView_size"
+        android:id="@+id/header_size"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:text="@string/size"
         android:textSize="12sp"
         android:textColor="@color/colorPrimaryDark">
     </TextView>
