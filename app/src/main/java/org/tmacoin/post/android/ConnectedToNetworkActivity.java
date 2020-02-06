@@ -54,11 +54,12 @@ public class ConnectedToNetworkActivity extends BaseActivity {
 
 
     private void complete(final String balance) {
+        final TextView balanceTextView = findViewById(R.id.balance);
         if(balance == null) {
+            balanceTextView.setText(getResources().getString(R.string.fail_retrieve_balance));
             updateStatus(getResources().getString(R.string.fail_retrieve_balance));
             Toast.makeText(this, getResources().getString(R.string.fail_retrieve_balance), Toast.LENGTH_LONG).show();
         } else {
-            final TextView balanceTextView = findViewById(R.id.balance);
             balanceTextView.setText(balance + " " + getResources().getString(R.string.coins));
         }
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
