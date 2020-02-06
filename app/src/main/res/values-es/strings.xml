@@ -9,7 +9,7 @@
     <string name="file_menu">Archivo</string>
     <string name="tools_menu">Herramientas</string>
     <string name="messaging_menu">Mensajería</string>
-    <string name="twitter_menu">Gorjeo</string>
+    <string name="twitter_menu">Twitter</string>
     <string name="posting_menu">Destino</string>
     <string name="stop_message_listener">Detener mensaje oyente</string>
     <string name="show_address">Mostrar dirección</string>
