@@ -9,6 +9,7 @@ import android.provider.DocumentsContract;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.tma.util.TmaLogger;
 
@@ -51,12 +52,13 @@ public class ExportFilesConfig extends BaseActivity {
                             logger.error(e.getMessage(), e);
                         }
                     } else {
-                        logger.error("No files in config directory");
+                        logger.error(getResources().getString(R.string.no_files_in_config_dir));
                     }
                 }
             });
         } else {
-            logger.error("Possible no config directory");
+            logger.error(getResources().getString(R.string.no_config_dir));
+            Toast.makeText(this, getResources().getString(R.string.no_config_dir), Toast.LENGTH_LONG).show();
         }
 
     }
@@ -79,6 +81,7 @@ public class ExportFilesConfig extends BaseActivity {
             if (resultData != null) {
                 uri = resultData.getData();
                 copyFile(selectedFile, uri);
+                Toast.makeText(this, getResources().getString(R.string.file_success_exported), Toast.LENGTH_LONG).show();
             }
         }
     }

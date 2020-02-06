@@ -2,16 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal"
+    android:weightSum="100">
 
     <TextView
         android:id="@+id/textView_fileName"
-        android:layout_width="fill_parent"
-        android:layout_height="?android:attr/listPreferredItemHeight"
-        android:textSize="20sp"
-        android:paddingLeft="6dip"
-        android:paddingRight="6dip"
-        android:gravity="center"
+        android:layout_weight="33"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:textSize="10sp"
+        android:textColor="@color/colorPrimaryDark">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_dateModified"
+        android:layout_weight="33"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="10sp"
+        android:textColor="@color/colorPrimaryDark">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_size"
+        android:layout_weight="33"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="10sp"
         android:textColor="@color/colorPrimaryDark">
     </TextView>
 
