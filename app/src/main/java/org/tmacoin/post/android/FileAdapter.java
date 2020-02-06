@@ -12,6 +12,9 @@ import android.widget.TextView;
 import org.tma.util.TmaLogger;
 
 import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class FileAdapter extends ArrayAdapter<File> {
 
@@ -19,6 +22,7 @@ public class FileAdapter extends ArrayAdapter<File> {
 
     private final Activity context;
     private final File[] list;
+    private final String DATE_MM_DD_YYYY_TIME = "MM-dd-YYYY HH:mm:ss";
 
     public FileAdapter(Activity context, File[] list) {
         super(context, R.layout.message_rowlayout, list);
@@ -36,11 +40,22 @@ public class FileAdapter extends ArrayAdapter<File> {
 
         File currentFile = list[position];
 
-        TextView release = rowView.findViewById(R.id.textView_fileName);
-
+        TextView textFileName = rowView.findViewById(R.id.textView_fileName);
         SpannableString content = new SpannableString(currentFile.getName());
         content.setSpan(new UnderlineSpan(), 0, currentFile.getName().length(), 0);
-        release.setText(content, TextView.BufferType.SPANNABLE);
+        textFileName.setText(content, TextView.BufferType.SPANNABLE);
+
+        TextView textDateModified = rowView.findViewById(R.id.textView_dateModified);
+        SimpleDateFormat outputFormat = new SimpleDateFormat(DATE_MM_DD_YYYY_TIME);
+        long val = currentFile.lastModified();
+        Date date=new Date(val);
+        textDateModified.setText(outputFormat.format(date));
+
+        TextView textFileSize = rowView.findViewById(R.id.textView_size);
+        textFileSize.setText(String.valueOf(Integer.parseInt(String.valueOf(currentFile.length())))+" kb");
+
+
+
 
         return rowView;
     }
