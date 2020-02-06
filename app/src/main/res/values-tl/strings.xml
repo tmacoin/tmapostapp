@@ -81,12 +81,6 @@
     <string name="pls_check_your_balance">. Mangyaring suriin ang iyong balanse.</string>
     <string name="success_sent">Matagumpay na ipinadala</string>
     <string name="coins_to">barya sa</string>
-
-    <string name="successfully_sent_message">Successfully sent message</string>
-    <string name="to">to</string>
-    <string name="secure_message_received">Secure Message Received</string>
-    <string name="new_messages_listener">New messages listener</string>
-    <string name="show_peers">Show Peers</string>
     <string name="fail_retrieve_balance">Nabigong makuha ang balanse. Pakiulit muli.</string>
 
     
