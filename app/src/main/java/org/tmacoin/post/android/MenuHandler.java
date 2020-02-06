@@ -99,4 +99,9 @@ public class MenuHandler {
         Intent intent = new Intent(activity, LogViewerActivity.class);
         activity.startActivity(intent);
     }
+
+    public void handleShowPeers(Activity activity) {
+        Intent intent = new Intent(activity, ShowPeersActivity.class);
+        activity.startActivity(intent);
+    }
 }

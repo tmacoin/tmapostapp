@@ -3,7 +3,7 @@
     package="org.tmacoin.post.android">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -16,10 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".messaging.AddAddressActivity"
+        <activity android:name=".ShowPeersActivity"></activity>
+        <activity
+            android:name=".messaging.AddAddressActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:parentActivityName=".messaging.ShowMessagesActivity"
-            ></activity>
+            android:parentActivityName=".messaging.ShowMessagesActivity" />
         <activity
             android:name=".LogViewerActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />

@@ -20,6 +20,10 @@
             <item
                 android:id="@+id/view_log"
                 android:title="@string/view_log" />
+            <item
+                android:id="@+id/show_peers"
+                android:title="@string/show_peers" />
+
         </menu>
 
     </item>

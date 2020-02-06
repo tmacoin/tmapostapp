@@ -56,6 +56,10 @@ public class BaseActivity extends AppCompatActivity {
                 menuHandler.handleViewLog(this);
                 return true;
 
+            case R.id.show_peers:
+                menuHandler.handleShowPeers(this);
+                return true;
+
             case R.id.send_transaction:
                 menuHandler.handleSendTransaction(this);
                 return true;
