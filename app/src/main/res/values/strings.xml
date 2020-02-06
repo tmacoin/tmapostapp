@@ -81,13 +81,13 @@
     <string name="pls_check_your_balance">. Please check your balance.</string>
     <string name="success_sent">Successfully sent</string>
     <string name="coins_to">coins to</string>
+    <string name="fail_retrieve_balance">Failed to retrieve balance. Please try again.</string>
 
     <string name="successfully_sent_message" translatable="false">Successfully sent message</string>
     <string name="to" translatable="false">to</string>
     <string name="secure_message_received" translatable="false">Secure Message Received</string>
     <string name="new_messages_listener" translatable="false">New messages listener</string>
     <string name="show_peers" translatable="false">Show Peers</string>
-    <string name="fail_retrieve_balance" translatable="false">Failed to retrieve balance. Please try again.</string>
     <string name="no_config_dir" translatable="false">Possible no config directory</string>
     <string name="no_files_in_config_dir" translatable="false">No files in config directory</string>
     <string name="file_success_exported" translatable="false">File successfully exported</string>
