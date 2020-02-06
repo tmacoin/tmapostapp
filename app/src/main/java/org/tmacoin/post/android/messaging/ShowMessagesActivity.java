@@ -203,6 +203,20 @@ public class ShowMessagesActivity extends BaseActivity {
                 buttonClicked(secureMessage);
             }
         });
+
+        Button deleteButton = findViewById(R.id.delete_button);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                delete(secureMessage);
+            }
+        });
+    }
+
+    private void delete(SecureMessage secureMessage) {
+        list.remove(secureMessage);
+        processSync();
+        showMessages();
     }
 
     private void senderClicked(SecureMessage secureMessage) {
@@ -217,7 +231,13 @@ public class ShowMessagesActivity extends BaseActivity {
         startActivity(intent);
     }
 
-
+    private void showMessages() {
+        activeView = "messages";
+        ConstraintLayout messages = findViewById(R.id.messages);
+        messages.setVisibility(View.VISIBLE);
+        ScrollView message = findViewById(R.id.message);
+        message.setVisibility(View.GONE);
+    }
 
 
     @Override
@@ -231,11 +251,7 @@ public class ShowMessagesActivity extends BaseActivity {
                     onBackPressed();
                     return true;
                 }
-                activeView = "messages";
-                ConstraintLayout messages = findViewById(R.id.messages);
-                messages.setVisibility(View.VISIBLE);
-                ScrollView message = findViewById(R.id.message);
-                message.setVisibility(View.GONE);
+                showMessages();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
