@@ -1,4 +1,4 @@
-package org.tmacoin.post.android.messaging.persistance;
+package org.tmacoin.post.android.persistance;
 
 public class Address {
 

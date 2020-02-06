@@ -7,19 +7,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import org.tma.peer.thin.SecureMessage;
 import org.tma.util.StringUtil;
 import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
-import org.tmacoin.post.android.messaging.persistance.Address;
-import org.tmacoin.post.android.messaging.persistance.AddressStore;
+import org.tmacoin.post.android.persistance.Address;
+import org.tmacoin.post.android.persistance.AddressStore;
 
 public class AddAddressActivity extends BaseActivity {
 

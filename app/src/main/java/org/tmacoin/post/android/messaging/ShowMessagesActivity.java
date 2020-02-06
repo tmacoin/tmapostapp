@@ -1,12 +1,7 @@
 package org.tmacoin.post.android.messaging;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,15 +14,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.app.NotificationCompat;
 
 import org.tma.blockchain.Wallet;
-import org.tma.peer.BootstrapRequest;
 import org.tma.peer.Network;
 import org.tma.peer.thin.GetMessagesRequest;
 import org.tma.peer.thin.ResponseHolder;
 import org.tma.peer.thin.SecureMessage;
-import org.tma.util.Base58;
 import org.tma.util.Encryptor;
 import org.tma.util.StringUtil;
 import org.tma.util.TmaLogger;
@@ -35,13 +27,10 @@ import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.MainActivity;
 import org.tmacoin.post.android.R;
-import org.tmacoin.post.android.SendTransactionActivity;
 import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
-import org.tmacoin.post.android.messaging.persistance.AddressStore;
+import org.tmacoin.post.android.persistance.AddressStore;
 
-import java.nio.charset.StandardCharsets;
-import java.security.GeneralSecurityException;
 import java.security.PublicKey;
 import java.util.Date;
 import java.util.Iterator;

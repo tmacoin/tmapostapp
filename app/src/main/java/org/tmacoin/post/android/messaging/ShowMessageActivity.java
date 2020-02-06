@@ -5,10 +5,7 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ScrollView;
 import android.widget.TextView;
-
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import org.tma.blockchain.Wallet;
 import org.tma.peer.Network;
@@ -19,7 +16,7 @@ import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.Wallets;
-import org.tmacoin.post.android.messaging.persistance.AddressStore;
+import org.tmacoin.post.android.persistance.AddressStore;
 
 import java.util.Date;
 

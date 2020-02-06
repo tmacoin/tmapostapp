@@ -9,16 +9,13 @@ import android.widget.TextView;
 
 import org.tma.blockchain.Wallet;
 import org.tma.peer.thin.SecureMessage;
-import org.tma.util.Base58;
 import org.tma.util.Encryptor;
 import org.tma.util.StringUtil;
 import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.Wallets;
-import org.tmacoin.post.android.messaging.persistance.AddressStore;
+import org.tmacoin.post.android.persistance.AddressStore;
 
-import java.nio.charset.StandardCharsets;
-import java.security.GeneralSecurityException;
 import java.util.Date;
 import java.util.List;
 

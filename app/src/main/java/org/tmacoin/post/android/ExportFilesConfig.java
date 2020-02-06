@@ -24,7 +24,6 @@ public class ExportFilesConfig extends BaseActivity {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
     private static final int REQUEST_CODE = 1;
-    private ListView listView;
     private File selectedFile;
 
     @Override
@@ -32,36 +31,26 @@ public class ExportFilesConfig extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_export_files);
 
-        File directory = getApplicationContext().getFilesDir().getAbsoluteFile();
-        if (directory.listFiles().length > 0) {
-            final File[] fList = (directory.listFiles())[0].listFiles();
+        File directory = new File(getFilesDir(), "config");
+        final File[] fList = directory.listFiles();
+        ListView listView = findViewById(R.id.simpleListView);
+        FileAdapter arrayAdapter = new FileAdapter(this, fList);
+        listView.setAdapter(arrayAdapter);
+        View headerView = getLayoutInflater().inflate(R.layout.file_header, null);
+        listView.addHeaderView(headerView);
 
-            listView = findViewById(R.id.simpleListView);
-            FileAdapter arrayAdapter = new FileAdapter(this, fList);
-            listView.setAdapter(arrayAdapter);
-            View headerView = getLayoutInflater().inflate(R.layout.file_header, null);
-            listView.addHeaderView(headerView);
-
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view,
-                                        int position, long id) {
-                    if (fList.length > 0) {
-                        selectedFile = fList[position];
-                        try {
-                            createFile();
-                        } catch (Exception e) {
-                            logger.error(e.getMessage(), e);
-                        }
-                    } else {
-                        logger.error(getResources().getString(R.string.no_files_in_config_dir));
-                    }
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                selectedFile = (File) parent.getItemAtPosition(position);
+                try {
+                    createFile();
+                } catch (Exception e) {
+                    logger.error(e.getMessage(), e);
                 }
-            });
-        } else {
-            logger.error(getResources().getString(R.string.no_config_dir));
-            Toast.makeText(this, getResources().getString(R.string.no_config_dir), Toast.LENGTH_LONG).show();
-        }
+            }
+        });
+
 
     }
 
@@ -79,9 +68,8 @@ public class ExportFilesConfig extends BaseActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent resultData) {
         super.onActivityResult(requestCode, resultCode, resultData);
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
-            Uri uri = null;
             if (resultData != null) {
-                uri = resultData.getData();
+                Uri uri = resultData.getData();
                 copyFile(selectedFile, uri);
                 Toast.makeText(this, getResources().getString(R.string.file_success_exported), Toast.LENGTH_LONG).show();
             }

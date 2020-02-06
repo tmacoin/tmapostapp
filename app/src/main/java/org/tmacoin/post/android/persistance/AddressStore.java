@@ -1,12 +1,10 @@
-package org.tmacoin.post.android.messaging.persistance;
+package org.tmacoin.post.android.persistance;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
-
-import org.tma.util.TmaLogger;
 
 import java.util.ArrayList;
 import java.util.List;

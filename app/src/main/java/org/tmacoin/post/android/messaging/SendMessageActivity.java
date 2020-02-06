@@ -16,7 +16,6 @@ import org.tma.blockchain.Transaction;
 import org.tma.blockchain.TransactionData;
 import org.tma.blockchain.TransactionOutput;
 import org.tma.blockchain.Wallet;
-import org.tma.peer.BootstrapRequest;
 import org.tma.peer.Network;
 import org.tma.peer.SendTransactionRequest;
 import org.tma.peer.thin.GetInputsRequest;
@@ -34,7 +33,7 @@ import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
-import org.tmacoin.post.android.messaging.persistance.AddressStore;
+import org.tmacoin.post.android.persistance.AddressStore;
 
 import java.nio.charset.StandardCharsets;
 import java.security.PublicKey;
