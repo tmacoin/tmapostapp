@@ -78,7 +78,6 @@
     <string name="key_file">Schlüsseldatei</string>
     <string name="existing_key_file">Möchten Sie eine vorhandene Schlüsseldatei verwenden?</string>
     <string name="no_load_key_file">Schlüssel konnten nicht geladen werden</string>
-    <string name="tma_starting">TMA POST wird gestartet</string>
     <string name="no_inputs">Für die tma-Adresse sind keine Eingänge verfügbar</string>
     <string name="pls_check_your_balance">. Bitte überprüfen Sie Ihr Guthaben.</string>
     <string name="success_sent">Erfolgreich gesendet</string>

@@ -79,7 +79,6 @@
     <string name="key_file">پرونده اصلی</string>
     <string name="existing_key_file">آیا می خواهید از یک فایل کلیدی موجود استفاده کنید</string>
     <string name="no_load_key_file">کلیدها بارگیری نشد</string>
-    <string name="tma_starting">راه اندازی TMA POST</string>
     <string name="no_inputs">هیچ ورودی برای آدرس tma موجود نیست</string>
     <string name="pls_check_your_balance">. لطفا تعادل خود را بررسی کنید.</string>
     <string name="success_sent">با موفقیت ارسال شد</string>

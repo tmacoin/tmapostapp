@@ -79,7 +79,6 @@
     <string name="key_file">Fichier clé</string>
     <string name="existing_key_file">Voulez-vous utiliser un fichier de clés existant</string>
     <string name="no_load_key_file">Impossible de charger les clés</string>
-    <string name="tma_starting">Démarrage de TMA POST</string>
     <string name="no_inputs">Aucune entrée disponible pour l\'adresse tma</string>
     <string name="pls_check_your_balance">. Veuillez vérifier votre solde.</string>
     <string name="success_sent">Envoyé avec succès</string>

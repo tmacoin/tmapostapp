@@ -79,7 +79,6 @@
     <string name="key_file">キーファイル</string>
     <string name="existing_key_file">既存のキーファイルを使用しますか</string>
     <string name="no_load_key_file">キーを読み込めませんでした</string>
-    <string name="tma_starting">TMA POSTの起動</string>
     <string name="no_inputs">TMAアドレスに利用可能な入力はありません</string>
     <string name="pls_check_your_balance">。残高を確認してください。</string>
     <string name="success_sent">正常に送信されました</string>

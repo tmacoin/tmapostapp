@@ -79,7 +79,6 @@
     <string name="key_file">קובץ מפתח</string>
     <string name="existing_key_file">האם ברצונך להשתמש בקובץ מפתח קיים</string>
     <string name="no_load_key_file">לא ניתן היה לטעון מפתחות</string>
-    <string name="tma_starting">הפעלת TMA POST</string>
     <string name="no_inputs">אין כניסות זמינות לכתובת tma</string>
     <string name="pls_check_your_balance">. אנא בדוק את היתרה שלך.</string>
     <string name="success_sent">נשלח בהצלחה</string>

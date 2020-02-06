@@ -26,6 +26,7 @@
     <string name="get_balance_wait">Retrieving balance. Please wait.</string>
     <string name="retrieving_messages_wait">Retrieving messages. Please wait.</string>
     <string name="fail_retrieve_messages">Failed to retrieve messages. Please try again.</string>
+
     <string name="tma_address">TMA Address</string>
     <string name="balance">Balance</string>
     <string name="wrong_password">Entered passphrase was not correct. Please try again.</string>
@@ -76,7 +77,6 @@
     <string name="key_file">Key File</string>
     <string name="existing_key_file">Do you want to use an existing key file</string>
     <string name="no_load_key_file">Could not load keys</string>
-    <string name="tma_starting">TMA POST starting up</string>
     <string name="no_inputs">No inputs available for tma address</string>
     <string name="pls_check_your_balance">. Please check your balance.</string>
     <string name="success_sent">Successfully sent</string>
@@ -87,6 +87,7 @@
     <string name="secure_message_received" translatable="false">Secure Message Received</string>
     <string name="new_messages_listener" translatable="false">New messages listener</string>
     <string name="show_peers" translatable="false">Show Peers</string>
+    <string name="fail_retrieve_balance" translatable="false">Failed to retrieve balance. Please try again.</string>
 
     <!-- BUTTONS -->
     <string name="down_load_file_button">Locate File</string>

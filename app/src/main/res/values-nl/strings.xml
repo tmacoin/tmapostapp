@@ -79,7 +79,6 @@
     <string name="key_file">Sleutelbestand</string>
     <string name="existing_key_file">Wilt u een bestaand sleutelbestand gebruiken</string>
     <string name="no_load_key_file">Kan sleutels niet laden</string>
-    <string name="tma_starting">TMA POST wordt gestart</string>
     <string name="no_inputs">Geen ingangen beschikbaar voor tma-adres</string>
     <string name="pls_check_your_balance">. Controleer uw saldo.</string>
     <string name="success_sent">Succesvol verzonden</string>

@@ -18,6 +18,7 @@ public class ShowPeersActivity extends BaseActivity {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
     private boolean active = true;
+    private String text = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +40,16 @@ public class ShowPeersActivity extends BaseActivity {
             for(Peer peer: list) {
                 stringBuilder.append(peer.toString()).append(System.lineSeparator());
             }
+            String localText = stringBuilder.toString();
+            if(text.equals(localText)) {
+                return;
+            }
+            text = localText;
             new Handler(Looper.getMainLooper()).post(new Runnable(){
                 @Override
                 public void run() {
                     try {
-                        peersTextView.setText(stringBuilder.toString());
+                        peersTextView.setText(text);
                     } catch (Exception e) {
                         logger.error(e.getMessage(), e);
                     }

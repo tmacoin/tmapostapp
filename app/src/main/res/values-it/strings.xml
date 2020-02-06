@@ -79,7 +79,6 @@
     <string name="key_file">File chiave</string>
     <string name="existing_key_file">Vuoi usare un file chiave esistente</string>
     <string name="no_load_key_file">Impossibile caricare le chiavi</string>
-    <string name="tma_starting">TMA POST all\'avvio</string>
     <string name="no_inputs">Nessun input disponibile per l\'indirizzo tma</string>
     <string name="pls_check_your_balance">. Si prega di controllare il saldo.</string>
     <string name="success_sent">Inviato con successo</string>

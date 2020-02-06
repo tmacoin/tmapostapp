@@ -79,7 +79,6 @@
     <string name="key_file">Avaintiedosto</string>
     <string name="existing_key_file">Haluatko käyttää olemassa olevaa avaintiedostoa?</string>
     <string name="no_load_key_file">Avaimia ei voitu ladata</string>
-    <string name="tma_starting">TMA POST käynnistyy</string>
     <string name="no_inputs">Tma-osoitteelle ei ole saatavissa tuloja</string>
     <string name="pls_check_your_balance">. Tarkista saldosi.</string>
     <string name="success_sent">Lähetys onnistui</string>

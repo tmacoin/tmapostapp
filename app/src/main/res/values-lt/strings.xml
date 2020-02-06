@@ -79,7 +79,6 @@
     <string name="key_file">Raktų failas</string>
     <string name="existing_key_file">Ar norite naudoti esamą rakto failą</string>
     <string name="no_load_key_file">Nepavyko įkelti raktų</string>
-    <string name="tma_starting">TMA POST paleidimas</string>
     <string name="no_inputs">Negalima įvesti tma adreso</string>
     <string name="pls_check_your_balance">. Patikrinkite savo balansą.</string>
     <string name="success_sent">Sėkmingai išsiųstas</string>

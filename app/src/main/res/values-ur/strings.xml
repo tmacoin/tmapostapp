@@ -79,7 +79,6 @@
     <string name="key_file">کلیدی فائل</string>
     <string name="existing_key_file">کیا آپ کسی موجودہ کلیدی فائل کو استعمال کرنا چاہتے ہیں؟</string>
     <string name="no_load_key_file">چابیاں نہیں لوڈ ہوسکیں</string>
-    <string name="tma_starting">ٹی ایم اے پوسٹ شروع ہو رہی ہے</string>
     <string name="no_inputs">ٹی ایم اے ایڈریس کے لئے کوئی آدان دستیاب نہیں ہے</string>
     <string name="pls_check_your_balance">. براہ کرم اپنا بیلنس چیک کریں۔</string>
     <string name="success_sent">کامیابی کے ساتھ بھیج دیا گیا</string>

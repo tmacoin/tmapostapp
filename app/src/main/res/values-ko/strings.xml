@@ -79,7 +79,6 @@
     <string name="key_file">키 파일</string>
     <string name="existing_key_file">기존 키 파일을 사용 하시겠습니까?</string>
     <string name="no_load_key_file">키를로드 할 수 없습니다</string>
-    <string name="tma_starting">TMA POST 시작</string>
     <string name="no_inputs">TMA 주소에 사용할 수있는 입력이 없습니다</string>
     <string name="pls_check_your_balance">. 잔액을 확인하십시오.</string>
     <string name="success_sent">성공적으로 보냈습니다</string>

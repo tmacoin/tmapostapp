@@ -79,7 +79,6 @@
     <string name="key_file">ملف مفتاح</string>
     <string name="existing_key_file">هل تريد استخدام ملف مفتاح موجود</string>
     <string name="no_load_key_file">لا يمكن تحميل المفاتيح</string>
-    <string name="tma_starting">TMA POST بدء التشغيل</string>
     <string name="no_inputs">لا المدخلات المتاحة لعنوان tma</string>
     <string name="pls_check_your_balance">. يرجى التحقق من رصيدك.</string>
     <string name="success_sent">أرسلت بنجاح</string>

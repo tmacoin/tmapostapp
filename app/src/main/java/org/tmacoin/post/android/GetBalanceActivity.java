@@ -79,8 +79,13 @@ public class GetBalanceActivity extends BaseActivity {
     private void complete(final String balance, final String tmaAddress) {
         setContentView(R.layout.activity_show_balance);
         final TextView addressTextView = findViewById(R.id.tma_address_textView);
-        final TextView balanceTextView = findViewById(R.id.balance_textView);
         addressTextView.setText(tmaAddress);
+        if(balance == null) {
+            updateStatus(getResources().getString(R.string.fail_retrieve_balance));
+            Toast.makeText(this, getResources().getString(R.string.fail_retrieve_balance), Toast.LENGTH_LONG).show();
+            return;
+        }
+        final TextView balanceTextView = findViewById(R.id.balance_textView);
         balanceTextView.setText(balance + " " + getResources().getString(R.string.coins));
         updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
     }

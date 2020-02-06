@@ -79,7 +79,6 @@
     <string name="key_file">Ключевой файл</string>
     <string name="existing_key_file">Вы хотите использовать существующий ключевой файл?</string>
     <string name="no_load_key_file">Не удалось загрузить ключи</string>
-    <string name="tma_starting">Запуск TMA POST</string>
     <string name="no_inputs">Нет доступных входов для адреса tma</string>
     <string name="pls_check_your_balance">, Пожалуйста, проверьте свой баланс.</string>
     <string name="success_sent">Успешно отправлено</string>

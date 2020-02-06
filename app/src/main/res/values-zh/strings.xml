@@ -78,7 +78,6 @@
     <string name="key_file">密鑰文件</string>
     <string name="existing_key_file">您是否要使用現有的密鑰文件</string>
     <string name="no_load_key_file">無法加載密鑰</string>
-    <string name="tma_starting">TMA POST啟動</string>
     <string name="no_inputs">沒有可用於tma地址的輸入</string>
     <string name="pls_check_your_balance">。請檢查您的餘額。</string>
     <string name="success_sent">發送成功</string>

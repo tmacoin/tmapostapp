@@ -121,13 +121,13 @@ public class ShowMessagesActivity extends BaseActivity {
     }
 
     private void processSync() {
+        final ProgressBar pgsBar = findViewById(R.id.progressBar);
+        pgsBar.setVisibility(View.GONE);
         if(list == null) {
             updateStatus(getResources().getString(R.string.fail_retrieve_messages));
             Toast.makeText(this, getResources().getString(R.string.fail_retrieve_messages), Toast.LENGTH_LONG).show();
             return;
         }
-        final ProgressBar pgsBar = findViewById(R.id.progressBar);
-        pgsBar.setVisibility(View.GONE);
         ListView listView = findViewById(R.id.simpleListView);
         MessageAdapter arrayAdapter = new MessageAdapter(this, list, addressStore);
         listView.setAdapter(arrayAdapter);
