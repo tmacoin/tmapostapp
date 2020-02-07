@@ -111,9 +111,9 @@
     <string name="no_config_dir">可能没有配置目录</string>
     <string name="no_files_in_config_dir">config目录中没有文件</string>
     <string name="file_success_exported">文件成功导出</string>
-    <string name ="date_modified">修改日期</ string>
-    <string name ="size">大小</ string>
-    <string name ="delete">删除</ string>
+    <string name ="date_modified">修改日期</string>
+    <string name ="size">大小</string>
+    <string name ="delete">删除</string>
 
 
 </resources>

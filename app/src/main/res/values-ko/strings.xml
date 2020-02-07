@@ -110,8 +110,8 @@
     <string name="no_config_dir">가능한 구성 디렉토리가 없습니다.</string>
     <string name="no_files_in_config_dir">구성 디렉토리에 파일이 없습니다.</string>
     <string name="file_success_exported">파일을 성공적으로 내보냈습니다</string>
-    <string name = "date_modified"> 수정 된 날짜 </ string>
-    <string name = "size"> 크기 </ string>
-    <string name = "delete"> 삭제 </ string>
+    <string name = "date_modified"> 수정 된 날짜 </string>
+    <string name = "size"> 크기 </string>
+    <string name = "delete"> 삭제 </string>
 
 </resources>

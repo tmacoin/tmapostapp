@@ -111,8 +111,8 @@
     <string name="no_files_in_config_dir">لا توجد ملفات في دليل التكوين</string>
     <string name="file_success_exported">تم تصدير الملف بنجاح</string>
 
-    <string name = "date_modified"> تاريخ التعديل </ string>
-    <string name = "size"> الحجم </ string>
+    <string name = "date_modified"> تاريخ التعديل </string>
+    <string name = "size"> الحجم </string>
     <string name = "delete"> حذف </string>
 
 </resources>

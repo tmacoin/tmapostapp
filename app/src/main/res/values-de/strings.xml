@@ -109,9 +109,9 @@
     <string name="no_config_dir">Möglicherweise kein Konfigurationsverzeichnis</string>
     <string name="no_files_in_config_dir">Keine Dateien im Konfigurationsverzeichnis</string>
     <string name="file_success_exported">Datei erfolgreich exportiert</string>
-    <string name = "date_modified"> Änderungsdatum </ string>
-    <string name = "size"> Größe </ string>
-    <string name = "delete"> Löschen </ string>
+    <string name = "date_modified"> Änderungsdatum </string>
+    <string name = "size"> Größe </string>
+    <string name = "delete"> Löschen </string>
 
 
 </resources>
