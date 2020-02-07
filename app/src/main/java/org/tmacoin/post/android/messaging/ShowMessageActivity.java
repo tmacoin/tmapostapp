@@ -42,7 +42,6 @@ public class ShowMessageActivity extends BaseActivity {
         String expire = new Date(secureMessage.getTimeStamp() + secureMessage.getExpire() * 60000).toString();
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         String subject = secureMessage.getSubject(wallet.getPrivateKey());
-        logger.debug("date={}, expire={}, subject={}", date, expire, subject);
         TextView sender = findViewById(R.id.sender);
 
         String senderTmaAddress = StringUtil.getStringFromKey(secureMessage.getSender());

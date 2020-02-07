@@ -6,31 +6,35 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
-import org.tma.peer.thin.SecureMessage;
+import org.tma.util.TmaLogger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MessageStore {
 
-    private Context context;
-    TmaPostDbHelper dbHelper;
+    private static final TmaLogger logger = TmaLogger.getLogger();
+
+    private TmaPostDbHelper dbHelper;
     private SQLiteDatabase db;
 
     public MessageStore(Context context) {
-        this.context = context;
         dbHelper = new TmaPostDbHelper(context);
         db = dbHelper.getWritableDatabase();
     }
 
     public void save(String transactionId) {
+        if(transactionId == null) {
+            logger.debug("transactionId is null");
+            return;
+        }
         String result = findTransactionId(transactionId);
         if(result != null) {
             return;
         }
         ContentValues values = new ContentValues();
         values.put(DatabaseContract.MessageEntry.COLUMN_NAME_TRANSACTION_ID, transactionId);
-        long newRowId = db.insert(DatabaseContract.MessageEntry.TABLE_NAME, null, values);
+        db.insert(DatabaseContract.MessageEntry.TABLE_NAME, null, values);
     }
 
     public void deleteByTransactionId(String transactionId) {
@@ -39,7 +43,7 @@ public class MessageStore {
         db.delete(DatabaseContract.MessageEntry.TABLE_NAME, selection, selectionArgs);
     }
 
-    public String findTransactionId(String transactionId) {
+    private String findTransactionId(String transactionId) {
         String result = null;
         String[] projection = {
                 BaseColumns._ID,

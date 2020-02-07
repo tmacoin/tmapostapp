@@ -11,15 +11,12 @@ import java.util.List;
 
 public class AddressStore {
 
-    private Context context;
-    TmaPostDbHelper dbHelper;
+    private TmaPostDbHelper dbHelper;
     private SQLiteDatabase db;
 
     public AddressStore(Context context) {
-        this.context = context;
         dbHelper = new TmaPostDbHelper(context);
         db = dbHelper.getWritableDatabase();
-
     }
 
     public void save(Address address) {
@@ -34,13 +31,13 @@ public class AddressStore {
             values.put(DatabaseContract.AddressEntry.COLUMN_NAME_NAME, address.getName());
 
             // Insert the new row, returning the primary key value of the new row
-            long newRowId = db.insert(DatabaseContract.AddressEntry.TABLE_NAME, null, values);
+            db.insert(DatabaseContract.AddressEntry.TABLE_NAME, null, values);
             return;
         }
         update(address);
     }
 
-    public void update(Address address) {
+    private void update(Address address) {
         // New value for one column
         String name = findNameByTmaAddress(address.getTmaAddress());
         if(address.getName().equals(name)) {
@@ -53,11 +50,10 @@ public class AddressStore {
         ContentValues values = new ContentValues();
         values.put(DatabaseContract.AddressEntry.COLUMN_NAME_NAME, address.getName());
 
-        // Which row to update, based on the title
         String selection = DatabaseContract.AddressEntry.COLUMN_NAME_TMA_ADDRESS + " LIKE ?";
         String[] selectionArgs = { address.getTmaAddress() };
 
-        int count = db.update(
+        db.update(
                 DatabaseContract.AddressEntry.TABLE_NAME,
                 values,
                 selection,
