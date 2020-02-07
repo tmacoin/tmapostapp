@@ -12,7 +12,9 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
         android:text="@string/name"
-        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginBottom="5dp"
         android:textColor="@color/colorPrimaryDark">
     </TextView>
     <TextView
@@ -21,7 +23,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/date_modified"
-        android:textSize="12sp"
+        android:textSize="16sp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
         android:textColor="@color/colorPrimaryDark">
     </TextView>
     <TextView
@@ -30,7 +34,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/size"
-        android:textSize="12sp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="15dp"
+        android:textSize="16sp"
         android:textColor="@color/colorPrimaryDark">
     </TextView>
 

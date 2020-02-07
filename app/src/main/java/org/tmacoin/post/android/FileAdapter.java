@@ -13,6 +13,7 @@ import org.tma.util.TmaLogger;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -23,6 +24,7 @@ public class FileAdapter extends ArrayAdapter<File> {
     private final Activity context;
     private final File[] list;
     private final String DATE_MM_DD_YYYY_TIME = "MM-dd-YYYY HH:mm:ss";
+    DecimalFormat formatter = new DecimalFormat("#,###");
 
     public FileAdapter(Activity context, File[] list) {
         super(context, R.layout.message_rowlayout, list);
@@ -52,7 +54,7 @@ public class FileAdapter extends ArrayAdapter<File> {
         textDateModified.setText(outputFormat.format(date));
 
         TextView textFileSize = rowView.findViewById(R.id.textView_size);
-        textFileSize.setText(String.valueOf(Integer.parseInt(String.valueOf(currentFile.length())))+" kb");
+        textFileSize.setText(String.format("%,d", currentFile.length())+" KB");
 
 
 

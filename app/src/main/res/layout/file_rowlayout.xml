@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:textColor="@color/colorPrimaryDark">
     </TextView>
     <TextView
@@ -19,7 +19,7 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:textColor="@color/colorPrimaryDark">
     </TextView>
     <TextView
@@ -27,7 +27,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="12sp"
+        android:textSize="14sp"
+        android:layout_marginLeft="15dp"
         android:textColor="@color/colorPrimaryDark">
     </TextView>
 
