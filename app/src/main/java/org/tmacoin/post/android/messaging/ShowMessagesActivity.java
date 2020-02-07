@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import org.tma.blockchain.Wallet;
 import org.tma.peer.Network;
@@ -63,11 +64,23 @@ public class ShowMessagesActivity extends BaseActivity {
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.VISIBLE);
         updateStatus(getResources().getString(R.string.retrieving_messages_wait));
+        final SwipeRefreshLayout swipeRefresh = findViewById(R.id.swipeRefresh);
+        swipeRefresh.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        list = null;
+                        process();
+
+                    }
+                }
+        );
         process();
 
     }
 
     private void process() {
+
         new AndroidExecutor() {
 
             @Override
@@ -157,6 +170,8 @@ public class ShowMessagesActivity extends BaseActivity {
                 showMessage(secureMessage);
             }
         });
+        final SwipeRefreshLayout swipeRefresh = findViewById(R.id.swipeRefresh);
+        swipeRefresh.setRefreshing(false);
     }
 
     private void showMessage(final SecureMessage secureMessage) {
