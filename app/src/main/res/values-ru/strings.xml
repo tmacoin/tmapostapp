@@ -35,11 +35,11 @@
     <string name="Fee_in_satoshis">Плата в сатоши</string>
     <string name="data">Данные</string>
     <string name="Expire_after_blocks">Действительные</string>
-    <string name="Expiring_Data">Истекающие данные</string>
+    <string name="Expiring_Data">Временные данные</string>
     <string name="wait">Пожалуйста, подождите.</string>
     <string name="entered_info_not_correct">Введенная информация была неверной. Пожалуйста, попробуйте еще раз.</string>
     <string name="subject">Тема</string>
-    <string name="body">Тело письма</string>
+    <string name="body">Текст</string>
     <string name="expire_prompt">Выберите срок действия</string>
 
     <string name="re">Re: </string>
