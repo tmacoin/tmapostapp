@@ -47,6 +47,7 @@ public class ShowMessagesActivity extends BaseActivity {
     private String activeView = "messages";
     private AddressStore addressStore;
     private MessageStore messageStore;
+    private MessageAdapter arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,7 +148,7 @@ public class ShowMessagesActivity extends BaseActivity {
             return;
         }
         ListView listView = findViewById(R.id.simpleListView);
-        MessageAdapter arrayAdapter = new MessageAdapter(this, list, addressStore);
+        arrayAdapter = new MessageAdapter(this, list, addressStore);
         listView.setAdapter(arrayAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -233,7 +234,8 @@ public class ShowMessagesActivity extends BaseActivity {
 
     private void delete(SecureMessage secureMessage) {
         messageStore.save(secureMessage.getTransactionId());
-        processSync();
+        list.remove(secureMessage);
+        arrayAdapter.notifyDataSetChanged();
         showMessages();
     }
 
