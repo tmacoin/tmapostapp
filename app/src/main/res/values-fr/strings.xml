@@ -110,6 +110,9 @@
     <string name="no_config_dir">Pas de répertoire de configuration possible</string>
     <string name="no_files_in_config_dir">Aucun fichier dans le répertoire de configuration</string>
     <string name="file_success_exported">Fichier exporté avec succès</string>
+    <string name = "date_modified"> Date de modification </string>
+    <string name = "size"> Taille </string>
+    <string name = "delete"> Supprimer </string>
 
 
 </resources>

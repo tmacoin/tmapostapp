@@ -110,5 +110,8 @@
     <string name="no_config_dir">Negalima konfigūruoti katalogo</string>
     <string name="no_files_in_config_dir">Konfigūracijos kataloge nėra failų</string>
     <string name="file_success_exported">Failas sėkmingai eksportuotas</string>
+    <string name = "date_modified"> Pakeitimo data </string>
+    <string name = "size"> dydis </string>
+    <string name = "delete"> Ištrinti </string>
 
 </resources>

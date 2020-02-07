@@ -110,5 +110,8 @@
     <string name="no_config_dir">Posibleng walang direktoryo ng config</string>
     <string name="no_files_in_config_dir">Walang mga file sa direktoryo ng config</string>
     <string name="file_success_exported">Matagumpay na nai-export ang file</string>
+    <string name = "date_modified"> Binago ang petsa </string>
+    <string name = "size"> Sukat </string>
+    <string name = "delete"> Tanggalin </string>
 
 </resources>

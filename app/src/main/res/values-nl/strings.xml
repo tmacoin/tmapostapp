@@ -110,5 +110,8 @@
     <string name="no_config_dir">Mogelijk geen configuratiemap</string>
     <string name="no_files_in_config_dir">Geen bestanden in configuratiemap</string>
     <string name="file_success_exported">Bestand succesvol geëxporteerd</string>
+    <string name = "date_modified"> Datum gewijzigd </string>
+    <string name = "size"> Grootte </string>
+    <string name = "delete"> Verwijderen </string>
 
 </resources>
