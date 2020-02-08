@@ -153,8 +153,6 @@ public class ShowMessagesActivity extends BaseActivity {
 
     private void processSync() {
         final SwipeRefreshLayout swipeRefresh = findViewById(R.id.swipeRefresh);
-
-        hideMessages();
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.GONE);
         if(list == null) {
@@ -163,6 +161,7 @@ public class ShowMessagesActivity extends BaseActivity {
             swipeRefresh.setRefreshing(false);
             return;
         }
+        hideMessages();
         ListView listView = findViewById(R.id.simpleListView);
         arrayAdapter = new MessageAdapter(this, list, addressStore);
         listView.setAdapter(arrayAdapter);
