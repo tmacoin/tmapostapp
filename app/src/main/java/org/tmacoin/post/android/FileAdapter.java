@@ -54,10 +54,9 @@ public class FileAdapter extends ArrayAdapter<File> {
         textDateModified.setText(outputFormat.format(date));
 
         TextView textFileSize = rowView.findViewById(R.id.textView_size);
-        textFileSize.setText(String.format("%,d", currentFile.length())+" KB");
-
-
-
+        long length = currentFile.length();
+        length = length % 1024 == 0? length / 1024: (length / 1024) + 1;
+        textFileSize.setText(String.format("%,d KB", length));
 
         return rowView;
     }
