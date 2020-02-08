@@ -37,7 +37,7 @@ public class ExportFilesConfig extends BaseActivity {
         FileAdapter arrayAdapter = new FileAdapter(this, fList);
         listView.setAdapter(arrayAdapter);
         View headerView = getLayoutInflater().inflate(R.layout.file_header, null);
-        listView.addHeaderView(headerView);
+        listView.addHeaderView(headerView, null, false);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
