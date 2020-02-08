@@ -152,12 +152,15 @@ public class ShowMessagesActivity extends BaseActivity {
     }
 
     private void processSync() {
+        final SwipeRefreshLayout swipeRefresh = findViewById(R.id.swipeRefresh);
+
         hideMessages();
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.GONE);
         if(list == null) {
             updateStatus(getResources().getString(R.string.fail_retrieve_messages));
             Toast.makeText(this, getResources().getString(R.string.fail_retrieve_messages), Toast.LENGTH_LONG).show();
+            swipeRefresh.setRefreshing(false);
             return;
         }
         ListView listView = findViewById(R.id.simpleListView);
@@ -170,7 +173,6 @@ public class ShowMessagesActivity extends BaseActivity {
                 showMessage(secureMessage);
             }
         });
-        final SwipeRefreshLayout swipeRefresh = findViewById(R.id.swipeRefresh);
         swipeRefresh.setRefreshing(false);
     }
 
