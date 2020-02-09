@@ -91,20 +91,18 @@ public class GetBalanceActivity extends BaseActivity {
     }
 
     private String getBalance(int attemptNumber, String tmaAddress) {
-        if(attemptNumber < 0) {
-            return null;
-        }
-        logger.debug("getBalance attempt {}", attemptNumber);
-        updateStatus("getBalance attempt " + attemptNumber);
+        String balance = null;
+        int i = attemptNumber;
         Network network = Network.getInstance();
-        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
-        TmaAndroidUtil.checkNetwork();
-        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
-        GetBalanceRequest request = new GetBalanceRequest(network, tmaAddress);
-        request.start();
-        String balance = (String) ResponseHolder.getInstance().getObject(request.getCorrelationId());
-        if(balance == null) {
-            balance = getBalance(--attemptNumber, tmaAddress);
+        while(balance == null && i > 0 ) {
+            logger.debug("getBalance attempt {}", attemptNumber - i);
+            updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
+            TmaAndroidUtil.checkNetwork();
+            updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
+            GetBalanceRequest request = new GetBalanceRequest(network, tmaAddress);
+            request.start();
+            balance = (String) ResponseHolder.getInstance().getObject(request.getCorrelationId());
+            i--;
         }
         updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
         return balance;
