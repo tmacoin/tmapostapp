@@ -44,7 +44,7 @@ public class ShowMessageActivity extends BaseActivity {
         String subject = secureMessage.getSubject(wallet.getPrivateKey());
         TextView sender = findViewById(R.id.sender);
 
-        String senderTmaAddress = StringUtil.getStringFromKey(secureMessage.getSender());
+        String senderTmaAddress = secureMessage.getSenderTmaAddress();
         String name = addressStore.findNameByTmaAddress(senderTmaAddress);
         if(name == null) {
             sender.setText(senderTmaAddress);

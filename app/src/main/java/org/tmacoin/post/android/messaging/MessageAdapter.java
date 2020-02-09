@@ -61,7 +61,7 @@ public class MessageAdapter extends ArrayAdapter<SecureMessage> {
         ViewHolder holder = (ViewHolder) rowView.getTag();
         SecureMessage secureMessage = list.get(position);
 
-        String senderTmaAddress = StringUtil.getStringFromKey(secureMessage.getSender());
+        String senderTmaAddress = secureMessage.getSenderTmaAddress();
         String name = addressStore.findNameByTmaAddress(senderTmaAddress);
         if(name == null) {
             name = senderTmaAddress;

@@ -32,7 +32,7 @@ public class AddAddressActivity extends BaseActivity {
         final SecureMessage secureMessage = (SecureMessage)getIntent().getSerializableExtra("secureMessage");
         TextView tma_address = findViewById(R.id.tma_address);
 
-        String tmaAddress = StringUtil.getStringFromKey(secureMessage.getSender());
+        String tmaAddress = secureMessage.getSenderTmaAddress();
         tma_address.setText(tmaAddress);
 
         Button button = findViewById(R.id.add_to_address_book);

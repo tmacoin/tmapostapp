@@ -66,9 +66,9 @@ public class SendMessageActivity extends BaseActivity {
         recipientTmaAddressEditText.setThreshold(1);
 
         if(secureMessage != null) {
-            String recipientName = addressStore.findNameByTmaAddress(StringUtil.getStringFromKey(secureMessage.getSender()));
+            String recipientName = addressStore.findNameByTmaAddress(secureMessage.getSenderTmaAddress());
             if(recipientName == null) {
-                recipientName = StringUtil.getStringFromKey(secureMessage.getSender());
+                recipientName = secureMessage.getSenderTmaAddress();
             }
 
             recipientTmaAddressEditText.setText(recipientName);
