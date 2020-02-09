@@ -200,7 +200,6 @@ public class SendMessageActivity extends BaseActivity {
             result = "Recipient public key is not found for tma address " + recipientTmaAddress;
             return;
         }
-        logger.debug("expire={}, subjectTextView={}, expiringData={}", expire, subject, expiringData);
 
         TransactionData transactionData = null;
         if(subject != null) {
@@ -279,7 +278,6 @@ public class SendMessageActivity extends BaseActivity {
         subject = StringUtil.trim(subjectEditText.getText().toString());
         EditText expiringDataEditText = findViewById(R.id.expiringDataEditText);
         expiringData = StringUtil.trim(expiringDataEditText.getText().toString());
-        logger.debug("expiringData={}, expiringDataEditText.getLineCount()={}", expiringData, expiringDataEditText.getLineCount());
     }
 
     @Override
