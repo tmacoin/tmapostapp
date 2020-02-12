@@ -9,14 +9,14 @@
     <string name="file_menu">файл</string>
     <string name="tools_menu">инструменты</string>
     <string name="messaging_menu">обмен сообщениями</string>
-    <string name="twitter_menu">Твиттер</string>
+    <string name="twitter_menu">Тмиттер</string>
     <string name="posting_menu">оприходование</string>
     <string name="stop_message_listener">Остановить прослушиватель сообщений</string>
     <string name="show_address">Показать адрес</string>
     <string name="show_messages">Показать сообщения</string>
-    <string name="create_twitter">Создать твиттер</string>
-    <string name="show_my_tweets">Показать мои твиты</string>
-    <string name="search_twitter">Поиск в Твиттере</string>
+    <string name="create_twitter">Создать тmиттер</string>
+    <string name="show_my_tweets">Показать мои тmиты</string>
+    <string name="search_twitter">Поиск в Тmиттере</string>
     <string name="my_subscription">Моя подписка</string>
     <string name="create_post">Создать сообщение</string>
     <string name="find_post">Найти сообщение</string>
@@ -89,7 +89,7 @@
     <string name="submit">Разместить</string>
     <string name="send_transaction">Отправить транзакцию</string>
     <string name="send_secure_message">Отправить безопасное сообщение</string>
-    <string name="send_tweet">Отправить твит</string>
+    <string name="send_tweet">Отправить тmит</string>
 
 
     <string-array name="expire_arrays">

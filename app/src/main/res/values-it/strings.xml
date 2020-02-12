@@ -14,9 +14,9 @@
     <string name="stop_message_listener">Ferma l\'ascoltatore di messaggi</string>
     <string name="show_address">Mostra indirizzo</string>
     <string name="show_messages">Mostra messaggi</string>
-    <string name="create_twitter">Crea Twitter</string>
-    <string name="show_my_tweets">Mostra i miei tweet</string>
-    <string name="search_twitter">Cerca su Twitter</string>
+    <string name="create_twitter">Crea Tmitter</string>
+    <string name="show_my_tweets">Mostra i miei tmeet</string>
+    <string name="search_twitter">Cerca su Tmitter</string>
     <string name="my_subscription">La mia iscrizione</string>
     <string name="create_post">Crea post</string>
     <string name="find_post">Trova post</string>
@@ -89,7 +89,7 @@
     <string name="submit">Invia</string>
     <string name="send_transaction">Invia transazione</string>
     <string name="send_secure_message">Invia un messaggio sicuro</string>
-    <string name="send_tweet">Invia Tweet</string>
+    <string name="send_tweet">Invia Tmeet</string>
 
 
     <string-array name="expire_arrays">

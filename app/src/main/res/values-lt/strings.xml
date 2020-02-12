@@ -9,14 +9,14 @@
     <string name="file_menu">Byla</string>
     <string name="tools_menu">Įrankiai</string>
     <string name="messaging_menu">Žinutės</string>
-    <string name="twitter_menu">„Twitter“</string>
+    <string name="twitter_menu">„Tmitter“</string>
     <string name="posting_menu">Skelbimas</string>
     <string name="stop_message_listener">Sustabdyti pranešimų klausytoją</string>
     <string name="show_address">Rodyti adresą</string>
     <string name="show_messages">Rodyti pranešimus</string>
-    <string name="create_twitter">Sukurkite „Twitter“</string>
-    <string name="show_my_tweets">Rodyti mano Tweets</string>
-    <string name="search_twitter">Ieškokite „Twitter“</string>
+    <string name="create_twitter">Sukurkite „Tmitter“</string>
+    <string name="show_my_tweets">Rodyti mano Tmeets</string>
+    <string name="search_twitter">Ieškokite „Tmitter“</string>
     <string name="my_subscription">Mano prenumerata</string>
     <string name="create_post">Sukurti pranešimą</string>
     <string name="find_post">Rasti pranešimą</string>
@@ -89,7 +89,7 @@
     <string name="submit">Pateikti</string>
     <string name="send_transaction">Siųsti operaciją</string>
     <string name="send_secure_message">Siųsti saugią žinutę</string>
-    <string name="send_tweet">Siųsti „Tweet“</string>
+    <string name="send_tweet">Siųsti „Tmeet“</string>
 
 
     <string-array name="expire_arrays">

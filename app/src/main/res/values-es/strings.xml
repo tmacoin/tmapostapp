@@ -9,14 +9,14 @@
     <string name="file_menu">Archivo</string>
     <string name="tools_menu">Herramientas</string>
     <string name="messaging_menu">Mensajería</string>
-    <string name="twitter_menu">Twitter</string>
+    <string name="twitter_menu">Tmitter</string>
     <string name="posting_menu">Destino</string>
     <string name="stop_message_listener">Detener mensaje oyente</string>
     <string name="show_address">Mostrar dirección</string>
     <string name="show_messages">Mostrar mensajes</string>
-    <string name="create_twitter">Crear Twitter</string>
-    <string name="show_my_tweets">Mostrar mis tweets</string>
-    <string name="search_twitter">Busca en Twitter</string>
+    <string name="create_twitter">Crear Tmitter</string>
+    <string name="show_my_tweets">Mostrar mis tmeets</string>
+    <string name="search_twitter">Busca en Tmitter</string>
     <string name="my_subscription">Mi suscripción</string>
     <string name="create_post">Crear publicación</string>
     <string name="find_post">Buscar publicación</string>
@@ -89,7 +89,7 @@
     <string name="submit">Enviar</string>
     <string name="send_transaction">Enviar transacción</string>
     <string name="send_secure_message">Enviar mensaje seguro</string>
-    <string name="send_tweet">Enviar Tweet</string>
+    <string name="send_tweet">Enviar Tmeet</string>
 
 
     <string-array name="expire_arrays">

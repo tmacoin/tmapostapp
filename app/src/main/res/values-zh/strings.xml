@@ -16,7 +16,7 @@
     <string name="stop_message_listener">停止消息監聽器</string>
     <string name="show_address">顯示地址</string>
     <string name="show_messages">顯示訊息</string>
-    <string name="create_twitter">創建Twitter</string>
+    <string name="create_twitter">創建Tmitter</string>
     <string name="show_my_tweets">顯示我的推文</string>
     <string name="search_twitter">搜索推特</string>
     <string name="my_subscription">我的訂閱</string>

@@ -14,9 +14,9 @@
     <string name="stop_message_listener">Lopeta viestin kuuntelija</string>
     <string name="show_address">Näytä osoite</string>
     <string name="show_messages">Näytä viestit</string>
-    <string name="create_twitter">Luo Twitter</string>
-    <string name="show_my_tweets">Näytä omat twiitit</string>
-    <string name="search_twitter">Hae Twitteristä</string>
+    <string name="create_twitter">Luo Tmitter</string>
+    <string name="show_my_tweets">Näytä omat tmiitit</string>
+    <string name="search_twitter">Hae Tmitteristä</string>
     <string name="my_subscription">Oma tilaukseni</string>
     <string name="create_post">Luo viesti</string>
     <string name="find_post">Etsi viesti</string>
@@ -89,7 +89,7 @@
     <string name="submit">Lähetä</string>
     <string name="send_transaction">Lähetä tapahtuma</string>
     <string name="send_secure_message">Lähetä suojattu viesti</string>
-    <string name="send_tweet">Lähetä Tweet</string>
+    <string name="send_tweet">Lähetä Tmeet</string>
 
 
     <string-array name="expire_arrays">

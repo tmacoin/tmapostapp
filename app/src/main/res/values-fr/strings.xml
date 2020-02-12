@@ -9,14 +9,14 @@
     <string name="file_menu">Fichier</string>
     <string name="tools_menu">Outils</string>
     <string name="messaging_menu">Messagerie</string>
-    <string name="twitter_menu">Twitter</string>
+    <string name="twitter_menu">Tmitter</string>
     <string name="posting_menu">Affectation</string>
     <string name="stop_message_listener">Arrêter l\'écouteur de messages</string>
     <string name="show_address">Afficher l\'adresse</string>
     <string name="show_messages">Show Messages</string>
-    <string name="create_twitter">Créez Twitter</string>
-    <string name="show_my_tweets">Afficher mes tweets</string>
-    <string name="search_twitter">Recherche sur Twitter</string>
+    <string name="create_twitter">Créez Tmitter</string>
+    <string name="show_my_tweets">Afficher mes tmeets</string>
+    <string name="search_twitter">Recherche sur Tmitter</string>
     <string name="my_subscription">Mon abonnement</string>
     <string name="create_post">Créer une publication</string>
     <string name="find_post">Trouver un message</string>
@@ -89,7 +89,7 @@
     <string name="submit">Soumettre</string>
     <string name="send_transaction">Envoyer la transaction</string>
     <string name="send_secure_message">Envoyer un message sécurisé</string>
-    <string name="send_tweet">Envoyer Tweet</string>
+    <string name="send_tweet">Envoyer Tmeet</string>
 
 
     <string-array name="expire_arrays">

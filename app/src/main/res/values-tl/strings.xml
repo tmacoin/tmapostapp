@@ -9,14 +9,14 @@
     <string name="file_menu">File</string>
     <string name="tools_menu">Mga tool</string>
     <string name="messaging_menu">Pagmemensahe</string>
-    <string name="twitter_menu">Twitter</string>
+    <string name="twitter_menu">Tmitter</string>
     <string name="posting_menu">Pag-post</string>
     <string name="stop_message_listener">Itigil ang nakikinig ng mensahe</string>
     <string name="show_address">Ipakita ang Address</string>
     <string name="show_messages">Ipakita ang Mga Mensahe</string>
-    <string name="create_twitter">Lumikha ng Twitter</string>
-    <string name="show_my_tweets">Ipakita ang Aking Mga Tweet</string>
-    <string name="search_twitter">Paghahanap sa Twitter</string>
+    <string name="create_twitter">Lumikha ng Tmitter</string>
+    <string name="show_my_tweets">Ipakita ang Aking Mga Tmeet</string>
+    <string name="search_twitter">Paghahanap sa Tmitter</string>
     <string name="my_subscription">Aking Subskripsyon</string>
     <string name="create_post">Lumikha ng Post</string>
     <string name="find_post">Maghanap ng Post</string>
@@ -90,7 +90,7 @@
     <string name="submit">Ipasa</string>
     <string name="send_transaction">Magpadala ng Transaksyon</string>
     <string name="send_secure_message">Magpadala ng Ligtas na Mensahe</string>
-    <string name="send_tweet">Magpadala ng Tweet</string>
+    <string name="send_tweet">Magpadala ng Tmeet</string>
 
 
     <string-array name="expire_arrays">

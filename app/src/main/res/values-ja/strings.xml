@@ -14,9 +14,9 @@
     <string name="stop_message_listener">メッセージリスナーを停止</string>
     <string name="show_address">住所を表示</string>
     <string name="show_messages">メッセージを表示</string>
-    <string name="create_twitter">Twitterを作成する</string>
+    <string name="create_twitter">Tmitterを作成する</string>
     <string name="show_my_tweets">ツイートを表示</string>
-    <string name="search_twitter">Twitterを検索</string>
+    <string name="search_twitter">Tmitterを検索</string>
     <string name="my_subscription">私のサブスクリプション</string>
     <string name="create_post">投稿を作成</string>
     <string name="find_post">投稿を探す</string>

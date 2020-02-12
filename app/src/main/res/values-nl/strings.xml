@@ -14,9 +14,9 @@
     <string name="stop_message_listener">Stop berichtluisteraar</string>
     <string name="show_address">Toon adres</string>
     <string name="show_messages">Toon berichten</string>
-    <string name="create_twitter">Maak Twitter</string>
-    <string name="show_my_tweets">Toon mijn tweets</string>
-    <string name="search_twitter">Zoeken op Twitter</string>
+    <string name="create_twitter">Maak Tmitter</string>
+    <string name="show_my_tweets">Toon mijn tmeets</string>
+    <string name="search_twitter">Zoeken op Tmitter</string>
     <string name="my_subscription">Mijn abonnement</string>
     <string name="create_post">Maak bericht</string>
     <string name="find_post">Post zoeken</string>
@@ -89,7 +89,7 @@
     <string name="submit">voorleggen</string>
     <string name="send_transaction">Stuur transactie</string>
     <string name="send_secure_message">Verzend beveiligd bericht</string>
-    <string name="send_tweet">Tweet verzenden</string>
+    <string name="send_tweet">Tmeet verzenden</string>
 
 
     <string-array name="expire_arrays">
