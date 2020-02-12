@@ -20,8 +20,6 @@ import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.AndroidContants;
 import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.Wallets;
-import org.tmacoin.post.android.messaging.NewMessageNotifier;
-import org.tmacoin.post.android.messaging.ShowMessagesActivity;
 
 public class NewMessageEventListener implements EventListener {
 
@@ -35,6 +33,7 @@ public class NewMessageEventListener implements EventListener {
 
     @Override
     public void onEvent(Event event) {
+        logger.debug("Received new message event");
         NewMessageEvent newMessageEvent = (NewMessageEvent)event;
         addNotification(newMessageEvent.getSecureMessage());
     }
@@ -54,7 +53,6 @@ public class NewMessageEventListener implements EventListener {
                         .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
                         .setPriority(NotificationCompat.PRIORITY_MAX)
                         .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
-                ;
         ;
 
         Intent notificationIntent = new Intent(context, ShowMessageActivity.class);
