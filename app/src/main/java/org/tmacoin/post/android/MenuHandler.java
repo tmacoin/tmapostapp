@@ -103,7 +103,7 @@ public class MenuHandler {
     }
 
     public void handleShowPeers(Activity activity) {
-        Intent intent = new Intent(activity, CreateAccount.class);
+        Intent intent = new Intent(activity, ShowPeersActivity.class);
         activity.startActivity(intent);
     }
 
