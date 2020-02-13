@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat;
 import org.tmacoin.post.android.messaging.NewMessageNotifier;
 import org.tmacoin.post.android.messaging.SendMessageActivity;
 import org.tmacoin.post.android.messaging.ShowMessagesActivity;
+import org.tmacoin.post.android.tmitter.CreateAccount;
 
 public class MenuHandler {
 
@@ -59,7 +60,8 @@ public class MenuHandler {
     }
 
     public void handleCreateTwitter(Activity activity) {
-        Toast.makeText(activity, activity.getResources().getString(R.string.create_twitter), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(activity, CreateAccount.class);
+        activity.startActivity(intent);
     }
 
     public void handleShowMyTweets(Activity activity) {
@@ -101,7 +103,8 @@ public class MenuHandler {
     }
 
     public void handleShowPeers(Activity activity) {
-        Intent intent = new Intent(activity, ShowPeersActivity.class);
+        Intent intent = new Intent(activity, CreateAccount.class);
         activity.startActivity(intent);
     }
+
 }

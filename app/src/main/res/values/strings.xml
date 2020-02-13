@@ -114,5 +114,8 @@
     <string name="date_modified">Date modified</string>
     <string name="size">Size</string>
     <string name="delete">Delete</string>
+    <string name="account_name" translatable="false">Account Name:</string>
+    <string name="description" translatable="false">Description:</string>
+    <string name="enter_passphrase_tmitter" translatable="false">Enter Passphrase:</string>
 
 </resources>

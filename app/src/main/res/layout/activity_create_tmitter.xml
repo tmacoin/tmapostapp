@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<org.tmacoin.post.android.ZoomLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/accountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        android:text="@string/account_name"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:text="@string/description"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="@+id/accountTextView"
+            app:layout_constraintTop_toTopOf="@+id/accountTextView" />
+
+    <TextView
+            android:id="@+id/passphraseTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:text="@string/enter_passphrase_tmitter"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="@+id/descriptionTextView"
+            app:layout_constraintTop_toTopOf="@+id/descriptionTextView" />
+
+    <EditText
+            android:id="@+id/accountEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:text=""
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/accountTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="3dp" />
+
+    <EditText
+            android:id="@+id/descriptionEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="text"
+            android:text=""
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/descriptionTextView"
+            app:layout_constraintTop_toBottomOf="@+id/accountEditText"
+            android:padding="3dp" />
+
+    <EditText
+            android:id="@+id/passphraseEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:text=""
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/passphraseTextView"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionEditText"
+            android:padding="3dp" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/submit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passphraseTextView" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:indeterminateDrawable="@drawable/rotate"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</org.tmacoin.post.android.ZoomLayout>
