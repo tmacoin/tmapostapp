@@ -118,5 +118,8 @@
     <string name="description" translatable="false">Description</string>
     <string name="enter_passphrase_tmitter" translatable="false">Enter Passphrase</string>
     <string name="create_tmitter_account" translatable="false">Create Tmitter Account</string>
+    <string name="account_cannot_be_empty" translatable="false">Account cannot be empty</string>
+    <string name="description_cannot_be_empty" translatable="false">Description cannot be empty</string>
+    <string name="tmitter_account_created" translatable="false">Tmitter account was successfully created</string>
 
 </resources>
