@@ -121,5 +121,9 @@
     <string name="account_cannot_be_empty" translatable="false">Account cannot be empty</string>
     <string name="description_cannot_be_empty" translatable="false">Description cannot be empty</string>
     <string name="tmitter_account_created" translatable="false">Tmitter account was successfully created</string>
+    <string name="tmitter_account_created_account_name_is" translatable="false">Tmitter account was already created. Account name is</string>
+    <string name="with_tma_address" translatable="false">with tma address</string>
+
+
 
 </resources>

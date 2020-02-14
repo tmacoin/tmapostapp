@@ -1,5 +1,6 @@
 package org.tmacoin.post.android.tmitter;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,13 +28,16 @@ import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.Wallets;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
 public class CreateAccount extends BaseActivity {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
-    private static final int POWER = 20;
+    private static final int POWER = 15;
+    private static boolean active = false;
+    private static Activity activity;
 
     private String account;
     private String description;
@@ -44,6 +48,23 @@ public class CreateAccount extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        activity = this;
+        Wallets wallets = Wallets.getInstance();
+        Collection<String> names = wallets.getNames(Wallets.TWITTER);
+        if (!names.isEmpty()) {
+            String accountName = names.iterator().next();
+            String str = getResources().getString(R.string.tmitter_account_created_account_name_is) + " " + accountName
+                + " " + getResources().getString(R.string.with_tma_address) + " " +
+                wallets.getWallet(Wallets.TWITTER, accountName).getTmaAddress();
+            setContentView(R.layout.activity_create_tmitter_complete);
+            TextView resultTextView = findViewById(R.id.resultTextView);
+            resultTextView.setText(str);
+            return;
+        }
+        if(active) {
+            setContentView(R.layout.activity_create_tmitter_wait);
+            return;
+        }
         setContentView(R.layout.activity_create_tmitter);
         Button createTmitterAccount = findViewById(R.id.createTmitterAccount);
         createTmitterAccount.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -86,8 +107,16 @@ public class CreateAccount extends BaseActivity {
     }
 
     private void processAsync() throws Exception {
-        if(generateKeyPair()) {
-            result = (getResources().getString(R.string.tmitter_account_created) + " " + account);
+        active = true;
+        try {
+            if (generateKeyPair()) {
+                result = (getResources().getString(R.string.tmitter_account_created) + ": \"" + account + "\"");
+            }
+        } catch (Throwable e) {
+            logger.error(e.getMessage(), e);
+
+        } finally {
+            active = false;
         }
     }
 
@@ -110,15 +139,20 @@ public class CreateAccount extends BaseActivity {
 
         Wallet wallet = new Wallet();
         int shardId = StringUtil.getShardForNonTmaAddress(account, POWER);
-        logger.debug("shardId: {}", shardId);
+        logger.debug("shardId: {} for power {}", shardId, POWER);
+        long i = 0;
         while (true) {
+            i++;
+            if(i % 10000 == 0) {
+                logger.debug("i={}", i);
+            }
             wallet.generateKeyPair();
             if (StringUtil.getShard(wallet.getTmaAddress(), POWER) == shardId) {
                 break;
             }
         }
         shardId = StringUtil.getShard(wallet.getTmaAddress(), network.getBootstrapShardingPower());
-        logger.debug("shardId: {}", shardId);
+        logger.debug("generated address {} for shard {} for power {}", wallet.getTmaAddress(), shardId, network.getBootstrapShardingPower());
         Wallets wallets = Wallets.getInstance();
         wallets.putWallet(Wallets.TWITTER, account, wallet);
         passwordUtil.saveKeys(passphrase);
@@ -157,10 +191,10 @@ public class CreateAccount extends BaseActivity {
     }
 
     private void processSync() {
-        setContentView(R.layout.activity_create_tmitter_complete);
-        TextView resultTextView = findViewById(R.id.resultTextView);
+        activity.setContentView(R.layout.activity_create_tmitter_complete);
+        TextView resultTextView = activity.findViewById(R.id.resultTextView);
         resultTextView.setText(result);
-        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        Toast.makeText(activity, result, Toast.LENGTH_LONG).show();
         updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
     }
 
