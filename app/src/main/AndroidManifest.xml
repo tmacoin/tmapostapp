@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".tmitter.SearchTwitterActivity"></activity>
+        <activity android:name=".tmitter.SendTmeetActivity"></activity>
+        <activity android:name=".tmitter.SearchTwitterActivity" />
         <activity android:name=".ShowPeersActivity" />
         <activity
             android:name=".messaging.AddAddressActivity"

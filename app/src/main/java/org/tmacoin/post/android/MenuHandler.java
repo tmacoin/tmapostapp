@@ -11,6 +11,7 @@ import org.tmacoin.post.android.messaging.SendMessageActivity;
 import org.tmacoin.post.android.messaging.ShowMessagesActivity;
 import org.tmacoin.post.android.tmitter.CreateAccount;
 import org.tmacoin.post.android.tmitter.SearchTwitterActivity;
+import org.tmacoin.post.android.tmitter.SendTmeetActivity;
 
 public class MenuHandler {
 
@@ -70,7 +71,8 @@ public class MenuHandler {
     }
 
     public void handleSendTweet(Activity activity) {
-        Toast.makeText(activity, activity.getResources().getString(R.string.send_tweet), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(activity, SendTmeetActivity.class);
+        activity.startActivity(intent);
     }
 
     public void handleSearchTwitter(Activity activity) {
