@@ -123,7 +123,7 @@
     <string name="tmitter_account_created" translatable="false">Tmitter account was successfully created</string>
     <string name="tmitter_account_created_account_name_is" translatable="false">Tmitter account was already created. Account name is</string>
     <string name="with_tma_address" translatable="false">with tma address</string>
-
+    <string name="search_tmitter_accounts" translatable="false">Search Tmitter Accounts</string>
 
 
 </resources>

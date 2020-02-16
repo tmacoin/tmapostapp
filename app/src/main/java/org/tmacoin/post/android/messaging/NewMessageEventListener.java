@@ -21,6 +21,8 @@ import org.tmacoin.post.android.AndroidContants;
 import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.Wallets;
 
+import java.util.Objects;
+
 public class NewMessageEventListener implements EventListener {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
@@ -82,5 +84,21 @@ public class NewMessageEventListener implements EventListener {
             NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (other == null || getClass() != other.getClass()) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
     }
 }

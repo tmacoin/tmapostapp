@@ -10,6 +10,7 @@ import org.tmacoin.post.android.messaging.NewMessageNotifier;
 import org.tmacoin.post.android.messaging.SendMessageActivity;
 import org.tmacoin.post.android.messaging.ShowMessagesActivity;
 import org.tmacoin.post.android.tmitter.CreateAccount;
+import org.tmacoin.post.android.tmitter.SearchTwitterActivity;
 
 public class MenuHandler {
 
@@ -73,7 +74,8 @@ public class MenuHandler {
     }
 
     public void handleSearchTwitter(Activity activity) {
-        Toast.makeText(activity, activity.getResources().getString(R.string.search_twitter), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(activity, SearchTwitterActivity.class);
+        activity.startActivity(intent);
     }
 
     public void handleMySubscription(Activity activity) {
