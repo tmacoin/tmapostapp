@@ -42,7 +42,7 @@ public class CreateAccount extends BaseActivity {
     private String account;
     private String description;
     private String passphrase;
-    String result = "";
+    private String result = "";
 
 
     @Override

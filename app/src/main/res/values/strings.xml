@@ -129,6 +129,9 @@
     <string name="postDescription" translatable="false">Description</string>
     <string name="post" translatable="false">Post</string>
     <string name="keywords" translatable="false">Keywords</string>
+    <string name="post_cannot_be_empty">Post cannot be empty</string>
+    <string name="keywords_cannot_be_empty">Keywords cannot be empty</string>
+    <string name="post_was_sent">Post was sent</string>
 
 
 </resources>
