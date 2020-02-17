@@ -165,7 +165,7 @@ public class CreatePost extends BaseActivity {
 
         Transaction transaction = new Transaction(wallet.getPublicKey(), twitterTmaAddress, Coin.SATOSHI, Coin.SATOSHI,
                 inputs, wallet.getPrivateKey(), description, null, keywords);
-        transaction.setApp(Applications.POST);
+        transaction.setApp(Applications.RATING);
         new SendTransactionRequest(network, transaction).start();
         logger.debug("sent {}", transaction);
         return true;
