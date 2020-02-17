@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat;
 import org.tmacoin.post.android.messaging.NewMessageNotifier;
 import org.tmacoin.post.android.messaging.SendMessageActivity;
 import org.tmacoin.post.android.messaging.ShowMessagesActivity;
+import org.tmacoin.post.android.posting.CreatePost;
 import org.tmacoin.post.android.tmitter.CreateAccount;
 import org.tmacoin.post.android.tmitter.MySubscriptionsActivity;
 import org.tmacoin.post.android.tmitter.SearchTwitterActivity;
@@ -90,7 +91,8 @@ public class MenuHandler {
 
 
     public void handleCreatePost(Activity activity) {
-        Toast.makeText(activity, activity.getResources().getString(R.string.create_post), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(activity, CreatePost.class);
+        activity.startActivity(intent);
     }
 
     public void handleFindPost(Activity activity) {

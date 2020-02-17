@@ -85,6 +85,10 @@
             android:name=".tmitter.CreateAccount"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
 
+        <activity
+            android:name=".posting.CreatePost"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
+
         <service
             android:name=".messaging.NewMessageNotifier"
             android:enabled="true"

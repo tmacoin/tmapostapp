@@ -124,8 +124,11 @@
     <string name="tmitter_account_created_account_name_is" translatable="false">Tmitter account was already created. Account name is</string>
     <string name="with_tma_address" translatable="false">with tma address</string>
     <string name="search_tmitter_accounts" translatable="false">Search Tmitter Accounts</string>
-    <string name="send_tmeet">Send Tmeet</string>
-    <string name="enter_tmeet">Enter Tmeet</string>
+    <string name="send_tmeet" translatable="false">Send Tmeet</string>
+    <string name="enter_tmeet" translatable="false">Enter Tmeet</string>
+    <string name="postDescription" translatable="false">Description</string>
+    <string name="post" translatable="false">Post</string>
+    <string name="keywords" translatable="false">Keywords</string>
 
 
 </resources>
