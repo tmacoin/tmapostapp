@@ -113,5 +113,22 @@
     <string name = "date_modified"> Binago ang petsa </string>
     <string name = "size"> Sukat </string>
     <string name = "delete"> Tanggalin </string>
+    <string name = "account_name"> Pangalan ng Account </string>
+    <string name = "description"> paglalarawan </string>
+    <string name = "enter_passphrase_tmitter"> Ipasok ang Passphrase </string>
+    <string name = "create_tmitter_account"> Lumikha ng Tmitter Account </string>
+    <string name = "account_cannot_be_empty"> Hindi maaaring walang laman ang account </string>
+    <string name = "description_cannot_be_empty"> Hindi maaring walang laman ang paglalarawan </string>
+    <string name = "tmitter_account_created"> Ang account ng Tmitter ay matagumpay na nilikha </string>
+    <string name = "tmitter_account_created_account_name_is"> Nilikha na ang account ng Tmitter. Ang pangalan ng account ay </string>
+    <string name = "with_tma_address"> na may tma address </string>
+    <string name = "search_tmitter_accounts"> Mga Account sa Paghahanap ng Tmitter </string>
+    <string name = "send_tmeet"> Magpadala ng Tmeet </string>
+    <string name = "enter_tmeet"> Ipasok ang Tmeet </string>
+    <string name = "post"> Post </string>
+    <string name = "keywords"> Mga Keyword </string>
+    <string name = "post_cannot_be_empty"> Hindi maaring walang laman ang post </string>
+    <string name = "keywords_cannot_be_empty"> Hindi maaaring walang laman ang mga keyword </string>
+    <string name = "post_was_sent"> Ipinadala ang nai-post </string>
 
 </resources>

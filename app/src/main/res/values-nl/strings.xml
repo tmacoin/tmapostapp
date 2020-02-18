@@ -114,4 +114,22 @@
     <string name = "size"> Grootte </string>
     <string name = "delete"> Verwijderen </string>
 
+    <string name = "account_name"> Accountnaam </string>
+    <string name = "description"> Beschrijving </string>
+    <string name = "enter_passphrase_tmitter"> Voer wachtwoordzin in </string>
+    <string name = "create_tmitter_account"> Maak Tmitter-account </string>
+    <string name = "account_cannot_be_empty"> Account mag niet leeg zijn </string>
+    <string name = "description_cannot_be_empty"> Beschrijving mag niet leeg zijn </string>
+    <string name = "tmitter_account_created"> Tmitter-account is succesvol aangemaakt </string>
+    <string name = "tmitter_account_created_account_name_is"> Tmitter-account is al gemaakt. Accountnaam is </string>
+    <string name = "with_tma_address"> met tma-adres </string>
+    <string name = "search_tmitter_accounts"> Doorzoek Tmitter Accounts </string>
+    <string name = "send_tmeet"> Stuur Tmeet </string>
+    <string name = "enter_tmeet"> Voer Tmeet in </string>
+    <string name = "post"> Post </string>
+    <string name = "keywords"> Sleutelwoorden </string>
+    <string name = "post_cannot_be_empty"> Bericht mag niet leeg zijn </string>
+    <string name = "keywords_cannot_be_empty"> Sleutelwoorden mogen niet leeg zijn </string>
+    <string name = "post_was_sent"> Bericht is verzonden </string>
+
 </resources>

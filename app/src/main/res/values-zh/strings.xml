@@ -82,6 +82,7 @@
     <string name="pls_check_your_balance">。請檢查您的餘額。</string>
     <string name="success_sent">發送成功</string>
     <string name="coins_to">硬幣到</string>
+    <string name="fail_retrieve_balance">无法取得余额。 请再试一遍。</string>
 
     
     <string name="down_load_file_button">定位文件</string>
@@ -102,18 +103,36 @@
         <item>1年</item>
     </string-array>
 
-    <string name="fail_retrieve_balance">无法取得余额。 请再试一遍。</string>
-    <string name="successfully_sent_message">成功发送信息</string>
-    <string name="to">至</string>
-    <string name="secure_message_received">收到安全消息</string>
-    <string name="new_messages_listener">新邮件监听器</string>
-    <string name="show_peers">显示同行</string>
-    <string name="no_config_dir">可能没有配置目录</string>
-    <string name="no_files_in_config_dir">config目录中没有文件</string>
-    <string name="file_success_exported">文件成功导出</string>
+
+
+    <string name ="successfully_sent_message">成功发送消息</string>
+    <string name ="to">至</string>
+    <string name ="secure_message_received">收到的安全消息</string>
+    <string name ="new_messages_listener">新邮件监听器</string>
+    <string name ="show_peers">显示对等体</string>
+    <string name ="no_config_dir">可能没有配置目录</string>
+    <string name ="no_files_in_config_dir">配置目录中没有文件</string>
+    <string name ="file_success_exported">文件已成功导出</string>
     <string name ="date_modified">修改日期</string>
     <string name ="size">大小</string>
     <string name ="delete">删除</string>
+    <string name ="account_name" translatable ="false">帐户名称</string>
+    <string name ="description" translatable ="false">说明</string>
+    <string name ="enter_passphrase_tmitter" translatable ="false">输入密码短语</string>
+    <string name ="create_tmitter_account" translatable ="false">创建付款人帐户</string>
+    <string name ="account_cannot_be_empty" translatable ="false">帐户不能为空</string>
+    <string name ="description_cannot_be_empty" translatable ="false">说明不能为空</string>
+    <string name ="tmitter_account_created" translatable ="false">成功创建了发射者帐户</string>
+    <string name ="tmitter_account_created_account_name_is" translatable ="false">已经创建了发射者帐户。帐户名称为</string>
+    <string name ="with_tma_address" translatable ="false">带有tma地址</string>
+    <string name ="search_tmitter_accounts" translatable ="false">搜索发射器帐户</string>
+    <string name ="send_tmeet" translatable ="false">发送Tmeet </string>
+    <string name ="enter_tmeet" translatable ="false">输入Tmeet </string>
+    <string name ="post" translatable ="false">发布</string>
+    <string name ="keywords" translatable ="false">关键字</string>
+    <string name ="post_cannot_be_empty" translatable ="false">帖子不能为空</string>
+    <string name ="keywords_cannot_be_empty" translatable ="false">关键字不能为空</string>
+    <string name ="post_was_sent" translatable ="false">帖子已发送</string>
 
 
 </resources>

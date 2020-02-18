@@ -114,4 +114,22 @@
     <string name = "size"> 크기 </string>
     <string name = "delete"> 삭제 </string>
 
+    <string name = "account_name"> 계정 이름 </string>
+    <string name = "description"> 설명 </string>
+    <string name = "enter_passphrase_tmitter"> 패스 프레이즈 입력 </string>
+    <string name = "create_tmitter_account"> 입찰자 계정 생성 </string>
+    <string name = "account_cannot_be_empty"> 계정은 비워 둘 수 없습니다 </string>
+    <string name = "description_cannot_be_empty"> 설명은 비워 둘 수 없습니다 </string>
+    <string name = "tmitter_account_created"> 승무원 계정이 성공적으로 생성되었습니다 </string>
+    <string name = "tmitter_account_created_account_name_is"> 승무원 계정이 이미 생성되었습니다. 계정 이름은 </string>입니다.
+    <string name = "with_tma_address"> tma 주소 사용 </string>
+    <string name = "search_tmitter_accounts"> 검색 담당자 계정 </string>
+    <string name = "send_tmeet"> Tmeet 보내기 </string>
+    <string name = "enter_tmeet"> Tmeet 입력 </string>
+    <string name = "post"> 게시물 </string>
+    <string name = "keywords"> 키워드 </string>
+    <string name = "post_cannot_be_empty"> 게시물은 비워 둘 수 없습니다 </string>
+    <string name = "keywords_cannot_be_empty"> 키워드는 비워 둘 수 없습니다 </string>
+    <string name = "post_was_sent"> 게시물이 전송되었습니다 </string>
+
 </resources>

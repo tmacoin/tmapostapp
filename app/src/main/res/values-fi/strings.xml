@@ -114,5 +114,23 @@
     <string name = "size"> koko </string>
     <string name = "delete"> Poista </string>
 
+    <string name = "account_name"> tilin nimi </string>
+    <string name = "description"> Kuvaus </string>
+    <string name = "enter_passphrase_tmitter"> Anna salasana </string>
+    <string name = "create_tmitter_account"> Luo välittäjätili </string>
+    <string name = "account_cannot_be_empty"> Tili ei voi olla tyhjä </string>
+    <string name = "description_cannot_be_empty"> Kuvaus ei voi olla tyhjä </string>
+    <string name = "tmitter_account_created"> Lähettäjätilin luonti onnistui </string>
+    <string name = "tmitter_account_created_account_name_is"> Lähettäjätili on jo luotu. Tilin nimi on </string>
+    <string name = "with_tma_address"> tma-osoitteella </string>
+    <string name = "search_tmitter_accounts"> Etsi haltijatilit </string>
+    <string name = "send_tmeet"> Lähetä Tmeet </string>
+    <string name = "enter_tmeet"> Kirjoita Tmeet </string>
+    <string name = "post"> Lähetä </string>
+    <string name = "keywords"> avainsanat </string>
+    <string name = "post_cannot_be_empty"> Viesti ei voi olla tyhjä </string>
+    <string name = "keywords_cannot_be_empty"> Avainsanat eivät voi olla tyhjät </string>
+    <string name = "post_was_sent"> Viesti lähetettiin </string>
+
 
 </resources>

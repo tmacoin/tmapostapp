@@ -115,4 +115,22 @@
     <string name = "size"> الحجم </string>
     <string name = "delete"> حذف </string>
 
+    <string name = "account_name"> اسم الحساب </string>
+    <string name = "description"> الوصف </string>
+    <string name = "enter_passphrase_tmitter"> أدخل عبارة المرور </string>
+    <string name = "create_tmitter_account"> إنشاء حساب Tmitter </string>
+    <string name = "account_cannot_be_empty"> لا يمكن أن يكون الحساب فارغًا </string>
+    <string name = "description_cannot_be_empty"> لا يمكن أن يكون الوصف فارغًا </string>
+    <string name = "tmitter_account_created"> تم إنشاء حساب Tmitter بنجاح </string>
+    <string name = "tmitter_account_created_account_name_is"> تم إنشاء حساب Tmitter بالفعل. اسم الحساب هو </string>
+    <string name = "with_tma_address"> مع عنوان tma </string>
+    <string name = "search_tmitter_accounts"> البحث في حسابات Tmitter </string>
+    <string name = "send_tmeet"> إرسال Tmeet </string>
+    <string name = "enter_tmeet"> أدخل Tmeet </string>
+    <string name = "post"> النشر </string>
+    <string name = "keywords"> الكلمات الرئيسية </string>
+    <string name = "post_cannot_be_empty"> لا يمكن أن تكون المشاركة فارغة </string>
+    <string name = "keywords_cannot_be_empty"> لا يمكن أن تكون الكلمات الرئيسية فارغة </string>
+    <string name = "post_was_sent"> تم إرسال المشاركة </string>
+
 </resources>

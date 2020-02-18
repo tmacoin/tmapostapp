@@ -114,4 +114,22 @@
     <string name = "size"> גודל </string>
     <string name = "delete"> מחק </string>
 
+    <string name = "account_name"> שם חשבון </string>
+    <string name = "description"> תיאור </string>
+    <string name = "enter_passphrase_tmitter"> הזן ביטוי סיסמה </string>
+    <string name = "create_tmitter_account"> צור חשבון טיטר </string>
+    <string name = "account_cannot_be_empty"> החשבון לא יכול להיות ריק </string>
+    <string name = "description_cannot_be_empty"> התיאור לא יכול להיות ריק </string>
+    <string name = "tmitter_account_created"> חשבון ה- Tmitter נוצר בהצלחה </string>
+    <string name = "tmitter_account_created_account_name_is"> חשבון ה- Tmitter כבר נוצר. שם החשבון הוא </string>
+    <string name = "with_tma_address"> עם כתובת tma </string>
+    <string name = "search_tmitter_accounts"> חיפוש חשבונות טמיטר </string>
+    <string name = "send_tmeet"> שלח Tmeet </string>
+    <string name = "enter_tmeet"> הכנס Tmeet </string>
+    <string name = "post"> פוסט </string>
+    <string name = "keywords"> מילות מפתח </string>
+    <string name = "post_cannot_be_empty"> הפוסט לא יכול להיות ריק </string>
+    <string name = "keywords_cannot_be_empty"> מילות המפתח לא יכולות להיות ריקות </string>
+    <string name = "post_was_sent"> ההודעה נשלחה </string>
+
 </resources>

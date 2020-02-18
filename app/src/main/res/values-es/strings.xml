@@ -110,10 +110,27 @@
     <string name="no_config_dir">Posible directorio no config</string>
     <string name="no_files_in_config_dir">No hay archivos en el directorio de configuración</string>
     <string name="file_success_exported">Archivo exportado exitosamente</string>
-
     <string name = "date_modified"> Fecha de modificación </string>
     <string name = "size"> Tamaño </string>
     <string name = "delete"> Eliminar </string>
+
+    <string name = "account_name"> Nombre de la cuenta </string>
+    <string name = "description"> Descripción </string>
+    <string name = "enter_passphrase_tmitter"> Ingrese la frase de contraseña </string>
+    <string name = "create_tmitter_account"> Crear cuenta de Tmitter </string>
+    <string name = "account_cannot_be_empty"> La cuenta no puede estar vacía </string>
+    <string name = "description_cannot_be_empty"> La descripción no puede estar vacía </string>
+    <string name = "tmitter_account_created"> La cuenta de Tmitter se creó correctamente </string>
+    <string name = "tmitter_account_created_account_name_is"> La cuenta de Tmitter ya se creó. El nombre de la cuenta es </string>
+    <string name = "with_tma_address"> con dirección tma </string>
+    <string name = "search_tmitter_accounts"> Buscar cuentas de Tmitter </string>
+    <string name = "send_tmeet"> Enviar Tmeet </string>
+    <string name = "enter_tmeet"> Ingrese Tmeet </string>
+    <string name = "post"> Publicar </string>
+    <string name = "keywords"> Palabras clave </string>
+    <string name = "post_cannot_be_empty"> La publicación no puede estar vacía </string>
+    <string name = "keywords_cannot_be_empty"> Las palabras clave no pueden estar vacías </string>
+    <string name = "post_was_sent"> La publicación se envió </string>
 
 
 </resources>

@@ -114,21 +114,21 @@
     <string name="date_modified">Date modified</string>
     <string name="size">Size</string>
     <string name="delete">Delete</string>
-    <string name="account_name" translatable="false">Account Name</string>
-    <string name="description" translatable="false">Description</string>
-    <string name="enter_passphrase_tmitter" translatable="false">Enter Passphrase</string>
-    <string name="create_tmitter_account" translatable="false">Create Tmitter Account</string>
-    <string name="account_cannot_be_empty" translatable="false">Account cannot be empty</string>
-    <string name="description_cannot_be_empty" translatable="false">Description cannot be empty</string>
-    <string name="tmitter_account_created" translatable="false">Tmitter account was successfully created</string>
-    <string name="tmitter_account_created_account_name_is" translatable="false">Tmitter account was already created. Account name is</string>
-    <string name="with_tma_address" translatable="false">with tma address</string>
-    <string name="search_tmitter_accounts" translatable="false">Search Tmitter Accounts</string>
-    <string name="send_tmeet" translatable="false">Send Tmeet</string>
-    <string name="enter_tmeet" translatable="false">Enter Tmeet</string>
-    <string name="postDescription" translatable="false">Description</string>
-    <string name="post" translatable="false">Post</string>
-    <string name="keywords" translatable="false">Keywords</string>
+
+    <string name="account_name">Account Name</string>
+    <string name="description">Description</string>
+    <string name="enter_passphrase_tmitter">Enter Passphrase</string>
+    <string name="create_tmitter_account">Create Tmitter Account</string>
+    <string name="account_cannot_be_empty">Account cannot be empty</string>
+    <string name="description_cannot_be_empty">Description cannot be empty</string>
+    <string name="tmitter_account_created">Tmitter account was successfully created</string>
+    <string name="tmitter_account_created_account_name_is">Tmitter account was already created. Account name is</string>
+    <string name="with_tma_address">with tma address</string>
+    <string name="search_tmitter_accounts">Search Tmitter Accounts</string>
+    <string name="send_tmeet">Send Tmeet</string>
+    <string name="enter_tmeet">Enter Tmeet</string>
+    <string name="post">Post</string>
+    <string name="keywords">Keywords</string>
     <string name="post_cannot_be_empty">Post cannot be empty</string>
     <string name="keywords_cannot_be_empty">Keywords cannot be empty</string>
     <string name="post_was_sent">Post was sent</string>

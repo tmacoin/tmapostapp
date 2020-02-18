@@ -101,18 +101,35 @@
         <item>1 سال</item>
     </string-array>
 
-    <string name="fail_retrieve_balance">توازن بازیافت کرنے میں ناکام۔ دوبارہ کوشش کریں.</string>
-    <string name="successfully_sent_message">کامیابی کے ساتھ پیغام بھیجا</string>
-    <string name="to">کرنے کے لئے</string>
-    <string name="secure_message_received">محفوظ پیغام موصول ہوا</string>
-    <string name="new_messages_listener">نیا پیغام سننے والا</string>
-    <string name="show_peers">ساتھیوں کو دکھائیں</string>
-    <string name="no_config_dir">ممکن نہیں کوئی تشکیل ڈائریکٹری</string>
-    <string name="no_files_in_config_dir">تشکیل ڈائریکٹری میں کوئی فائلیں نہیں</string>
-    <string name="file_success_exported">فائل کامیابی کے ساتھ برآمد ہوئی</string>
-    <string name="date_modified">تاریخ میں ترمیم</string>
-    <string name="size">سائز</string>
-    <string name="delete"> حذف کریں </string>
+    <string name ="fail_retrieve_balance">توازن بازیافت کرنے میں ناکام۔ دوبارہ کوشش کریں.</string>
+    <string name ="successfully_sent_message">کامیابی کے ساتھ پیغام بھیجا</string>
+    <string name ="to">کرنے کے لئے</string>
+    <string name ="secure_message_received">محفوظ پیغام موصول ہوا</string>
+    <string name ="new_messages_listener">نیا پیغام سننے والا</string>
+    <string name ="show_peers">ساتھیوں کو دکھائیں</string>
+    <string name ="no_config_dir">ممکن نہیں کوئی تشکیل ڈائریکٹری</string>
+    <string name ="no_files_in_config_dir">تشکیل ڈائریکٹری میں کوئی فائلیں نہیں</string>
+    <string name ="file_success_exported">فائل کامیابی کے ساتھ برآمد ہوئی</string>
+    <string name ="date_modified">تاریخ میں ترمیم</string>
+    <string name ="size">سائز</string>
+    <string name ="delete"> حذف کریں </string>
+    <string name ="account_name">کھاتے کا نام</string>
+    <string name ="description">Description</string>
+    <string name ="enter_passphrase_tmitter">پاسفریز درج کریں</string>
+    <string name = "create_tmitter_account"> ٹیمٹر اکاؤنٹ بنائیں </string>
+    <string name = "account_cannot_be_empty"> اکاؤنٹ خالی نہیں ہوسکتا ہے </string>
+    <string name = "description_cannot_be_empty">تفصیل خالی نہیں ہوسکتی ہے</string>
+    <string name = "tmitter_account_created">ٹیمٹر اکاؤنٹ کامیابی کے ساتھ تشکیل دے دیا گیا تھا</string>
+    <string name = "tmitter_account_created_account_name_is">ٹیمٹر اکاؤنٹ پہلے ہی بنا تھا۔ اکاؤنٹ کا نام ہے</string>
+    <string name = "with_tma_address">ٹی ایم اے ایڈریس کے ساتھ</string>
+    <string name = "search_tmitter_accounts"> تلاش کرنے والے ٹیمٹر اکاؤنٹس </string>
+    <string name = "send_tmeet"> Tmeet بھیجیں </string>
+    <string name = "enter_tmeet"> Tmeet درج کریں </string>
+    <string name = "post"> پوسٹ </string>
+    <string name = "keywords"> مطلوبہ الفاظ </string>
+    <string name = "post_cannot_be_empty"> پوسٹ خالی نہیں ہوسکتی ہے </string>
+    <string name = "keywords_cannot_be_empty"> مطلوبہ الفاظ خالی نہیں ہوسکتے ہیں </string>
+    <string name = "post_was_sent"> پوسٹ بھیجی گئی تھی </string>
 
 
 </resources>

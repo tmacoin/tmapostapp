@@ -114,4 +114,22 @@
     <string name = "size"> dydis </string>
     <string name = "delete"> Ištrinti </string>
 
+    <string name = "account_name"> sąskaitos pavadinimas </string>
+    <string name = "description"> Aprašymas </string>
+    <string name = "enter_passphrase_tmitter"> Įveskite slaptafrazę </string>
+    <string name = "create_tmitter_account"> Sukurti mokėtojo sąskaitą </string>
+    <string name = "account_cannot_be_empty"> Paskyra negali būti tuščia </string>
+    <string name = "description_cannot_be_empty"> Aprašymas negali būti tuščias </string>
+    <string name = "tmitter_account_created"> Sulaikytojo sąskaita buvo sėkmingai sukurta </string>
+    <string name = "tmitter_account_created_account_name_is"> Mokėtojo paskyra jau buvo sukurta. Sąskaitos pavadinimas yra </string>
+    <string name = "with_tma_address"> su tma adresu </string>
+    <string name = "search_tmitter_accounts"> Ieškokite skutiklio paskyrų </string>
+    <string name = "send_tmeet"> Siųsti Tmeet </string>
+    <string name = "enter_tmeet"> Įveskite Tmeet </string>
+    <string name = "post"> Skelbti </string>
+    <string name = "keywords"> Raktiniai žodžiai </string>
+    <string name = "post_cannot_be_empty"> Įrašas negali būti tuščias </string>
+    <string name = "keywords_cannot_be_empty"> Raktažodžiai negali būti tušti </string>
+    <string name = "post_was_sent"> Įrašas buvo išsiųstas </string>
+
 </resources>

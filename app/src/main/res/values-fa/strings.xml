@@ -114,5 +114,23 @@
     <string name = "size"> اندازه </string>
     <string name = "delete"> حذف </string>
 
+    <string name = "account_name"> نام حساب </string>
+    <string name = "description"> توضیحات </string>
+    <string name = "enter_passphrase_tmitter"> عبارت عبور را وارد کنید </string>
+    <string name = "create_tmitter_account"> ایجاد حساب Tmitter </string>
+    <string name = "account_cannot_be_empty"> حساب قابل خالی نیست </string>
+    <string name = "description_cannot_be_empty"> توضیحات خالی نیست </string>
+    <string name = "tmitter_account_created"> حساب Tmitter با موفقیت ایجاد شد </string>
+    <string name = "tmitter_account_created_account_name_is"> حساب Tmitter قبلاً ایجاد شده است. نام حساب </string> است
+    <string name = "with_tma_address"> با آدرس tma </string>
+    <string name = "search_tmitter_accounts"> جستجوی حسابهای Tmitter </string>
+    <string name = "send_tmeet"> ارسال tmeet </string>
+    <string name = "enter_tmeet"> Tmeet را وارد کنید </string>
+    <string name = "post"> ارسال </string>
+    <string name = "keywords"> کلمات کلیدی </string>
+    <string name = "post_cannot_be_empty"> ارسال نمی تواند خالی باشد </string>
+    <string name = "keywords_cannot_be_empty"> کلمات کلیدی نمی توانند خالی باشند </string>
+    <string name = "post_was_sent"> ارسال شد </string>
+
 
 </resources>

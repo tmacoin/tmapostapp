@@ -114,4 +114,22 @@
     <string name = "size"> Размер </string>
     <string name = "delete"> Удалить </string>
 
+    <string name = "account_name"> Имя учетной записи </string>
+    <string name = "description"> Description </string>
+    <string name = "enter_passphrase_tmitter">"Введите кодовую фразу "</string>
+    <string name = "create_tmitter_account"> Создать учетную запись Tmitter </string>
+    <string name = "account_cannot_be_empty"> Аккаунт не может быть пустым </string>
+    <string name = "description_cannot_be_empty">"Описание не может быть пустым "</string>
+    <string name = "tmitter_account_created"> Учетная запись Tmitter была успешно создана </string>
+    <string name = "tmitter_account_created_account_name_is"> Учетная запись Tmitter уже создана. Имя учетной записи </string>
+    <string name = "with_tma_address"> с адресом tma </string>
+    <string name = "search_tmitter_accounts"> Поиск учетных записей Tmitter </string>
+    <string name = "send_tmeet"> Отправить тmит </string>
+    <string name = "enter_tmeet"> Введите тmит </string>
+    <string name = "post"> Post </string>
+    <string name = "keywords"> Ключевые слова </string>
+    <string name = "post_cannot_be_empty"> Запись не может быть пустой </string>
+    <string name = "keywords_cannot_be_empty"> Ключевые слова не могут быть пустыми </string>
+    <string name = "post_was_sent"> Сообщение было отправлено </string>
+
 </resources>

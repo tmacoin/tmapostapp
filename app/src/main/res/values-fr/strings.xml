@@ -114,5 +114,23 @@
     <string name = "size"> Taille </string>
     <string name = "delete"> Supprimer </string>
 
+    <string name = "account_name"> Nom du compte </string>
+    <string name = "description"> Description </string>
+    <string name = "enter_passphrase_tmitter"> Entrez le mot de passe </string>
+    <string name = "create_tmitter_account"> Créer un compte Tmitter </string>
+    <string name = "account_cannot_be_empty"> Le compte ne peut pas être vide </string>
+    <string name = "description_cannot_be_empty"> La description ne peut pas être vide </string>
+    <string name = "tmitter_account_created"> Le compte Tmitter a été créé avec succès </string>
+    <string name = "tmitter_account_created_account_name_is"> Le compte Tmitter a déjà été créé. Le nom du compte est </string>
+    <string name = "with_tma_address"> avec adresse tma </string>
+    <string name = "search_tmitter_accounts"> Rechercher des comptes Tmitter </string>
+    <string name = "send_tmeet"> Envoyer Tmeet </string>
+    <string name = "enter_tmeet"> Entrez Tmeet </string>
+    <string name = "post"> Message </string>
+    <string name = "keywords"> Mots clés </string>
+    <string name = "post_cannot_be_empty"> Le message ne peut pas être vide </string>
+    <string name = "keywords_cannot_be_empty"> Les mots clés ne peuvent pas être vides </string>
+    <string name = "post_was_sent"> Le message a été envoyé </string>
+
 
 </resources>

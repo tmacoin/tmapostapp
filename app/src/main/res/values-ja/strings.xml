@@ -114,4 +114,22 @@
     <string name = "size">サイズ</string>
     <string name = "delete">削除</string>
 
+    <string name = "account_name">アカウント名</string>
+    <string name = "description">説明</string>
+    <string name = "enter_passphrase_tmitter">パスフレーズを入力</string>
+    <string name = "create_tmitter_account"> Tmitterアカウントの作成</string>
+    <string name = "account_cannot_be_empty">アカウントは空にできません</string>
+    <string name = "description_cannot_be_empty">説明を空にすることはできません</string>
+    <string name = "tmitter_account_created">送信機アカウントが正常に作成されました</string>
+    <string name = "tmitter_account_created_account_name_is">送信者アカウントは既に作成されています。アカウント名は</string>
+    <string name = "with_tma_address"> tmaアドレス付き</string>
+    <string name = "search_tmitter_accounts"> Tmitterアカウントの検索</string>
+    <string name = "send_tmeet"> Tmeetを送信</string>
+    <string name = "enter_tmeet"> Tmeetを入力</string>
+    <string name = "post">投稿</string>
+    <string name = "keywords">キーワード</string>
+    <string name = "post_cannot_be_empty">投稿を空にすることはできません</string>
+    <string name = "keywords_cannot_be_empty">キーワードを空にすることはできません</string>
+    <string name = "post_was_sent">投稿が送信されました</string>
+
 </resources>
