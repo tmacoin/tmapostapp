@@ -64,9 +64,11 @@ public class CreatePost extends BaseActivity {
                 }
                 Toast.makeText(CreatePost.this, getResources().getString(R.string.wait), Toast.LENGTH_LONG).show();
                 setContentView(R.layout.activity_create_post_wait);
+                updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
                 process();
             }
         });
+        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
 
     }
 

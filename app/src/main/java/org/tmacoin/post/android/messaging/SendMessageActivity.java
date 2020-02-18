@@ -241,6 +241,7 @@ public class SendMessageActivity extends BaseActivity {
         setContentView(R.layout.activity_send_message_complete);
         TextView resultTextView = findViewById(R.id.resultTextView);
         resultTextView.setText(result);
+        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
         updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
     }
 
