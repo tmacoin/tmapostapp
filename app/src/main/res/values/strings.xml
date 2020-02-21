@@ -133,5 +133,7 @@
     <string name="keywords_cannot_be_empty">Keywords cannot be empty</string>
     <string name="post_was_sent">Post was sent</string>
 
+    <string name="tweet_was_sent_successfully" translatable="false">Tweet was sent successfully</string>
+
 
 </resources>
