@@ -1,6 +1,8 @@
 package org.tmacoin.post.android.tmitter;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,22 +30,25 @@ public class ShowMyTweetsActivity extends BaseActivity {
 
     private String tmaAddress;
     private String result = "";
+    private Tweet title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_my_tweets);
-
         Wallets wallets = Wallets.getInstance();
         Collection<String> names = wallets.getNames(Wallets.TWITTER);
         if(names.isEmpty()) {
-            Toast.makeText(this,getResources().getString(R.string.tmitter_account_create), Toast.LENGTH_LONG).show();
+            setContentView(R.layout.activity_show_my_tweets_complete);
+            result = getResources().getString(R.string.tmitter_account_create);
+            Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+            TextView resultTextView = findViewById(R.id.resultTextView);
+            resultTextView.setText(result);
         } else {
+            setContentView(R.layout.activity_show_my_tmeets_wait);
             String accountName = names.iterator().next();
             Wallet twitterWallet = wallets.getWallet(Wallets.TWITTER, accountName);
             tmaAddress = twitterWallet.getTmaAddress();
             Toast.makeText(this, getResources().getString(R.string.wait), Toast.LENGTH_LONG).show();
-            setContentView(R.layout.activity_show_my_tmeet_wait);
             updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
             process();
         }
@@ -81,19 +86,11 @@ public class ShowMyTweetsActivity extends BaseActivity {
             return;
         }
 
-
-        Tweet title = null;
         for(Tweet tweet: list) {
             if(tweet.getKeywords() != null && tweet.getKeywords().getMap().get("create") != null) {
                 title = tweet;
             }
         }
-
-
-       // if(title != null) {
-         //   twitterHelper.print(panel, title.getKeywords().getMap().get("create"));
-        //    twitterHelper.print(panel, title.getText());
-        //}
 
         Iterator<Tweet> i = list.iterator();
 
@@ -104,9 +101,7 @@ public class ShowMyTweetsActivity extends BaseActivity {
             }
         }
 
-       // twitterHelper.print(panel, "Retrieved number of tmeets " + list.size());
-
-
+        result = "Retrieved number of tmeets " + list.size();
 
         Comparator<Tweet> compareByTimestamp = new Comparator<Tweet>() {
             @Override
@@ -117,15 +112,16 @@ public class ShowMyTweetsActivity extends BaseActivity {
 
         Collections.sort(list, compareByTimestamp);
 
-       // for(Tweet tweet: list) {
-        //    twitterHelper.addTweet(panel, tweet);
-        //}
-
-
     }
 
     private void processSync() {
-        setContentView(R.layout.activity_send_tmeet_complete);
+        setContentView(R.layout.activity_show_my_tweets_complete);
+
+        TextView textViewAccountName = findViewById(R.id.textViewAccountName);
+        textViewAccountName.setText(title.getKeywords().getMap().get("create"));
+        TextView textViewAccountDescription = findViewById(R.id.textViewAccountDescription);
+        textViewAccountDescription.setText(title.getText());
+
         TextView resultTextView = findViewById(R.id.resultTextView);
         resultTextView.setText(result);
         Toast.makeText(this, result, Toast.LENGTH_LONG).show();
