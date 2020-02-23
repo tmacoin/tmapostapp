@@ -1,7 +1,9 @@
 package org.tmacoin.post.android.tmitter;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -51,18 +53,37 @@ public class SearchTwitterActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 hideKeyboard(v);
-                load();
-                if(!validate()) {
-                    return;
-                }
-                Toast.makeText(SearchTwitterActivity.this, getResources().getString(R.string.wait), Toast.LENGTH_LONG).show();
-                setContentView(R.layout.activity_search_tmitter_wait);
-                updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
-                process();
+                buttonClicked();
             }
         });
+
+        EditText editTextAccountName = findViewById(R.id.editTextAccountName);
+        editTextAccountName.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
+                    hideKeyboard(v);
+                    buttonClicked();
+                }
+                return false;
+            }
+        });
+
         updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
     }
+
+    private void buttonClicked() {
+
+        load();
+        if(!validate()) {
+            return;
+        }
+        Toast.makeText(SearchTwitterActivity.this, getResources().getString(R.string.wait), Toast.LENGTH_LONG).show();
+        setContentView(R.layout.activity_search_tmitter_wait);
+        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
+        process();
+    }
+
 
     private void process() {
         new AndroidExecutor() {

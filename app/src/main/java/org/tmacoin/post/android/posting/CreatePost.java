@@ -1,7 +1,9 @@
 package org.tmacoin.post.android.posting;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -58,18 +60,35 @@ public class CreatePost extends BaseActivity {
             @Override
             public void onClick(View v) {
                 hideKeyboard(v);
-                load();
-                if(!validate()) {
-                    return;
-                }
-                Toast.makeText(CreatePost.this, getResources().getString(R.string.wait), Toast.LENGTH_LONG).show();
-                setContentView(R.layout.activity_create_post_wait);
-                updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
-                process();
+                buttonClicked();
+
             }
         });
         updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
 
+        EditText editTextKeywords = findViewById(R.id.editTextKeywords);
+        editTextKeywords.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
+                    hideKeyboard(v);
+                    buttonClicked();
+                }
+                return false;
+            }
+        });
+
+    }
+
+    private void buttonClicked() {
+        load();
+        if(!validate()) {
+            return;
+        }
+        Toast.makeText(CreatePost.this, getResources().getString(R.string.wait), Toast.LENGTH_LONG).show();
+        setContentView(R.layout.activity_create_post_wait);
+        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
+        process();
     }
 
     private void process() {
