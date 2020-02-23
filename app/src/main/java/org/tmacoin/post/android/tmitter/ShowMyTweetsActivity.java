@@ -1,8 +1,7 @@
 package org.tmacoin.post.android.tmitter;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +30,7 @@ public class ShowMyTweetsActivity extends BaseActivity {
     private String tmaAddress;
     private String result = "";
     private Tweet title;
+    private List<Tweet> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,8 +78,8 @@ public class ShowMyTweetsActivity extends BaseActivity {
 
         GetMyTweetsRequest request = new GetMyTweetsRequest(network, tmaAddress);
         request.start();
-        @SuppressWarnings("unchecked")
-        List<Tweet> list = (List<Tweet>) ResponseHolder.getInstance().getObject(request.getCorrelationId());
+
+        list = (List<Tweet>) ResponseHolder.getInstance().getObject(request.getCorrelationId());
 
         if(list == null) {
             result = "Failed to retrieve transactions. Please try again";
@@ -126,5 +126,9 @@ public class ShowMyTweetsActivity extends BaseActivity {
         resultTextView.setText(result);
         Toast.makeText(this, result, Toast.LENGTH_LONG).show();
         updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
+
+        ListView listView = findViewById(R.id.simpleListView);
+        TmeetAdapter arrayAdapter = new TmeetAdapter(this, list);
+        listView.setAdapter(arrayAdapter);
     }
 }

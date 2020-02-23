@@ -34,7 +34,6 @@ public class SearchTwitterActivity extends BaseActivity {
     private String tmitterAccount;
     private String result = "";
     List<TwitterAccount> list;
-    private TmitterAdapter arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,7 +131,7 @@ public class SearchTwitterActivity extends BaseActivity {
         Toast.makeText(this, result, Toast.LENGTH_LONG).show();
 
         ListView listView = findViewById(R.id.simpleListView);
-        arrayAdapter = new TmitterAdapter(this, list);
+        TmitterAdapter arrayAdapter = new TmitterAdapter(this, list);
         listView.setAdapter(arrayAdapter);
     }
 
