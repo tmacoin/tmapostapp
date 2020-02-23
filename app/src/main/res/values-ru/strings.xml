@@ -117,13 +117,13 @@
     <string name = "account_name">Имя счета</string>
     <string name = "description">Описание</string>
     <string name = "enter_passphrase_tmitter">Введите кодовую фразу</string>
-    <string name = "create_tmitter_account">Создать счет Тмиттера</string>
+    <string name = "create_tmitter_account">Создать счет в Тмиттере</string>
     <string name = "account_cannot_be_empty">Аккаунт не может быть пустым</string>
     <string name = "description_cannot_be_empty">Описание не может быть пустым</string>
-    <string name = "tmitter_account_created">Счет Тмиттера был успешно создан</string>
-    <string name = "tmitter_account_created_account_name_is">Счет Тмиттер уже создан. Имя счета</string>
+    <string name = "tmitter_account_created">Счет в Тмиттере был успешно создан</string>
+    <string name = "tmitter_account_created_account_name_is">Счет в Тмиттере уже создан. Имя счета</string>
     <string name = "with_tma_address">с адресом tma</string>
-    <string name = "search_tmitter_accounts">Поиск счетов Тмиттера</string>
+    <string name = "search_tmitter_accounts">Поиск счетов в Тмиттере</string>
     <string name = "send_tmeet">Отправить тмит</string>
     <string name = "enter_tmeet">Введите тмит</string>
     <string name = "post">Объявление</string>
