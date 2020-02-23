@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.Wallets;
+import org.tmacoin.post.android.messaging.MessageAdapter;
 
 import java.util.Collection;
 import java.util.List;
@@ -30,6 +32,7 @@ public class SearchTwitterActivity extends BaseActivity {
     private String tmitterAccount;
     private String result = "";
     List<TwitterAccount> list;
+    private TmitterAdapter arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +109,10 @@ public class SearchTwitterActivity extends BaseActivity {
         TextView resultTextView = findViewById(R.id.resultTextView);
         resultTextView.setText(result);
         Toast.makeText(this, result, Toast.LENGTH_LONG).show();
-        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
+
+        ListView listView = findViewById(R.id.simpleListView);
+        arrayAdapter = new TmitterAdapter(this, list);
+        listView.setAdapter(arrayAdapter);
     }
 
 
