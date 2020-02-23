@@ -38,7 +38,11 @@
         android:layout_height="wrap_content"
         android:text="@+id/descriptionTextView"
         android:textSize="12dp"
-        android:textColor="@color/colorPrimaryDark">
+        android:textColor="@color/colorPrimaryDark"
+        android:scrollHorizontally="true"
+        android:ellipsize="end"
+        android:maxLines="1"
+        >
     </TextView>
 
 </LinearLayout>
