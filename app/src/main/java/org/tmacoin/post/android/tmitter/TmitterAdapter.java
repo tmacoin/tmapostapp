@@ -44,12 +44,12 @@ public class TmitterAdapter extends ArrayAdapter<TwitterAccount> {
         // reuse views
         if (rowView == null) {
             LayoutInflater inflater = context.getLayoutInflater();
-            rowView = inflater.inflate(R.layout.message_rowlayout, null);
+            rowView = inflater.inflate(R.layout.tmitter_rowlayout, null);
             // configure view holder
             ViewHolder viewHolder = new ViewHolder();
-            viewHolder.accountName = (TextView) rowView.findViewById(R.id.from);
-            viewHolder.dateTextView = (TextView) rowView.findViewById(R.id.subjectTextView);
-            viewHolder.descriptionTextView = (TextView) rowView.findViewById(R.id.dateTextView);
+            viewHolder.accountName = (TextView) rowView.findViewById(R.id.accountName);
+            viewHolder.dateTextView = (TextView) rowView.findViewById(R.id.dateTextView);
+            viewHolder.descriptionTextView = (TextView) rowView.findViewById(R.id.descriptionTextView);
 
             rowView.setTag(viewHolder);
         }
