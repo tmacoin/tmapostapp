@@ -35,6 +35,16 @@ public class ShowMyTweetsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        tmaAddress = (String) getIntent().getSerializableExtra("tmaAddress");
+        if(tmaAddress == null) {
+            showMyTmeets();
+            return;
+        }
+        process();
+        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
+    }
+
+    private void showMyTmeets() {
         Wallets wallets = Wallets.getInstance();
         Collection<String> names = wallets.getNames(Wallets.TWITTER);
         if(names.isEmpty()) {
@@ -52,7 +62,7 @@ public class ShowMyTweetsActivity extends BaseActivity {
             updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
             process();
         }
-        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
+
     }
 
     private void process() {

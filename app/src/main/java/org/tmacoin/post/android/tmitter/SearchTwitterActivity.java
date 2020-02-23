@@ -1,9 +1,11 @@
 package org.tmacoin.post.android.tmitter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -15,6 +17,7 @@ import org.tma.peer.BootstrapRequest;
 import org.tma.peer.Network;
 import org.tma.peer.thin.ResponseHolder;
 import org.tma.peer.thin.SearchTwitterRequest;
+import org.tma.peer.thin.SecureMessage;
 import org.tma.peer.thin.TwitterAccount;
 import org.tma.util.StringUtil;
 import org.tma.util.TmaLogger;
@@ -22,6 +25,7 @@ import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.Wallets;
+import org.tmacoin.post.android.messaging.AddAddressActivity;
 import org.tmacoin.post.android.messaging.MessageAdapter;
 
 import java.util.Collection;
@@ -133,6 +137,19 @@ public class SearchTwitterActivity extends BaseActivity {
         ListView listView = findViewById(R.id.simpleListView);
         TmitterAdapter arrayAdapter = new TmitterAdapter(this, list);
         listView.setAdapter(arrayAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                final TwitterAccount twitterAccount = (TwitterAccount) parent.getItemAtPosition(position);
+                showMessage(twitterAccount);
+            }
+        });
+    }
+
+    private void showMessage(TwitterAccount twitterAccount) {
+        Intent intent = new Intent(this, ShowMyTweetsActivity.class);
+        intent.putExtra("tmaAddress", twitterAccount.getTmaAddress());
+        startActivity(intent);
     }
 
 
