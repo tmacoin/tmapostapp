@@ -135,7 +135,10 @@
 
     <string name="tweet_was_sent_successfully" translatable="false">Tweet was sent successfully</string>
     <string name="tmitter_account_create" translatable="false">Please create your tmitter account first.</string>
-    <string name="enter_tmitter_account">Enter Tmitter Account</string>
+    <string name="enter_tmitter_account" translatable="false">Enter Tmitter Account</string>
+    <string name="replyBack" translatable="false">Back</string>
+    <string name="enter_reply" translatable="false">Enter Reply</string>
+    <string name="send_reply" translatable="false">Send Reply</string>
 
 
 </resources>

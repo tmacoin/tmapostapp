@@ -12,23 +12,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.tma.blockchain.Wallet;
 import org.tma.peer.BootstrapRequest;
 import org.tma.peer.Network;
 import org.tma.peer.thin.ResponseHolder;
 import org.tma.peer.thin.SearchTwitterRequest;
-import org.tma.peer.thin.SecureMessage;
 import org.tma.peer.thin.TwitterAccount;
 import org.tma.util.StringUtil;
 import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
-import org.tmacoin.post.android.Wallets;
-import org.tmacoin.post.android.messaging.AddAddressActivity;
-import org.tmacoin.post.android.messaging.MessageAdapter;
 
-import java.util.Collection;
 import java.util.List;
 
 public class SearchTwitterActivity extends BaseActivity {
