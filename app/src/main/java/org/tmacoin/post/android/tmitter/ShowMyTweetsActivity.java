@@ -1,9 +1,6 @@
 package org.tmacoin.post.android.tmitter;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,7 +11,6 @@ import org.tma.peer.Network;
 import org.tma.peer.thin.GetMyTweetsRequest;
 import org.tma.peer.thin.ResponseHolder;
 import org.tma.peer.thin.Tweet;
-import org.tma.peer.thin.TwitterAccount;
 import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
@@ -144,20 +140,5 @@ public class ShowMyTweetsActivity extends BaseActivity {
         ListView listView = findViewById(R.id.simpleListView);
         TmeetAdapter arrayAdapter = new TmeetAdapter(this, list);
         listView.setAdapter(arrayAdapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                final TwitterAccount twitterAccount = (TwitterAccount) parent.getItemAtPosition(position);
-                showMessage(twitterAccount);
-            }
-        });
-    }
-
-    private void showMessage(TwitterAccount twitterAccount) {
-        Intent intent = new Intent(this, ShowMyTweetsActivity.class);
-        intent.putExtra("tmaAddress", twitterAccount.getTmaAddress());
-        startActivity(intent);
-
     }
 }
