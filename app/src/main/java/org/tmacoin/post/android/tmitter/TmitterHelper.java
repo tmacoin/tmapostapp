@@ -1,5 +1,7 @@
 package org.tmacoin.post.android.tmitter;
 
+import org.tma.peer.thin.Tweet;
+
 public class TmitterHelper {
 	
 
@@ -33,7 +35,7 @@ public class TmitterHelper {
 
 
 	
-	//public void createForm(JPanel panel, Tweet tweet) {
+	public void createForm(Tweet tweet) {
 
 	/*	JLabel label = new JLabel("Enter reply:");
 		panel.add(label);
@@ -55,6 +57,6 @@ public class TmitterHelper {
 		frame.getRootPane().setDefaultButton(btnSubmit);
 
 	 */
-	//}
+	}
 
 }
