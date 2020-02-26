@@ -41,7 +41,7 @@ public class TmitterHelper {
 		JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		JTextArea area = new JTextArea(3, 45);
 		JTextFieldRegularPopupMenu.addTo(area);
-		JScrollPane scroll = new JScrollPane (area);
+		JScrollPane scroll = new JScrollPane (area);3
 		p.add(scroll);
 		panel.add(p);
 		
