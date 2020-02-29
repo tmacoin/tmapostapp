@@ -22,6 +22,7 @@ import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
+import org.tmacoin.post.android.TmaAndroidUtil;
 
 import java.util.List;
 
@@ -105,9 +106,7 @@ public class SearchTwitterActivity extends BaseActivity {
 
     private boolean searchTweet() {
         Network network = Network.getInstance();
-        if(!network.isPeerSetComplete()) {
-            BootstrapRequest.getInstance().start();
-        }
+        TmaAndroidUtil.checkNetwork();
 
         SearchTwitterRequest request = new SearchTwitterRequest(network, tmitterAccount);
         request.start();

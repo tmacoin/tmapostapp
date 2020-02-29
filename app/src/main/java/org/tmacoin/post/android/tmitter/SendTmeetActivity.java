@@ -22,6 +22,7 @@ import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
+import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
 
 import java.util.ArrayList;
@@ -103,9 +104,7 @@ public class SendTmeetActivity extends BaseActivity {
 
     private boolean sendTweetTransaction(String twitterTmaAddress) {
         Network network = Network.getInstance();
-        if(!network.isPeerSetComplete()) {
-            BootstrapRequest.getInstance().start();
-        }
+        TmaAndroidUtil.checkNetwork();
         String tmaAddress = network.getTmaAddress();
         Wallets wallets = Wallets.getInstance();
         Wallet wallet = wallets.getWallet(Wallets.TMA, Wallets.WALLET_NAME);

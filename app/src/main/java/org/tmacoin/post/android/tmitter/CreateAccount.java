@@ -25,6 +25,7 @@ import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.PasswordUtil;
 import org.tmacoin.post.android.R;
+import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
 
 import java.util.ArrayList;
@@ -161,9 +162,7 @@ public class CreateAccount extends BaseActivity {
 
     private boolean sendCreateTwitterTransaction(String twitterTmaAddress) {
         Network network = Network.getInstance();
-        if(!network.isPeerSetComplete()) {
-            BootstrapRequest.getInstance().start();
-        }
+        TmaAndroidUtil.checkNetwork();
         String tmaAddress = network.getTmaAddress();
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         Coin amount = Coin.SATOSHI.multiply(2);

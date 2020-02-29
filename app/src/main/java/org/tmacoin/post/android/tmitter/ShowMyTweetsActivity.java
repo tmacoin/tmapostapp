@@ -15,6 +15,7 @@ import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
+import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
 
 import java.util.Collection;
@@ -82,9 +83,7 @@ public class ShowMyTweetsActivity extends BaseActivity {
 
     private void processAsync() throws Exception {
         Network network = Network.getInstance();
-        if(!network.isPeerSetComplete()) {
-            BootstrapRequest.getInstance().start();
-        }
+        TmaAndroidUtil.checkNetwork();
 
         GetMyTweetsRequest request = new GetMyTweetsRequest(network, tmaAddress);
         request.start();
@@ -92,7 +91,7 @@ public class ShowMyTweetsActivity extends BaseActivity {
         list = (List<Tweet>) ResponseHolder.getInstance().getObject(request.getCorrelationId());
 
         if(list == null) {
-            result = "Failed to retrieve transactions. Please try again";
+            result = "Failed to retrieve tmeets. Please try again";
             return;
         }
 
@@ -128,11 +127,19 @@ public class ShowMyTweetsActivity extends BaseActivity {
         setContentView(R.layout.activity_show_my_tweets_complete);
 
         TextView textViewAccountName = findViewById(R.id.textViewAccountName);
-        textViewAccountName.setText(title.getKeywords().getMap().get("create"));
         TextView textViewAccountDescription = findViewById(R.id.textViewAccountDescription);
-        textViewAccountDescription.setText(title.getText());
-
         TextView resultTextView = findViewById(R.id.resultTextView);
+
+        if(title == null) {
+            result = "Failed to retrieve tmeets. Please try again";
+            textViewAccountName.setText("");
+            textViewAccountDescription.setText("");
+            resultTextView.setText(result);
+            Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+            return;
+        }
+        textViewAccountName.setText(title.getKeywords().getMap().get("create"));
+        textViewAccountDescription.setText(title.getText());
         resultTextView.setText(result);
         Toast.makeText(this, result, Toast.LENGTH_LONG).show();
         updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
