@@ -28,7 +28,7 @@ public class MySubscriptionsActivity extends BaseActivity {
         }
 
         TextView resultTextView = findViewById(R.id.textViewMessage);
-        resultTextView.setText("Number of subscription found: " + subscribedAccounts.size());
+        resultTextView.setText("Number of subscription(s) found: " + subscribedAccounts.size());
 
         ListView listView = findViewById(R.id.simpleListView);
         TmitterAdapter arrayAdapter = new TmitterAdapter(this, subscribedAccounts);
