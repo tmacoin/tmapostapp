@@ -1,22 +1,25 @@
 package org.tmacoin.post.android.tmitter;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.tma.blockchain.Wallet;
-import org.tma.peer.BootstrapRequest;
 import org.tma.peer.Network;
 import org.tma.peer.thin.GetMyTweetsRequest;
 import org.tma.peer.thin.ResponseHolder;
 import org.tma.peer.thin.Tweet;
+import org.tma.peer.thin.TwitterAccount;
 import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
+import org.tmacoin.post.android.persistance.SubscriptionStore;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -28,6 +31,7 @@ public class ShowMyTweetsActivity extends BaseActivity {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
 
+    private TwitterAccount twitterAccount;
     private String tmaAddress;
     private String result = "";
     private Tweet title;
@@ -36,11 +40,12 @@ public class ShowMyTweetsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        tmaAddress = (String) getIntent().getSerializableExtra("tmaAddress");
-        if(tmaAddress == null) {
+        twitterAccount = (TwitterAccount) getIntent().getSerializableExtra("twitterAccount");
+        if(twitterAccount == null) {
             showMyTmeets();
             return;
         }
+        tmaAddress = twitterAccount.getTmaAddress();
         process();
         updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
     }
@@ -126,6 +131,7 @@ public class ShowMyTweetsActivity extends BaseActivity {
     private void processSync() {
         setContentView(R.layout.activity_show_my_tweets_complete);
 
+
         TextView textViewAccountName = findViewById(R.id.textViewAccountName);
         TextView textViewAccountDescription = findViewById(R.id.textViewAccountDescription);
         TextView resultTextView = findViewById(R.id.resultTextView);
@@ -147,5 +153,61 @@ public class ShowMyTweetsActivity extends BaseActivity {
         ListView listView = findViewById(R.id.simpleListView);
         TmeetAdapter arrayAdapter = new TmeetAdapter(this, list);
         listView.setAdapter(arrayAdapter);
+
+        doSubscriptionButtons();
     }
+
+    private void doSubscriptionButtons() {
+
+        Button buttonSubscribe = findViewById(R.id.buttonSubscribe);
+        buttonSubscribe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buttonSubscribeClick();
+            }
+        });
+
+        Button buttonUnsubscribe = findViewById(R.id.buttonUnsubscribe);
+        buttonUnsubscribe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buttonUnsubscribeClick();
+            }
+        });
+
+
+        if(twitterAccount == null) {
+            buttonSubscribe.setVisibility(View.INVISIBLE);
+            buttonUnsubscribe.setVisibility(View.INVISIBLE);
+            return;
+        }
+
+        List<TwitterAccount> subscribedAccounts = SubscriptionStore.getInstance().getSubscriptions();
+        if(subscribedAccounts.contains(twitterAccount)) {
+            buttonSubscribe.setVisibility(View.INVISIBLE);
+        } else {
+            buttonUnsubscribe.setVisibility(View.INVISIBLE);
+        }
+
+
+
+
+    }
+
+    private void buttonSubscribeClick() {
+        SubscriptionStore.getInstance().save(twitterAccount);
+        Button buttonSubscribe = findViewById(R.id.buttonSubscribe);
+        buttonSubscribe.setVisibility(View.INVISIBLE);
+        Button buttonUnsubscribe = findViewById(R.id.buttonUnsubscribe);
+        buttonUnsubscribe.setVisibility(View.VISIBLE);
+    }
+
+    private void buttonUnsubscribeClick() {
+        SubscriptionStore.getInstance().delete(twitterAccount);
+        Button buttonUnsubscribe = findViewById(R.id.buttonUnsubscribe);
+        buttonUnsubscribe.setVisibility(View.INVISIBLE);
+        Button buttonSubscribe = findViewById(R.id.buttonSubscribe);
+        buttonSubscribe.setVisibility(View.VISIBLE);
+    }
+
 }

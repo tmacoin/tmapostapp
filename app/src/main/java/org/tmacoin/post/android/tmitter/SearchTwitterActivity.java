@@ -141,7 +141,7 @@ public class SearchTwitterActivity extends BaseActivity {
 
     private void showMessage(TwitterAccount twitterAccount) {
         Intent intent = new Intent(this, ShowMyTweetsActivity.class);
-        intent.putExtra("tmaAddress", twitterAccount.getTmaAddress());
+        intent.putExtra("twitterAccount", twitterAccount);
         startActivity(intent);
     }
 
