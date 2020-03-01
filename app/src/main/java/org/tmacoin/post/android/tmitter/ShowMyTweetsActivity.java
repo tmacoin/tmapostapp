@@ -59,9 +59,7 @@ public class ShowMyTweetsActivity extends BaseActivity {
         if(names.isEmpty()) {
             setContentView(R.layout.activity_show_my_tweets_complete);
             result = getResources().getString(R.string.tmitter_account_create);
-            Toast.makeText(this, result, Toast.LENGTH_LONG).show();
-            TextView resultTextView = findViewById(R.id.resultTextView);
-            resultTextView.setText(result);
+            showError(result);
         } else {
             setContentView(R.layout.activity_show_my_tmeets_wait);
             String accountName = names.iterator().next();
@@ -71,7 +69,20 @@ public class ShowMyTweetsActivity extends BaseActivity {
             updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
             process();
         }
+    }
 
+    private void showError(String error) {
+        Toast.makeText(this, error, Toast.LENGTH_LONG).show();
+        TextView resultTextView = findViewById(R.id.resultTextView);
+        resultTextView.setText(error);
+        TextView textViewAccountName = findViewById(R.id.textViewAccountName);
+        TextView textViewAccountDescription = findViewById(R.id.textViewAccountDescription);
+        textViewAccountName.setVisibility(View.GONE);
+        textViewAccountDescription.setVisibility(View.GONE);
+        Button buttonSubscribe = findViewById(R.id.buttonSubscribe);
+        buttonSubscribe.setVisibility(View.GONE);
+        Button buttonUnsubscribe = findViewById(R.id.buttonUnsubscribe);
+        buttonUnsubscribe.setVisibility(View.GONE);
     }
 
     private void process() {
@@ -134,19 +145,16 @@ public class ShowMyTweetsActivity extends BaseActivity {
     private void processSync() {
         setContentView(R.layout.activity_show_my_tweets_complete);
 
+        if(title == null) {
+            result = "Failed to retrieve tmeets. Please try again";
+            showError(result);
+            return;
+        }
 
         TextView textViewAccountName = findViewById(R.id.textViewAccountName);
         TextView textViewAccountDescription = findViewById(R.id.textViewAccountDescription);
         TextView resultTextView = findViewById(R.id.resultTextView);
 
-        if(title == null) {
-            result = "Failed to retrieve tmeets. Please try again";
-            textViewAccountName.setText("");
-            textViewAccountDescription.setText("");
-            resultTextView.setText(result);
-            Toast.makeText(this, result, Toast.LENGTH_LONG).show();
-            return;
-        }
         textViewAccountName.setText(title.getKeywords().getMap().get("create"));
         textViewAccountDescription.setText(title.getText());
         resultTextView.setText(result);
