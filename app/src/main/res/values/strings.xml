@@ -139,6 +139,7 @@
     <string name="replyBack" translatable="false">Back</string>
     <string name="enter_reply" translatable="false">Enter Reply</string>
     <string name="send_reply" translatable="false">Send Reply</string>
+    <string name="Back" translatable="false">Back</string>
 
 
 </resources>

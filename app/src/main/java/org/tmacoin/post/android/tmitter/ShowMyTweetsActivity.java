@@ -1,7 +1,9 @@
 package org.tmacoin.post.android.tmitter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -21,6 +23,7 @@ import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
 import org.tmacoin.post.android.persistance.SubscriptionStore;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -155,6 +158,13 @@ public class ShowMyTweetsActivity extends BaseActivity {
         listView.setAdapter(arrayAdapter);
 
         doSubscriptionButtons();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                showClicked(position);
+            }
+        });
     }
 
     private void doSubscriptionButtons() {
@@ -208,6 +218,15 @@ public class ShowMyTweetsActivity extends BaseActivity {
         buttonUnsubscribe.setVisibility(View.INVISIBLE);
         Button buttonSubscribe = findViewById(R.id.buttonSubscribe);
         buttonSubscribe.setVisibility(View.VISIBLE);
+    }
+
+    private void showClicked(int position) {
+        Intent intent = new Intent(this, ReplyMyTweetsActivity.class);
+        Bundle args = new Bundle();
+        args.putSerializable("title", (Serializable) list.get(position));  //Tweet
+        intent.putExtra("tweetBundle", args);
+        intent.putExtra("tmaAddress", tmaAddress);
+        startActivity(intent);
     }
 
 }

@@ -22,6 +22,8 @@
         <activity android:name=".tmitter.SendTmeetActivity" />
         <activity android:name=".tmitter.SearchTwitterActivity" />
 
+        <activity android:name=".tmitter.ReplyMyTweetsActivity" />
+
         <activity android:name=".ShowPeersActivity" />
         <activity
             android:name=".messaging.AddAddressActivity"
