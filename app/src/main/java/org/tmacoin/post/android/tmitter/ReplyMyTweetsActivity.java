@@ -21,12 +21,15 @@ import org.tma.peer.thin.GetInputsRequest;
 import org.tma.peer.thin.GetRepliesRequest;
 import org.tma.peer.thin.ResponseHolder;
 import org.tma.peer.thin.Tweet;
+import org.tma.peer.thin.TwitterAccount;
 import org.tma.util.Applications;
 import org.tma.util.Coin;
+import org.tma.util.StringUtil;
 import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
+import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
 
 import java.util.ArrayList;
@@ -39,7 +42,6 @@ public class ReplyMyTweetsActivity extends BaseActivity {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
 
-    private String tmaAddress;
     private String result = "";
     private Tweet tweet;
     private List<Tweet> list;
@@ -47,33 +49,10 @@ public class ReplyMyTweetsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_respond_tmeet_complete);
+        setContentView(R.layout.activity_respond_tmeet_wait);
         Intent intent = getIntent();
-        Bundle args = intent.getBundleExtra("tweetBundle");
-        tweet = (Tweet) args.getSerializable("title");
-        tmaAddress = (String) getIntent().getSerializableExtra("tmaAddress");
-
+        tweet = (Tweet) getIntent().getSerializableExtra("tweet");
         displayData();
-
-        Button buttonReply = findViewById(R.id.sendReplyButton);
-        buttonReply.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    hideKeyboard(v);
-                }
-            }
-        });
-        buttonReply.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hideKeyboard(v);
-                replyButtonClicked();
-
-            }
-        });
-
-        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
     }
 
     private void replyButtonClicked() {
@@ -107,6 +86,7 @@ public class ReplyMyTweetsActivity extends BaseActivity {
             @Override
             public void start() throws Exception {
                 processAsyncReply();
+                processAsync();
             }
 
             @Override
@@ -126,11 +106,10 @@ public class ReplyMyTweetsActivity extends BaseActivity {
         GetRepliesRequest request = new GetRepliesRequest(network, tweet.getTransactionId(), tweet.getRecipient());
         request.start();
         list = (List<Tweet>) ResponseHolder.getInstance().getObject(request.getCorrelationId());
-        result = "Retrieved number of tmeets " + list.size();
     }
 
     private void processSync() {
-
+        setContentView(R.layout.activity_respond_tmeet_complete);
         TextView textViewAccountName = findViewById(R.id.textViewAccountName);
         textViewAccountName.setText(tweet.getKeywords().getMap().get("from"));
         TextView textViewAccountDescription = findViewById(R.id.textViewAccountDescription);
@@ -138,9 +117,10 @@ public class ReplyMyTweetsActivity extends BaseActivity {
         TextView textViewDate = findViewById(R.id.dateTextView);
         textViewDate.setText(new Date(tweet.getTimeStamp()).toString());
 
-        TextView resultTextView = findViewById(R.id.resultTextView);
-        resultTextView.setText(result);
-        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        if(!StringUtil.isEmpty(result)) {
+            Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        }
+
         updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
 
         ListView listView = findViewById(R.id.simpleListView);
@@ -150,17 +130,41 @@ public class ReplyMyTweetsActivity extends BaseActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                showClicked();
+                Tweet tweet = (Tweet) parent.getItemAtPosition(position);
+                showClicked(tweet);
             }
         });
+
+        Button buttonReply = findViewById(R.id.sendReplyButton);
+        buttonReply.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    hideKeyboard(v);
+                }
+            }
+        });
+        buttonReply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hideKeyboard(v);
+                replyButtonClicked();
+
+            }
+        });
+    }
+
+    private void showClicked(Tweet tweet) {
+        setContentView(R.layout.activity_respond_tmeet_wait);
+        this.tweet = tweet;
+        displayData();
     }
 
     private void processAsyncReply() {
 
         Network network = Network.getInstance();
-        if(!network.isPeerSetComplete()) {
-            BootstrapRequest.getInstance().start();
-        }
+        String tmaAddress = network.getTmaAddress();
+        TmaAndroidUtil.checkNetwork();
         Wallets wallets = Wallets.getInstance();
         Wallet wallet = wallets.getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         Coin amount = Coin.SATOSHI.multiply(2);
@@ -187,7 +191,7 @@ public class ReplyMyTweetsActivity extends BaseActivity {
             return;
         }
         EditText replyDataEditText = findViewById(R.id.replyDataEditText);
-        Transaction transaction = new Transaction(wallet.getPublicKey(), tweet.getFromTwitterAccount(), Coin.SATOSHI, Coin.SATOSHI,
+        Transaction transaction = new Transaction(wallet.getPublicKey(), tweet.getRecipient(), Coin.SATOSHI, Coin.SATOSHI,
                 inputs, wallet.getPrivateKey(), replyDataEditText.getText().toString(), null, keywords);
         transaction.setApp(Applications.TWITTER);
 
@@ -198,11 +202,7 @@ public class ReplyMyTweetsActivity extends BaseActivity {
 
     }
 
-    private void showClicked() {
-        Toast.makeText(this, "Clicked", Toast.LENGTH_LONG).show();
-        //pass transaction ID from position Tweet object
 
-    }
 
 
 }

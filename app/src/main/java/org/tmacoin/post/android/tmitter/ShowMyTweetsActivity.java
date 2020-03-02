@@ -170,9 +170,16 @@ public class ShowMyTweetsActivity extends BaseActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                showClicked(position);
+                Tweet tweet = (Tweet) parent.getItemAtPosition(position);
+                showClicked(tweet);
             }
         });
+    }
+
+    private void showClicked(Tweet tweet) {
+        Intent intent = new Intent(this, ReplyMyTweetsActivity.class);
+        intent.putExtra("tweet", tweet);
+        startActivity(intent);
     }
 
     private void doSubscriptionButtons() {
@@ -226,15 +233,6 @@ public class ShowMyTweetsActivity extends BaseActivity {
         buttonUnsubscribe.setVisibility(View.INVISIBLE);
         Button buttonSubscribe = findViewById(R.id.buttonSubscribe);
         buttonSubscribe.setVisibility(View.VISIBLE);
-    }
-
-    private void showClicked(int position) {
-        Intent intent = new Intent(this, ReplyMyTweetsActivity.class);
-        Bundle args = new Bundle();
-        args.putSerializable("title", (Serializable) list.get(position));  //Tweet
-        intent.putExtra("tweetBundle", args);
-        intent.putExtra("tmaAddress", tmaAddress);
-        startActivity(intent);
     }
 
 }
