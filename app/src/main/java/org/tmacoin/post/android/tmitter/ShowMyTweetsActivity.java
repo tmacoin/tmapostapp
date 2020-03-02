@@ -158,7 +158,7 @@ public class ShowMyTweetsActivity extends BaseActivity {
         textViewAccountName.setText(title.getKeywords().getMap().get("create"));
         textViewAccountDescription.setText(title.getText());
         resultTextView.setText(result);
-        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        final Toast toast = Toast.makeText(this, result, Toast.LENGTH_LONG);
         updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
 
         ListView listView = findViewById(R.id.simpleListView);
@@ -166,10 +166,11 @@ public class ShowMyTweetsActivity extends BaseActivity {
         listView.setAdapter(arrayAdapter);
 
         doSubscriptionButtons();
-
+        toast.show();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                toast.cancel();
                 Tweet tweet = (Tweet) parent.getItemAtPosition(position);
                 showClicked(tweet);
             }
