@@ -196,8 +196,9 @@ public class ReplyMyTweetsActivity extends BaseActivity {
             return;
         }
         EditText replyDataEditText = header.findViewById(R.id.replyDataEditText);
+        String replyData = StringUtil.trim(replyDataEditText.getText().toString());
         Transaction transaction = new Transaction(wallet.getPublicKey(), tweet.getRecipient(), Coin.SATOSHI, Coin.SATOSHI,
-                inputs, wallet.getPrivateKey(), replyDataEditText.getText().toString(), null, keywords);
+                inputs, wallet.getPrivateKey(), replyData, null, keywords);
         transaction.setApp(Applications.TWITTER);
 
         new SendTransactionRequest(network, transaction).start();
