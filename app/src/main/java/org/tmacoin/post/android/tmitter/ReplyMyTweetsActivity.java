@@ -150,7 +150,7 @@ public class ReplyMyTweetsActivity extends BaseActivity {
         TextView textViewDate = header.findViewById(R.id.dateTextView);
         textViewDate.setText(new Date(tweet.getTimeStamp()).toString());
 
-        Button buttonReply = header.findViewById(R.id.sendReplyButton);
+        final Button buttonReply = header.findViewById(R.id.sendReplyButton);
         buttonReply.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -165,6 +165,16 @@ public class ReplyMyTweetsActivity extends BaseActivity {
                 hideKeyboard(v);
                 replyButtonClicked();
 
+            }
+        });
+
+        TextView textViewEnterReply = header.findViewById(R.id.textViewEnterReply);
+        textViewEnterReply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText replyDataEditText = header.findViewById(R.id.replyDataEditText);
+                replyDataEditText.setVisibility(View.VISIBLE);
+                buttonReply.setVisibility(View.VISIBLE);
             }
         });
     }
