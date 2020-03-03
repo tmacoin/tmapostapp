@@ -34,6 +34,8 @@ import org.tmacoin.post.android.Wallets;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -58,6 +60,7 @@ public class ReplyMyTweetsActivity extends BaseActivity {
     }
 
     private void replyButtonClicked() {
+        setContentView(R.layout.activity_respond_tmeet_wait);
         processReply();
         updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
     }
@@ -88,7 +91,6 @@ public class ReplyMyTweetsActivity extends BaseActivity {
             @Override
             public void start() throws Exception {
                 processAsyncReply();
-                processAsync();
             }
 
             @Override
@@ -108,6 +110,14 @@ public class ReplyMyTweetsActivity extends BaseActivity {
         GetRepliesRequest request = new GetRepliesRequest(network, tweet.getTransactionId(), tweet.getRecipient());
         request.start();
         list = (List<Tweet>) ResponseHolder.getInstance().getObject(request.getCorrelationId());
+        Comparator<Tweet> compareByTimestamp = new Comparator<Tweet>() {
+            @Override
+            public int compare(Tweet o1, Tweet o2) {
+                return Long.valueOf(o2.getTimeStamp()).compareTo( o1.getTimeStamp() );
+            }
+        };
+
+        Collections.sort(list, compareByTimestamp);
     }
 
     private void processSync() {
@@ -205,6 +215,15 @@ public class ReplyMyTweetsActivity extends BaseActivity {
         logger.debug("sent {}", transaction);
         result = "Reply successfully sent!";
         replyDataEditText.getText().clear();
+
+        Tweet tweet = new Tweet();
+        tweet.setTransactionId(transaction.getTransactionId());
+        tweet.setSender(transaction.getSenderAsString());
+        tweet.setText(transaction.getData());
+        tweet.setRecipient(transaction.getRecipient());
+        tweet.setTimeStamp(System.currentTimeMillis());
+        tweet.setKeywords(transaction.getKeywords());
+        list.add(0, tweet);
 
     }
 

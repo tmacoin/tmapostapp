@@ -129,8 +129,6 @@ public class ShowMyTweetsActivity extends BaseActivity {
             }
         }
 
-        result = "Retrieved number of tmeets " + list.size();
-
         Comparator<Tweet> compareByTimestamp = new Comparator<Tweet>() {
             @Override
             public int compare(Tweet o1, Tweet o2) {
@@ -158,7 +156,6 @@ public class ShowMyTweetsActivity extends BaseActivity {
         textViewAccountName.setText(title.getKeywords().getMap().get("create"));
         textViewAccountDescription.setText(title.getText());
         resultTextView.setText(result);
-        final Toast toast = Toast.makeText(this, result, Toast.LENGTH_LONG);
         updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
 
         ListView listView = findViewById(R.id.simpleListView);
@@ -166,11 +163,9 @@ public class ShowMyTweetsActivity extends BaseActivity {
         listView.setAdapter(arrayAdapter);
 
         doSubscriptionButtons();
-        toast.show();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                toast.cancel();
                 Tweet tweet = (Tweet) parent.getItemAtPosition(position);
                 showClicked(tweet);
             }
