@@ -45,6 +45,8 @@ public class ReplyMyTweetsActivity extends BaseActivity {
     private String result = "";
     private Tweet tweet;
     private List<Tweet> list;
+    private View header;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,19 +112,6 @@ public class ReplyMyTweetsActivity extends BaseActivity {
 
     private void processSync() {
         setContentView(R.layout.activity_respond_tmeet_complete);
-        TextView textViewAccountName = findViewById(R.id.textViewAccountName);
-        textViewAccountName.setText(tweet.getKeywords().getMap().get("from"));
-        TextView textViewAccountDescription = findViewById(R.id.textViewAccountDescription);
-        textViewAccountDescription.setText(tweet.getText());
-        TextView textViewDate = findViewById(R.id.dateTextView);
-        textViewDate.setText(new Date(tweet.getTimeStamp()).toString());
-
-        if(!StringUtil.isEmpty(result)) {
-            Toast.makeText(this, result, Toast.LENGTH_LONG).show();
-        }
-
-        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
-
         ListView listView = findViewById(R.id.simpleListView);
         TmeetAdapter arrayAdapter = new TmeetAdapter(this, list);
         listView.setAdapter(arrayAdapter);
@@ -135,7 +124,23 @@ public class ReplyMyTweetsActivity extends BaseActivity {
             }
         });
 
-        Button buttonReply = findViewById(R.id.sendReplyButton);
+        if(!StringUtil.isEmpty(result)) {
+            Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        }
+
+        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
+
+        header =  getLayoutInflater().inflate(R.layout.activity_respond_tmeet_header, null);
+        listView.addHeaderView(header, null, false);
+
+        TextView textViewAccountName = header.findViewById(R.id.textViewAccountName);
+        textViewAccountName.setText(tweet.getKeywords().getMap().get("from"));
+        TextView textViewAccountDescription = header.findViewById(R.id.textViewAccountDescription);
+        textViewAccountDescription.setText(tweet.getText());
+        TextView textViewDate = header.findViewById(R.id.dateTextView);
+        textViewDate.setText(new Date(tweet.getTimeStamp()).toString());
+
+        Button buttonReply = header.findViewById(R.id.sendReplyButton);
         buttonReply.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -190,7 +195,7 @@ public class ReplyMyTweetsActivity extends BaseActivity {
             result = "You have not created your tmitter account yet.";
             return;
         }
-        EditText replyDataEditText = findViewById(R.id.replyDataEditText);
+        EditText replyDataEditText = header.findViewById(R.id.replyDataEditText);
         Transaction transaction = new Transaction(wallet.getPublicKey(), tweet.getRecipient(), Coin.SATOSHI, Coin.SATOSHI,
                 inputs, wallet.getPrivateKey(), replyDataEditText.getText().toString(), null, keywords);
         transaction.setApp(Applications.TWITTER);
