@@ -1,6 +1,7 @@
 package org.tmacoin.post.android.tmitter;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -173,10 +174,17 @@ public class ReplyMyTweetsActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 EditText replyDataEditText = header.findViewById(R.id.replyDataEditText);
+                if(replyDataEditText.getVisibility() == View.VISIBLE) {
+                    replyDataEditText.setVisibility(View.GONE);
+                    buttonReply.setVisibility(View.GONE);
+                    return;
+                }
+
                 replyDataEditText.setVisibility(View.VISIBLE);
                 buttonReply.setVisibility(View.VISIBLE);
             }
         });
+        textViewEnterReply.setPaintFlags(textViewEnterReply.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
     }
 
     private void showClicked(Tweet tweet) {
