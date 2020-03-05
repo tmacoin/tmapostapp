@@ -131,5 +131,11 @@
     <string name = "post_cannot_be_empty"> Įrašas negali būti tuščias </string>
     <string name = "keywords_cannot_be_empty"> Raktažodžiai negali būti tušti </string>
     <string name = "post_was_sent"> Įrašas buvo išsiųstas </string>
-
+    <string name="tweet_was_sent_successfully">„Tweet“ buvo sėkmingai išsiųstas</string>
+    <string name="tmitter_account_create">Pirmiausia sukurkite savo skaldos sąskaitą.</string>
+    <string name="enter_tmitter_account">Įveskite mokėtojo sąskaitą</string>
+    <string name="replyBack">Atgal</string>
+    <string name="enter_reply">Įveskite Atsakyti</string>
+    <string name="send_reply">Siųsti atsakymą</string>
+    <string name="Back">Atgal</string>
 </resources>

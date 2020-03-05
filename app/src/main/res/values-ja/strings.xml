@@ -131,5 +131,12 @@
     <string name = "post_cannot_be_empty">投稿を空にすることはできません</string>
     <string name = "keywords_cannot_be_empty">キーワードを空にすることはできません</string>
     <string name = "post_was_sent">投稿が送信されました</string>
+    <string name="tweet_was_sent_successfully">ツイートが正常に送信されました</string>
+    <string name="tmitter_account_create">最初にtmitterアカウントを作成してください。</string>
+    <string name="enter_tmitter_account">送信者アカウントを入力してください</string>
+    <string name="replyBack">バック</string>
+    <string name="enter_reply">返信を入力</string>
+    <string name="send_reply">返信する</string>
+    <string name="Back">バック</string>
 
 </resources>

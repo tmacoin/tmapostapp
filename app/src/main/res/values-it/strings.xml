@@ -131,5 +131,11 @@
     <string name = "post_cannot_be_empty"> Il post non può essere vuoto </string>
     <string name = "keywords_cannot_be_empty"> Le parole chiave non possono essere vuote </string>
     <string name = "post_was_sent"> Il post è stato inviato </string>
-
+    <string name="tweet_was_sent_successfully">Tweet è stato inviato con successo</string>
+    <string name="tmitter_account_create">Crea prima il tuo account tmitter.</string>
+    <string name="enter_tmitter_account">Inserisci l\'account Tmitter</string>
+    <string name="replyBack">Indietro</string>
+    <string name="enter_reply">Inserisci risposta</string>
+    <string name="send_reply">Invia risposta</string>
+    <string name="Back">Indietro</string>
 </resources>

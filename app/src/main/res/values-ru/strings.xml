@@ -131,5 +131,11 @@
     <string name = "post_cannot_be_empty">Объявление не может быть пустой</string>
     <string name = "keywords_cannot_be_empty">Ключевые слова не могут быть пустыми</string>
     <string name = "post_was_sent">Объявление было отправлено</string>
-
+    <string name="tweet_was_sent_successfully">Твит был успешно отправлен</string>
+    <string name="tmitter_account_create">Пожалуйста, сначала создайте учетную запись tmitter.</string>
+    <string name="enter_tmitter_account">Войдите в аккаунт Tmitter</string>
+    <string name="replyBack">назад</string>
+    <string name="enter_reply">Введите ответ</string>
+    <string name="send_reply">Отправить ответ</string>
+    <string name="Back">назад</string>
 </resources>

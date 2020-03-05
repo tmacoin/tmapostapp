@@ -133,13 +133,13 @@
     <string name="keywords_cannot_be_empty">Keywords cannot be empty</string>
     <string name="post_was_sent">Post was sent</string>
 
-    <string name="tweet_was_sent_successfully" translatable="false">Tweet was sent successfully</string>
-    <string name="tmitter_account_create" translatable="false">Please create your tmitter account first.</string>
-    <string name="enter_tmitter_account" translatable="false">Enter Tmitter Account</string>
-    <string name="replyBack" translatable="false">Back</string>
-    <string name="enter_reply" translatable="false">Enter Reply</string>
-    <string name="send_reply" translatable="false">Send Reply</string>
-    <string name="Back" translatable="false">Back</string>
+    <string name="tweet_was_sent_successfully" >Tweet was sent successfully</string>
+    <string name="tmitter_account_create" >Please create your tmitter account first.</string>
+    <string name="enter_tmitter_account" >Enter Tmitter Account</string>
+    <string name="replyBack" >Back</string>
+    <string name="enter_reply" >Enter Reply</string>
+    <string name="send_reply" >Send Reply</string>
+    <string name="Back" >Back</string>
 
 
 </resources>

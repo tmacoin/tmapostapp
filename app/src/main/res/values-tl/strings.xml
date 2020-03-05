@@ -130,5 +130,11 @@
     <string name = "post_cannot_be_empty"> Hindi maaring walang laman ang post </string>
     <string name = "keywords_cannot_be_empty"> Hindi maaaring walang laman ang mga keyword </string>
     <string name = "post_was_sent"> Ipinadala ang nai-post </string>
-
+    <string name="tweet_was_sent_successfully">Matagumpay na ipinadala ang Tweet</string>
+    <string name="tmitter_account_create">Mangyaring lumikha muna sa iyong tmitter account.</string>
+    <string name="enter_tmitter_account">Ipasok ang Tmitter Account</string>
+    <string name="replyBack">Balik</string>
+    <string name="enter_reply">Ipasok ang Sumagot</string>
+    <string name="send_reply">Magpadala ng Sumagot</string>
+    <string name="Back">Balik</string>
 </resources>

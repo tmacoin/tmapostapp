@@ -133,6 +133,12 @@
     <string name ="post_cannot_be_empty" translatable ="false">帖子不能为空</string>
     <string name ="keywords_cannot_be_empty" translatable ="false">关键字不能为空</string>
     <string name ="post_was_sent" translatable ="false">帖子已发送</string>
-
+    <string name="tweet_was_sent_successfully">推文已成功發送</string>
+    <string name="tmitter_account_create">請先創建您的發送者帳戶。</string>
+    <string name="enter_tmitter_account">輸入匯款賬戶</string>
+    <string name="replyBack">背部</string>
+    <string name="enter_reply">輸入回覆</string>
+    <string name="send_reply">發送回复</string>
+    <string name="Back">背部</string>
 
 </resources>

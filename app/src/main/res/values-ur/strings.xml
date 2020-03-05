@@ -130,6 +130,12 @@
     <string name = "post_cannot_be_empty"> پوسٹ خالی نہیں ہوسکتی ہے </string>
     <string name = "keywords_cannot_be_empty"> مطلوبہ الفاظ خالی نہیں ہوسکتے ہیں </string>
     <string name = "post_was_sent"> پوسٹ بھیجی گئی تھی </string>
-
+    <string name="tweet_was_sent_successfully">ٹویٹ کامیابی کے ساتھ بھیجا گیا تھا</string>
+    <string name="tmitter_account_create">براہ کرم پہلے اپنا ٹیمٹر اکاؤنٹ بنائیں۔</string>
+    <string name="enter_tmitter_account">ٹیمٹر اکاؤنٹ درج کریں</string>
+    <string name="replyBack">پیچھے</string>
+    <string name="enter_reply">جواب داخل کریں</string>
+    <string name="send_reply">جواب دیں</string>
+    <string name="Back">پیچھے</string>
 
 </resources>

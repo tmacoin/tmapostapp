@@ -133,4 +133,12 @@
     <string name = "keywords_cannot_be_empty"> لا يمكن أن تكون الكلمات الرئيسية فارغة </string>
     <string name = "post_was_sent"> تم إرسال المشاركة </string>
 
+    <string name="tweet_was_sent_successfully">تم إرسال Tweet بنجاح</string>
+    <string name="tmitter_account_create">يرجى إنشاء حساب tmitter الخاص بك أولاً.</string>
+    <string name="enter_tmitter_account">أدخل حساب Tmitter</string>
+    <string name="replyBack">عودة</string>
+    <string name="enter_reply">أدخل الرد</string>
+    <string name="send_reply">إرسال الرد</string>
+    <string name="Back">عودة</string>
+
 </resources>
