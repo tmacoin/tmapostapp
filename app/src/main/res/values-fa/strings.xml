@@ -132,5 +132,12 @@
     <string name = "keywords_cannot_be_empty"> کلمات کلیدی نمی توانند خالی باشند </string>
     <string name = "post_was_sent"> ارسال شد </string>
 
+    <string name="tweet_was_sent_successfully">Tweet با موفقیت ارسال شد</string>
+    <string name="tmitter_account_create">لطفاً ابتدا حساب tmitter خود را ایجاد کنید.</string>
+    <string name="enter_tmitter_account">وارد حساب Tmitter شوید</string>
+    <string name="replyBack">بازگشت</string>
+    <string name="enter_reply">پاسخ را وارد کنید</string>
+    <string name="send_reply">ارسال پاسخ</string>
+    <string name="Back">بازگشت</string>
 
 </resources>

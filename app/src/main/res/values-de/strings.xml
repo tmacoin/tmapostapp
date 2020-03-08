@@ -130,6 +130,13 @@
     <string name = "post_cannot_be_empty"> Beitrag darf nicht leer sein </string>
     <string name = "keywords_cannot_be_empty"> Schlüsselwörter dürfen nicht leer sein </string>
     <string name = "post_was_sent"> Beitrag wurde gesendet </string>
+    <string name="tweet_was_sent_successfully">Tweet wurde erfolgreich gesendet</string>
 
+    <string name="tmitter_account_create">Bitte erstellen Sie zuerst Ihr Tmitter-Konto.</string>
+    <string name="enter_tmitter_account">Geben Sie das Tmitter-Konto ein</string>
+    <string name="replyBack">Zurück</string>
+    <string name="enter_reply">Antwort eingeben</string>
+    <string name="send_reply">Antwort senden</string>
+    <string name="Back">Zurück</string>
 
 </resources>

@@ -131,5 +131,11 @@
     <string name = "post_cannot_be_empty"> הפוסט לא יכול להיות ריק </string>
     <string name = "keywords_cannot_be_empty"> מילות המפתח לא יכולות להיות ריקות </string>
     <string name = "post_was_sent"> ההודעה נשלחה </string>
-
+    <string name="tweet_was_sent_successfully">הציוץ נשלח בהצלחה</string>
+    <string name="tmitter_account_create">אנא צור תחילה את חשבון ה- tmitter שלך.</string>
+    <string name="enter_tmitter_account">הכנס חשבון טמיטר</string>
+    <string name="replyBack">חזור</string>
+    <string name="enter_reply">הזן תגובה</string>
+    <string name="send_reply">שלח תגובה</string>
+    <string name="Back">חזור</string>
 </resources>

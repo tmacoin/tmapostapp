@@ -131,5 +131,11 @@
     <string name = "post_cannot_be_empty"> 게시물은 비워 둘 수 없습니다 </string>
     <string name = "keywords_cannot_be_empty"> 키워드는 비워 둘 수 없습니다 </string>
     <string name = "post_was_sent"> 게시물이 전송되었습니다 </string>
-
+    <string name="tweet_was_sent_successfully">트윗이 성공적으로 전송되었습니다</string>
+    <string name="tmitter_account_create">먼저 tmitter 계정을 만드십시오.</string>
+    <string name="enter_tmitter_account">Tmitter Account를 입력하십시오</string>
+    <string name="replyBack">뒤</string>
+    <string name="enter_reply">답장 입력</string>
+    <string name="send_reply">답장 보내기</string>
+    <string name="Back">뒤</string>
 </resources>

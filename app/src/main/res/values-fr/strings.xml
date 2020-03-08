@@ -131,6 +131,12 @@
     <string name = "post_cannot_be_empty"> Le message ne peut pas être vide </string>
     <string name = "keywords_cannot_be_empty"> Les mots clés ne peuvent pas être vides </string>
     <string name = "post_was_sent"> Le message a été envoyé </string>
-
+    <string name="tweet_was_sent_successfully">Le Tweet a été envoyé avec succès</string>
+    <string name="tmitter_account_create">Veuillez d\'abord créer votre compte tmitter.</string>
+    <string name="enter_tmitter_account">Entrer dans le compte Tmitter</string>
+    <string name="replyBack">Retour</string>
+    <string name="enter_reply">Entrez une réponse</string>
+    <string name="send_reply">Envoyer une réponse</string>
+    <string name="Back">Retour</string>
 
 </resources>

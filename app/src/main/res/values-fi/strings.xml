@@ -131,6 +131,12 @@
     <string name = "post_cannot_be_empty"> Viesti ei voi olla tyhjä </string>
     <string name = "keywords_cannot_be_empty"> Avainsanat eivät voi olla tyhjät </string>
     <string name = "post_was_sent"> Viesti lähetettiin </string>
-
+    <string name="tweet_was_sent_successfully">Tweet lähetettiin onnistuneesti</string>
+    <string name="tmitter_account_create">Luo ensin jakelutili.</string>
+    <string name="enter_tmitter_account">Syötä Tittelitili</string>
+    <string name="replyBack">Takaisin</string>
+    <string name="enter_reply">Kirjoita Vastaa</string>
+    <string name="send_reply">Lähetä vastaus</string>
+    <string name="Back">Takaisin</string>
 
 </resources>

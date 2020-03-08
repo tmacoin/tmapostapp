@@ -132,5 +132,11 @@
     <string name = "keywords_cannot_be_empty"> Las palabras clave no pueden estar vacías </string>
     <string name = "post_was_sent"> La publicación se envió </string>
 
-
+    <string name="tweet_was_sent_successfully">Tuit fue enviado con éxito</string>
+    <string name="tmitter_account_create">Por favor cree su cuenta tmitter primero.</string>
+    <string name="enter_tmitter_account">Ingrese cuenta Tmitter</string>
+    <string name="replyBack">atrás</string>
+    <string name="enter_reply">Ingrese respuesta</string>
+    <string name="send_reply">Enviar respuesta</string>
+    <string name="Back">atrás</string>
 </resources>

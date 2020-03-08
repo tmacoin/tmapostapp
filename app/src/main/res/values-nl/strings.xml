@@ -131,5 +131,11 @@
     <string name = "post_cannot_be_empty"> Bericht mag niet leeg zijn </string>
     <string name = "keywords_cannot_be_empty"> Sleutelwoorden mogen niet leeg zijn </string>
     <string name = "post_was_sent"> Bericht is verzonden </string>
-
+    <string name="tweet_was_sent_successfully">Tweet is succesvol verzonden</string>
+    <string name="tmitter_account_create">Maak eerst uw tmitter-account aan.</string>
+    <string name="enter_tmitter_account">Voer Tmitter-account in</string>
+    <string name="replyBack">Terug</string>
+    <string name="enter_reply">Voer antwoord in</string>
+    <string name="send_reply">Stuur antwoord</string>
+    <string name="Back">Terug</string>
 </resources>
