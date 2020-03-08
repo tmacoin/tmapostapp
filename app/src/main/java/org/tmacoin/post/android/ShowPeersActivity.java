@@ -38,7 +38,7 @@ public class ShowPeersActivity extends BaseActivity {
             final StringBuilder stringBuilder = new StringBuilder();
             List<Peer> list = Network.getInstance().getConnectedPeers();
             for(Peer peer: list) {
-                stringBuilder.append(peer.toString()).append(System.lineSeparator());
+                stringBuilder.append(peer.getRawSocket().toString()).append(System.lineSeparator());
             }
             String localText = stringBuilder.toString();
             if(text.equals(localText)) {
