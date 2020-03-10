@@ -16,14 +16,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".tmitter.MySubscriptionsActivity"></activity>
-        <activity android:name=".tmitter.ShowMyTweetsActivity"></activity>
+        <activity android:name=".posting.FindPostActivity"></activity>
+        <activity android:name=".tmitter.MySubscriptionsActivity" />
+        <activity android:name=".tmitter.ShowMyTweetsActivity" />
         <activity android:name=".tmitter.SendTmeetActivity" />
         <activity android:name=".tmitter.SearchTwitterActivity" />
-
         <activity android:name=".tmitter.ReplyMyTweetsActivity" />
-
         <activity android:name=".ShowPeersActivity" />
         <activity
             android:name=".messaging.AddAddressActivity"
@@ -86,7 +84,6 @@
         <activity
             android:name=".tmitter.CreateAccount"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
-
         <activity
             android:name=".posting.CreatePost"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />

@@ -10,6 +10,7 @@ import org.tmacoin.post.android.messaging.NewMessageNotifier;
 import org.tmacoin.post.android.messaging.SendMessageActivity;
 import org.tmacoin.post.android.messaging.ShowMessagesActivity;
 import org.tmacoin.post.android.posting.CreatePost;
+import org.tmacoin.post.android.posting.FindPostActivity;
 import org.tmacoin.post.android.tmitter.CreateAccount;
 import org.tmacoin.post.android.tmitter.MySubscriptionsActivity;
 import org.tmacoin.post.android.tmitter.SearchTwitterActivity;
@@ -96,7 +97,8 @@ public class MenuHandler {
     }
 
     public void handleFindPost(Activity activity) {
-        Toast.makeText(activity, activity.getResources().getString(R.string.find_post), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(activity, FindPostActivity.class);
+        activity.startActivity(intent);
     }
 
     public void handleMyRatings(Activity activity) {
