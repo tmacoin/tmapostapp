@@ -11,6 +11,8 @@ import org.tmacoin.post.android.messaging.SendMessageActivity;
 import org.tmacoin.post.android.messaging.ShowMessagesActivity;
 import org.tmacoin.post.android.posting.CreatePost;
 import org.tmacoin.post.android.posting.FindPostActivity;
+import org.tmacoin.post.android.posting.MyPostsActivity;
+import org.tmacoin.post.android.posting.MyRatingsActivity;
 import org.tmacoin.post.android.tmitter.CreateAccount;
 import org.tmacoin.post.android.tmitter.MySubscriptionsActivity;
 import org.tmacoin.post.android.tmitter.SearchTwitterActivity;
@@ -102,11 +104,13 @@ public class MenuHandler {
     }
 
     public void handleMyRatings(Activity activity) {
-        Toast.makeText(activity, activity.getResources().getString(R.string.my_ratings), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(activity, MyRatingsActivity.class);
+        activity.startActivity(intent);
     }
 
     public void handleMyPosts(Activity activity) {
-        Toast.makeText(activity, activity.getResources().getString(R.string.my_posts), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(activity, MyPostsActivity.class);
+        activity.startActivity(intent);
     }
 
     public void handleViewLog(Activity activity) {
