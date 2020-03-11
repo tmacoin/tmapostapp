@@ -21,9 +21,11 @@ import org.tma.util.Applications;
 import org.tma.util.Coin;
 import org.tma.util.StringUtil;
 import org.tma.util.TmaLogger;
+import org.tmacoin.post.android.AndroidContants;
 import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
+import org.tmacoin.post.android.TmaAndroidUtil;
 import org.tmacoin.post.android.Wallets;
 
 import java.util.ArrayList;
@@ -35,7 +37,6 @@ import java.util.Set;
 public class CreatePost extends BaseActivity {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
-    private static final int MAX_NUMBER_OF_KEYWORDS = 10;
 
     private String post;
     private String description;
@@ -146,29 +147,13 @@ public class CreatePost extends BaseActivity {
         description = editTextDescription.getText().toString();
         EditText editTextKeywords = findViewById(R.id.editTextKeywords);
         String keywords = editTextKeywords.getText().toString();
-        words = getKeywords(keywords);
-    }
-
-    public Set<String> getKeywords(String keywords) {
-        Set<String> set = new HashSet<>();
-        String[] strings = keywords.split(" ");
-        for(String str: strings) {
-            if(set.size() > MAX_NUMBER_OF_KEYWORDS) {
-                break;
-            }
-            if(!"".equals(str)) {
-                set.add(str.toLowerCase());
-            }
-        }
-        return set;
+        words = TmaAndroidUtil.getKeywords(keywords);
     }
 
     private Transaction sendCreateRateeTransaction() {
         String ratee = StringUtil.getTmaAddressFromString(post);
         Network network = Network.getInstance();
-        if(!network.isPeerSetComplete()) {
-            BootstrapRequest.getInstance().start();
-        }
+        TmaAndroidUtil.checkNetwork();
         String tmaAddress = network.getTmaAddress();
         Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
         Coin amount = Coin.SATOSHI.multiply(2);

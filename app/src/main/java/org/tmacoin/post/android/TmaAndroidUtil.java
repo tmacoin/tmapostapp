@@ -10,6 +10,9 @@ import org.tma.peer.Network;
 import org.tma.util.ThreadExecutor;
 import org.tma.util.TmaRunnable;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class TmaAndroidUtil {
 
     public static final String STOP = "stop";
@@ -36,5 +39,19 @@ public class TmaAndroidUtil {
 
     public static void checkNetwork() {
         BootstrapRequest.getInstance().startAndWait();
+    }
+
+    public static Set<String> getKeywords(String keywords) {
+        Set<String> set = new HashSet<>();
+        String[] strings = keywords.split(" ");
+        for(String str: strings) {
+            if(set.size() > AndroidContants.MAX_NUMBER_OF_KEYWORDS) {
+                break;
+            }
+            if(!"".equals(str)) {
+                set.add(str.toLowerCase());
+            }
+        }
+        return set;
     }
 }
