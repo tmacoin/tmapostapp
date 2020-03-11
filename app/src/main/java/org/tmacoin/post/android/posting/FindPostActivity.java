@@ -30,7 +30,7 @@ public class FindPostActivity extends BaseActivity {
     private String post;
     private Set<String> words;
     private String result = "";
-    List<Ratee> list;
+    private List<Ratee> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
