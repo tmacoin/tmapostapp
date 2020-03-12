@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ import org.tmacoin.post.android.R;
 
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.TmaAndroidUtil;
+import org.tmacoin.post.android.tmitter.TmeetAdapter;
 
 import java.util.HashSet;
 import java.util.List;
@@ -124,10 +126,10 @@ public class FindPostActivity extends BaseActivity {
 
     private void processSync() {
         setContentView(R.layout.activity_find_post_complete);
-        TextView resultTextView = findViewById(R.id.resultTextView);
-        resultTextView.setText(result);
-        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
-        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
+        ListView listView = findViewById(R.id.simpleListView);
+        RateeAdapter arrayAdapter = new RateeAdapter(this, list);
+        listView.setAdapter(arrayAdapter);
+        Toast.makeText(this, "Found " +  list.size() + " posts", Toast.LENGTH_LONG).show();
     }
 
     private boolean validate() {
