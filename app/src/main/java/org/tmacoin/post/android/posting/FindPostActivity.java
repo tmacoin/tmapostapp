@@ -126,10 +126,15 @@ public class FindPostActivity extends BaseActivity {
 
     private void processSync() {
         setContentView(R.layout.activity_find_post_complete);
+        if(!StringUtil.isEmpty(result)) {
+            Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        }
+        if(list == null || list.isEmpty()) {
+            return;
+        }
         ListView listView = findViewById(R.id.simpleListView);
         RateeAdapter arrayAdapter = new RateeAdapter(this, list);
         listView.setAdapter(arrayAdapter);
-        Toast.makeText(this, "Found " +  list.size() + " posts", Toast.LENGTH_LONG).show();
     }
 
     private boolean validate() {
