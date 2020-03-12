@@ -1,6 +1,7 @@
 package org.tmacoin.post.android.posting;
 
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -8,6 +9,7 @@ import org.tma.peer.Network;
 import org.tma.peer.thin.Rating;
 import org.tma.peer.thin.ResponseHolder;
 import org.tma.peer.thin.SearchRatingForRaterRequest;
+import org.tma.util.StringUtil;
 import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.R;
@@ -55,8 +57,8 @@ public class MyRatingsActivity extends BaseActivity {
         SearchRatingForRaterRequest
                 request = new SearchRatingForRaterRequest(network, rater);
         request.start();
-        @SuppressWarnings("unchecked")
-        List<Rating> list = (List<Rating>) ResponseHolder.getInstance().getObject(request.getCorrelationId());
+
+        list = (List<Rating>) ResponseHolder.getInstance().getObject(request.getCorrelationId());
 
         if(list == null) {
             result  = ("Failed to retrieve ratings. Please try again");
@@ -69,10 +71,15 @@ public class MyRatingsActivity extends BaseActivity {
 
     private void processSync() {
         setContentView(R.layout.activity_my_ratings);
-        TextView resultTextView = findViewById(R.id.resultTextView);
-        resultTextView.setText(result);
-        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
-        updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
+        if(!StringUtil.isEmpty(result)) {
+            Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        }
+        if(list == null || list.isEmpty()) {
+            return;
+        }
+        ListView listView = findViewById(R.id.simpleListView);
+        RatingAdapter arrayAdapter = new RatingAdapter(this, list);
+        listView.setAdapter(arrayAdapter);
     }
 
 

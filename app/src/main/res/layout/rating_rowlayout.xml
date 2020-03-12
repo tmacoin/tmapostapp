@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/raterLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rater"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimaryDark">
+    </TextView>
+
+    <TextView
+        android:id="@+id/rater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@+id/accountName"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimaryDark">
+    </TextView>
+
+    <TextView
+        android:id="@+id/postLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimaryDark">
+    </TextView>
+
+    <TextView
+        android:id="@+id/post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@+id/accountName"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimaryDark">
+    </TextView>
+
+    <TextView
+        android:id="@+id/rateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rate"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimaryDark">
+    </TextView>
+
+    <TextView
+        android:id="@+id/rateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@+id/accountName"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimaryDark">
+    </TextView>
+
+    <TextView
+        android:id="@+id/dateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimaryDark">
+    </TextView>
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@+id/accountName"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimaryDark">
+    </TextView>
+
+    <TextView
+        android:id="@+id/commentLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comment"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimaryDark">
+    </TextView>
+
+    <TextView
+        android:id="@+id/commentTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@+id/accountName"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimaryDark">
+    </TextView>
+
+
+
+</LinearLayout>
