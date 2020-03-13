@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final TmaLogger logger = TmaLogger.getLogger();
     private static final int REQUEST_CODE = 1;
+    private Toast connectToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return false;
             }
-            Toast.makeText(this, getResources().getString(R.string.connecting_wait), Toast.LENGTH_LONG).show();
+            connectToast = Toast.makeText(this, getResources().getString(R.string.connecting_wait), Toast.LENGTH_LONG);
+            connectToast.show();
             logger.debug("TMA POST starting up");
             StartNetwork.getInstance().start(this);
         } catch (Exception e) {
@@ -243,6 +245,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void connectedToTmaNetwork() {
+        connectToast.cancel();
         Intent intent = new Intent(this, ConnectedToNetworkActivity.class);
         startActivity(intent);
         finish();
