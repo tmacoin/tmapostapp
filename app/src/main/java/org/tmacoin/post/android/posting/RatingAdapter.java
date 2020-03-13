@@ -42,7 +42,7 @@ public class RatingAdapter extends ArrayAdapter<Rating> {
         // reuse views
         if (rowView == null) {
             LayoutInflater inflater = context.getLayoutInflater();
-            rowView = inflater.inflate(R.layout.ratee_rowlayout, null);
+            rowView = inflater.inflate(R.layout.rating_rowlayout, null);
             // configure view holder
             ViewHolder viewHolder = new ViewHolder();
             viewHolder.rater = (TextView) rowView.findViewById(R.id.rater);

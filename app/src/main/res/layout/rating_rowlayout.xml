@@ -10,7 +10,8 @@
         android:layout_height="wrap_content"
         android:text="Rater"
         android:textSize="12dp"
-        android:textColor="@color/colorPrimaryDark">
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold">
     </TextView>
 
     <TextView
@@ -28,7 +29,8 @@
         android:layout_height="wrap_content"
         android:text="Post"
         android:textSize="12dp"
-        android:textColor="@color/colorPrimaryDark">
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold">
     </TextView>
 
     <TextView
@@ -46,7 +48,8 @@
         android:layout_height="wrap_content"
         android:text="Rate"
         android:textSize="12dp"
-        android:textColor="@color/colorPrimaryDark">
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold">
     </TextView>
 
     <TextView
@@ -64,7 +67,8 @@
         android:layout_height="wrap_content"
         android:text="Date"
         android:textSize="12dp"
-        android:textColor="@color/colorPrimaryDark">
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold">
     </TextView>
 
     <TextView
@@ -82,7 +86,8 @@
         android:layout_height="wrap_content"
         android:text="Comment"
         android:textSize="12dp"
-        android:textColor="@color/colorPrimaryDark">
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold">
     </TextView>
 
     <TextView
