@@ -1,6 +1,9 @@
 package org.tmacoin.post.android.posting;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -9,6 +12,7 @@ import org.tma.peer.Network;
 import org.tma.peer.thin.Ratee;
 import org.tma.peer.thin.ResponseHolder;
 import org.tma.peer.thin.SearchPostsRequest;
+import org.tma.peer.thin.TwitterAccount;
 import org.tma.util.StringUtil;
 import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.BaseActivity;
@@ -79,6 +83,20 @@ public class MyPostsActivity extends BaseActivity {
         ListView listView = findViewById(R.id.simpleListView);
         RateeAdapter arrayAdapter = new RateeAdapter(this, list);
         listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                final Ratee ratee = (Ratee) parent.getItemAtPosition(position);
+                showPost(ratee);
+            }
+        });
+    }
+
+    private void showPost(Ratee ratee) {
+        Intent intent = new Intent(this, ShowPostActivity.class);
+        intent.putExtra("ratee", ratee);
+        startActivity(intent);
     }
 
 

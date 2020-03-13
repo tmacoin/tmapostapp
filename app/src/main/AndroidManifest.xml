@@ -16,9 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".posting.FindPostActivity"></activity>
-        <activity android:name=".posting.MyRatingsActivity"></activity>
-        <activity android:name=".posting.MyPostsActivity"></activity>
+        <activity android:name=".posting.ShowPostActivity"></activity>
+        <activity android:name=".posting.FindPostActivity" />
+        <activity android:name=".posting.MyRatingsActivity" />
+        <activity android:name=".posting.MyPostsActivity" />
         <activity android:name=".tmitter.MySubscriptionsActivity" />
         <activity android:name=".tmitter.ShowMyTweetsActivity" />
         <activity android:name=".tmitter.SendTmeetActivity" />
