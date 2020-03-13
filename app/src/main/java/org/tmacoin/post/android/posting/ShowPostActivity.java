@@ -24,7 +24,8 @@ public class ShowPostActivity extends BaseActivity {
         textViewDescription.setText(ratee.getDescription());
         TextView textViewDate = findViewById(R.id.textViewDate);
         textViewDate.setText(new Date(ratee.getTimeStamp()).toString());
-
+        TextView textViewIdentifier = findViewById(R.id.textViewIdentifier);
+        textViewIdentifier.setText(ratee.getTransactionId());
 
 
     }
