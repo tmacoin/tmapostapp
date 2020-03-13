@@ -9,6 +9,8 @@ import org.tmacoin.post.android.R;
 
 import org.tmacoin.post.android.BaseActivity;
 
+import java.util.Date;
+
 public class ShowPostActivity extends BaseActivity {
 
     @Override
@@ -20,5 +22,10 @@ public class ShowPostActivity extends BaseActivity {
         textViewPost.setText(ratee.getName());
         TextView textViewDescription = findViewById(R.id.textViewDescription);
         textViewDescription.setText(ratee.getDescription());
+        TextView textViewDate = findViewById(R.id.textViewDate);
+        textViewDate.setText(new Date(ratee.getTimeStamp()).toString());
+
+
+
     }
 }

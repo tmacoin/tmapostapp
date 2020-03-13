@@ -1,9 +1,11 @@
 package org.tmacoin.post.android.posting;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -135,6 +137,21 @@ public class FindPostActivity extends BaseActivity {
         ListView listView = findViewById(R.id.simpleListView);
         RateeAdapter arrayAdapter = new RateeAdapter(this, list);
         listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                final Ratee ratee = (Ratee) parent.getItemAtPosition(position);
+                showPost(ratee);
+            }
+        });
+
+    }
+
+    private void showPost(Ratee ratee) {
+        Intent intent = new Intent(this, ShowPostActivity.class);
+        intent.putExtra("ratee", ratee);
+        startActivity(intent);
     }
 
     private boolean validate() {
