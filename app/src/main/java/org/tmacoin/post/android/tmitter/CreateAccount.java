@@ -84,7 +84,7 @@ public class CreateAccount extends BaseActivity {
                 if(!validate()) {
                     return;
                 }
-                Toast.makeText(CreateAccount.this, getResources().getString(R.string.wait), Toast.LENGTH_LONG).show();
+                Toast.makeText(CreateAccount.this, getResources().getString(R.string.tmitter_wait), Toast.LENGTH_LONG).show();
                 setContentView(R.layout.activity_create_tmitter_wait);
                 process();
             }
