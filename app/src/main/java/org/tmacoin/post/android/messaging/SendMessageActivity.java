@@ -59,12 +59,13 @@ public class SendMessageActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_message);
         addressStore = new AddressStore(getApplicationContext());
-        SecureMessage secureMessage = (SecureMessage)getIntent().getSerializableExtra("secureMessage");
+
         AutoCompleteTextView recipientTmaAddressEditText = findViewById(R.id.recipientTmaAddressEditText);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, addressStore.getAllNames());
         recipientTmaAddressEditText.setAdapter(adapter);
         recipientTmaAddressEditText.setThreshold(1);
 
+        SecureMessage secureMessage = (SecureMessage)getIntent().getSerializableExtra("secureMessage");
         if(secureMessage != null) {
             String recipientName = addressStore.findNameByTmaAddress(secureMessage.getSenderTmaAddress());
             if(recipientName == null) {
@@ -76,6 +77,22 @@ public class SendMessageActivity extends BaseActivity {
             Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
             subjectEditText.setText(getResources().getString(R.string.re) + " " + secureMessage.getSubject(wallet.getPrivateKey()));
         }
+        String subject = (String)getIntent().getSerializableExtra("subject");
+        if(subject != null) {
+            String recipient = (String)getIntent().getSerializableExtra("recipient");
+            String recipientName = addressStore.findNameByTmaAddress(recipient);
+            if(recipientName == null) {
+                recipientName = recipient;
+            }
+
+            recipientTmaAddressEditText.setText(recipientName);
+            EditText subjectEditText = findViewById(R.id.subjectEditText);
+            Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
+            subjectEditText.setText(getResources().getString(R.string.re) + " " + subject);
+        }
+
+
+
         updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
         Button sendMessageButton = findViewById(R.id.sendMessageButton);
         sendMessageButton.setOnFocusChangeListener(new View.OnFocusChangeListener() {

@@ -1,5 +1,7 @@
 package org.tmacoin.post.android.posting;
 
+import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -19,7 +21,9 @@ import org.tmacoin.post.android.R;
 
 import org.tmacoin.post.android.BaseActivity;
 import org.tmacoin.post.android.TmaAndroidUtil;
+import org.tmacoin.post.android.messaging.SendMessageActivity;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -82,8 +86,8 @@ public class ShowPostActivity extends BaseActivity {
         if(!StringUtil.isEmpty(result)) {
             Toast.makeText(this, result, Toast.LENGTH_LONG).show();
         }
-        if(list == null || list.isEmpty()) {
-            return;
+        if(list == null) {
+            list = new ArrayList<>();
         }
         ListView listView = findViewById(R.id.simpleListView);
         RatingAdapter arrayAdapter = new RatingAdapter(this, list);
@@ -94,6 +98,16 @@ public class ShowPostActivity extends BaseActivity {
 
         TextView textViewPost = header.findViewById(R.id.textViewPost);
         textViewPost.setText(ratee.getName());
+        textViewPost.setPaintFlags(textViewPost.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
+        textViewPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reply();
+            }
+        });
+
+
         TextView textViewDescription = header.findViewById(R.id.textViewDescription);
         textViewDescription.setText(ratee.getDescription());
         TextView textViewDate = header.findViewById(R.id.textViewDate);
@@ -104,5 +118,12 @@ public class ShowPostActivity extends BaseActivity {
         TextView totalRating = header.findViewById(R.id.totalRating);
         totalRating.setText("Total rating is " + ratee.getTotalRating());
 
+    }
+
+    private void reply() {
+        Intent intent = new Intent(this, SendMessageActivity.class);
+        intent.putExtra("subject", ratee.getName());
+        intent.putExtra("recipient", ratee.getCreatorTmaAddress());
+        startActivity(intent);
     }
 }
