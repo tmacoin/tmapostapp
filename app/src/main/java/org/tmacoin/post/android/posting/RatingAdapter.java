@@ -16,6 +16,7 @@ import org.tma.peer.thin.Rating;
 import org.tma.peer.thin.ResponseHolder;
 import org.tma.peer.thin.SearchRateeRequest;
 import org.tma.util.TmaLogger;
+import org.tmacoin.post.android.AndroidExecutor;
 import org.tmacoin.post.android.R;
 import org.tmacoin.post.android.TmaAndroidUtil;
 
@@ -28,6 +29,7 @@ public class RatingAdapter extends ArrayAdapter<Rating> {
 
     private final Activity context;
     private final List<Rating> list;
+    private Ratee ratee;
 
     static class ViewHolder {
         public TextView rater;
@@ -81,7 +83,7 @@ public class RatingAdapter extends ArrayAdapter<Rating> {
         holder.post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showRatee(rating.getRatee(), rating.getTransactionId());
+                process(rating.getRatee(), rating.getTransactionId());
             }
         });
 
@@ -92,14 +94,23 @@ public class RatingAdapter extends ArrayAdapter<Rating> {
         return rowView;
     }
 
-    private void showRatee(String account, String transactionId) {
-        Network network = Network.getInstance();
-        TmaAndroidUtil.checkNetwork();
+    private void process(final String account, final String transactionId) {
+        Toast.makeText(context, context.getResources().getString(R.string.wait), Toast.LENGTH_LONG).show();
+        new AndroidExecutor() {
 
-        SearchRateeRequest request = new SearchRateeRequest(network, account, transactionId);
-        request.start();
-        Ratee ratee = (Ratee) ResponseHolder.getInstance().getObject(request.getCorrelationId());
+            @Override
+            public void start() throws Exception {
+                showRatee(account, transactionId);
+            }
 
+            @Override
+            public void finish() {
+                processSync();
+            }
+        }.run();
+    }
+
+    private void processSync() {
         if(ratee == null) {
             Toast.makeText(context, "Failed to retrieve ratee. Please try again", Toast.LENGTH_LONG).show();
             return;
@@ -107,6 +118,15 @@ public class RatingAdapter extends ArrayAdapter<Rating> {
         Intent intent = new Intent(context, ShowPostActivity.class);
         intent.putExtra("ratee", ratee);
         context.startActivity(intent);
+    }
+
+    private void showRatee(String account, String transactionId) {
+        Network network = Network.getInstance();
+        TmaAndroidUtil.checkNetwork();
+
+        SearchRateeRequest request = new SearchRateeRequest(network, account, transactionId);
+        request.start();
+        ratee = (Ratee) ResponseHolder.getInstance().getObject(request.getCorrelationId());
     }
 
     private void showRatings(String rater) {

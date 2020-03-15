@@ -142,6 +142,10 @@ public class ShowPostActivity extends BaseActivity {
         buttonAddRating.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                load();
+                if(!validate()) {
+                    return;
+                }
                 setContentView(R.layout.activity_show_post_wait);
                 addRating();
             }
@@ -165,7 +169,7 @@ public class ShowPostActivity extends BaseActivity {
 
             @Override
             public void start() throws Exception {
-                load();
+
                 addRatingAsync();
             }
 
@@ -174,6 +178,18 @@ public class ShowPostActivity extends BaseActivity {
                 processSync();
             }
         }.run();
+    }
+
+    private boolean validate() {
+        if(StringUtil.isEmpty(comment)) {
+            Toast.makeText(this, "Comment cannot be empty", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        if(StringUtil.isEmpty(rating)) {
+            Toast.makeText(this, "Please choose rating", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return true;
     }
 
     private void load() {
