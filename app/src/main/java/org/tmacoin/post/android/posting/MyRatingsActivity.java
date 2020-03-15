@@ -21,10 +21,12 @@ public class MyRatingsActivity extends BaseActivity {
 
     private String result = "";
     private List<Rating> list;
+    private String rater;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        rater = (String)getIntent().getSerializableExtra("rater");
         setContentView(R.layout.activity_my_ratings_wait);
         process();
     }
@@ -51,7 +53,10 @@ public class MyRatingsActivity extends BaseActivity {
     private void findRatings() {
 
         Network network = Network.getInstance();
-        String rater  =  network.getTmaAddress();
+        if(rater == null) {
+            rater  =  network.getTmaAddress();
+        }
+
         TmaAndroidUtil.checkNetwork();
 
         SearchRatingForRaterRequest

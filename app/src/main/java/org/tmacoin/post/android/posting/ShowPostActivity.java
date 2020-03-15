@@ -266,4 +266,6 @@ public class ShowPostActivity extends BaseActivity {
         intent.putExtra("recipient", ratee.getCreatorTmaAddress());
         startActivity(intent);
     }
+
+
 }

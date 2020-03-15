@@ -1,6 +1,8 @@
 package org.tmacoin.post.android.posting;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,9 +59,18 @@ public class RatingAdapter extends ArrayAdapter<Rating> {
 
         // fill data
         ViewHolder holder = (ViewHolder) rowView.getTag();
-        Rating rating = list.get(position);
+        final Rating rating = list.get(position);
 
         holder.rater.setText(rating.getRater());
+        holder.rater.setPaintFlags(holder.rater.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        holder.rater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showRatings(rating.getRater());
+            }
+        });
+
+
         holder.post.setText(rating.getRatee());
         holder.rateTextView.setText(rating.getRate());
         holder.dateTextView.setText(new Date(rating.getTimeStamp()).toString());
@@ -67,6 +78,12 @@ public class RatingAdapter extends ArrayAdapter<Rating> {
 
 
         return rowView;
+    }
+
+    private void showRatings(String rater) {
+        Intent intent = new Intent(context, MyRatingsActivity.class);
+        intent.putExtra("rater", rater);
+        context.startActivity(intent);
     }
 
 }
