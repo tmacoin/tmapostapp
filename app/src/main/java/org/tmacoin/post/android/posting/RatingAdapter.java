@@ -8,10 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import org.tma.peer.Network;
+import org.tma.peer.thin.Ratee;
 import org.tma.peer.thin.Rating;
+import org.tma.peer.thin.ResponseHolder;
+import org.tma.peer.thin.SearchRateeRequest;
 import org.tma.util.TmaLogger;
 import org.tmacoin.post.android.R;
+import org.tmacoin.post.android.TmaAndroidUtil;
 
 import java.util.Date;
 import java.util.List;
@@ -70,14 +76,37 @@ public class RatingAdapter extends ArrayAdapter<Rating> {
             }
         });
 
-
         holder.post.setText(rating.getRatee());
+        holder.post.setPaintFlags(holder.post.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        holder.post.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showRatee(rating.getRatee(), rating.getTransactionId());
+            }
+        });
+
         holder.rateTextView.setText(rating.getRate());
         holder.dateTextView.setText(new Date(rating.getTimeStamp()).toString());
         holder.commentTextView.setText(rating.getComment());
 
-
         return rowView;
+    }
+
+    private void showRatee(String account, String transactionId) {
+        Network network = Network.getInstance();
+        TmaAndroidUtil.checkNetwork();
+
+        SearchRateeRequest request = new SearchRateeRequest(network, account, transactionId);
+        request.start();
+        Ratee ratee = (Ratee) ResponseHolder.getInstance().getObject(request.getCorrelationId());
+
+        if(ratee == null) {
+            Toast.makeText(context, "Failed to retrieve ratee. Please try again", Toast.LENGTH_LONG).show();
+            return;
+        }
+        Intent intent = new Intent(context, ShowPostActivity.class);
+        intent.putExtra("ratee", ratee);
+        context.startActivity(intent);
     }
 
     private void showRatings(String rater) {

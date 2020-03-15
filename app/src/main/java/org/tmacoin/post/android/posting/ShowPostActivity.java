@@ -60,8 +60,6 @@ public class ShowPostActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_post_wait);
         ratee = (Ratee) getIntent().getSerializableExtra("ratee");
-
-
         process();
     }
 
