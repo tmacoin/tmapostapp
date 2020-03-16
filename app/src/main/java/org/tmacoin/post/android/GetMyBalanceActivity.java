@@ -70,12 +70,11 @@ public class GetMyBalanceActivity extends BaseActivity {
         }
         final ProgressBar pgsBar = findViewById(R.id.progressBar);
         pgsBar.setVisibility(View.INVISIBLE);
-        Intent service = new Intent(this, NewMessageNotifier.class);
+
         toast.cancel();
-        service.setAction(TmaAndroidUtil.START);
-        Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
-        service.putExtra("wallet", wallet);
-        ContextCompat.startForegroundService(this, service);
+
+        final TextView address = findViewById(R.id.address);
+        address.setText(Network.getInstance().getTmaAddress());
     }
 
     private String getBalance(int attemptNumber) {

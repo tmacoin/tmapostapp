@@ -31,6 +31,15 @@ public class ConnectedToNetworkActivity extends BaseActivity {
         final TextView address = findViewById(R.id.address);
         address.setText(Network.getInstance().getTmaAddress());
         listeners.addEventListener(NewMessageEvent.class, new NewMessageEventListener(getApplicationContext()));
+        startNotifier();
+    }
+
+    private void startNotifier() {
+        Intent service = new Intent(this, NewMessageNotifier.class);
+        service.setAction(TmaAndroidUtil.START);
+        Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
+        service.putExtra("wallet", wallet);
+        ContextCompat.startForegroundService(this, service);
     }
 
 }
