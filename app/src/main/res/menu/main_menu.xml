@@ -42,6 +42,9 @@
                 android:id="@+id/get_balance"
                 android:title="@string/get_balance" />
             <item
+                android:id="@+id/get_my_balance"
+                android:title="@string/get_my_balance" />
+            <item
                 android:id="@+id/send_transaction"
                 android:title="@string/send_transaction" />
             <item

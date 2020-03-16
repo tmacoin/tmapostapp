@@ -42,6 +42,11 @@ public class MenuHandler {
         activity.startActivity(intent);
     }
 
+    public void handleGetMyBalance(Activity activity) {
+        Intent intent = new Intent(activity, GetMyBalanceActivity.class);
+        activity.startActivity(intent);
+    }
+
     public void handleGetBalance(Activity activity) {
         Intent intent = new Intent(activity, GetBalanceActivity.class);
         activity.startActivity(intent);

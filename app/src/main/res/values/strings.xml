@@ -142,5 +142,7 @@
     <string name="Back">Back</string>
     <string name="post_and_keywords_cannot_be_empty" translatable="false">Both Post and Keywords cannot be empty</string>
     <string name="tmitter_wait" translatable="false">Please wait ..this can take a while.</string>
+    <!-- Buttons -->
+    <string name="get_my_balance" translatable="false">Get My Balance</string>
 
 </resources>

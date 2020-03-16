@@ -54,6 +54,10 @@
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:parentActivityName=".ConnectedToNetworkActivity" />
         <activity
+            android:name=".GetMyBalanceActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:parentActivityName=".ConnectedToNetworkActivity" />
+        <activity
             android:name=".GetBalanceActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:parentActivityName=".ConnectedToNetworkActivity">
