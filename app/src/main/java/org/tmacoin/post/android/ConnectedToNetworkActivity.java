@@ -30,63 +30,7 @@ public class ConnectedToNetworkActivity extends BaseActivity {
         setContentView(R.layout.activity_connected_to_network);
         final TextView address = findViewById(R.id.address);
         address.setText(Network.getInstance().getTmaAddress());
-        final TextView balance = findViewById(R.id.balance);
-        balance.setText(getResources().getString(R.string.get_balance_wait));
-        final ProgressBar pgsBar = findViewById(R.id.progressBar);
-        pgsBar.setVisibility(View.VISIBLE);
-        Toast.makeText(this, getResources().getString(R.string.get_balance_wait), Toast.LENGTH_LONG).show();
-
-        new AndroidExecutor() {
-            private String balance;
-            @Override
-            public void start() throws Exception {
-                balance = getBalance(10);
-            }
-
-            @Override
-            public void finish() throws Exception {
-                complete(balance);
-            }
-        }.run();
         listeners.addEventListener(NewMessageEvent.class, new NewMessageEventListener(getApplicationContext()));
-    }
-
-
-
-    private void complete(final String balance) {
-        final TextView balanceTextView = findViewById(R.id.balance);
-        if(balance == null) {
-            balanceTextView.setText(getResources().getString(R.string.fail_retrieve_balance));
-            updateStatus(getResources().getString(R.string.fail_retrieve_balance));
-            Toast.makeText(this, getResources().getString(R.string.fail_retrieve_balance), Toast.LENGTH_LONG).show();
-        } else {
-            balanceTextView.setText(balance + " " + getResources().getString(R.string.coins));
-        }
-        final ProgressBar pgsBar = findViewById(R.id.progressBar);
-        pgsBar.setVisibility(View.INVISIBLE);
-        Intent service = new Intent(this, NewMessageNotifier.class);
-        service.setAction(TmaAndroidUtil.START);
-        Wallet wallet = Wallets.getInstance().getWallet(Wallets.TMA, Wallets.WALLET_NAME);
-        service.putExtra("wallet", wallet);
-        ContextCompat.startForegroundService(this, service);
-    }
-
-    private String getBalance(int attemptNumber) {
-        String balance = null;
-        int i = attemptNumber;
-        Network network = Network.getInstance();
-        while(balance == null && i > 0 ) {
-            logger.debug("getBalance attempt {}", attemptNumber - i);
-            updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
-            TmaAndroidUtil.checkNetwork();
-            updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
-            GetBalanceRequest request = new GetBalanceRequest(network, network.getTmaAddress());
-            request.start();
-            balance = (String) ResponseHolder.getInstance().getObject(request.getCorrelationId());
-            i--;
-        }
-        updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
-        return balance;
     }
 
 }
