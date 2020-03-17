@@ -68,7 +68,7 @@ public class MyPostsActivity extends BaseActivity {
             return;
         }
 
-        result = ("Total number of posts found for " + tmaAddress + ": " + list.size());
+        result = "";
 
     }
 

@@ -96,7 +96,7 @@ public class ShowPostActivity extends BaseActivity {
             return;
         }
 
-        result = (getResources().getString(R.string.total_number_of_comments_found_for) + " " + ratee.getName() + ": " + list.size());
+        result = "";
 
     }
 

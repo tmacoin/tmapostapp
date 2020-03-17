@@ -70,7 +70,7 @@ public class MyRatingsActivity extends BaseActivity {
             return;
         }
 
-        result = ("Total number of comments found for " + rater + ": " + list.size());
+        result = "";
 
     }
 

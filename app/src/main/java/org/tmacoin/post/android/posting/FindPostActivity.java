@@ -122,7 +122,7 @@ public class FindPostActivity extends BaseActivity {
             return;
         }
 
-        result = "Found " + list.size() + " Post(s)";
+        result = "";
 
     }
 
