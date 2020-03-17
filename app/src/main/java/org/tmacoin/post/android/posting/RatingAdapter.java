@@ -88,9 +88,9 @@ public class RatingAdapter extends ArrayAdapter<Rating> {
         });
 
         if("Yes".equals(rating.getRate())) {
-            holder.rateTextView.setText(context.getResources().getString(R.string.negative));
-        } else if("No".equals(rating.getRate())) {
             holder.rateTextView.setText(context.getResources().getString(R.string.positive));
+        } else if("No".equals(rating.getRate())) {
+            holder.rateTextView.setText(context.getResources().getString(R.string.negative));
         }
         holder.dateTextView.setText(new Date(rating.getTimeStamp()).toString());
         holder.commentTextView.setText(rating.getComment());
