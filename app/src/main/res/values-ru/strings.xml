@@ -142,4 +142,5 @@
     <string name="get_my_balance">Показать мой баланс</string>
     <string name="number_of_accounts_found">Количество найденных аккаунтов</string>
     <string name="number_of_subscription_found">Количество найденных подписок</string>
+    <string name="created_on">Создано на</string>
 </resources>

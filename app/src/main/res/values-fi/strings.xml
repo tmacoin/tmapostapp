@@ -142,5 +142,6 @@
     <string name="get_my_balance">Näytä Oma tasapaino</string>
     <string name="number_of_accounts_found">Löydettyjen tilien lukumäärä</string>
     <string name="number_of_subscription_found">Löydettyjen tilausten määrä</string>
+    <string name="created_on">Luotu</string>
 
 </resources>

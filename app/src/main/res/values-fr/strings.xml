@@ -142,5 +142,6 @@
     <string name="get_my_balance">Afficher mon équilibre</string>
     <string name="number_of_accounts_found">Nombre de comptes trouvés</string>
     <string name="number_of_subscription_found">Number of subscription(s) found</string>
+    <string name="created_on">Créé sur</string>
 
 </resources>

@@ -141,4 +141,5 @@
     <string name="get_my_balance">Ipakita ang Aking Balanse</string>
     <string name="number_of_accounts_found">Bilang ng mga account na natagpuan</string>
     <string name="number_of_subscription_found">Bilang ng mga (mga) subscription na natagpuan</string>
+    <string name="created_on">Nilikha Sa</string>
 </resources>
