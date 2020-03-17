@@ -141,5 +141,6 @@
 
     <string name="get_my_balance">Mostrar meu saldo</string>
     <string name="number_of_accounts_found">Número de contas encontradas</string>
+    <string name="number_of_subscription_found">Número de assinaturas encontradas</string>
 
 </resources>

@@ -141,5 +141,6 @@
 
     <string name="get_my_balance">Zeige mein Gleichgewicht</string>
     <string name="number_of_accounts_found">Anzahl der gefundenen Konten</string>
+    <string name="number_of_subscription_found">Anzahl der gefundenen Abonnements</string>
 
 </resources>

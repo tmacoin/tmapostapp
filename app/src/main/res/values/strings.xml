@@ -145,5 +145,6 @@
     <!-- Buttons -->
     <string name="get_my_balance">Get My Balance</string>
     <string name="number_of_accounts_found">Number of accounts found</string>
+    <string name="number_of_subscription_found">Number of subscription(s) found</string>
 
 </resources>
