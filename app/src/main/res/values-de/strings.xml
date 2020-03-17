@@ -139,4 +139,6 @@
     <string name="send_reply">Antwort senden</string>
     <string name="Back">Zurück</string>
 
+    <string name="get_my_balance">Zeige mein Gleichgewicht</string>
+
 </resources>

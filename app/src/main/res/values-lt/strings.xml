@@ -138,4 +138,6 @@
     <string name="enter_reply">Įveskite Atsakyti</string>
     <string name="send_reply">Siųsti atsakymą</string>
     <string name="Back">Atgal</string>
+
+    <string name="get_my_balance">Parodyk mano balansą</string>
 </resources>

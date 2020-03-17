@@ -137,4 +137,6 @@
     <string name="enter_reply">Ipasok ang Sumagot</string>
     <string name="send_reply">Magpadala ng Sumagot</string>
     <string name="Back">Balik</string>
+
+    <string name="get_my_balance">Ipakita ang Aking Balanse</string>
 </resources>

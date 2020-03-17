@@ -137,5 +137,7 @@
     <string name="replyBack">назад</string>
     <string name="enter_reply">Введите ответ</string>
     <string name="send_reply">Отправить ответ</string>
-    <string name="Back">назад</string>
+    <string name="Back">Назад</string>
+
+    <string name="get_my_balance">Показать мой баланс</string>
 </resources>

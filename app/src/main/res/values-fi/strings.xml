@@ -139,4 +139,6 @@
     <string name="send_reply">Lähetä vastaus</string>
     <string name="Back">Takaisin</string>
 
+    <string name="get_my_balance">Näytä Oma tasapaino</string>
+
 </resources>

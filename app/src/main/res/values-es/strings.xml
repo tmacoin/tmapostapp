@@ -139,4 +139,6 @@
     <string name="enter_reply">Ingrese respuesta</string>
     <string name="send_reply">Enviar respuesta</string>
     <string name="Back">atrás</string>
+
+    <string name="get_my_balance">Mostrar mi saldo</string>
 </resources>
