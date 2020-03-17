@@ -130,6 +130,7 @@ public class ShowPostActivity extends BaseActivity {
 
         TextView textViewDescription = header.findViewById(R.id.textViewDescription);
         textViewDescription.setText(ratee.getDescription());
+
         TextView textViewDate = header.findViewById(R.id.textViewDate);
         textViewDate.setText(new Date(ratee.getTimeStamp()).toString());
         TextView textViewIdentifier = header.findViewById(R.id.textViewIdentifier);
