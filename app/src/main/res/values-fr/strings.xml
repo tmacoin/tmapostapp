@@ -140,5 +140,6 @@
     <string name="Back">Retour</string>
 
     <string name="get_my_balance">Afficher mon équilibre</string>
+    <string name="number_of_accounts_found">Nombre de comptes trouvés</string>
 
 </resources>

@@ -140,4 +140,5 @@
     <string name="Back">Atgal</string>
 
     <string name="get_my_balance">Parodyk mano balansą</string>
+    <string name="number_of_accounts_found">Rastų paskyrų skaičius</string>
 </resources>

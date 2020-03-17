@@ -100,7 +100,7 @@ public class SearchTwitterActivity extends BaseActivity {
 
     private void processAsync() throws Exception {
         if(searchTweet()) {
-            result = "Number of accounts found: " + list.size();
+            result = getString(R.string.number_of_accounts_found) + ": " + list.size();
         }
     }
 

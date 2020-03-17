@@ -144,5 +144,6 @@
     <string name="tmitter_wait" translatable="false">Please wait ..this can take a while.</string>
     <!-- Buttons -->
     <string name="get_my_balance">Get My Balance</string>
+    <string name="number_of_accounts_found">Number of accounts found</string>
 
 </resources>
