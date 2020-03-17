@@ -126,7 +126,7 @@
     <string name = "search_tmitter_accounts"> Ieškokite skutiklio paskyrų </string>
     <string name = "send_tmeet"> Siųsti Tmeet </string>
     <string name = "enter_tmeet"> Įveskite Tmeet </string>
-    <string name = "post"> Skelbti </string>
+    <string name = "post">Skelbimas</string>
     <string name = "keywords"> Raktiniai žodžiai </string>
     <string name = "post_cannot_be_empty"> Įrašas negali būti tuščias </string>
     <string name = "keywords_cannot_be_empty"> Raktažodžiai negali būti tušti </string>

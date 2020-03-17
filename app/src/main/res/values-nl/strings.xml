@@ -126,7 +126,7 @@
     <string name = "search_tmitter_accounts"> Doorzoek Tmitter Accounts </string>
     <string name = "send_tmeet"> Stuur Tmeet </string>
     <string name = "enter_tmeet"> Voer Tmeet in </string>
-    <string name = "post"> Post </string>
+    <string name = "post">Aankondiging</string>
     <string name = "keywords"> Sleutelwoorden </string>
     <string name = "post_cannot_be_empty"> Bericht mag niet leeg zijn </string>
     <string name = "keywords_cannot_be_empty"> Sleutelwoorden mogen niet leeg zijn </string>

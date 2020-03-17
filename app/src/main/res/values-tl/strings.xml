@@ -125,7 +125,7 @@
     <string name = "search_tmitter_accounts"> Mga Account sa Paghahanap ng Tmitter </string>
     <string name = "send_tmeet"> Magpadala ng Tmeet </string>
     <string name = "enter_tmeet"> Ipasok ang Tmeet </string>
-    <string name = "post"> Post </string>
+    <string name = "post">Anunsyo</string>
     <string name = "keywords"> Mga Keyword </string>
     <string name = "post_cannot_be_empty"> Hindi maaring walang laman ang post </string>
     <string name = "keywords_cannot_be_empty"> Hindi maaaring walang laman ang mga keyword </string>

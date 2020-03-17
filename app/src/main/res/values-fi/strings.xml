@@ -126,7 +126,7 @@
     <string name = "search_tmitter_accounts"> Etsi haltijatilit </string>
     <string name = "send_tmeet"> Lähetä Tmeet </string>
     <string name = "enter_tmeet"> Kirjoita Tmeet </string>
-    <string name = "post"> Lähetä </string>
+    <string name = "post">Ilmoitus</string>
     <string name = "keywords"> avainsanat </string>
     <string name = "post_cannot_be_empty"> Viesti ei voi olla tyhjä </string>
     <string name = "keywords_cannot_be_empty"> Avainsanat eivät voi olla tyhjät </string>

@@ -126,7 +126,7 @@
     <string name = "search_tmitter_accounts"> Cerca account Tmitter </string>
     <string name = "send_tmeet"> Invia Tmeet </string>
     <string name = "enter_tmeet"> Inserisci Tmeet </string>
-    <string name = "post"> Post </string>
+    <string name = "post">Annuncio</string>
     <string name = "keywords"> Parole chiave </string>
     <string name = "post_cannot_be_empty"> Il post non può essere vuoto </string>
     <string name = "keywords_cannot_be_empty"> Le parole chiave non possono essere vuote </string>
