@@ -135,13 +135,35 @@
     <string name="tweet_was_sent_successfully">Tuit fue enviado con éxito</string>
     <string name="tmitter_account_create">Por favor cree su cuenta tmitter primero.</string>
     <string name="enter_tmitter_account">Ingrese cuenta Tmitter</string>
-    <string name="replyBack">atrás</string>
+    <string name="replyBack">Atrás</string>
     <string name="enter_reply">Ingrese respuesta</string>
     <string name="send_reply">Enviar respuesta</string>
-    <string name="Back">atrás</string>
+    <string name="Back">Atrás</string>
+    <string name = "post_and_keywords_cannot_be_empty"> Tanto la publicación como las palabras clave no pueden estar vacías </string>
+    <string name = "tmitter_wait"> Por favor, espere ... Esto puede llevar un tiempo. </string>
 
     <string name="get_my_balance">Mostrar mi saldo</string>
     <string name="number_of_accounts_found">Número de cuentas encontradas</string>
     <string name="number_of_subscription_found">Número de suscripciones encontradas</string>
     <string name="created_on">Creado en</string>
+
+    <string name = "identifier">Identificador</string>
+    <string name = "comment">Comentario</string>
+    <string name = "approve">Aprobar</string>
+    <string name = "yes">Sí</string>
+    <string name = "no">No</string>
+
+    <string name="add_rating">Agregar calificación</string>
+    <string name="total_rating_is">La calificación total es</string>
+    <string name="failed_to_retrieve_ratings">Error al recuperar calificaciones. Inténtalo de nuevo</string>
+    <string name="total_number_of_comments_found_for">Número total de comentarios encontrados para</string>
+    <string name="comment_cannot_be_empty">El comentario no puede estar vacío</string>
+    <string name="please_choose_rating">Por favor elija calificación</string>
+    <string name="could_not_retrieve_any_keywords_for">No se pudieron recuperar palabras clave para</string>
+    <string name="please_check_your_balance">Por favor revise su saldo.</string>
+    <string name="no_inputs_available_for_tma_address">No hay entradas disponibles para la dirección tma</string>
+    <string name="rate">Calificación</string>
+    <string name="rater">Apreciador</string>
+
+
 </resources>

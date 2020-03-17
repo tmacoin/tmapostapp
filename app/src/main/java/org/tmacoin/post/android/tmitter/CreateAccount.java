@@ -171,7 +171,7 @@ public class CreateAccount extends BaseActivity {
         List<Set<TransactionOutput>> inputList = new GetInputsRequest(network, tmaAddress, totals).getInputlist();
 
         if(inputList.size() != totals.size()) {
-            result = ("No inputs available for tma address " + tmaAddress + ". Please check your balance.");
+            result = (getResources().getString(R.string.no_inputs_available_for_tma_address) + " " + tmaAddress + ". " + getResources().getString(R.string.please_check_your_balance));
             return false;
         }
 

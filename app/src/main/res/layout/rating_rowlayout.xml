@@ -8,7 +8,7 @@
         android:id="@+id/raterLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rater"
+        android:text="@string/rater"
         android:textSize="12dp"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold">
@@ -27,7 +27,7 @@
         android:id="@+id/postLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Post"
+        android:text="@string/post"
         android:textSize="12dp"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold">
@@ -46,7 +46,7 @@
         android:id="@+id/rateLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rate"
+        android:text="@string/rate"
         android:textSize="12dp"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold">
@@ -65,7 +65,7 @@
         android:id="@+id/dateLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Date"
+        android:text="@string/date"
         android:textSize="12dp"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold">
@@ -84,7 +84,7 @@
         android:id="@+id/commentLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Comment"
+        android:text="@string/comment"
         android:textSize="12dp"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold">

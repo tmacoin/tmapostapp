@@ -137,9 +137,31 @@
     <string name="enter_reply">Ipasok ang Sumagot</string>
     <string name="send_reply">Magpadala ng Sumagot</string>
     <string name="Back">Balik</string>
+    <string name="post_and_keywords_cannot_be_empty">Parehong Post at Mga Keyword ay hindi maaaring walang laman</string>
+    <string name="tmitter_wait">Mangyaring maghintay ... Ito ay maaaring tumagal ng ilang sandali.</string>
 
     <string name="get_my_balance">Ipakita ang Aking Balanse</string>
     <string name="number_of_accounts_found">Bilang ng mga account na natagpuan</string>
     <string name="number_of_subscription_found">Bilang ng mga (mga) subscription na natagpuan</string>
     <string name="created_on">Nilikha Sa</string>
+
+    <string name = "identifier">Identifier</string>
+    <string name = "comment">Komento</string>
+    <string name = "approve">Aprubahan</string>
+    <string name = "yes">Oo</string>
+    <string name = "no">Hindi</string>
+
+    <string name="add_rating">Magdagdag ng Rating</string>
+    <string name="total_rating_is">Kabuuang rating ay</string>
+    <string name="failed_to_retrieve_ratings">Nabigong makuha ang mga rating. Pakiulit muli</string>
+    <string name="total_number_of_comments_found_for">Kabuuang bilang ng mga komento na natagpuan para sa</string>
+    <string name="comment_cannot_be_empty">Ang puna ay hindi maaaring walang laman</string>
+    <string name="please_choose_rating">Mangyaring pumili ng rating</string>
+    <string name="could_not_retrieve_any_keywords_for">Hindi makuhang makuha ang anumang mga keyword para sa</string>
+    <string name="please_check_your_balance">Mangyaring suriin ang iyong balanse.</string>
+    <string name="no_inputs_available_for_tma_address">Walang magagamit na mga input para sa tma address</string>
+    <string name="rate">Presiyo</string>
+    <string name="rater">Ebalwasyon</string>
+
+
 </resources>

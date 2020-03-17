@@ -110,27 +110,27 @@
     <string name="no_config_dir">Possível diretório de configuração</string>
     <string name="no_files_in_config_dir">Nenhum arquivo no diretório de configuração</string>
     <string name="file_success_exported">Arquivo exportado com sucesso</string>
-    <string name = "date_modified"> Data da modificação </string>
-    <string name = "size"> Tamanho </string>
-    <string name = "delete"> Excluir </string>
+    <string name = "date_modified">Data da modificação </string>
+    <string name = "size">Tamanho </string>
+    <string name = "delete">Excluir </string>
 
-    <string name = "account_name"> Nome da conta </string>
-    <string name = "description"> Descrição </string>
-    <string name = "enter_passphrase_tmitter"> Digite a senha </string>
-    <string name = "create_tmitter_account"> Criar conta do Tmitter </string>
-    <string name = "account_cannot_be_empty"> A conta não pode estar vazia </string>
-    <string name = "description_cannot_be_empty"> A descrição não pode estar vazia </string>
-    <string name = "tmitter_account_created"> A conta do Tmitter foi criada com sucesso </string>
-    <string name = "tmitter_account_created_account_name_is"> A conta do Tmitter já foi criada. O nome da conta é </string>
-    <string name = "with_tma_address"> com endereço tma </string>
-    <string name = "search_tmitter_accounts"> Pesquisar contas do Tmitter </string>
-    <string name = "send_tmeet"> Enviar Tmeet </string>
-    <string name = "enter_tmeet"> Digite Tmeet </string>
+    <string name = "account_name">Nome da conta </string>
+    <string name = "description">Descrição </string>
+    <string name = "enter_passphrase_tmitter">Digite a senha </string>
+    <string name = "create_tmitter_account">Criar conta do Tmitter </string>
+    <string name = "account_cannot_be_empty">A conta não pode estar vazia </string>
+    <string name = "description_cannot_be_empty">A descrição não pode estar vazia </string>
+    <string name = "tmitter_account_created">A conta do Tmitter foi criada com sucesso </string>
+    <string name = "tmitter_account_created_account_name_is">A conta do Tmitter já foi criada. O nome da conta é</string>
+    <string name = "with_tma_address">Com endereço tma</string>
+    <string name = "search_tmitter_accounts">Pesquisar contas do Tmitter</string>
+    <string name = "send_tmeet">Enviar Tmeet</string>
+    <string name = "enter_tmeet">Digite Tmeet</string>
     <string name = "post">Anúncio</string>
-    <string name = "keywords"> Palavras-chave </string>
-    <string name = "post_cannot_be_empty"> A postagem não pode estar vazia </string>
-    <string name = "keywords_cannot_be_empty"> As palavras-chave não podem estar vazias </string>
-    <string name = "post_was_sent"> A postagem foi enviada </string>
+    <string name = "keywords">Palavras-chave</string>
+    <string name = "post_cannot_be_empty">A postagem não pode estar vazia</string>
+    <string name = "keywords_cannot_be_empty">As palavras-chave não podem estar vazias</string>
+    <string name = "post_was_sent">A postagem foi enviada</string>
     <string name="tweet_was_sent_successfully">O Tweet foi enviado com sucesso</string>
     <string name="tmitter_account_create">Crie sua conta tmitter primeiro.</string>
     <string name="enter_tmitter_account">Entrar na conta do Tmitter</string>
@@ -138,10 +138,31 @@
     <string name="enter_reply">Digite a resposta</string>
     <string name="send_reply">Enviar resposta</string>
     <string name="Back">Costas</string>
+    <string name="post_and_keywords_cannot_be_empty">Postagem e palavras-chave não podem estar vazias</string>
+    <string name="tmitter_wait">Aguarde ... Isso pode demorar um pouco.</string>
 
     <string name="get_my_balance">Mostrar meu saldo</string>
     <string name="number_of_accounts_found">Número de contas encontradas</string>
     <string name="number_of_subscription_found">Número de assinaturas encontradas</string>
     <string name="created_on">Criado em</string>
+
+    <string name = "identifier">Identificador</string>
+    <string name = "comment">Comentário</string>
+    <string name = "approve">Aprovar</string>
+    <string name = "yes">Sim</string>
+    <string name = "no">Não</string>
+
+    <string name="add_rating">Adicionar classificação</string>
+    <string name="total_rating_is">A classificação total é</string>
+    <string name="failed_to_retrieve_ratings">Falha ao recuperar classificações. Por favor, tente novamente</string>
+    <string name="total_number_of_comments_found_for">Número total de comentários encontrados para</string>
+    <string name="comment_cannot_be_empty">O comentário não pode estar vazio</string>
+    <string name="please_choose_rating">Por favor, escolha a classificação</string>
+    <string name="could_not_retrieve_any_keywords_for">Não foi possível recuperar nenhuma palavra-chave para</string>
+    <string name="please_check_your_balance">Por favor, verifique seu saldo.</string>
+    <string name="no_inputs_available_for_tma_address">Nenhuma entrada disponível para o endereço tma</string>
+    <string name="rate">Taxa</string>
+    <string name="rater">Avaliador</string>
+
 
 </resources>

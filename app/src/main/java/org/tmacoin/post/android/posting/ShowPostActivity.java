@@ -92,11 +92,11 @@ public class ShowPostActivity extends BaseActivity {
         list = (List<Rating>) ResponseHolder.getInstance().getObject(request.getCorrelationId());
 
         if(list == null) {
-            result  = ("Failed to retrieve ratings. Please try again");
+            result  = (getResources().getString(R.string.failed_to_retrieve_ratings));
             return;
         }
 
-        result = ("Total number of comments found for " + ratee.getName() + ": " + list.size());
+        result = (getResources().getString(R.string.total_number_of_comments_found_for) + " " + ratee.getName() + ": " + list.size());
 
     }
 
@@ -136,7 +136,7 @@ public class ShowPostActivity extends BaseActivity {
         textViewIdentifier.setText(ratee.getTransactionId());
 
         TextView totalRating = header.findViewById(R.id.totalRating);
-        totalRating.setText("Total rating is " + ratee.getTotalRating());
+        totalRating.setText(getResources().getString(R.string.total_rating_is) + " " + ratee.getTotalRating());
 
         Button buttonAddRating = header.findViewById(R.id.buttonAddRating);
         buttonAddRating.setOnClickListener(new View.OnClickListener() {
@@ -182,11 +182,11 @@ public class ShowPostActivity extends BaseActivity {
 
     private boolean validate() {
         if(StringUtil.isEmpty(comment)) {
-            Toast.makeText(this, "Comment cannot be empty", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getResources().getString(R.string.comment_cannot_be_empty), Toast.LENGTH_LONG).show();
             return false;
         }
         if(StringUtil.isEmpty(rating)) {
-            Toast.makeText(this, "Please choose rating", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getResources().getString(R.string.please_choose_rating), Toast.LENGTH_LONG).show();
             return false;
         }
         return true;
@@ -207,7 +207,7 @@ public class ShowPostActivity extends BaseActivity {
         Keywords accountKeywords = (Keywords)ResponseHolder.getInstance().getObject(getKeywordsRequest.getCorrelationId());
 
         if(accountKeywords == null || accountKeywords.getMap().isEmpty()) {
-            result = ("Could not retrieve any keywords for " + ratee.getName());
+            result = (getResources().getString(R.string.could_not_retrieve_any_keywords_for) + " " + ratee.getName());
             return false;
         }
 
@@ -226,7 +226,7 @@ public class ShowPostActivity extends BaseActivity {
         int i = 0;
 
         if(inputList.size() != totals.size()) {
-            result = ("No inputs available for tma address " + tmaAddress + ". Please check your balance.");
+            result = (getResources().getString(R.string.no_inputs_available_for_tma_address) + " " + tmaAddress + ". " + getResources().getString(R.string.please_check_your_balance));
             return false;
         }
 

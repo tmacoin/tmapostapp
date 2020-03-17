@@ -138,9 +138,31 @@
     <string name="enter_reply">Voer antwoord in</string>
     <string name="send_reply">Stuur antwoord</string>
     <string name="Back">Terug</string>
+    <string name="post_and_keywords_cannot_be_empty">Zowel Bericht als Sleutelwoorden mogen niet leeg zijn</string>
+    <string name="tmitter_wait">Even geduld aub ... Dit kan even duren.</string>
 
     <string name="get_my_balance">Toon mijn saldo</string>
     <string name="number_of_accounts_found">Aantal gevonden accounts</string>
     <string name="number_of_subscription_found">Aantal gevonden abonnement (en)</string>
     <string name="created_on">Gemaakt op</string>
+
+    <string name = "identifier">Identificatie</string>
+    <string name = "comment">Reageren</string>
+    <string name = "approve">Goedkeuren</string>
+    <string name = "yes">Ja</string>
+    <string name = "no">Nee</string>
+
+    <string name="add_rating">Beoordeling toevoegen</string>
+    <string name="total_rating_is">Total rating is</string>
+    <string name="failed_to_retrieve_ratings">Kan beoordelingen niet ophalen. Probeer het alstublieft opnieuw</string>
+    <string name="total_number_of_comments_found_for">Totaal aantal reacties gevonden voor</string>
+    <string name="comment_cannot_be_empty">Reactie mag niet leeg zijn</string>
+    <string name="please_choose_rating">Kies beoordeling</string>
+    <string name="could_not_retrieve_any_keywords_for">Kan geen zoekwoorden ophalen voor</string>
+    <string name="please_check_your_balance">Controleer uw saldo.</string>
+    <string name="no_inputs_available_for_tma_address">Geen invoer beschikbaar voor tma-adres</string>
+    <string name="rate">Tarief</string>
+    <string name="rater">Beoordelaar</string>
+
+
 </resources>

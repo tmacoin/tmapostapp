@@ -138,9 +138,30 @@
     <string name="enter_reply">Inserisci risposta</string>
     <string name="send_reply">Invia risposta</string>
     <string name="Back">Indietro</string>
+    <string name = "post_and_keywords_cannot_be_empty">Sia Post che Parole chiave non possono essere vuoti</string>
+    <string name = "tmitter_wait">Per favore attendi ... L\'operazione potrebbe richiedere del tempo.</string>
 
     <string name="get_my_balance">Mostra il mio saldo</string>
     <string name="number_of_accounts_found">Numero di account trovati</string>
     <string name="number_of_subscription_found">Nombre d\'abonnement (s) trouvé (s)</string>
     <string name="created_on">Creato</string>
+
+    <string name = "identifier">Identificatore</string>
+    <string name = "comment">Comment</string>
+    <string name = "approve">Approva</string>
+    <string name = "yes">Sì</string>
+    <string name = "no">No</string>
+
+    <string name="add_rating">Aggiungi valutazione</string>
+    <string name="total_rating_is">La valutazione totale è</string>
+    <string name="failed_to_retrieve_ratings">Impossibile recuperare le valutazioni. Per favore riprova</string>
+    <string name="total_number_of_comments_found_for">Numero totale di commenti trovati per</string>
+    <string name="comment_cannot_be_empty">Il commento non può essere vuoto</string>
+    <string name="please_choose_rating">Si prega di scegliere la valutazione</string>
+    <string name="could_not_retrieve_any_keywords_for">Impossibile recuperare parole chiave per</string>
+    <string name="please_check_your_balance">Si prega di controllare il saldo.</string>
+    <string name="no_inputs_available_for_tma_address">Nessun input disponibile per l\'indirizzo tma</string>
+    <string name="rate">Vota</string>
+    <string name="rater">Valutatore</string>
+
 </resources>

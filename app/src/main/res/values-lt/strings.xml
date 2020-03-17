@@ -138,9 +138,30 @@
     <string name="enter_reply">Įveskite Atsakyti</string>
     <string name="send_reply">Siųsti atsakymą</string>
     <string name="Back">Atgal</string>
+    <string name = "post_and_keywords_cannot_be_empty"> Tiek skelbimo, tiek raktiniai žodžiai negali būti tušti </string>
+    <string name = "tmitter_wait"> Prašome palaukti ... Tai gali užtrukti. </string>
 
     <string name="get_my_balance">Parodyk mano balansą</string>
     <string name="number_of_accounts_found">Rastų paskyrų skaičius</string>
     <string name="number_of_subscription_found">Rasta prenumeratų skaičius</string>
     <string name="created_on">Sukurtas</string>
+
+    <string name = "identifier">Identifikatorius</string>
+    <string name = "comment">Komentuoti</string>
+    <string name = "approve">Patvirtinti</string>
+    <string name = "yes">Taip</string>
+    <string name = "no">Ne</string>
+
+    <string name="add_rating">Pridėti vertinimą</string>
+    <string name="total_rating_is">Bendras įvertinimas yra</string>
+    <string name="failed_to_retrieve_ratings">Nepavyko gauti įvertinimų. Prašau, pabandykite dar kartą</string>
+    <string name="total_number_of_comments_found_for">Bendras rastų komentarų skaičius</string>
+    <string name="comment_cannot_be_empty">Komentaro laukas negali būti tuščias</string>
+    <string name="please_choose_rating">Pasirinkite reitingą</string>
+    <string name="could_not_retrieve_any_keywords_for">Nepavyko nuskaityti jokių raktinių žodžių</string>
+    <string name="please_check_your_balance">Patikrinkite savo balansą.</string>
+    <string name="no_inputs_available_for_tma_address">Negalima įvesti tma adreso</string>
+    <string name="rate">Įvertink</string>
+    <string name="rater">Mis</string>
+
 </resources>

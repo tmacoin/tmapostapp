@@ -110,27 +110,27 @@
     <string name="no_config_dir">Pas de répertoire de configuration possible</string>
     <string name="no_files_in_config_dir">Aucun fichier dans le répertoire de configuration</string>
     <string name="file_success_exported">Fichier exporté avec succès</string>
-    <string name = "date_modified"> Date de modification </string>
-    <string name = "size"> Taille </string>
-    <string name = "delete"> Supprimer </string>
+    <string name = "date_modified">Date de modification </string>
+    <string name = "size">Taille </string>
+    <string name = "delete">Supprimer </string>
 
-    <string name = "account_name"> Nom du compte </string>
-    <string name = "description"> Description </string>
-    <string name = "enter_passphrase_tmitter"> Entrez le mot de passe </string>
-    <string name = "create_tmitter_account"> Créer un compte Tmitter </string>
-    <string name = "account_cannot_be_empty"> Le compte ne peut pas être vide </string>
-    <string name = "description_cannot_be_empty"> La description ne peut pas être vide </string>
-    <string name = "tmitter_account_created"> Le compte Tmitter a été créé avec succès </string>
-    <string name = "tmitter_account_created_account_name_is"> Le compte Tmitter a déjà été créé. Le nom du compte est </string>
-    <string name = "with_tma_address"> avec adresse tma </string>
-    <string name = "search_tmitter_accounts"> Rechercher des comptes Tmitter </string>
-    <string name = "send_tmeet"> Envoyer Tmeet </string>
-    <string name = "enter_tmeet"> Entrez Tmeet </string>
+    <string name = "account_name">Nom du compte </string>
+    <string name = "description">La description</string>
+    <string name = "enter_passphrase_tmitter">Entrez le mot de passe </string>
+    <string name = "create_tmitter_account">Créer un compte Tmitter </string>
+    <string name = "account_cannot_be_empty">Le compte ne peut pas être vide </string>
+    <string name = "description_cannot_be_empty">La description ne peut pas être vide </string>
+    <string name = "tmitter_account_created">Le compte Tmitter a été créé avec succès </string>
+    <string name = "tmitter_account_created_account_name_is">Le compte Tmitter a déjà été créé. Le nom du compte est </string>
+    <string name = "with_tma_address">avec adresse tma </string>
+    <string name = "search_tmitter_accounts">Rechercher des comptes Tmitter </string>
+    <string name = "send_tmeet">Envoyer Tmeet </string>
+    <string name = "enter_tmeet">Entrez Tmeet </string>
     <string name = "post">Annonce</string>
-    <string name = "keywords"> Mots clés </string>
-    <string name = "post_cannot_be_empty"> Le message ne peut pas être vide </string>
-    <string name = "keywords_cannot_be_empty"> Les mots clés ne peuvent pas être vides </string>
-    <string name = "post_was_sent"> Le message a été envoyé </string>
+    <string name = "keywords">Mots clés </string>
+    <string name = "post_cannot_be_empty">Le message ne peut pas être vide </string>
+    <string name = "keywords_cannot_be_empty">Les mots clés ne peuvent pas être vides </string>
+    <string name = "post_was_sent">Le message a été envoyé </string>
     <string name="tweet_was_sent_successfully">Le Tweet a été envoyé avec succès</string>
     <string name="tmitter_account_create">Veuillez d\'abord créer votre compte tmitter.</string>
     <string name="enter_tmitter_account">Entrer dans le compte Tmitter</string>
@@ -138,10 +138,31 @@
     <string name="enter_reply">Entrez une réponse</string>
     <string name="send_reply">Envoyer une réponse</string>
     <string name="Back">Retour</string>
+    <string name = "post_and_keywords_cannot_be_empty">La publication et les mots clés ne peuvent pas être vides</string>
+    <string name = "tmitter_wait">Veuillez patienter ... Cela peut prendre un certain temps.</string>
 
     <string name="get_my_balance">Afficher mon équilibre</string>
     <string name="number_of_accounts_found">Nombre de comptes trouvés</string>
     <string name="number_of_subscription_found">Number of subscription(s) found</string>
     <string name="created_on">Créé sur</string>
+
+    <string name = "identifier">Identifiant </string>
+    <string name = "comment">Commentaire </string>
+    <string name = "approve">Approuver </string>
+    <string name = "yes">Oui </string>
+    <string name = "no">Non </string>
+
+    <string name="add_rating">Ajouter une note</string>
+    <string name="total_rating_is">La note totale est</string>
+    <string name="failed_to_retrieve_ratings">Échec de la récupération des notes. Veuillez réessayer</string>
+    <string name="total_number_of_comments_found_for">Nombre total de commentaires trouvés pour</string>
+    <string name="comment_cannot_be_empty">Le commentaire ne peut pas être vide</string>
+    <string name="please_choose_rating">Veuillez choisir une note</string>
+    <string name="could_not_retrieve_any_keywords_for">Impossible de récupérer des mots clés pour</string>
+    <string name="please_check_your_balance">Veuillez vérifier votre solde.</string>
+    <string name="no_inputs_available_for_tma_address">Aucune entrée disponible pour l\'adresse tma</string>
+    <string name="rate">Taux</string>
+    <string name="rater">Évaluateur</string>
+
 
 </resources>

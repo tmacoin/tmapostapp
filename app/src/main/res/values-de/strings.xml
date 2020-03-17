@@ -138,10 +138,31 @@
     <string name="enter_reply">Antwort eingeben</string>
     <string name="send_reply">Antwort senden</string>
     <string name="Back">Zurück</string>
+    <string name = "post_and_keywords_cannot_be_empty">Sowohl Post als auch Keywords dürfen nicht leer sein</string>
+    <string name = "tmitter_wait">Bitte warten ... Dies kann eine Weile dauern.</string>
 
     <string name="get_my_balance">Zeige mein Gleichgewicht</string>
     <string name="number_of_accounts_found">Anzahl der gefundenen Konten</string>
     <string name="number_of_subscription_found">Anzahl der gefundenen Abonnements</string>
     <string name="created_on">Erstellt am</string>
+
+    <string name = "identifier">Identifier</string>
+    <string name = "comment">Kommentar</string>
+    <string name = "approve">Genehmigen</string>
+    <string name = "yes">Ja</string>
+    <string name = "no">Nein</string>
+
+    <string name = "add_rating">Bewertung hinzufügen</string>
+    <string name = "total_rating_is">Die Gesamtbewertung lautet</string>
+    <string name = "failed_to_retrieve_ratings">Fehler beim Abrufen von Bewertungen. Bitte versuchen Sie es erneut</string>
+    <string name = "total_number_of_comments_found_for">Gesamtzahl der gefundenen Kommentare für</string>
+    <string name = "comment_cannot_be_empty">Kommentar darf nicht leer sein</string>
+    <string name = "please_choose_rating">Bitte wählen Sie die Bewertung</string>
+    <string name = "could_not_retrieve_any_keywords_for">Es konnten keine Schlüsselwörter für abgerufen werden</string>
+    <string name = "please_check_your_balance">Bitte überprüfen Sie Ihr Guthaben.</string>
+    <string name = "no_inputs_available_for_tma_address">Keine Eingaben für tma-Adresse verfügbar</string>
+    <string name = "rate">Bewertung</string>
+    <string name = "rater">Rater</string>
+
 
 </resources>

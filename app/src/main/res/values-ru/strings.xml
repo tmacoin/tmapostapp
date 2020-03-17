@@ -138,9 +138,30 @@
     <string name="enter_reply">Введите ответ</string>
     <string name="send_reply">Отправить ответ</string>
     <string name="Back">Назад</string>
+    <string name="post_and_keywords_cannot_be_empty">И сообщение, и ключевые слова не могут быть пустыми</string>
+    <string name="tmitter_wait">Пожалуйста, подождите ... Это может занять некоторое время.</string>
 
     <string name="get_my_balance">Показать мой баланс</string>
     <string name="number_of_accounts_found">Количество найденных аккаунтов</string>
     <string name="number_of_subscription_found">Количество найденных подписок</string>
     <string name="created_on">Создано на</string>
+
+    <string name = "identifier">Идентификатор</string>
+    <string name = "comment">Комментарий</string>
+    <string name = "approve">Одобрить</string>
+    <string name = "yes">Да</string>
+    <string name = "no">Нет</string>
+
+    <string name="add_rating">Добавить рейтинг</string>
+    <string name="total_rating_is">Общий рейтинг</string>
+    <string name="failed_to_retrieve_ratings">Не удалось получить оценки. Пожалуйста, попробуйте еще раз</string>
+    <string name="total_number_of_comments_found_for">Общее количество комментариев найдено для</string>
+    <string name="comment_cannot_be_empty">Комментарий не может быть пустым</string>
+    <string name="please_choose_rating">Пожалуйста, выберите рейтинг</string>
+    <string name="could_not_retrieve_any_keywords_for">Не удалось получить ключевые слова для</string>
+    <string name="please_check_your_balance">Пожалуйста, проверьте свой баланс.</string>
+    <string name="no_inputs_available_for_tma_address">Нет доступных входов для адреса tma</string>
+    <string name="rate">Pейтинг</string>
+    <string name="rater">Oценщик</string>
+
 </resources>

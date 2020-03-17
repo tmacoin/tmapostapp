@@ -138,10 +138,31 @@
     <string name="enter_reply">Kirjoita Vastaa</string>
     <string name="send_reply">Lähetä vastaus</string>
     <string name="Back">Takaisin</string>
+    <string name = "post_and_keywords_cannot_be_empty"> Sekä viesti että avainsanat eivät voi olla tyhjiä </string>
+    <string name = "tmitter_wait"> Odota ... Tämä voi viedä hetken. </string>
 
     <string name="get_my_balance">Näytä Oma tasapaino</string>
     <string name="number_of_accounts_found">Löydettyjen tilien lukumäärä</string>
     <string name="number_of_subscription_found">Löydettyjen tilausten määrä</string>
     <string name="created_on">Luotu</string>
+
+    <string name="identifier">Identifier</string>
+    <string name="comment">Comment</string>
+    <string name="approve">Approve</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="add_rating">Lisää arvostelu</string>
+    <string name="total_rating_is">Kokonaisarvosana on</string>
+    <string name="failed_to_retrieve_ratings">Arvostelujen nouto epäonnistui. Yritä uudelleen</string>
+    <string name="total_number_of_comments_found_for">Kommentteja löytyi kokonaisuudessaan</string>
+    <string name="comment_cannot_be_empty">Kommentti ei voi olla tyhjä</string>
+    <string name="please_choose_rating">Valitse luokitus</string>
+    <string name="could_not_retrieve_any_keywords_for">Mitään avainsanoja ei voitu noutaa</string>
+    <string name="please_check_your_balance">Tarkista saldosi.</string>
+    <string name="no_inputs_available_for_tma_address">Tma-osoitteelle ei ole saatavissa tuloja</string>
+    <string name="rate">Nopeus</string>
+    <string name="rater">Neiti</string>
+
 
 </resources>

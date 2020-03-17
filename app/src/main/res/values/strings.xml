@@ -140,12 +140,31 @@
     <string name="enter_reply">Enter Reply</string>
     <string name="send_reply">Send Reply</string>
     <string name="Back">Back</string>
-    <string name="post_and_keywords_cannot_be_empty" translatable="false">Both Post and Keywords cannot be empty</string>
-    <string name="tmitter_wait" translatable="false">Please wait ..this can take a while.</string>
-    <!-- Buttons -->
+    <string name="post_and_keywords_cannot_be_empty">Both Post and Keywords cannot be empty</string>
+    <string name="tmitter_wait">Please wait ... This can take a while.</string>
+
     <string name="get_my_balance">Get My Balance</string>
     <string name="number_of_accounts_found">Number of accounts found</string>
     <string name="number_of_subscription_found">Number of subscription(s) found</string>
     <string name="created_on">Created On</string>
+
+    <string name="identifier">Identifier</string>
+    <string name="comment">Comment</string>
+    <string name="approve">Approve</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="add_rating">Add Rating</string>
+    <string name="total_rating_is">Total rating is</string>
+    <string name="failed_to_retrieve_ratings">Failed to retrieve ratings. Please try again</string>
+    <string name="total_number_of_comments_found_for">Total number of comments found for</string>
+    <string name="comment_cannot_be_empty">Comment cannot be empty</string>
+    <string name="please_choose_rating">Please choose rating</string>
+    <string name="could_not_retrieve_any_keywords_for">Could not retrieve any keywords for</string>
+    <string name="please_check_your_balance">Please check your balance.</string>
+    <string name="no_inputs_available_for_tma_address">No inputs available for tma address</string>
+    <string name="rate">Rate</string>
+    <string name="rater">Rater</string>
+
 
 </resources>
