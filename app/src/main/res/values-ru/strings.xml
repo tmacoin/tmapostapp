@@ -164,4 +164,9 @@
     <string name="rate">Pейтинг</string>
     <string name="rater">Oценщик</string>
 
+    <string name="negative">Oтрицательный</string>
+    <string name="positive">Положительный</string>
+    <string name="failed_to_retrieve_ratee">Не удалось получить оценщика. Пожалуйста, попробуйте еще раз</string>
+
+
 </resources>

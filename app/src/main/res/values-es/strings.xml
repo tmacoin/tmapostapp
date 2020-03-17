@@ -165,5 +165,9 @@
     <string name="rate">Calificación</string>
     <string name="rater">Apreciador</string>
 
+    <string name = "negative">Negativo</string>
+    <string name = "positive">Positivo</string>
+    <string name = "failed_to_retrieve_ratee">Error al recuperar la tasa. Por favor intente nuevamente</string>
+
 
 </resources>

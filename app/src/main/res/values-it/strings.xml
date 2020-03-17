@@ -164,4 +164,8 @@
     <string name="rate">Vota</string>
     <string name="rater">Valutatore</string>
 
+    <string name = "negative"> Negativo </string>
+    <string name = "positive"> Positivo </string>
+    <string name = "failed_to_retrieve_ratee"> Impossibile recuperare ratee. Riprova </string>
+
 </resources>

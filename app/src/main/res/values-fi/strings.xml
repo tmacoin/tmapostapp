@@ -164,5 +164,9 @@
     <string name="rate">Nopeus</string>
     <string name="rater">Neiti</string>
 
+    <string name = "negative">Negatiivinen</string>
+    <string name = "positive">Positiivinen</string>
+    <string name = "failed_to_retrieve_ratee">Suosituksen saaja epäonnistui. Yritä uudelleen</string>
+
 
 </resources>

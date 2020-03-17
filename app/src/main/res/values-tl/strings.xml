@@ -163,5 +163,13 @@
     <string name="rate">Presiyo</string>
     <string name="rater">Ebalwasyon</string>
 
+    <string name="negative">Negatibo</string>
+    <string name="positive">Positibo</string>
+    <string name="failed_to_retrieve_ratee">Nabigong makuha ang ratee. Pakiulit muli</string>
+
+
+
+
+
 
 </resources>

@@ -164,5 +164,13 @@
     <string name="rate">Taxa</string>
     <string name="rater">Avaliador</string>
 
+    <string name="negative">Negativo</string>
+    <string name="positive">Positivo</string>
+    <string name="failed_to_retrieve_ratee">Falha ao recuperar o ratee. Por favor, tente novamente</string>
+
+
+
+
+
 
 </resources>

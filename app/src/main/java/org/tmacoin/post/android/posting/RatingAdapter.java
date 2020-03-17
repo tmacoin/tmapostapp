@@ -87,7 +87,11 @@ public class RatingAdapter extends ArrayAdapter<Rating> {
             }
         });
 
-        holder.rateTextView.setText(rating.getRate());
+        if("Yes".equals(rating.getRate())) {
+            holder.rateTextView.setText(context.getResources().getString(R.string.negative));
+        } else if("No".equals(rating.getRate())) {
+            holder.rateTextView.setText(context.getResources().getString(R.string.positive));
+        }
         holder.dateTextView.setText(new Date(rating.getTimeStamp()).toString());
         holder.commentTextView.setText(rating.getComment());
 
@@ -112,7 +116,7 @@ public class RatingAdapter extends ArrayAdapter<Rating> {
 
     private void processSync() {
         if(ratee == null) {
-            Toast.makeText(context, "Failed to retrieve ratee. Please try again", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, context.getResources().getString(R.string.failed_to_retrieve_ratee), Toast.LENGTH_LONG).show();
             return;
         }
         Intent intent = new Intent(context, ShowPostActivity.class);

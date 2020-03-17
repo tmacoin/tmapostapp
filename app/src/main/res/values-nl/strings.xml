@@ -164,5 +164,13 @@
     <string name="rate">Tarief</string>
     <string name="rater">Beoordelaar</string>
 
+    <string name="negative">Negatief</string>
+    <string name="positive">Positief</string>
+    <string name="failed_to_retrieve_ratee">Kan tarief niet ophalen. Probeer het alstublieft opnieuw</string>
+
+
+
+
+
 
 </resources>

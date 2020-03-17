@@ -164,5 +164,9 @@
     <string name="rate">Taux</string>
     <string name="rater">Évaluateur</string>
 
+    <string name = "negative">Negative</string>
+    <string name = "positive">Positif</string>
+    <string name = "failed_to_retrieve_ratee">Impossible de récupérer ratee. Veuillez réessayer</string>
+
 
 </resources>

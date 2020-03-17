@@ -166,5 +166,9 @@
     <string name="rate">Rate</string>
     <string name="rater">Rater</string>
 
+    <string name="negative">Negative</string>
+    <string name="positive">Positive</string>
+    <string name="failed_to_retrieve_ratee">Failed to retrieve ratee. Please try again</string>
+
 
 </resources>

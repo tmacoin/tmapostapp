@@ -164,4 +164,13 @@
     <string name="rate">Įvertink</string>
     <string name="rater">Mis</string>
 
+    <string name="negative">Neigiama</string>
+    <string name="positive">Teigiamas</string>
+    <string name="failed_to_retrieve_ratee">Nepavyko gauti gavėjo. Prašau, pabandykite dar kartą</string>
+
+
+
+
+
+
 </resources>
