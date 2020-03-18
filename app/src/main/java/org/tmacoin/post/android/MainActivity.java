@@ -245,7 +245,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void connectedToTmaNetwork() {
-        connectToast.cancel();
+        if(connectToast != null) {
+            connectToast.cancel();
+        }
         Intent intent = new Intent(this, ConnectedToNetworkActivity.class);
         startActivity(intent);
         finish();
