@@ -85,9 +85,9 @@
     
     <string name="down_load_file_button">Raskite failą</string>
     <string name="change_password">Pakeisti slaptažodį</string>
-    <string name="get_balance">Gaukite pusiausvyrą</string>
+    <string name="get_balance">Gaukite bendraamžių balansą</string>
     <string name="submit">Pateikti</string>
-    <string name="send_transaction">Siųsti operaciją</string>
+    <string name="send_transaction">Siųsti monetas</string>
     <string name="send_secure_message">Siųsti saugią žinutę</string>
     <string name="send_tweet">Siųsti „Tmeet“</string>
 

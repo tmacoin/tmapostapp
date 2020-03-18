@@ -85,9 +85,9 @@
     
     <string name="down_load_file_button">Etsi tiedosto</string>
     <string name="change_password">Vaihda salasana</string>
-    <string name="get_balance">Hanki tasapaino</string>
+    <string name="get_balance">Hanki vertaistasapaino</string>
     <string name="submit">Lähetä</string>
-    <string name="send_transaction">Lähetä tapahtuma</string>
+    <string name="send_transaction">Lähetä kolikot</string>
     <string name="send_secure_message">Lähetä suojattu viesti</string>
     <string name="send_tweet">Lähetä Tmeet</string>
 

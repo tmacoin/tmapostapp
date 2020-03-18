@@ -85,9 +85,9 @@
     
     <string name="down_load_file_button">Vind het bestand</string>
     <string name="change_password">Verander wachtwoord</string>
-    <string name="get_balance">Krijg saldo</string>
+    <string name="get_balance">Krijg peer-evenwicht</string>
     <string name="submit">voorleggen</string>
-    <string name="send_transaction">Stuur transactie</string>
+    <string name="send_transaction">Stuur munten</string>
     <string name="send_secure_message">Verzend beveiligd bericht</string>
     <string name="send_tweet">Tmeet verzenden</string>
 

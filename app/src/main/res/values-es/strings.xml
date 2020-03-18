@@ -85,9 +85,9 @@
     
     <string name="down_load_file_button">Localizar el archivo</string>
     <string name="change_password">Cambia la contraseña</string>
-    <string name="get_balance">Obtener el equilibrio</string>
+    <string name="get_balance">Obtener el equilibrio de Peer</string>
     <string name="submit">Enviar</string>
-    <string name="send_transaction">Enviar transacción</string>
+    <string name="send_transaction">Enviar Monedas</string>
     <string name="send_secure_message">Enviar mensaje seguro</string>
     <string name="send_tweet">Enviar Tmeet</string>
 
