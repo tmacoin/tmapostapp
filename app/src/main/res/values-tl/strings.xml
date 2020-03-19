@@ -86,7 +86,7 @@
     
     <string name="down_load_file_button">Hanapin ang dokumento</string>
     <string name="change_password">Palitan ANG password</string>
-    <string name="get_balance">Kumuha ng Balanse sa Peer</string>
+    <string name="get_balance">Kumuha ng Balanse ng Isang Address</string>
     <string name="submit">Ipasa</string>
     <string name="send_transaction">Magpadala ng mga Barya</string>
     <string name="send_secure_message">Magpadala ng Ligtas na Mensahe</string>

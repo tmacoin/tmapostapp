@@ -85,7 +85,7 @@
     
     <string name="down_load_file_button">Localizza file</string>
     <string name="change_password">Cambia la password</string>
-    <string name="get_balance">Ottieni l\'equilibrio tra pari</string>
+    <string name="get_balance">Ottieni il saldo di un indirizzo</string>
     <string name="submit">Invia</string>
     <string name="send_transaction">Invia monete</string>
     <string name="send_secure_message">Invia un messaggio sicuro</string>

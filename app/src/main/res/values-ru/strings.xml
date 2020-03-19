@@ -85,7 +85,7 @@
     
     <string name="down_load_file_button">Найти файл</string>
     <string name="change_password">Изменить пароль</string>
-    <string name="get_balance">Получить равный баланс</string>
+    <string name="get_balance">Получить баланс адреса</string>
     <string name="submit">Ввести</string>
     <string name="send_transaction">Отправить монеты</string>
     <string name="send_secure_message">Отправить безопасное сообщение</string>

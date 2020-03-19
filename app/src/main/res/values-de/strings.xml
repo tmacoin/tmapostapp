@@ -84,7 +84,7 @@
     
     <string name="down_load_file_button">Datei suchen</string>
     <string name="change_password">Passwort ändern</string>
-    <string name="get_balance">Holen Sie sich das Peer Gleichgewicht</string>
+    <string name="get_balance">Holen Sie sich das Gleichgewicht einer Adresse</string>
     <string name="submit">einreichen</string>
     <string name="send_transaction">Münzen senden</string>
     <string name="send_secure_message">Sichere Nachricht senden</string>
