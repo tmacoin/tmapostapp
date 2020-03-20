@@ -170,5 +170,7 @@
     <string name="positive">Positive</string>
     <string name="failed_to_retrieve_ratee">Failed to retrieve ratee. Please try again</string>
 
+    <string name="post_cannot_be_longer">Post title cannot be longer than 64 characters</string>
+
 
 </resources>

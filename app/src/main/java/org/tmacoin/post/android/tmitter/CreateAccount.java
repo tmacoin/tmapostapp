@@ -179,7 +179,7 @@ public class CreateAccount extends BaseActivity {
         Set<TransactionOutput> inputs = inputList.get(i++);
 
         Keywords keywords = new Keywords();
-        keywords.getMap().put("create", account);
+        keywords.put("create", account);
 
         Transaction transaction = new Transaction(wallet.getPublicKey(), twitterTmaAddress, Coin.SATOSHI, Coin.SATOSHI,
                 inputs, wallet.getPrivateKey(), description, null, keywords);

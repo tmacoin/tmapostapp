@@ -115,7 +115,7 @@ public class ShowMyTweetsActivity extends BaseActivity {
         }
 
         for(Tweet tweet: list) {
-            if(tweet.getKeywords() != null && tweet.getKeywords().getMap().get("create") != null) {
+            if(tweet.getKeywords() != null && tweet.getKeywords().get("create") != null) {
                 title = tweet;
             }
         }
@@ -124,7 +124,7 @@ public class ShowMyTweetsActivity extends BaseActivity {
 
         while(i.hasNext()) {
             Tweet t = i.next();
-            if (t.getKeywords() != null && (t.getKeywords().getMap().get("create") != null || t.getKeywords().getMap().get("transactionId") != null)) {
+            if (t.getKeywords() != null && (t.getKeywords().get("create") != null || t.getKeywords().get("transactionId") != null)) {
                 i.remove();
             }
         }
@@ -153,7 +153,7 @@ public class ShowMyTweetsActivity extends BaseActivity {
         TextView textViewAccountDescription = findViewById(R.id.textViewAccountDescription);
         TextView resultTextView = findViewById(R.id.resultTextView);
 
-        textViewAccountName.setText(title.getKeywords().getMap().get("create"));
+        textViewAccountName.setText(title.getKeywords().get("create"));
         textViewAccountDescription.setText(title.getText());
         resultTextView.setText(result);
         updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());

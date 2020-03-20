@@ -126,6 +126,10 @@ public class CreatePost extends BaseActivity {
             Toast.makeText(this, getResources().getString(R.string.post_cannot_be_empty), Toast.LENGTH_LONG).show();
             return false;
         }
+        if(post.length() > Keywords.KEYWORD_MAX_LENGTH) {
+            Toast.makeText(this, getResources().getString(R.string.post_cannot_be_longer), Toast.LENGTH_LONG).show();
+            return false;
+        }
 
         if (StringUtil.isEmpty(description)) {
             Toast.makeText(this, getResources().getString(R.string.description_cannot_be_empty), Toast.LENGTH_LONG).show();
@@ -172,10 +176,10 @@ public class CreatePost extends BaseActivity {
 
         Set<TransactionOutput> inputs = inputList.get(i++);
         Keywords keywords = new Keywords();
-        keywords.getMap().put("create", post);
-        keywords.getMap().put("first", post);
+        keywords.put("create", post);
+        keywords.put("first", post);
         for(String word: words) {
-            keywords.getMap().put(word, word);
+            keywords.put(word, word);
         }
 
         Transaction transaction = new Transaction(wallet.getPublicKey(), ratee, Coin.SATOSHI, Coin.SATOSHI,
@@ -184,17 +188,14 @@ public class CreatePost extends BaseActivity {
         new SendTransactionRequest(network, transaction).start();
         logger.debug("sent {}", transaction);
 
-        Map<String, String> map = keywords.getMap();
-
         for(String word: words) {
-            keywords = new Keywords();
-            keywords.getMap().putAll(map);
-            keywords.getMap().put("transactionId", transaction.getTransactionId());
-            keywords.getMap().put("first", word);
+            Keywords keywordsLoop = keywords.copy();
+            keywordsLoop.put("transactionId", transaction.getTransactionId());
+            keywordsLoop.put("first", word);
             inputs = inputList.get(i++);
             String recipient = StringUtil.getTmaAddressFromString(word);
             Transaction keyWordTransaction = new Transaction(wallet.getPublicKey(), recipient, Coin.SATOSHI, Coin.SATOSHI,
-                    inputs, wallet.getPrivateKey(), description, null, keywords);
+                    inputs, wallet.getPrivateKey(), description, null, keywordsLoop);
             keyWordTransaction.setApp(Applications.RATING);
             new SendTransactionRequest(network, keyWordTransaction).start();
             logger.debug("sent {}", keyWordTransaction);

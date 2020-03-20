@@ -167,5 +167,6 @@
     <string name = "negative"> Negativo </string>
     <string name = "positive"> Positivo </string>
     <string name = "failed_to_retrieve_ratee"> Impossibile recuperare ratee. Riprova </string>
+    <string name="post_cannot_be_longer">Il titolo del post non può contenere più di 64 caratteri</string>
 
 </resources>

@@ -168,6 +168,7 @@
     <string name = "negative">Negativo</string>
     <string name = "positive">Positivo</string>
     <string name = "failed_to_retrieve_ratee">Error al recuperar la tasa. Por favor intente nuevamente</string>
+    <string name="post_cannot_be_longer">El título de la publicación no puede tener más de 64 caracteres.</string>
 
 
 </resources>

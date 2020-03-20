@@ -207,7 +207,7 @@ public class ShowPostActivity extends BaseActivity {
 
         Keywords accountKeywords = (Keywords)ResponseHolder.getInstance().getObject(getKeywordsRequest.getCorrelationId());
 
-        if(accountKeywords == null || accountKeywords.getMap().isEmpty()) {
+        if(accountKeywords == null || accountKeywords.isEmpty()) {
             result = (getResources().getString(R.string.could_not_retrieve_any_keywords_for) + " " + ratee.getName());
             return false;
         }
@@ -218,8 +218,8 @@ public class ShowPostActivity extends BaseActivity {
         Coin amount = Coin.SATOSHI.multiply(2);
         List<Coin> totals = new ArrayList<Coin>();
         totals.add(amount);
-        for(String word: accountKeywords.getMap().keySet()) {
-            if(word.equals(accountKeywords.getMap().get(word))) {
+        for(String word: accountKeywords.keySet()) {
+            if(word.equals(accountKeywords.get(word))) {
                 totals.add(amount);
             }
         }
@@ -232,10 +232,10 @@ public class ShowPostActivity extends BaseActivity {
         }
 
         Keywords keywords = new Keywords();
-        keywords.getMap().put("rater", wallet.getTmaAddress());
-        keywords.getMap().put("ratee", ratee.getName());
-        keywords.getMap().put("transactionId", ratee.getTransactionId());
-        keywords.getMap().put("rating", rating);
+        keywords.put("rater", wallet.getTmaAddress());
+        keywords.put("ratee", ratee.getName());
+        keywords.put("transactionId", ratee.getTransactionId());
+        keywords.put("rating", rating);
 
         Transaction transaction = new Transaction(wallet.getPublicKey(), StringUtil.getTmaAddressFromString(ratee.getName()), Coin.SATOSHI, Coin.SATOSHI,
                 inputList.get(i++), wallet.getPrivateKey(), comment, null, keywords);
@@ -244,12 +244,10 @@ public class ShowPostActivity extends BaseActivity {
         logger.debug("sent {}", transaction);
         addRating(transaction);
 
-        Map<String, String> map = new HashMap<>(keywords.getMap());
-        map.remove("rater");
-        for(String word: accountKeywords.getMap().keySet()) {
-            if(word.equals(accountKeywords.getMap().get(word))) {
-                Keywords words = new Keywords();
-                words.getMap().putAll(map);
+        for(String word: accountKeywords.keySet()) {
+            if(word.equals(accountKeywords.get(word))) {
+                Keywords words = keywords.copy();
+                words.remove("rater");
                 transaction = new Transaction(wallet.getPublicKey(), StringUtil.getTmaAddressFromString(word), Coin.SATOSHI, Coin.SATOSHI,
                         inputList.get(i++), wallet.getPrivateKey(), comment, null, words);
                 transaction.setApp(Applications.RATING);
@@ -262,15 +260,15 @@ public class ShowPostActivity extends BaseActivity {
 
     private void addRating(Transaction transaction) {
         Keywords keywords  = transaction.getKeywords();
-        String rate = keywords.getMap().get("rating");
+        String rate = keywords.get("rating");
         Rating rating = new Rating();
         rating.setRater(Network.getInstance().getTmaAddress());
         rating.setComment(transaction.getData());
         rating.setRate(rate);
-        rating.setRatee(keywords.getMap().get("ratee"));
+        rating.setRatee(keywords.get("ratee"));
         rating.setTimeStamp(System.currentTimeMillis());
 
-        String transactionId = keywords.getMap().get("transactionId") ;
+        String transactionId = keywords.get("transactionId") ;
         rating.setTransactionId(transactionId);
         list.add(0, rating);
     }

@@ -167,6 +167,7 @@
     <string name = "negative">Negatiivinen</string>
     <string name = "positive">Positiivinen</string>
     <string name = "failed_to_retrieve_ratee">Suosituksen saaja epäonnistui. Yritä uudelleen</string>
+    <string name="post_cannot_be_longer">Viestin otsikko ei voi olla pidempi kuin 64 merkkiä</string>
 
 
 </resources>

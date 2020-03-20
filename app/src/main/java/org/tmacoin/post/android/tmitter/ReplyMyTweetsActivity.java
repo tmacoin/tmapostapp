@@ -145,7 +145,7 @@ public class ReplyMyTweetsActivity extends BaseActivity {
         listView.addHeaderView(header, null, false);
 
         TextView textViewAccountName = header.findViewById(R.id.textViewAccountName);
-        textViewAccountName.setText(tweet.getKeywords().getMap().get("from"));
+        textViewAccountName.setText(tweet.getKeywords().get("from"));
         TextView textViewAccountDescription = header.findViewById(R.id.textViewAccountDescription);
         textViewAccountDescription.setText(tweet.getText());
         TextView textViewDate = header.findViewById(R.id.dateTextView);
@@ -214,11 +214,11 @@ public class ReplyMyTweetsActivity extends BaseActivity {
         Set<TransactionOutput> inputs = inputList.get(i++);
 
         Keywords keywords = new Keywords();
-        keywords.getMap().put("transactionId", tweet.getTransactionId());
+        keywords.put("transactionId", tweet.getTransactionId());
         Collection<String> names = wallets.getNames(Wallets.TWITTER);
         if (!names.isEmpty()) {
             String accountName = names.iterator().next();
-            keywords.getMap().put("from", accountName);
+            keywords.put("from", accountName);
         } else {
             result = "You have not created your tmitter account yet.";
             return;

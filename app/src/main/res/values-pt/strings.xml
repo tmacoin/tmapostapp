@@ -167,10 +167,7 @@
     <string name="negative">Negativo</string>
     <string name="positive">Positivo</string>
     <string name="failed_to_retrieve_ratee">Falha ao recuperar o ratee. Por favor, tente novamente</string>
-
-
-
-
+    <string name="post_cannot_be_longer">O título da postagem não pode ter mais de 64 caracteres</string>
 
 
 </resources>
