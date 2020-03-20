@@ -126,7 +126,7 @@ public class SendTransactionActivity extends BaseActivity {
         logger.debug("sent {}", transaction);
         new SendTransactionRequest(Network.getInstance(), transaction).start();
         updateStatus(getResources().getString(R.string.network_status) + ": " + network.getPeerCount().toString());
-        result = getResources().getString(R.string.success_sent) + " " + amount + getResources().getString(R.string.coins_to) + recipient;
+        result = getResources().getString(R.string.success_sent) + " " + amount + " " + getResources().getString(R.string.coins_to) + " " + recipient;
     }
 
     private void processSync() {
