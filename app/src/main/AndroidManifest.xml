@@ -26,12 +26,16 @@
         <activity android:name=".tmitter.SearchTwitterActivity" />
         <activity android:name=".tmitter.ReplyMyTweetsActivity" />
         <activity android:name=".ShowPeersActivity" />
+        <activity android:name=".StartShowPeersActivity" />
         <activity
             android:name=".messaging.AddAddressActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:parentActivityName=".messaging.ShowMessagesActivity" />
         <activity
             android:name=".LogViewerActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
+        <activity
+            android:name=".StartLogViewerActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
         <activity
             android:name=".messaging.ShowMessageActivity"
