@@ -35,8 +35,13 @@ public class StartShowPeersActivity extends StartActivity {
     private void process() {
         final TextView peersTextView = findViewById(R.id.peers_text_view);
         while(active) {
+            Network network = Network.getInstance();
+            if(network == null) {
+                ThreadExecutor.sleep(Constants.ONE_SECOND);
+                continue;
+            }
             final StringBuilder stringBuilder = new StringBuilder();
-            List<Peer> list = Network.getInstance().getConnectedPeers();
+            List<Peer> list = network.getConnectedPeers();
             for(Peer peer: list) {
                 stringBuilder.append(peer.getRawSocket().toString()).append(System.lineSeparator());
             }
