@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<org.tmacoin.post.android.ZoomLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<org.tmacoin.post.android.ZoomLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -28,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="text"
+            android:text=""
             android:textColor="@color/colorPrimaryDark"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -50,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@string/address_label"
+            android:text=""
             android:textColor="@color/colorPrimaryDark"
             android:textIsSelectable="true"
             app:layout_constraintStart_toStartOf="parent"
