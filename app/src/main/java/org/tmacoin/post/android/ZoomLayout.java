@@ -18,7 +18,7 @@ import org.tma.util.TmaLogger;
  */
 public class ZoomLayout extends ConstraintLayout implements ScaleGestureDetector.OnScaleGestureListener {
 
-    private static final TmaLogger logger = TmaLogger.getLogger();
+    //private static final TmaLogger logger = TmaLogger.getLogger();
 
     private enum Mode {
         NONE,
@@ -45,6 +45,47 @@ public class ZoomLayout extends ConstraintLayout implements ScaleGestureDetector
     private float focusx = 0f;
     private float focusy = 0f;
 
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        processMotionEvent(motionEvent);
+        if(mode == Mode.NONE) {
+            return false;
+        }
+        return true;
+    }
+
+    private void processMotionEvent(MotionEvent motionEvent) {
+        switch (motionEvent.getAction() & MotionEvent.ACTION_MASK) {
+            case MotionEvent.ACTION_DOWN:
+                //logger.debug("DOWN");
+                if (scale > MIN_ZOOM) {
+                    mode = Mode.DRAG;
+                    startX = motionEvent.getX() - prevDx;
+                    startY = motionEvent.getY() - prevDy;
+                }
+                break;
+            case MotionEvent.ACTION_MOVE:
+                if (mode == Mode.DRAG) {
+                    dx = motionEvent.getX() - startX;
+                    dy = motionEvent.getY() - startY;
+                }
+                break;
+            case MotionEvent.ACTION_POINTER_DOWN:
+                mode = Mode.ZOOM;
+                break;
+            case MotionEvent.ACTION_POINTER_UP:
+                mode = Mode.DRAG;
+                break;
+            case MotionEvent.ACTION_UP:
+                //logger.debug("UP");
+                mode = Mode.NONE;
+                prevDx = dx;
+                prevDy = dy;
+                break;
+        }
+    }
+
+
     public ZoomLayout(Context context) {
         super(context);
         init(context);
@@ -65,34 +106,7 @@ public class ZoomLayout extends ConstraintLayout implements ScaleGestureDetector
         this.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction() & MotionEvent.ACTION_MASK) {
-                    case MotionEvent.ACTION_DOWN:
-                        logger.debug("DOWN");
-                        if (scale > MIN_ZOOM) {
-                            mode = Mode.DRAG;
-                            startX = motionEvent.getX() - prevDx;
-                            startY = motionEvent.getY() - prevDy;
-                        }
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-                        if (mode == Mode.DRAG) {
-                            dx = motionEvent.getX() - startX;
-                            dy = motionEvent.getY() - startY;
-                        }
-                        break;
-                    case MotionEvent.ACTION_POINTER_DOWN:
-                        mode = Mode.ZOOM;
-                        break;
-                    case MotionEvent.ACTION_POINTER_UP:
-                        mode = Mode.DRAG;
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        logger.debug("UP");
-                        mode = Mode.NONE;
-                        prevDx = dx;
-                        prevDy = dy;
-                        break;
-                }
+                processMotionEvent(motionEvent);
                 scaleDetector.onTouchEvent(motionEvent);
 
                 if ((mode == Mode.DRAG && scale >= MIN_ZOOM) || mode == Mode.ZOOM) {
@@ -101,7 +115,7 @@ public class ZoomLayout extends ConstraintLayout implements ScaleGestureDetector
                     float maxDy = (child().getHeight() - (child().getHeight() / scale))/ 2 * scale;
                     dx = Math.min(Math.max(dx, -maxDx), maxDx);
                     dy = Math.min(Math.max(dy, -maxDy), maxDy);
-                    logger.debug("Width: {}, scale {}, dx {}, max {}", child().getWidth(), scale, dx, maxDx);
+                    //logger.debug("Width: {}, scale {}, dx {}, max {}", child().getWidth(), scale, dx, maxDx);
                     applyScaleAndTranslation();
                 }
 
@@ -114,7 +128,7 @@ public class ZoomLayout extends ConstraintLayout implements ScaleGestureDetector
 
     @Override
     public boolean onScaleBegin(ScaleGestureDetector scaleDetector) {
-        logger.debug("onScaleBegin");
+        //logger.debug("onScaleBegin");
         return true;
     }
 
@@ -123,7 +137,7 @@ public class ZoomLayout extends ConstraintLayout implements ScaleGestureDetector
         float scaleFactor = scaleDetector.getScaleFactor();
         focusx = scaleDetector.getFocusX();
         focusy = scaleDetector.getFocusY();
-        logger.debug("onScale={} focusx={} focusy={}", scaleFactor, focusx, focusy);
+        //logger.debug("onScale={} focusx={} focusy={}", scaleFactor, focusx, focusy);
 
         if (lastScaleFactor == 0 || (Math.signum(scaleFactor) == Math.signum(lastScaleFactor))) {
             scale *= scaleFactor;
@@ -141,7 +155,7 @@ public class ZoomLayout extends ConstraintLayout implements ScaleGestureDetector
 
     @Override
     public void onScaleEnd(ScaleGestureDetector scaleDetector) {
-        logger.debug("onScaleEnd");
+        //logger.debug("onScaleEnd");
         mode = Mode.NONE;
     }
 
