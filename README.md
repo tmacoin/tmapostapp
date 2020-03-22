@@ -14,21 +14,22 @@ Installation instructions:
 
 1. Create an APK directory on your phone(on SD ok). 
 
-![apkDir](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android1.png)
+   ![apkDir](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android1.png)
 
 2. Click on the  [APK file](https://github.com/tmacoin/tmapostapp/tma.apk) in the tmapostapp directory and download it to your Android phone APK folder from step one above.
 
 3. If you already have keys.csv file with existing keys, just copy it to the APK folder, otherwise, it will create new key. 
 4. Double click on the APK file located in the APK directory from step one above. 
 
-![apkFile](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android2.png)
+   ![apkFile](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android2.png)
 
 5. Click Install
 
-![install](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android3.png)
+   ![install](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android3.png)
 
-4. Once installed, select Open. Note: if you have a Keys.csv file, verify it is saved to your download folder(the same location the apk file was copied)
+6. Once installed, select Open. Important: if you have a Keys.csv file, copy it to the APK directory before you select Open.
 
+Logging in to App
 It will ask you to enter passphrase and confirm it. In case you have existing key it will ask you to enter passphrase for it.
 
 
