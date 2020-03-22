@@ -12,7 +12,7 @@ Tma Post App does not require downloading of blockchain and can be installed and
 
 Installation instructions:
 
-1. Create an APK directory on your phone(on SD ok)
+1. Create an APK directory on your phone(on SD ok).
 ![apkDir](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android1.png)
 
 2. Click on the  [APK file](https://github.com/tmacoin/tmapostapp/tma.apk) in this directory and download it to your Android phone download folder(sd drive is ok)
