@@ -19,7 +19,7 @@ Installation instructions:
 2. Click on the  [APK file](https://github.com/tmacoin/tmapostapp/tma.apk) in the tmapostapp directory and download it to your Android phone download folder(sd drive is ok)
 
 3. If you already have keys.csv file with existing keys, just copy it to the Android download folder, otherwise, it will create new key. 
-4. Double click on the APK file located in the download folder on your phone. 
+4. Double click on the APK file located in the APK dirstory from step one above. 
 
 ![apkFile](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android2.png)
 
