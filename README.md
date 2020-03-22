@@ -33,7 +33,7 @@ Tma Post App does not require downloading of blockchain and can be installed and
 
 It will ask you to enter passphrase and confirm it. In case you have existing key it will ask you to enter passphrase for it.
 
-  ![login](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android5.png)
+  ![login](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android4.png)
 
 It will then start network by connecting to full peers specified in peers.config and locals.config in case you have full instances running on your local network.Once logged in, it will display your address.
 
