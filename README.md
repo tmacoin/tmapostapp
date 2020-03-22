@@ -43,7 +43,9 @@ To access the main menu, select the ellipsis or dot menu located on the upper ri
 
   ![mainMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android5.png)
 
-File menu: allows users to import, export, and copy fles; in addition, they can view system logs and show peers
+
+
+<b>File sub menu:</b> allows users to import, export, and copy fles; in addition, they can view system logs and show peers
 * Stop Message Listener: if this app is stops responding, select this option
 * Import File: select a file to import(see exhibit below)
 * Export File: select a file to export(see exhibit below)
@@ -63,7 +65,7 @@ File menu: allows users to import, export, and copy fles; in addition, they can 
  
 
 
-Tools menu: allows users to change thier password, get balances, and send Coins.
+<b>Tools sub menu:</b> allows users to change thier password, get balances, and send Coins.
 * Change Password: allows user to change thier password
 * Get Any Balance: allows user to enter any address and retrieve its balance
 * Get My Address: allows user to get thier address 
@@ -101,17 +103,24 @@ Show Address:
 
 
 
-Secure Messaging
+<b>Secure Messaging sub menu:</b>
 * Send Secure Messaging: allows user to send a Secure Encrypted message.
 * Show messages: allows user to view a list of their messages
 
 ![messageMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android15.png)
 
-Send Secure:
+Send Secure(similiar to cellular text messaging):
+* Recipient TMA Address: this is the address your are sending money 
+* Fee in satoshis: the fee you are charging to send Coins
+* Expiring after # blocks: data to expire or deleted after number of bloacks created after the bloack to include this transaction
+* Subject: information which will expire
+* Body: information which will expire after number blocks mined
 
 ![secureMessage](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android16.png)
 
+Show Messages:
 
+![secureMessage](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android17.png)
 
 You can check balance of any address.
 
