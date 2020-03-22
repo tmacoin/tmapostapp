@@ -19,7 +19,11 @@ Installation instructions:
 
 It will ask you to enter passphrase and confirm it. In case you have existing key it will ask you to enter passphrase for it.
 
-![Passphrase](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/image001.png)
+![download](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android1.png)
+
+![Passphrase1](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android1.png)
+
+![Passphrase2](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android1.png)
 
 It will then start network by connecting to full peers specified in peers.config and locals.config in case you have full instances running on your local network.
 
