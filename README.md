@@ -31,13 +31,14 @@ Tma Post App does not require downloading of blockchain and can be installed and
 
 <b>Logging in to App</b>
 
-It will ask you to enter passphrase and confirm it. In case you have existing key it will ask you to enter passphrase for it.
+If you do not have an existing keys.csv file, it will promprt  you for a phrase and confirm paaphrase.
+If you do have a passphrase, it will only prompt you for the existing passphrase. The example exhibit below is the prompt for a user who copied their existing keys.csv file to the Apk directory.
 
   ![login](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android4.png)
 
-It will then start network by connecting to full peers specified in peers.config and locals.config in case you have full instances running on your local network.Once logged in, it will display your address.
+It will then the start network by connecting to full peers specified in peers.config and locals.config in case you have full instances running on your local network. Once logged in, it will display your address.
 
-To access the main menu, select the bar icon on the upper right corner. It will display the main menu
+To access the main menu, select the bar icon located on the upper right corner. It will display the main menu
 
   ![mainMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android5.png)
 
