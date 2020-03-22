@@ -31,7 +31,7 @@ Tma Post App does not require downloading of blockchain and can be installed and
 
 <b>Logging in to App</b>
 
-If you do not have an existing keys.csv file, it will promprt  you for a phrase and confirm passphrase.
+If you do not have an existing keys.csv file, it will promprt  you for a passphrase and confirm passphrase.
 
 If you do have a passphrase, it will only prompt you for the existing passphrase. The example exhibit below is the prompt when a user  copied their existing keys.csv file to the Apk directory and then started the app.
 
@@ -39,7 +39,7 @@ If you do have a passphrase, it will only prompt you for the existing passphrase
 
 It will then the start network by connecting to full peers specified in peers.config and locals.config in case you have full instances running on your local network. Once logged in, it will display your address.
 
-To access the main menu, select the bar icon located on the upper right corner. It will display the main menu
+To access the main menu, select the ellipsis or dot menu located on the upper right corner. This will display the main menu.
 
   ![mainMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android5.png)
 
@@ -50,17 +50,44 @@ File menu: allows users to import, export, and copy fles; in addition, they can 
 * View Log: use to identify any issues with app
 * Shop Peers: this list peers connected to the same instance you are connected
     
+![mainMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android8.png)
 
-
- Import File
+ Import File:
  
  ![import](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android6.png)
 
 
- Export File
+ Export File:
  
  ![export](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android7.png)
  
+
+
+Tools menu: allows users to change thier password, get balances, and send Coins.
+* Change Password: allows user to change thier password
+* Get Any Balance: allows user to enter any address and retrieve its balance
+* Get My Address: allows user to get thier address 
+* Send Coins: allows user to send coins
+* Show Address: allows user to see their current address
+
+![mainMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android9.png)
+
+ Change Password:
+ 
+ ![mainMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android9.png)
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
 
 You can check balance of any address.
 
