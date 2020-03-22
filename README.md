@@ -74,19 +74,26 @@ Tools menu: allows users to change thier password, get balances, and send Coins.
 
  Change Password:
  
- ![mainMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android10.png)
+ ![password](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android10.png)
  
  Get Any Balance:
  
- ![mainMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android11.png)
+ ![anyBalance](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android11.png)
  
  Get My Balance:
  
- ![mainMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android12.png)
+ ![myBalance](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android12.png)
  
  
+ Send Coins
+* Recipient TMA Address: this is teh address your are sending money 
+* Amount in Coins: number of coins you are sending
+* Fee in satoshis: the fee you are charging to send Coins
+* Data: information related to transaction(never deleted)
+* Expiring after # blocks: data to expire or deleted after number of bloacks created after the bloack to include this transaction
+* Data: information which will expire
 
-
+ ![myBalance](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android13.png)
 
 
 
