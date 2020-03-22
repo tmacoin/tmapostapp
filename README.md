@@ -86,7 +86,7 @@ Tools menu: allows users to change thier password, get balances, and send Coins.
  
  
  Send Coins
-* Recipient TMA Address: this is teh address your are sending money 
+* Recipient TMA Address: this is the address your are sending money 
 * Amount in Coins: number of coins you are sending
 * Fee in satoshis: the fee you are charging to send Coins
 * Data: information related to transaction(never deleted)
@@ -101,8 +101,15 @@ Show Address:
 
 
 
+Secure Messaging
+* Send Secure Messaging: allows user to send a Secure Encrypted message.
+* Show messages: allows user to view a list of their messages
 
+![messageMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android15.png)
 
+Send Secure:
+
+![secureMessage](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android16.png)
 
 
 
