@@ -1,20 +1,21 @@
-TMA Post is a light client for TMA blockchain.
+TMA Post App is an Android application, which allows users to use Andorid to interact with the TMA Coin network.
 
-TMA Post functionality includes the following:
+TMA Post App functionality includes the following main and sub menus:
 
-* Checking balance of any address on any shard in TMA.
-* Sending secure encrypted messages between TMA addresses.
-* Twitter like functionality.
+* File menu: allows usrs to impoer, export, and copy fles; in addition, they can view system logs and show peers 
+* Tools menu: allows users to change thier password, get balances, and send Coins.
+* Messaging: allows users to send secure encrypted messages between TMA addresses.
+* Tmitter: smiliar to twitter but with a few modifications; explained below
 * Posting announcements,  which can be used as decentralized, distributed, uncensored version of Yelp, Craiglist or eBay.
 
-Tma Post does not require downloading of blockchain and can be installed and started quickly; most importantly, TMA Post uses less resources on your system. 
+Tma Post App does not require downloading of blockchain and can be installed and started quickly; most importantly, TMA Post uses less resources on your system. 
 
 Installation instructions:
 
-1. Install Java version 8 or 9
-2. Download project from github. You would need just tmapost/build folder. 
-3. If you already have keys.csv file with existing keys you can just copy it to config folder, otherwise it will create new key. 
-4. Start it by running tmapost.sh or tmabost.bat depending on your operating system.
+1. Click on the APK file in this directory and download it to your Android phone download folder(sd drive is ok)
+2. If you already have keys.csv file with existing keys you can just copy it to the Android download folder, otherwise, it will create new key. 
+3. Double click on the APK file and select install. 
+4. Once installed, select open. Note: if you have a Keys.csv file, verify it is saved to your download folder(the same pace the apk file was copied)
 
 It will ask you to enter passphrase and confirm it. In case you have existing key it will ask you to enter passphrase for it.
 
