@@ -155,31 +155,34 @@ My Subscription:
 ![tmeetsSubSript](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android22.png)
 
 
+<b>Posts sub menu:</b>
+* Create Post: allows user to create a Posting account on TMA Coin Network
+* Find Post: allows user to find a Posting by entering a Posting Account and keywords        
+* My Ratings: list your ratings of a particular Post on TMA Coin Network
+* My Posts: list all your Posts submitted to TMA Coin Network
 
-
-You can check balance of any address.
-
-![Balance](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/image002.png)
-
-Send transaction
-
-![Transaction](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/image003.png)
-
-Send secure encrypted message.
-
-![Secure Message](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/image004.png)
-
-Send Twitter like messages.
-
-![Twitter](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/image005.png)
-
-Search for posts
-
-![Search for posts](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/image006.png)
+![postMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android23.png)
 
 Create your own posts or submit reviews of any other posts.
 
-![View Post](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/image007.png)
+<need image>
+
+Find Posts
+
+![findPosts](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android24.png)
+
+My Ratings
+
+![findPosts](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android25.png)
+
+My Posts
+
+<need image>
+
+
+
+
+
 
 Posts and reviews are stored on TMA blockchain and can be only removed by the original poster. As any other blockchain it is censorship free.
 
