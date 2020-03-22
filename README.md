@@ -31,7 +31,7 @@ Tma Post App does not require downloading of blockchain and can be installed and
 
 <b>Logging in to App</b>
 
-If you do not have an existing keys.csv file, it will promprt  you for a passphrase and confirm passphrase.
+If you do not have an existing keys.csv file, it will prompt  you for a passphrase and confirm passphrase.
 
 If you do have a passphrase, it will only prompt you for the existing passphrase. The example exhibit below is the prompt when a user  copied their existing keys.csv file to the Apk directory and then started the app.
 
