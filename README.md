@@ -93,9 +93,11 @@ Tools menu: allows users to change thier password, get balances, and send Coins.
 * Expiring after # blocks: data to expire or deleted after number of bloacks created after the bloack to include this transaction
 * Data: information which will expire
 
- ![myBalance](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android13.png)
+ ![sendCoins](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android13.png)
 
+Show Address:
 
+![showAddress](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android14.png)
 
 
 
