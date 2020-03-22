@@ -74,7 +74,7 @@ Tools menu: allows users to change thier password, get balances, and send Coins.
 
  Change Password:
  
- ![mainMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android9.png)
+ ![mainMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android10.png)
  
  
 
