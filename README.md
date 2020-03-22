@@ -2,7 +2,7 @@ TMA Post App is an Android application, which allows users to use functionality 
 
 TMA Post App functionality includes the following main and sub menus:
 
-* File menu: allows usrs to impoer, export, and copy fles; in addition, they can view system logs and show peers 
+* File menu: allows users to import, export, and copy fles; in addition, they can view system logs and show peers 
 * Tools menu: allows users to change thier password, get balances, and send Coins.
 * Messaging: allows users to send secure encrypted messages between TMA addresses.
 * Tmitter: smiliar to twitter but with a few modifications; explained below
@@ -10,7 +10,7 @@ TMA Post App functionality includes the following main and sub menus:
 
 Tma Post App does not require downloading of blockchain and can be installed and started quickly; most importantly, TMA Post App uses less resources on your phone. 
 
-Installation instructions:
+<b>Installation instructions:</b>
 
 1. Create an APK directory on your phone(on SD ok). 
 
@@ -29,7 +29,8 @@ Installation instructions:
 
 6. Once installed, select Open. Important: if you have a Keys.csv file, copy it to the APK directory before you select Open.
 
-Logging in to App
+<b>Logging in to App</b>
+
 It will ask you to enter passphrase and confirm it. In case you have existing key it will ask you to enter passphrase for it.
 
 
