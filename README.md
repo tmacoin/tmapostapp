@@ -120,7 +120,42 @@ Send Secure(similiar to cellular text messaging):
 
 Show Messages:
 
-![secureMessage](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android17.png)
+![showMessage](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android17.png)
+
+<b>Tmitter sub menu:</b>
+* Create Tmitter: allows user to create Tmitter account for current TMA Coin address
+* Show my Tmeets: list number of Tmeets user sent            
+* Send Tmeets: allows user to send Tmeets to user's subscribed to your account
+* Search Tmeet: allows user to list Tmitter received for a specific Tmitter Account you subscribed (case sensitive)
+* My Subscription: allows you to see latest Tmeets for the Tmeet accounts you have subscribed (note: there is no notification when you receive a Tmeet)
+
+![tmeetsMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android18.png)
+
+
+Create Tmitter
+
+
+Show my Tmeets:
+
+![showTmeets](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android19.png)
+
+
+Send Tmeets:
+
+![sendTmeets](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android20.png)
+
+
+Search Tmeets:
+
+![searchTmeets](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android21.png)
+
+
+My Subscription:
+
+![tmeetsSubSript](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android22.png)
+
+
+
 
 You can check balance of any address.
 
