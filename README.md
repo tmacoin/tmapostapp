@@ -165,7 +165,7 @@ My Subscription:
 
 Create your own posts or submit reviews of any other posts.
 
-<need image>
+<B>NEED IMAGE</B>
 
 Find Posts
 
@@ -177,7 +177,7 @@ My Ratings
 
 My Posts
 
-<need image>
+<B>NEED IMAGE</B>
 
 
 
