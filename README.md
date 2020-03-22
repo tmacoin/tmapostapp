@@ -41,8 +41,23 @@ To access the main menu, select the bar icon on the upper right corner. It will 
 
   ![mainMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android5.png)
 
+ File menu: allows users to import, export, and copy fles; in addition, they can view system logs and show peers
+    * Stop Message Listener: if this app is stops responding, select this option
+    * Import File: select a file to import
+    * Export File: select a file to export
+    * View Log: use to identify any issues with app
+    * Shop Peers: this list peers connected to the same instance you are connected
+    
 
 
+ import
+ 
+ ![import](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android6.png)
+
+
+ export
+ 
+ ![export](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android7.png)
 
 You can check balance of any address.
 
