@@ -37,7 +37,7 @@ If you do not have an existing keys.csv file, it will prompt  you for a passphra
 
 If you do have a passphrase, it will only prompt you for the existing passphrase. The example exhibit below is the prompt when a user  copied their existing keys.csv file to the Apk directory and then started the app.
 
-  ![login](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android4.png)
+  ![login](app/images/android4.png)
 
 It will then the start network by connecting to full peers specified in peers.config and locals.config in case you have full instances running on your local network. Once logged in, it will display your address.
 
