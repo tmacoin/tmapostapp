@@ -23,7 +23,7 @@ Tma Post App does not require downloading of blockchain and can be installed and
 3. If you already have keys.csv file with existing keys, just copy it to the download folder, otherwise, it will create new key. 
 4. Double click on the APK file located in the Download directory from step one above. 
 
-   ![apkFile](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android2.png)
+   ![apkFile](app/images/android2.png)
 
 5. Click Install
 
