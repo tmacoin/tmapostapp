@@ -20,7 +20,7 @@ Tma Post App does not require downloading of blockchain and can be installed and
 2. Click on the  <a href="tma.apk" tagret="_blank" download="tma.apk">tma.apk</a> file in the this directory(i.e. github tmapostapp directory) and select the download button(next to the History button). Download it to your Download directory from step one above.
 
 
-3. If you already have keys.csv file with existing keys, just copy it to the download folder, otherwise, it will create new key. 
+3. If you already have keys.csv file with existing keys, just copy it to the Download directory, otherwise, it will create new key. 
 4. Double click on the tma.apk file located in your phone's Download directory from step one above. 
 
    ![apkFile](app/images/android2.png)
@@ -29,13 +29,13 @@ Tma Post App does not require downloading of blockchain and can be installed and
 
    ![install](app/images/android3.png)
 
-6. Once installed, select Open. Important: if you have a Keys.csv file, copy it to the APK directory before you select Open.
+6. Once installed, select Open. Important: if you have a Keys.csv file, copy it to the Download directory before you select Open.
 
 <b>Logging in to App</b>
 
 If you do not have an existing keys.csv file, it will prompt  you for a passphrase and confirm passphrase.
 
-If you do have a passphrase, it will only prompt you for the existing passphrase. The example exhibit below is the prompt when a user  copied their existing keys.csv file to the Apk directory and then started the app.
+If you do have a passphrase, it will only prompt you for the existing passphrase. The example exhibit below is the prompt when a user  copied their existing keys.csv file to the Download directory and then started the app.
 
   ![login](app/images/android4.png)
 
@@ -43,7 +43,7 @@ It will then the start network by connecting to full peers specified in peers.co
 
 To access the main menu, select the ellipsis or dot menu located on the upper right corner. This will display the main menu.
 
-  ![mainMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android5.png)
+  ![mainMenu](app/images/android5.png)
 
 
 
@@ -54,39 +54,39 @@ To access the main menu, select the ellipsis or dot menu located on the upper ri
 * View Log: use to identify any issues with app
 * Shop Peers: this list peers connected to the same instance you are connected
     
-![mainMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android8.png)
+![mainMenu](app/images/android8.png)
 
  Import File:
  
- ![import](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android6.png)
+ ![import](app/images/android6.png)
 
 
  Export File:
  
- ![export](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android7.png)
+ ![export](app/images/android7.png)
  
 
 
-<b>Tools sub menu:</b> allows users to change thier password, get balances, and send Coins.
-* Change Password: allows user to change thier password
+<b>Tools sub menu:</b> allows user to change their password, get balances, and send Coins.
+* Change Password: allows user to change their password
 * Get Any Balance: allows user to enter any address and retrieve its balance
-* Get My Address: allows user to get thier address 
+* Get My Address: allows user to get their address 
 * Send Coins: allows user to send coins
 * Show Address: allows user to see their current address
 
-![mainMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android9.png)
+![mainMenu](app/images/android9.png)
 
  Change Password:
  
- ![password](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android10.png)
+ ![password](app/images/android10.png)
  
  Get Any Balance:
  
- ![anyBalance](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android11.png)
+ ![anyBalance](app/images/android11.png)
  
  Get My Balance:
  
- ![myBalance](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android12.png)
+ ![myBalance](app/images/android12.png)
  
  
  Send Coins
@@ -97,11 +97,11 @@ To access the main menu, select the ellipsis or dot menu located on the upper ri
 * Expiring after # blocks: data to expire or deleted after number of bloacks created after the bloack to include this transaction
 * Data: information which will expire
 
- ![sendCoins](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android13.png)
+ ![sendCoins](app/images/android13.png)
 
 Show Address:
 
-![showAddress](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android14.png)
+![showAddress](app/images/android14.png)
 
 
 
@@ -109,7 +109,7 @@ Show Address:
 * Send Secure Messaging: allows user to send a Secure Encrypted message.
 * Show messages: allows user to view a list of their messages
 
-![messageMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android15.png)
+![messageMenu](app/images/android15.png)
 
 Send Secure(similiar to cellular text messaging):
 * Recipient TMA Address: this is the address your are sending money 
@@ -118,11 +118,11 @@ Send Secure(similiar to cellular text messaging):
 * Subject: information which will expire
 * Body: information which will expire after number blocks mined
 
-![secureMessage](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android16.png)
+![secureMessage](app/images/android16.png)
 
 Show Messages:
 
-![showMessage](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android17.png)
+![showMessage](app/images/android17.png)
 
 <b>Tmitter sub menu:</b>
 * Create Tmitter: allows user to create Tmitter account for current TMA Coin address
@@ -131,7 +131,7 @@ Show Messages:
 * Search Tmeet: allows user to list Tmitter received for a specific Tmitter Account you subscribed (case sensitive)
 * My Subscription: allows you to see latest Tmeets for the Tmeet accounts you have subscribed (note: there is no notification when you receive a Tmeet)
 
-![tmeetsMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android18.png)
+![tmeetsMenu](app/images/android18.png)
 
 
 Create Tmitter
@@ -139,22 +139,22 @@ Create Tmitter
 
 Show my Tmeets:
 
-![showTmeets](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android19.png)
+![showTmeets](app/images/android19.png)
 
 
 Send Tmeets:
 
-![sendTmeets](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android20.png)
+![sendTmeets](app/images/android20.png)
 
 
 Search Tmeets:
 
-![searchTmeets](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android21.png)
+![searchTmeets](app/images/android21.png)
 
 
 My Subscription:
 
-![tmeetsSubSript](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android22.png)
+![tmeetsSubSript](app/images/android22.png)
 
 
 <b>Posts sub menu:</b>
@@ -163,7 +163,7 @@ My Subscription:
 * My Ratings: list your ratings of a particular Post on TMA Coin Network
 * My Posts: list all your Posts submitted to TMA Coin Network
 
-![postMenu](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android23.png)
+![postMenu](app/images/android23.png)
 
 Create your own posts or submit reviews of any other posts.
 
@@ -171,11 +171,11 @@ Create your own posts or submit reviews of any other posts.
 
 Find Posts
 
-![findPosts](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android24.png)
+![findPosts](app/images/android24.png)
 
 My Ratings
 
-![findPosts](https://raw.githubusercontent.com/tmacoin/tmapost/master/tmapost/images/android25.png)
+![findPosts](app/images/android25.png)
 
 My Posts
 
