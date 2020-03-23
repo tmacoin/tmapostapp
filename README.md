@@ -70,7 +70,7 @@ To access the main menu, select the ellipsis or dot menu located on the upper ri
 <b>Tools sub menu:</b> allows user to change their password, get balances, and send Coins.
 * Change Password: allows user to change their password
 * Get Any Balance: allows user to enter any address and retrieve its balance
-* Get My Address: allows user to get their address 
+* Get My Balance: allows user to get their current balance 
 * Send Coins: allows user to send coins
 * Show Address: allows user to see their current address
 
