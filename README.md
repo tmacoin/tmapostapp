@@ -93,9 +93,11 @@ To access the main menu, select the ellipsis or dot menu located on the upper ri
 * Recipient TMA Address: this is the address your are sending TMA Coins 
 * Amount in Coins: number of coins you are sending
 * Fee in satoshis: the fee you are charging to send TMA Coins
-* Data: information related to transaction(this data is never deleted and is in clear text human readable form)
+* Data: information related to transaction; this data is never deleted
 * Expiring after # blocks: Expire data after this number of blocks created(after this transaction added to a block)
 * Expiring Data: this data will expire after the number of blocks created after this transaction added to a block
+
+  note: data is in clear text human readable form
 
  ![sendCoins](app/images/android13.png)
 
@@ -114,7 +116,7 @@ Show Address:
 Send Secure(similiar to cellular text messaging):
 * Recipient TMA Address: this is the address your are sending money 
 * Fee in satoshis: the fee you are charging to send Coins
-* Expiring after # blocks: data to expire or deleted after number of bloacks created after the bloack to include this transaction
+* Expiring after # blocks: data to expire or deleted after number of blocks created after the block to include this transaction
 * Subject: information which will expire
 * Body: information which will expire after number blocks mined
 
