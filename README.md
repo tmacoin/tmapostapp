@@ -48,7 +48,7 @@ To access the main menu, select the ellipsis or dot menu located on the upper ri
 
 
 <b>File sub menu:</b> allows users to import, export, and copy fles; in addition, they can view system logs and show peers
-* Stop Message Listener: if this app is stops responding, select this option
+* Stop Message Listener: if this app stops responding, select this option
 * Import File: select a file to import(see exhibit below)
 * Export File: select a file to export(see exhibit below)
 * View Log: use to identify any issues with app
