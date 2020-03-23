@@ -87,7 +87,7 @@
     <!-- BUTTONS -->
     <string name="down_load_file_button">Locate File</string>
     <string name="change_password">Change Password</string>
-    <string name="get_balance">Get Balance Of An Address</string>
+    <string name="get_balance">Get Any Balance</string>
     <string name="submit">Submit</string>
     <string name="send_transaction">Send Coins</string>
     <string name="send_secure_message">Send Secure Message</string>
