@@ -51,7 +51,7 @@ To access the main menu, select the ellipsis or dot menu located on the upper ri
 * Stop Message Listener: if this app stops responding, select this option
 * Import File: select a file to import(see exhibit below)
 * Export File: select a file to export(see exhibit below)
-* View Log: use to identify any issues with app
+* View Log: this is used to identify any issues with app
 * Shop Peers: this list peers connected to the same instance you are connected
     
 ![mainMenu](app/images/android8.png)
