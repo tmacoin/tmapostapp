@@ -168,6 +168,6 @@
     <string name = "positive">Positif</string>
     <string name = "failed_to_retrieve_ratee">Impossible de récupérer ratee. Veuillez réessayer</string>
     <string name="post_cannot_be_longer">Le titre du message ne peut pas dépasser 64 caractères</string>
-
+    <string name="no_posts">Pas de messages</string>
 
 </resources>

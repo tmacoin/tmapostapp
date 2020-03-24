@@ -168,6 +168,6 @@
     <string name="positive">Положительный</string>
     <string name="failed_to_retrieve_ratee">Не удалось получить оценщика. Пожалуйста, попробуйте еще раз</string>
     <string name="post_cannot_be_longer">Заголовок сообщения не может быть длиннее 64 символов</string>
-
+    <string name="no_posts">Нет сообщений</string>
 
 </resources>

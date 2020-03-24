@@ -168,6 +168,6 @@
     <string name="positive">Teigiamas</string>
     <string name="failed_to_retrieve_ratee">Nepavyko gauti gavėjo. Prašau, pabandykite dar kartą</string>
     <string name="post_cannot_be_longer">Įrašo pavadinimas negali būti ilgesnis nei 64 simboliai</string>
-
+    <string name="no_posts">Nėra pranešimų</string>
 
 </resources>

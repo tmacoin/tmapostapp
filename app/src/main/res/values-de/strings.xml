@@ -168,6 +168,6 @@
     <string name = "positive">Positiv</string>
     <string name = "failed_to_retrieve_ratee">Ratee konnte nicht abgerufen werden. Bitte versuchen Sie es erneut</string>
     <string name="post_cannot_be_longer">Der Post-Titel darf nicht länger als 64 Zeichen sein</string>
-
+    <string name="no_posts">Keine Beiträge</string>
 
 </resources>

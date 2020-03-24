@@ -167,6 +167,6 @@
     <string name="positive">Positibo</string>
     <string name="failed_to_retrieve_ratee">Nabigong makuha ang ratee. Pakiulit muli</string>
     <string name="post_cannot_be_longer">Ang pamagat ng post ay hindi maaaring mas mahaba kaysa sa 64 na character</string>
-
+    <string name="no_posts">Walang Mga Post</string>
 
 </resources>
