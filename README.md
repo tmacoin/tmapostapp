@@ -177,7 +177,7 @@ My Subscription:
 
 Create your own posts or submit reviews of any other posts.
 
-![createPosts](app/images/android24.png)
+![createPosts](app/images/android28.png)
 
 Find Posts
 
