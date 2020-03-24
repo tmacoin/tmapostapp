@@ -37,7 +37,7 @@ If you do not have an existing keys.csv file, it will prompt  you for a passphra
 
   ![newLogin](app/images/android4a.png)
 
-If you do have a keys.csv file and passphrase, it will only prompt you for the existing passphrase. The example exhibit below is the prompt when a user  copied their existing keys.csv file to the Download directory and then started the app.
+If you do have a keys.csv file and passphrase, it will prompt you for the existing passphrase. The example exhibit below is the prompt when a user  copied their existing keys.csv file to the Download directory and then started the app.
 
   ![login](app/images/android4b.png)
 
