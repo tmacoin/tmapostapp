@@ -177,7 +177,7 @@ My Subscription:
 
 Create your own posts or submit reviews of any other posts.
 
-<B>NEED IMAGE</B>
+![createPosts](app/images/android24.png)
 
 Find Posts
 
@@ -185,7 +185,7 @@ Find Posts
 
 My Ratings
 
-![findPosts](app/images/android25.png)
+![myRating](app/images/android25.png)
 
 My Posts
 
