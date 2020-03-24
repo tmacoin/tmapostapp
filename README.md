@@ -2,10 +2,10 @@ TMA Post App is an Android application, which allows users to use functionality 
 
 TMA Post App functionality includes the following main and sub menus:
 
-* File menu: allows users to import, export, and copy fles; in addition, they can view system logs and show peers 
-* Tools menu: allows users to change thier password, get balances, and send Coins.
+* File menu: allows users to import, export, and copy files; in addition, they can view system logs and show peers
+* Tools menu: allows users to change their password, get balances, and send Coins.
 * Messaging: allows users to send secure encrypted messages between TMA addresses.
-* Tmitter: smiliar to twitter but with a few modifications; explained below
+* Tmitter: similar to twitter but with a few modifications; explained below
 * Posting announcements,  which can be used as decentralized, distributed, uncensored version of Yelp, Craiglist or eBay.
 
 Tma Post App does not require downloading of blockchain and can be installed and started quickly; most importantly, TMA Post App uses less resources on your phone. 
@@ -47,7 +47,7 @@ To access the main menu, select the ellipsis or dot menu located on the upper ri
 
 
 
-<b>File sub menu:</b> allows users to import, export, and copy fles; in addition, they can view system logs and show peers
+<b>File sub menu:</b> allows users to import, export, and copy files; in addition, they can view system logs and show peers
 * Stop Message Listener: if this app stops responding, select this option
 * Import File: select a file to import(see exhibit below)
 * Export File: select a file to export(see exhibit below)
