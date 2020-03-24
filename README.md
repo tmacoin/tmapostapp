@@ -189,7 +189,7 @@ My Ratings
 
 My Posts
 
-<B>NEED IMAGE</B>
+![myPostsPosts](app/images/android27.png)
 
 
 
