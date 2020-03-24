@@ -128,6 +128,12 @@ Show Messages:
 
 ![showMessage](app/images/android17.png)
 
+
+You can create aliases for your contact addresses
+
+![aliasMessage](app/images/android17a.png)
+
+
 <b>Tmitter sub menu:</b>
 * Create Tmitter: allows user to create Tmitter account for current TMA Coin address
 * Show my Tmeets: list number of Tmeets user sent            
