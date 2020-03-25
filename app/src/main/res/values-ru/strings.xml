@@ -138,7 +138,7 @@
     <string name="enter_reply">Введите ответ</string>
     <string name="send_reply">Отправить ответ</string>
     <string name="Back">Назад</string>
-    <string name="post_and_keywords_cannot_be_empty">И сообщение, и ключевые слова не могут быть пустыми</string>
+    <string name="post_and_keywords_cannot_be_empty">И объявление, и ключевые слова не могут быть пустыми</string>
     <string name="tmitter_wait">Пожалуйста, подождите ... Это может занять некоторое время.</string>
 
     <string name="get_my_balance">Показать мой баланс</string>
@@ -167,7 +167,7 @@
     <string name="negative">Oтрицательный</string>
     <string name="positive">Положительный</string>
     <string name="failed_to_retrieve_ratee">Не удалось получить оценщика. Пожалуйста, попробуйте еще раз</string>
-    <string name="post_cannot_be_longer">Заголовок сообщения не может быть длиннее 64 символов</string>
-    <string name="no_posts">Нет сообщений</string>
+    <string name="post_cannot_be_longer">Заголовок объявления не может быть длиннее 64 символов</string>
+    <string name="no_posts">Нет объявлений</string>
 
 </resources>
