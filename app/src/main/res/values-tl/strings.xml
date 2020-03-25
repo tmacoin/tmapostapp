@@ -168,5 +168,8 @@
     <string name="failed_to_retrieve_ratee">Nabigong makuha ang ratee. Pakiulit muli</string>
     <string name="post_cannot_be_longer">Ang pamagat ng post ay hindi maaaring mas mahaba kaysa sa 64 na character</string>
     <string name="no_posts">Walang Mga Post</string>
+    <string name="no_ratings">Walang Mga Rating</string>
+    <string name="no_results">Walang resulta</string>
+    <string name="no_posts_were_found_for_provided_keywords">Walang mga post na natagpuan para sa mga ibinigay na keyword.</string>
 
 </resources>

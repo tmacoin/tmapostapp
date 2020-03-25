@@ -169,5 +169,8 @@
     <string name = "failed_to_retrieve_ratee">Ratee konnte nicht abgerufen werden. Bitte versuchen Sie es erneut</string>
     <string name="post_cannot_be_longer">Der Post-Titel darf nicht länger als 64 Zeichen sein</string>
     <string name="no_posts">Keine Beiträge</string>
+    <string name="no_ratings">Keine Bewertungen</string>
+    <string name="no_results">Keine Ergebnisse</string>
+    <string name="no_posts_were_found_for_provided_keywords">Für die angegebenen Keywords wurden keine Beiträge gefunden.</string>
 
 </resources>

@@ -75,12 +75,13 @@ public class MyRatingsActivity extends BaseActivity {
     }
 
     private void processSync() {
+        if(list == null || list.isEmpty()) {
+            setContentView(R.layout.activity_show_no_ratings);
+            return;
+        }
         setContentView(R.layout.activity_my_ratings);
         if(!StringUtil.isEmpty(result)) {
             Toast.makeText(this, result, Toast.LENGTH_LONG).show();
-        }
-        if(list == null || list.isEmpty()) {
-            return;
         }
         ListView listView = findViewById(R.id.simpleListView);
         RatingAdapter arrayAdapter = new RatingAdapter(this, list);

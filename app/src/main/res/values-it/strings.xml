@@ -169,4 +169,7 @@
     <string name = "failed_to_retrieve_ratee"> Impossibile recuperare ratee. Riprova </string>
     <string name="post_cannot_be_longer">Il titolo del post non può contenere più di 64 caratteri</string>
     <string name="no_posts">Nessun post</string>
+    <string name="no_ratings">Nessuna valutazione</string>
+    <string name="no_results">Nessun risultato</string>
+    <string name="no_posts_were_found_for_provided_keywords">Nessun post trovato per le parole chiave fornite.</string>
 </resources>

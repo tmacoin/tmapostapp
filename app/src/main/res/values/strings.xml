@@ -172,6 +172,9 @@
 
     <string name="post_cannot_be_longer">Post title cannot be longer than 64 characters</string>
     <string name="no_posts">No Posts</string>
+    <string name="no_ratings">No Ratings</string>
+    <string name="no_results">No Results</string>
+    <string name="no_posts_were_found_for_provided_keywords">No posts were found for provided keywords.</string>
 
 
 </resources>

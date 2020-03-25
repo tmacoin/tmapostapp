@@ -169,5 +169,8 @@
     <string name="failed_to_retrieve_ratee">Nepavyko gauti gavėjo. Prašau, pabandykite dar kartą</string>
     <string name="post_cannot_be_longer">Įrašo pavadinimas negali būti ilgesnis nei 64 simboliai</string>
     <string name="no_posts">Nėra pranešimų</string>
+    <string name="no_ratings">Nėra įvertinimų</string>
+    <string name="no_results">Jokių rezultatų</string>
+    <string name="no_posts_were_found_for_provided_keywords">Pateiktų raktinių žodžių nerasta.</string>
 
 </resources>

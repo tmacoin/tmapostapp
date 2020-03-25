@@ -169,5 +169,8 @@
     <string name = "failed_to_retrieve_ratee">Suosituksen saaja epäonnistui. Yritä uudelleen</string>
     <string name="post_cannot_be_longer">Viestin otsikko ei voi olla pidempi kuin 64 merkkiä</string>
     <string name="no_posts">Ei viestejä</string>
+    <string name="no_ratings">Ei arvosteluita</string>
+    <string name="no_results">Ei tuloksia</string>
+    <string name="no_posts_were_found_for_provided_keywords">Antamille avainsanoille ei löytynyt viestejä.</string>
 
 </resources>

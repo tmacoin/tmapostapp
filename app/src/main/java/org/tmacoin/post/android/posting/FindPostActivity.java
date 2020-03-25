@@ -35,6 +35,7 @@ public class FindPostActivity extends BaseActivity {
     private Set<String> words;
     private String result = "";
     private List<Ratee> list;
+    private Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +79,8 @@ public class FindPostActivity extends BaseActivity {
         if(!validate()) {
             return;
         }
-        Toast.makeText(FindPostActivity.this, getResources().getString(R.string.wait), Toast.LENGTH_LONG).show();
+        toast = Toast.makeText(FindPostActivity.this, getResources().getString(R.string.wait), Toast.LENGTH_LONG);
+        toast.show();
         setContentView(R.layout.activity_find_post_wait);
         updateStatus(getResources().getString(R.string.network_status) + ": " + Network.getInstance().getPeerCount().toString());
         process();
@@ -118,7 +120,6 @@ public class FindPostActivity extends BaseActivity {
         }
 
         if(list.size() == 0) {
-            result = ("No posts were found for provided keywords.");
             return;
         }
 
@@ -127,12 +128,14 @@ public class FindPostActivity extends BaseActivity {
     }
 
     private void processSync() {
+        if(list == null || list.isEmpty()) {
+            setContentView(R.layout.activity_show_no_post_search);
+            toast.cancel();
+            return;
+        }
         setContentView(R.layout.activity_find_post_complete);
         if(!StringUtil.isEmpty(result)) {
             Toast.makeText(this, result, Toast.LENGTH_LONG).show();
-        }
-        if(list == null || list.isEmpty()) {
-            return;
         }
         ListView listView = findViewById(R.id.simpleListView);
         RateeAdapter arrayAdapter = new RateeAdapter(this, list);
@@ -145,7 +148,7 @@ public class FindPostActivity extends BaseActivity {
                 showPost(ratee);
             }
         });
-
+        toast.cancel();
     }
 
     private void showPost(Ratee ratee) {

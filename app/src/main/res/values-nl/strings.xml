@@ -169,5 +169,8 @@
     <string name="failed_to_retrieve_ratee">Kan tarief niet ophalen. Probeer het alstublieft opnieuw</string>
     <string name="post_cannot_be_longer">Titel van bericht mag niet langer zijn dan 64 tekens</string>
     <string name="no_posts">Geen berichten</string>
+    <string name="no_ratings">Geen beoordelingen</string>
+    <string name="no_results">Geen resultaten</string>
+    <string name="no_posts_were_found_for_provided_keywords">Er zijn geen berichten gevonden voor opgegeven zoekwoorden.</string>
 
 </resources>

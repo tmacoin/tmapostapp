@@ -169,5 +169,8 @@
     <string name="failed_to_retrieve_ratee">Falha ao recuperar o ratee. Por favor, tente novamente</string>
     <string name="post_cannot_be_longer">O título da postagem não pode ter mais de 64 caracteres</string>
     <string name="no_posts">Não há mensagens</string>
+    <string name="no_ratings">Nenhuma classificação</string>
+    <string name="no_results">Sem resultados</string>
+    <string name="no_posts_were_found_for_provided_keywords">Não foram encontradas postagens para palavras-chave fornecidas.</string>
 
 </resources>

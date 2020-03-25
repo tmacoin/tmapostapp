@@ -170,5 +170,8 @@
     <string name = "failed_to_retrieve_ratee">Error al recuperar la tasa. Por favor intente nuevamente</string>
     <string name="post_cannot_be_longer">El título de la publicación no puede tener más de 64 caracteres.</string>
     <string name="no_posts">No hay publicaciones</string>
+    <string name="no_ratings">No hay votos</string>
+    <string name="no_results">No hay resultados</string>
+    <string name="no_posts_were_found_for_provided_keywords">No se encontraron publicaciones para las palabras clave proporcionadas.</string>
 
 </resources>

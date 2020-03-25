@@ -169,5 +169,8 @@
     <string name="failed_to_retrieve_ratee">Не удалось получить оценщика. Пожалуйста, попробуйте еще раз</string>
     <string name="post_cannot_be_longer">Заголовок сообщения не может быть длиннее 64 символов</string>
     <string name="no_posts">Нет сообщений</string>
+    <string name="no_ratings">Никаких результатов</string>
+    <string name="no_results">Walang resulta</string>
+    <string name="no_posts_were_found_for_provided_keywords">По указанным ключевым словам сообщения не найдены.</string>
 
 </resources>
