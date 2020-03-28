@@ -1,5 +1,9 @@
 TMA Post App is an Android application, which allows users to use functionality below to interact with the TMA Coin network.
 
+You can read more about TMA Coin Network by reviewing the link below:
+
+https://github.com/tmacoin/tma/blob/master/README.md
+
 TMA Post App functionality includes the following main and sub menus:
 
 * File menu: allows users to import, export, and copy files; in addition, they can view system logs and show peers
