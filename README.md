@@ -145,11 +145,9 @@ You can create aliases for your contact addresses
 * Search Tmeet: allows user to list Tmitter received for a specific Tmitter Account you subscribed (case sensitive)
 * My Subscription: allows you to see latest Tmeets for the Tmeet accounts you have subscribed (note: there is no notification when you receive a Tmeet)
 
-![tmeetsMenu](app/images/android18.png)
-
-
 Create Tmitter
 
+![tmeetsMenu](app/images/android18.png)
 
 Show my Tmeets:
 
