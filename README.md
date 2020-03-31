@@ -20,7 +20,7 @@ Tma Post App does not require downloading of blockchain and can be installed and
 2. Enter and remember you passphrase
 3. Send an email to tmacoin@yahoo.com and request 2 partial coins.
 4. Check if you received the coins by selcting My Balance under Tools main menu item.
-5. Done, start sending messages and Posting.
+5. Done, start sending Messages and Posting.
 
 <b>Installation instructions:</b>
 
