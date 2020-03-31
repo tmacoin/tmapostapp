@@ -14,6 +14,13 @@ TMA Post App functionality includes the following main and sub menus:
 
 Tma Post App does not require downloading of blockchain and can be installed and started quickly; most importantly, TMA Post App uses less resources on your phone. 
 
+<b>Quick Installation:</b>
+
+1. Execute installation steps 1 - 5 below, ignoring anything about keys.csv file.
+2. Send an email to javatodesign@gmail.com and request 2 partial coins.
+3. Check if you received the coins by selcting My Balance under Tools main menu item.
+4. Done, start sending messages and Posting.
+
 <b>Installation instructions:</b>
 
 1. Go to your phone's Download directory(either phone internal or SD ok). 
