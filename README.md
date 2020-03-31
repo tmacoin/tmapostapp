@@ -185,7 +185,7 @@ My Subscription:
 
 ![postMenu](app/images/android23.png)
 
-Create your own posts or submit reviews of any other posts. The number of keywords is dependent upon the number of times someone send you Coins minus one or (n-1). For example, if someone sent one TMA Coin(or partial TMA Coin) three times, you can enter two keywords.
+Create your own posts or submit reviews of any other posts. The number of keywords is dependent upon the number of times someone sent you Coins minus one or (n-1). For example, if someone sent one TMA Coin(or partial TMA Coin) three times, you can enter two keywords.
 
 ![createPosts](app/images/android28.png)
 
