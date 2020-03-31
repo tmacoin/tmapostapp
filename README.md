@@ -16,10 +16,11 @@ Tma Post App does not require downloading of blockchain and can be installed and
 
 <b>Quick Installation:</b>
 
-1. Execute installation steps 1 - 5 below, ignoring anything about keys.csv file.
-2. Send an email to javatodesign@gmail.com and request 2 partial coins.
-3. Check if you received the coins by selcting My Balance under Tools main menu item.
-4. Done, start sending messages and Posting.
+1. Execute installation steps 1 - 6 below, ignoring anything about keys.csv file.
+2. Enter and remember you passphrase
+3. Send an email to javatodesign@gmail.com and request 2 partial coins.
+4. Check if you received the coins by selcting My Balance under Tools main menu item.
+5. Done, start sending messages and Posting.
 
 <b>Installation instructions:</b>
 
