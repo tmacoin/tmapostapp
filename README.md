@@ -1,5 +1,9 @@
 TMA Post App is an Android application, which allows users to use functionality below to interact with the TMA Coin network.
 
+You can read more about TMA Coin Network by reviewing the link below:
+
+https://github.com/tmacoin/tma/blob/master/README.md
+
 TMA Post App functionality includes the following main and sub menus:
 
 * File menu: allows users to import, export, and copy files; in addition, they can view system logs and show peers
@@ -9,6 +13,15 @@ TMA Post App functionality includes the following main and sub menus:
 * Posting announcements,  which can be used as decentralized, distributed, uncensored version of Yelp, Craiglist or eBay.
 
 Tma Post App does not require downloading of blockchain and can be installed and started quickly; most importantly, TMA Post App uses less resources on your phone. 
+
+<b>Quick Installation:</b>
+
+1. Execute installation steps 1 - 6 below, ignoring anything about keys.csv file.
+2. Enter a passphrase, and most important, remember it. &nbsp;&nbsp;&nbsp;&nbsp; note: no one can restore it for you.
+3. Send an email to tmacoin@yahoo.com and request 2 TMA Coins/partial coins.
+4. Check if you received the coins by selecting My Balance under Tools main menu item.
+5. Done, start sending Messages and Posting.
+
 
 <b>Installation instructions:</b>
 
@@ -20,16 +33,20 @@ Tma Post App does not require downloading of blockchain and can be installed and
 2. Click on the  <a href="tma.apk" tagret="_blank" download="tma.apk">tma.apk</a> file in the this directory(i.e. github tmapostapp directory) and select the download button(next to the History button). Download it to your Download directory from step one above.
 
 
-3. If you already have keys.csv file with existing keys, just copy it to the Download directory, otherwise, it will create new key. 
+3. If you already have keys.csv file with existing keys, just copy it to your phone's Download directory, otherwise, it will create new key. 
 4. Double click on the tma.apk file located in your phone's Download directory from step one above. 
 
    ![apkFile](app/images/android2.png)
+   
+5. First time users, press Cancel; otherwise, press Ok if the keys.csv was copied to your phone's Download directory.
+   
+   ![apkFile](app/images/android2a.png)
 
-5. Click Install
+6. Click Install
 
    ![install](app/images/android3.png)
 
-6. Once installed, select Open. Important: if you have a Keys.csv file, copy it to the Download directory before you select Open.
+7. Once installed, select Open. Important: if you have a Keys.csv file, copy it to the Download directory before you select Open.
 
 <b>Logging in to App</b>
 
@@ -141,11 +158,9 @@ You can create aliases for your contact addresses
 * Search Tmeet: allows user to list Tmitter received for a specific Tmitter Account you subscribed (case sensitive)
 * My Subscription: allows you to see latest Tmeets for the Tmeet accounts you have subscribed (note: there is no notification when you receive a Tmeet)
 
-![tmeetsMenu](app/images/android18.png)
-
-
 Create Tmitter
 
+![tmeetsMenu](app/images/android18.png)
 
 Show my Tmeets:
 
@@ -175,7 +190,7 @@ My Subscription:
 
 ![postMenu](app/images/android23.png)
 
-Create your own posts or submit reviews of any other posts.
+Create your own posts or submit reviews of any other posts. The number of keywords is dependent upon the number of times someone sent you Coins minus one or (n-1). For example, if someone sent one TMA Coin(or partial TMA Coin) three times, you can enter two keywords.
 
 ![createPosts](app/images/android28.png)
 
