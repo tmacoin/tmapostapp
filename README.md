@@ -18,7 +18,7 @@ Tma Post App does not require downloading of blockchain and can be installed and
 
 1. Execute installation steps 1 - 6 below, ignoring anything about keys.csv file.
 2. Enter a passphrase, and most important, remember it. &nbsp;&nbsp;&nbsp;&nbsp; note: no one can restore it for you.
-3. Send an email to tmacoin@yahoo.com and request 2 TMA Coins/partial coins.
+3. The installation process will auto send you partial coins. If not, send an email to admin@tmacoin.org or tmacoin@yahoo.com.
 4. Check if you received the coins by selecting My Balance under Tools main menu item.
 5. Done, start sending Messages and Posting.
 
@@ -38,25 +38,23 @@ Tma Post App does not require downloading of blockchain and can be installed and
 
    ![apkFile](app/images/android2.png)
    
-5. First time users, press Cancel; otherwise, press Ok if the keys.csv was copied to your phone's Download directory.
-   
-   ![apkFile](app/images/android2a.png)
-
-6. Click Install
+5. Click Install
 
    ![install](app/images/android3.png)
 
-7. Once installed, select Open. Important: if you have a Keys.csv file, copy it to the Download directory before you select Open.
+6. Once installed, select Open. Important: if you have a Keys.csv file, copy it to the Download directory before you select Open.
 
 <b>Logging in to App</b>
+    
+   ![newLogin](app/images/android2a.png)
 
-If you do not have an existing keys.csv file, it will prompt  you for a passphrase and confirm passphrase; see example exhibit below
-
-  ![newLogin](app/images/android4b.png)
+First time users, press Cancel; otherwise, press Ok if the keys.csv was copied to your phone's Download directory.
+    
+   ![apkFile](app/images/android4b.png)
 
 If you do have a keys.csv file and passphrase, it will prompt you for the existing passphrase. The example exhibit below is the prompt when a user  copied their existing keys.csv file to the Download directory and then started the app.
-
-  ![login](app/images/android4a.png)
+    
+   ![login](app/images/android4a.png)
 
 Once logged in, it will display your address.
 
@@ -73,7 +71,7 @@ To access the main menu, select the ellipsis or dot menu located on the upper ri
 * View Log: this is used to identify any issues with app
 * Shop Peers: this list peers connected to the same instance you are connected
     
-![mainMenu](app/images/android8.png)
+ ![mainMenu](app/images/android8.png)
 
  Import File:
  
