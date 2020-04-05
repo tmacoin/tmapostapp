@@ -46,7 +46,7 @@ Tma Post App does not require downloading of blockchain and can be installed and
 
 <b>Logging in to App</b>
 
-  ![newLogin](app/images/android2a.png)
+   ![newLogin](app/images/android2a.png)
 
 7. First time users, press Cancel; otherwise, press Ok if the keys.csv was copied to your phone's Download directory.
    
@@ -71,7 +71,7 @@ To access the main menu, select the ellipsis or dot menu located on the upper ri
 * View Log: this is used to identify any issues with app
 * Shop Peers: this list peers connected to the same instance you are connected
     
-![mainMenu](app/images/android8.png)
+ ![mainMenu](app/images/android8.png)
 
  Import File:
  
