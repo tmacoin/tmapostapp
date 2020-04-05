@@ -45,7 +45,7 @@ Tma Post App does not require downloading of blockchain and can be installed and
 6. Once installed, select Open. Important: if you have a Keys.csv file, copy it to the Download directory before you select Open.
 
 <b>Logging in to App</b>
-
+  
   &nbsp;&nbsp;&nbsp;&nbsp;![newLogin](app/images/android2a.png)
 
 7. First time users, press Cancel; otherwise, press Ok if the keys.csv was copied to your phone's Download directory.
@@ -53,7 +53,7 @@ Tma Post App does not require downloading of blockchain and can be installed and
    ![apkFile](app/images/android4b.png)
 
 If you do have a keys.csv file and passphrase, it will prompt you for the existing passphrase. The example exhibit below is the prompt when a user  copied their existing keys.csv file to the Download directory and then started the app.
-
+    
    ![login](app/images/android4a.png)
 
 Once logged in, it will display your address.
