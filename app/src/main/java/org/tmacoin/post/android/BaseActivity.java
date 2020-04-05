@@ -70,6 +70,9 @@ public class BaseActivity extends AppCompatActivity {
             case R.id.show_address:
                 menuHandler.handleShowAddress(this);
                 return true;
+            case R.id.show_transactions:
+                menuHandler.handleShowTransactions(this);
+                return true;
 
             case R.id.send_message:
                 menuHandler.handleSendSecureMessage(this);

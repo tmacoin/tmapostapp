@@ -16,6 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ShowTransactionsActivity"></activity>
         <activity android:name=".posting.ShowPostActivity"></activity>
         <activity android:name=".posting.FindPostActivity" />
         <activity android:name=".posting.MyRatingsActivity" />

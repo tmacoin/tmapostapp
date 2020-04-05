@@ -25,7 +25,7 @@ public class ShowPeersActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_peers);
         active = true;
-        ThreadExecutor.getInstance().execute(new TmaRunnable("NewMessageNotifier") {
+        ThreadExecutor.getInstance().execute(new TmaRunnable("ShowPeersActivity") {
             public void doRun() {
                 process();
             }

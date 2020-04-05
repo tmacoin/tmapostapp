@@ -66,12 +66,14 @@ public class ConnectedToNetworkActivity extends BaseActivity {
                 GetFaucetRequest getFaucetRequest = new GetFaucetRequest(network, network.getTmaAddress(), faucetAddress);
                 getFaucetRequest.start();
                 ThreadExecutor.sleep(Constants.TIMEOUT);
-                sendTransaction();
+                while(!sendTransaction()) {
+
+                }
             }
         });
     }
 
-    private void sendTransaction() {
+    private boolean sendTransaction() {
         Network network = Network.getInstance();
         final String tmaAddress = network.getTmaAddress();
         final Coin total = Coin.SATOSHI.multiply(2);
@@ -83,7 +85,7 @@ public class ConnectedToNetworkActivity extends BaseActivity {
         int i = 0;
 
         if(inputList == null || inputList.size() != totals.size()) {
-            return;
+            return false;
         }
 
         Set<TransactionOutput> inputs = inputList.get(i++);
@@ -92,6 +94,7 @@ public class ConnectedToNetworkActivity extends BaseActivity {
                 Coin.SATOSHI, inputs, wallet.getPrivateKey(), null, null, null);
         logger.debug("sent {}", transaction);
         new SendTransactionRequest(Network.getInstance(), transaction).start();
+        return true;
     }
 
     private void startNotifier() {

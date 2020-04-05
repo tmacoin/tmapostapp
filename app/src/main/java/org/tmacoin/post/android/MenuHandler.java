@@ -128,4 +128,9 @@ public class MenuHandler {
         activity.startActivity(intent);
     }
 
+    public void handleShowTransactions(Activity activity) {
+        Intent intent = new Intent(activity, ShowTransactionsActivity.class);
+        activity.startActivity(intent);
+    }
+
 }

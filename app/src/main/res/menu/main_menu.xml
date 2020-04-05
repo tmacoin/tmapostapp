@@ -50,7 +50,9 @@
             <item
                 android:id="@+id/show_address"
                 android:title="@string/show_address" />
-
+            <item
+                android:id="@+id/show_transactions"
+                android:title="@string/show_transactions" />
         </menu>
 
     </item>
