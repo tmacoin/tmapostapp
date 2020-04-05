@@ -38,21 +38,19 @@ Tma Post App does not require downloading of blockchain and can be installed and
 
    ![apkFile](app/images/android2.png)
    
-5. First time users, press Cancel; otherwise, press Ok if the keys.csv was copied to your phone's Download directory.
-   
-   ![apkFile](app/images/android2a.png)
-
-6. Click Install
+5. Click Install
 
    ![install](app/images/android3.png)
 
-7. Once installed, select Open. Important: if you have a Keys.csv file, copy it to the Download directory before you select Open.
+6. Once installed, select Open. Important: if you have a Keys.csv file, copy it to the Download directory before you select Open.
 
 <b>Logging in to App</b>
 
-If you do not have an existing keys.csv file, it will prompt  you for a passphrase and confirm passphrase; see example exhibit below
-
   ![newLogin](app/images/android4b.png)
+
+7. First time users, press Cancel; otherwise, press Ok if the keys.csv was copied to your phone's Download directory.
+   
+   ![apkFile](app/images/android2a.png)
 
 If you do have a keys.csv file and passphrase, it will prompt you for the existing passphrase. The example exhibit below is the prompt when a user  copied their existing keys.csv file to the Download directory and then started the app.
 
