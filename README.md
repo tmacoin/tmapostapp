@@ -46,11 +46,11 @@ Tma Post App does not require downloading of blockchain and can be installed and
 
 <b>Logging in to App</b>
 
-  ![newLogin](app/images/android4b.png)
+  ![newLogin](app/images/android2a.png)
 
 7. First time users, press Cancel; otherwise, press Ok if the keys.csv was copied to your phone's Download directory.
    
-   ![apkFile](app/images/android2a.png)
+   ![apkFile](app/images/androidb4.png)
 
 If you do have a keys.csv file and passphrase, it will prompt you for the existing passphrase. The example exhibit below is the prompt when a user  copied their existing keys.csv file to the Download directory and then started the app.
 
