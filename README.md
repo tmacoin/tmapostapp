@@ -46,7 +46,7 @@ Tma Post App does not require downloading of blockchain and can be installed and
 
 <b>Logging in to App</b>
 
-              ![newLogin](app/images/android2a.png)
+  &nbsp;&nbsp;&nbsp;&nbsp;![newLogin](app/images/android2a.png)
 
 7. First time users, press Cancel; otherwise, press Ok if the keys.csv was copied to your phone's Download directory.
    
