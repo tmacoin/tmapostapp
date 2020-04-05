@@ -67,6 +67,7 @@ public class ShowTransactionsActivity extends BaseActivity {
     }
 
     private void processAsync() {
+        result = "Show Transactions";
     }
 
     private void processSync() {
