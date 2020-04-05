@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".ShowPeersActivity">
+    tools:context=".ShowTransactionsActivity">
 
     <TextView
         android:id="@+id/textView37"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView39" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/showTransactionsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
