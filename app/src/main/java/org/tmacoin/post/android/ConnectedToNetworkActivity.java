@@ -51,6 +51,7 @@ public class ConnectedToNetworkActivity extends BaseActivity {
     private void tryFaucet() {
         ThreadExecutor.getInstance().execute(new TmaRunnable("Faucet") {
             public void doRun() {
+                ThreadExecutor.sleep(Constants.ONE_MINUTE);
                 Network network = Network.getInstance();
                 TmaAndroidUtil.checkNetwork();
                 GetBalanceRequest request = new GetBalanceRequest(network, network.getTmaAddress());
