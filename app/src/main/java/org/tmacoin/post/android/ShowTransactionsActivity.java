@@ -9,8 +9,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.tma.blockchain.Transaction;
 import org.tma.peer.Network;
 import org.tma.peer.Peer;
+import org.tma.peer.thin.GetTransactionsRequest;
+import org.tma.peer.thin.ResponseHolder;
 import org.tma.util.Coin;
 import org.tma.util.Constants;
 import org.tma.util.StringUtil;
@@ -19,6 +22,7 @@ import org.tma.util.TmaLogger;
 import org.tma.util.TmaRunnable;
 
 import java.util.List;
+import java.util.Set;
 
 public class ShowTransactionsActivity extends BaseActivity {
 
@@ -32,6 +36,8 @@ public class ShowTransactionsActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_transactions);
+        EditText addressEditText = findViewById(R.id.address);
+        addressEditText.setText(Network.getInstance().getTmaAddress());
         Button showTransactionsButton = findViewById(R.id.showTransactionsButton);
         showTransactionsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +73,17 @@ public class ShowTransactionsActivity extends BaseActivity {
     }
 
     private void processAsync() {
-        result = "Show Transactions";
+
+        Network network = Network.getInstance();
+        TmaAndroidUtil.checkNetwork();
+        GetTransactionsRequest request = new GetTransactionsRequest(network, address, minimum);
+        request.start();
+        Set<Transaction> set = (Set<Transaction>)ResponseHolder.getInstance().getObject(request.getCorrelationId());
+        if(set == null) {
+            result = "Could not retrieve transactions for " + address;
+            return;
+        }
+        result = "Number of transactions retrieved " + set.size();
     }
 
     private void processSync() {
