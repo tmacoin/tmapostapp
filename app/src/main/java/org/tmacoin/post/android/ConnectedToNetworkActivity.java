@@ -56,6 +56,7 @@ public class ConnectedToNetworkActivity extends BaseActivity {
                 GetBalanceRequest request = new GetBalanceRequest(network, network.getTmaAddress());
                 request.start();
                 String balance = (String) ResponseHolder.getInstance().getObject(request.getCorrelationId());
+                logger.debug("balance = {}", balance);
                 if(balance == null) {
                     return;
                 }
