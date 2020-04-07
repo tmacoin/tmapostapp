@@ -6,6 +6,7 @@ import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ import org.tma.util.ThreadExecutor;
 import org.tma.util.TmaLogger;
 import org.tma.util.TmaRunnable;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -31,6 +33,7 @@ public class ShowTransactionsActivity extends BaseActivity {
     private String address;
     private Coin minimum;
     private String result;
+    private List<Transaction> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,12 +87,21 @@ public class ShowTransactionsActivity extends BaseActivity {
             return;
         }
         result = "Number of transactions retrieved " + set.size();
+        list = new ArrayList<Transaction>(set);
     }
 
     private void processSync() {
         setContentView(R.layout.activity_show_transactions_complete);
-        TextView resultTextView = findViewById(R.id.resultTextView);
-        resultTextView.setText(result);
+        if(!StringUtil.isEmpty(result)) {
+            Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        }
+        if(list == null || list.isEmpty()) {
+            setContentView(R.layout.activity_show_transactions_empty);
+            return;
+        }
+        ListView listView = findViewById(R.id.simpleListView);
+        TransactionAdapter arrayAdapter = new TransactionAdapter(this, list);
+        listView.setAdapter(arrayAdapter);
     }
 
     private boolean validate() {

@@ -77,6 +77,7 @@ public class MyPostsActivity extends BaseActivity {
         }
         if(list == null || list.isEmpty()) {
             setContentView(R.layout.activity_show_no_post);
+            return;
         }
         ListView listView = findViewById(R.id.simpleListView);
         RateeAdapter arrayAdapter = new RateeAdapter(this, list);
