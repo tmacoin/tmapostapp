@@ -25,6 +25,7 @@ public class TransactionAdapter extends ArrayAdapter<Transaction> {
         public TextView sender;
         public TextView recipient;
         public TextView value;
+        public TextView date;
     }
 
     public TransactionAdapter(Activity context, List<Transaction> list) {
@@ -45,6 +46,7 @@ public class TransactionAdapter extends ArrayAdapter<Transaction> {
             viewHolder.value = (TextView) rowView.findViewById(R.id.value);
             viewHolder.sender = (TextView) rowView.findViewById(R.id.sender);
             viewHolder.recipient = (TextView) rowView.findViewById(R.id.recipient);
+            viewHolder.date = (TextView) rowView.findViewById(R.id.date);
 
             rowView.setTag(viewHolder);
         }
@@ -56,6 +58,7 @@ public class TransactionAdapter extends ArrayAdapter<Transaction> {
         holder.value.setText("Amount: " + transaction.getValue().toNumberOfCoins() + " coins");
         holder.sender.setText("Sender: " + transaction.getSenderAddress());
         holder.recipient.setText("Recipient: " + transaction.getRecipient());
+        holder.date.setText("Date: " + new Date(transaction.getTimeStamp()).toString());
 
         return rowView;
     }

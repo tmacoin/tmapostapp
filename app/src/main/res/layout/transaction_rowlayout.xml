@@ -10,7 +10,7 @@
         android:id="@+id/sender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@+id/subjectTextView"
+        android:text="@+id/sender"
         android:textSize="12dp"
         android:textColor="@color/colorPrimaryDark">
     </TextView>
@@ -19,7 +19,7 @@
         android:id="@+id/recipient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@+id/dateTextView"
+        android:text="@+id/recipient"
         android:textSize="12dp"
         android:textColor="@color/colorPrimaryDark">
     </TextView>
@@ -28,7 +28,16 @@
         android:id="@+id/value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@+id/from"
+        android:text="@+id/value"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimaryDark">
+    </TextView>
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@+id/date"
         android:textSize="12dp"
         android:textColor="@color/colorPrimaryDark">
     </TextView>
