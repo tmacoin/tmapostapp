@@ -1,26 +1,21 @@
 package org.tmacoin.post.android;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.tma.blockchain.Transaction;
 import org.tma.peer.Network;
-import org.tma.peer.Peer;
 import org.tma.peer.thin.GetTransactionsRequest;
 import org.tma.peer.thin.ResponseHolder;
 import org.tma.util.Coin;
-import org.tma.util.Constants;
 import org.tma.util.StringUtil;
-import org.tma.util.ThreadExecutor;
 import org.tma.util.TmaLogger;
-import org.tma.util.TmaRunnable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -102,6 +97,20 @@ public class ShowTransactionsActivity extends BaseActivity {
         ListView listView = findViewById(R.id.simpleListView);
         TransactionAdapter arrayAdapter = new TransactionAdapter(this, list);
         listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Transaction transaction = (Transaction) parent.getItemAtPosition(position);
+                show(transaction);
+            }
+        });
+    }
+
+    private void show(Transaction transaction) {
+        Intent intent = new Intent(this, ShowTransactionActivity.class);
+        intent.putExtra("transaction", transaction);
+        startActivity(intent);
     }
 
     private boolean validate() {
