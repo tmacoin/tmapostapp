@@ -37,6 +37,7 @@
         android:layout_marginTop="8dp"
         android:text="TextView"
         android:textColor="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView38" />
 
@@ -59,6 +60,7 @@
         android:layout_marginTop="8dp"
         android:text="TextView"
         android:textColor="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView41" />
 
@@ -81,6 +83,7 @@
         android:layout_marginTop="8dp"
         android:text="TextView"
         android:textColor="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView43" />
 
@@ -104,6 +107,7 @@
         android:layout_marginTop="8dp"
         android:text="TextView"
         android:textColor="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView45" />
 
@@ -127,6 +131,7 @@
         android:layout_marginTop="8dp"
         android:text="TextView"
         android:textColor="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView47" />
 
@@ -154,7 +159,8 @@
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView49" />
+        app:layout_constraintTop_toBottomOf="@+id/textView49"
+        />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

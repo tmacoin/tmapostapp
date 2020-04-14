@@ -35,7 +35,8 @@
             android:text="@+id/value"
             android:textSize="10dp"
             android:layout_weight="1"
-            android:textColor="@color/colorPrimaryDark">
+            android:textColor="@color/colorPrimaryDark"
+            >
         </TextView>
 
         <TextView
@@ -46,7 +47,8 @@
             android:textSize="10dp"
             android:layout_weight="1"
             android:textColor="@color/colorPrimaryDark"
-            android:gravity="right">
+            android:gravity="right"
+            >
         </TextView>
     </LinearLayout>
 </LinearLayout>
