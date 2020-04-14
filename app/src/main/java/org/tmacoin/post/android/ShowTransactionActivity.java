@@ -25,9 +25,13 @@ public class ShowTransactionActivity extends BaseActivity {
         TextView recipient = findViewById(R.id.recipient);
         recipient.setText(transaction.getRecipient());
         TextView value = findViewById(R.id.value);
-        value.setText(transaction.getValue().toNumberOfCoins() + " coins");
+        value.setText(transaction.getValue().toNumberOfCoins() + " " + getResources().getString(R.string.coins));
+        TextView fee = findViewById(R.id.fee);
+        fee.setText(transaction.getFee().toNumberOfCoins() + " " + getResources().getString(R.string.coins));
         TextView date = findViewById(R.id.date);
         date.setText(new Date(transaction.getTimeStamp()).toString());
+        TextView data = findViewById(R.id.data);
+        data.setText(transaction.getData()!=null? transaction.getData().toString():"");
 
     }
 }

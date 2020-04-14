@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:text="@+id/value"
             android:textSize="12dp"
-            android:layout_weight="0.65"
+            android:layout_weight="0.52"
             android:textColor="@color/colorPrimaryDark">
         </TextView>
 
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:text="@+id/date"
             android:textSize="12dp"
-            android:layout_weight="0.35"
+            android:layout_weight="0.48"
             android:textColor="@color/colorPrimaryDark">
         </TextView>
     </LinearLayout>
