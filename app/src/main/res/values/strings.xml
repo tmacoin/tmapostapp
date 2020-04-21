@@ -177,7 +177,9 @@
     <string name="no_results">No Results</string>
     <string name="no_posts_were_found_for_provided_keywords">No posts were found for provided keywords.</string>
 
-    <string name="show_transactions" translatable="false">Show Transactions</string>
+    <string name="show_transactions">Show Transactions</string>
+    <string name="create_new_passphrase">Create New Passphrase</string>
+    <string name="reenter_new_passphrase">Reenter New Passphrase</string>
 
 
 </resources>

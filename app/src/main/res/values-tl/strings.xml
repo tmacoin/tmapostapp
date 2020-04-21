@@ -172,4 +172,8 @@
     <string name="no_results">Walang resulta</string>
     <string name="no_posts_were_found_for_provided_keywords">Walang mga post na natagpuan para sa mga ibinigay na keyword.</string>
 
+    <string name = "show_transactions"> Ipakita ang Mga Transaksyon </string>
+    <string name = "create_new_passphrase"> Lumikha ng Bagong hudyat </string>
+    <string name = "reenter_new_passphrase"> Muling ipasok ang Bagong hudyat </string>
+
 </resources>

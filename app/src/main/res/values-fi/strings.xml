@@ -173,4 +173,8 @@
     <string name="no_results">Ei tuloksia</string>
     <string name="no_posts_were_found_for_provided_keywords">Antamille avainsanoille ei löytynyt viestejä.</string>
 
+    <string name = "show_transactions"> Näytä transaktiot </string>
+    <string name = "create_new_passphrase"> Luo uusi tunnuslause </string>
+    <string name = "reenter_new_passphrase"> Palauta uusi tunnuslause </string>
+
 </resources>

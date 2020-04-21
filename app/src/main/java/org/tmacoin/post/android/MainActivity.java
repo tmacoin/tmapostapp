@@ -61,11 +61,11 @@ public class MainActivity extends StartActivity {
                 .setTitle(getString(R.string.key_file))
                 .setMessage(getString(R.string.existing_key_file)+"?")
                 .setIcon(android.R.drawable.ic_dialog_alert)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                .setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         selectKeyFile();
                     }})
-                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                .setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         createNewKeyFile();
                     }}).show();

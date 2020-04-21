@@ -173,4 +173,9 @@
     <string name="no_results">Никаких результатов</string>
     <string name="no_posts_were_found_for_provided_keywords">По указанным ключевым словам сообщения не найдены.</string>
 
+    <string name = "show_transactions"> Показать транзакции </string>
+    <string name = "create_new_passphrase"> Создайте новую фразу-пароль </string>
+    <string name = "reenter_new_passphrase"> Повторно введите новую фразу-пароль </string>
+
+
 </resources>

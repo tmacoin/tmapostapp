@@ -173,4 +173,8 @@
     <string name="no_results">Geen resultaten</string>
     <string name="no_posts_were_found_for_provided_keywords">Er zijn geen berichten gevonden voor opgegeven zoekwoorden.</string>
 
+    <string name = "show_transactions"> Transacties weergeven </string>
+    <string name = "create_new_passphrase"> Nieuwe wachtwoordzin maken </string>
+    <string name = "reenter_new_passphrase"> Voer nieuwe wachtwoordzin opnieuw in </string>
+
 </resources>

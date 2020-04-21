@@ -75,7 +75,7 @@
     <string name="copy_cancelled">Se canceló el archivo de copia</string>
     <string name="file_does_not_exist">El archivo no existe:</string>
     <string name="key_file">Archivo de clave</string>
-    <string name="existing_key_file">¿Desea utilizar un archivo de clave existente?</string>
+    <string name="existing_key_file">Desea utilizar un archivo de clave existente</string>
     <string name="no_load_key_file">No se pudieron cargar las llaves</string>
     <string name="no_inputs">No hay entradas disponibles para la dirección tma</string>
     <string name="pls_check_your_balance">. Por favor revise su saldo.</string>
@@ -173,5 +173,9 @@
     <string name="no_ratings">No hay votos</string>
     <string name="no_results">No hay resultados</string>
     <string name="no_posts_were_found_for_provided_keywords">No se encontraron publicaciones para las palabras clave proporcionadas.</string>
+
+    <string name = "show_transactions"> Mostrar transacciones </string>
+    <string name = "create_new_passphrase"> Crear nueva frase de contraseña </string>
+    <string name = "reenter_new_passphrase"> Vuelva a ingresar la nueva frase de contraseña </string>
 
 </resources>

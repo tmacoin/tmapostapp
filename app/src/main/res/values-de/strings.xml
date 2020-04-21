@@ -173,4 +173,8 @@
     <string name="no_results">Keine Ergebnisse</string>
     <string name="no_posts_were_found_for_provided_keywords">Für die angegebenen Keywords wurden keine Beiträge gefunden.</string>
 
+    <string name = "show_transactions">Transaktionen anzeigen</string>
+    <string name = "create_new_passphrase">Neue Passwort erstellen </string>
+    <string name = "reenter_new_passphrase">Neue Passwort erneut eingeben</string>
+
 </resources>

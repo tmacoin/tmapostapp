@@ -173,4 +173,8 @@
     <string name="no_results">Aucun résultat</string>
     <string name="no_posts_were_found_for_provided_keywords">Aucun message n\'a été trouvé pour les mots clés fournis.</string>
 
+    <string name = "show_transactions"> Afficher les transactions </string>
+    <string name = "create_new_passphrase"> Créer une nouvelle phrase secrète </string>
+    <string name = "reenter_new_passphrase"> Entrez à nouveau une nouvelle phrase de passe </string>
+
 </resources>

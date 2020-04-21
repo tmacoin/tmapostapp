@@ -172,4 +172,11 @@
     <string name="no_ratings">Nessuna valutazione</string>
     <string name="no_results">Nessun risultato</string>
     <string name="no_posts_were_found_for_provided_keywords">Nessun post trovato per le parole chiave fornite.</string>
+
+    <string name = "show_transactions"> Mostra transazioni </string>
+    <string name = "create_new_passphrase"> Crea nuova frase d\'accesso </string>
+    <string name = "reenter_new_passphrase"> Reinserire la nuova frase d\'accesso </string>
+
+
+
 </resources>

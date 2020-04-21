@@ -173,4 +173,8 @@
     <string name="no_results">Jokių rezultatų</string>
     <string name="no_posts_were_found_for_provided_keywords">Pateiktų raktinių žodžių nerasta.</string>
 
+    <string name = "show_transactions"> Rodyti operacijas </string>
+    <string name = "create_new_passphrase"> Kurti naują slaptafrazę </string>
+    <string name = "reenter_new_passphrase"> Įveskite naują slaptafrazę </string>
+
 </resources>
